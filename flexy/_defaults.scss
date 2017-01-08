@@ -1,19 +1,18 @@
 @import "settings";
 
-body {
-  font-size: 15px;
+html {
+  // set body 100% height
+  height: 100%;
 }
 
-body, #{$flexy-headings} {
+body {
+  // set body 100% height
+  min-height: 100%;
+
+  font-size: 15px;
   font-family: $flexy-font;
 }
 
 #{$flexy-headings} {
   margin-top: 0;
-}
-
-p {
-  &:not(:last-child) {
-    margin-bottom: 0;
-  }
 }
