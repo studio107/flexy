@@ -1,0 +1,53 @@
+.#{$flexy-prefix} {
+  &-visible {
+    $prev: null;
+
+    @each $namespace, $px in $flexy-breakpoints {
+      $prev: map-prev-key($flexy-breakpoints, $namespace);
+      $next: map-next-key($flexy-breakpoints, $namespace);
+
+      &_#{$namespace} {
+        display: none;
+
+        $media: ();
+        @if ($next) {
+          $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+        } @else {
+          $media: (min-width: flexy-breakpoint($namespace));
+        }
+
+        @include flexy-media-screen($media) {
+          display: block;
+        }
+      }
+
+      $prev: $namespace;
+    }
+  }
+
+  &-hide {
+    $prev: null;
+    display: block;
+
+    @each $namespace, $px in $flexy-breakpoints {
+      $prev: map-prev-key($flexy-breakpoints, $namespace);
+      $next: map-next-key($flexy-breakpoints, $namespace);
+
+      &_#{$namespace} {
+
+        $media: ();
+        @if ($next) {
+          $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+        } @else {
+          $media: (min-width: flexy-breakpoint($namespace));
+        }
+
+        @include flexy-media-screen($media) {
+          display: none;
+        }
+      }
+
+      $prev: $namespace;
+    }
+  }
+}

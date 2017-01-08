@@ -1,0 +1,78 @@
+// bem
+$flexy-prefix: 'b' !default;
+
+// defaults
+$flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-colors: (
+        default: #353535,
+        blue: #007fff,
+        white: #fff,
+        green: #42aa09
+);
+
+// elements
+$flexy-headings: 'h1, h2, h3, h4, h5, h6' !default;
+
+// media
+
+/**
+ * Break point namespace object
+ *
+ * Set the default namespace object with these defaults with the
+ * understanding that you can pass in whatever you might require for your site.
+ *
+ * $fg-breakpoints is a Sass list with nested lists inside. Each sub list defines two things.
+ * 1. The namespace for that breakpoint. (Required) (i.e. xs, sm, md, lg)
+ * 2. The min-width measurement for the breakpoint for that namespace. (i.e. 48em, 62em, 75em)
+ *
+ * Note: These should be in the proper order (at least till libsass handles map keys properly).
+ *
+ * Note: If the measurement is left out then it will be skipped when generating
+ * the grid and applied to global styles.
+ */
+$flexy-breakpoints: (
+        small: 0,
+        medium: 768px,
+        large: 992px,
+        xlarge: 1200px
+) !default;
+
+/*
+ * Grid component
+ */
+
+// $flexy-grid-columns will inform the grid loops how many columns there should be.
+$flexy-grid-columns: 12 !default;
+// $flexy-grid-gutter will inform the grid loops how big eac column's gutters should be.
+$flexy-grid-gutter: 0.5rem !default;
+// $flexy-grid-container-width will inform the grid how many px can contain container
+$flexy-grid-container-width: 100% !default;
+// $flexy-grid-class-row string used for the row class
+$flexy-grid-class-row: 'row' !default;
+
+// The grid will name columns, rows, offsets based on these three variables:
+// $flexy-grid-class-container string used for the column container class
+$flexy-grid-class-container: 'container' !default;
+// $flexy-grid-class-col string used for the column class
+$flexy-grid-class-col: 'column' !default;
+// $flexy-grid-class-off string used for the offset class
+$flexy-grid-class-off: 'off' !default;
+
+/*
+ * Divider component
+ */
+$flexy-divider-color: #e1e1e1 !default;
+$flexy-divider-margin: 20px !default;
+$flexy-divider-height: 1px !default;
+$flexy-divider-large-medium: 3px !default;
+$flexy-divider-large-height: 5px !default;
+
+/*
+ * Segment component
+ */
+$flexy-segment-padding: 15px;
+
+/*
+ * Label component
+ */
+$flexy-label-border-radius: 2px 2px 2px 1px;

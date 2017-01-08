@@ -1,0 +1,19 @@
+@import "settings";
+
+body {
+  font-size: 15px;
+}
+
+body, #{$flexy-headings} {
+  font-family: $flexy-font;
+}
+
+#{$flexy-headings} {
+  margin-top: 0;
+}
+
+p {
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

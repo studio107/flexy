@@ -1,0 +1,14 @@
+@function implode($pieces, $glue: "") {
+  $result: null;
+  @each $piece in $pieces {
+    @if type-of($piece) == list {
+      $result: unquote("#{$result}#{$glue}#{implode($piece, $glue)}");
+    } @else {
+      $result: unquote("#{$result}#{$glue}#{$piece}");
+    }
+  }
+  @if $result != null {
+    $result: str-slice($result, str-length($glue) + 1, -1);
+  }
+  @return $result;
+}

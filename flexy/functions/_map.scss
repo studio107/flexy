@@ -1,0 +1,34 @@
+// Return list-map from `$list` and ensure input list-map is list-of-lists
+@function map-convert($list) {
+  @if length($list) == 2 and length(nth($list, 1)) == 1 {
+    @return append((), $list, 'comma');
+  }
+
+  @return $list;
+}
+
+// Return previous key from list-map
+@function map-prev-key($list, $key) {
+  @if map-has-key($list, $key) {
+    $list: map-convert($list);
+    $keys: map-keys($list);
+    $index: index($keys, $key) - 1;
+
+    @return if($index <= 0, null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}
+
+// Return next key from list-map
+@function map-next-key($list, $key) {
+  @if map-has-key($list, $key) {
+    $list: map-convert($list);
+    $keys: map-keys($list);
+    $index: index($keys, $key) + 1;
+
+    @return if($index > length($list), null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}

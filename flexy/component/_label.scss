@@ -1,0 +1,51 @@
+@mixin flexy-label-color($color) {
+  background-color: $color;
+  @if (lightness($color) > 50) {
+    color: #000;
+  } @else {
+    color: #fff;
+  }
+
+  &:after {
+    border-right-color: darken($color, 5%);
+  }
+}
+
+.#{$flexy-prefix}-label {
+  width: 100px;
+  border-radius: $flexy-label-border-radius;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 13px;
+  margin: 0;
+  min-width: max-content;
+  border-color: rgba(0, 0, 0, .15);
+  display: inline-block;
+  padding: 2px 6px;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    background-color: transparent !important;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    width: 0;
+    height: 0;
+  }
+
+  @each $name, $color in $flexy-colors {
+    @if ($name == 'default') {
+      @include flexy-label-color($color);
+    } @else {
+      &_#{$name} {
+        @include flexy-label-color($color);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@mixin flexy-input($color) {
+  &:focus, &:focus:hover {
+    box-shadow: 0 0 0 1px $color inset;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px rgba($color, 0.4) inset;
+  }
+}
+
+.b-input {
+  line-height: 28px;
+  height: 32px;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  border-radius: 4px;
+  transition: box-shadow .2s ease;
+  box-shadow: 0 0 1px 0 rgba(#000, 0.4) inset;
+
+  @each $name, $color in $flexy-colors {
+    @if ($name == 'default') {
+      @include flexy-input($color);
+    } @else {
+      &_#{$name} {
+        @include flexy-input($color);
+      }
+    }
+  }
+}

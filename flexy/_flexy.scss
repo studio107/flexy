@@ -1,0 +1,20 @@
+@import "normalize/normalize";
+@import "normalize/extra";
+
+// Default styles
+@import "defaults";
+
+// Mixins
+@import "mixins";
+
+// Functions
+@import "functions/index";
+
+// Components
+@import "component/input";
+@import "component/label";
+@import "component/divider";
+@import "component/menu";
+@import "component/grid";
+@import "component/segment";
+@import "component/visibility";

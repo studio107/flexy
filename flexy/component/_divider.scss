@@ -1,0 +1,23 @@
+.#{$flexy-prefix} {
+  &-divider {
+    @include clearfix;
+
+    margin: $flexy-divider-margin auto;
+    padding: 0;
+    height: $flexy-divider-height;
+    width: 100%;
+    display: block;
+    border: none;
+    background: {
+      color: $flexy-divider-color;
+    }
+
+    &_medium {
+      height: $flexy-divider-large-medium;
+    }
+
+    &_large {
+      height: $flexy-divider-large-height;
+    }
+  }
+}

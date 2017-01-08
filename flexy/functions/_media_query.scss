@@ -1,0 +1,11 @@
+@function flexy-breakpoint($key) {
+  @return map-get($flexy-breakpoints, $key);
+}
+
+@function flexy-media-map($map) {
+  $temp: ();
+  @each $prefix, $width in $map {
+    $temp: append($temp, '(' + $prefix + ': ' + $width + ')');
+  }
+  @return implode($temp, ' and ');
+}

@@ -1,0 +1,17 @@
+.#{$flexy-prefix} {
+  &-segment {
+    margin: 20px 0;
+    padding: $flexy-segment-padding;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(#000, 0.1), 0 1px 1px 2px rgba(#000, 0.1);
+    background: {
+      color: #fff;
+    }
+
+    .#{$flexy-prefix}-divider {
+      margin-left: -$flexy-segment-padding;
+      margin-right: -$flexy-segment-padding;
+      padding: 0 $flexy-segment-padding;
+    }
+  }
+}

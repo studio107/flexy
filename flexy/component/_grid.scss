@@ -1,0 +1,145 @@
+/**
+ * Flex Grid -
+ * Version: 0.3.5
+ *
+ * Simple grid built with flex box and sass.
+ *
+ * Matthew Simo - matthew.a.simo@gmail.com
+ */
+
+/**
+ * Grid setup
+ *
+ * The grid will calculate dimensions based on these two variables:
+ */
+
+/**
+ * Class Name Defaults
+ *
+ * Define class names for columns, rows and offsets in case compatibility with other
+ * libraries is necessary.
+
+
+/**
+ * Calculate column size percentage
+ */
+@function flexy-column-percent($column-num) {
+  @return $column-num / $flexy-grid-columns * 100%;
+}
+
+/**
+ * Spacing mixin to create uniform margin/padding
+ */
+@mixin flexy-grid-space($value, $type: margin, $orientation: vertical) {
+  @if $orientation == vertical {
+    #{$type}-top: $value;
+    #{$type}-bottom: $value;
+  } @else {
+    #{$type}-left: $value;
+    #{$type}-right: $value;
+  }
+}
+
+/**
+ * Row wrapper class, flex box parent.
+ */
+@mixin flexy-grid-row() {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include flexy-grid-space(-$flexy-grid-gutter, margin, horizontal);
+}
+
+@mixin flexy-grid-column() {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 1px;
+  @include flexy-grid-space($flexy-grid-gutter, padding, horizontal);
+}
+
+@mixin flexy-grid-container() {
+  @include flexy-grid-column;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: $flexy-grid-container-width;
+}
+
+@mixin flexy-grid-reset() {
+  margin-left: 0;
+}
+
+/**
+ * Generate a set of grid column classes using a namespace
+ *
+ * .#{$flexy-grid-class-col}-[namespace] for intelligent column division
+ * .#{$flexy-grid-class-col}-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+ * .#{$flexy-grid-class-off}-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+ * .#{$flexy-grid-class-off}-[namespace]-reset for resetting a col's offset for that and larger namespaces
+ */
+
+/**
+ * Build the grid in two steps, to help minimize file size
+ * Step 1, for each namespace, create the grid-base
+ * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+ */
+@mixin flexy-grid-build($namespace) {
+  // Run the loop for as many columns as speficied
+  @for $i from 1 through $flexy-grid-columns {
+    .#{$flexy-prefix}-grid__#{$flexy-grid-class-col}_#{$namespace} {
+      @include flexy-grid-container;
+
+      &_#{$i} {
+        flex-basis: flexy-column-percent($i);
+        max-width: flexy-column-percent($i);
+      }
+    }
+
+    // Don't include the .off class for the last column
+    @if ($i != $flexy-grid-columns) {
+      .#{$flexy-prefix}-grid__#{$flexy-grid-class-off}-#{$namespace}-#{$i} {
+        margin-left: flexy-column-percent($i);
+      }
+    }
+  }
+
+  .#{$flexy-prefix}-grid__#{$flexy-grid-class-off}-#{$namespace}-reset {
+    @include flexy-grid-reset;
+  }
+}
+
+@each $namespace, $width in $flexy-breakpoints {
+  @if ($width == 0) {
+    @include flexy-grid-build($namespace);
+  } @else {
+    @include flexy-media-screen((min-width: $width)) {
+      @include flexy-grid-build($namespace);
+    }
+  }
+}
+
+.#{$flexy-prefix} {
+  &-grid {
+    &__#{$flexy-grid-class-col} {
+      @include flexy-grid-column;
+    }
+    &__#{$flexy-grid-class-container} {
+      @include flexy-grid-container;
+      margin: 0 auto;
+
+      &_left {
+        margin: 0;
+      }
+
+      &_right {
+        margin-left: auto;
+      }
+    }
+    &__#{$flexy-grid-class-row} {
+      @include flexy-grid-row();
+    }
+  }
+}

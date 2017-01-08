@@ -1,0 +1,7 @@
+@function get-color($name) {
+  @if (map-has-key($flat, $name)) {
+    @return map-get($flat, $name);
+  }
+
+  @return null;
+}
