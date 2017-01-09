@@ -1,0 +1,57 @@
+@mixin flexy-checkbox-inactive() {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 30px;
+
+  &:before {
+    width: 19px;
+    height: 19px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: {
+      color: white;
+      position: center;
+      repeat: no-repeat;
+    };
+    border: 1px solid #bdc0c7;
+  }
+
+  @content;
+}
+
+@mixin flexy-checkbox-active() {
+  &:before {
+    background: {
+      color: #f38231;
+    };
+    border: 1px solid #de772d;
+  }
+
+  @content;
+}
+
+@mixin flexy-checkbox() {
+
+  &__input {
+    display: none;
+  }
+
+  &__input + &__label {
+    @include flexy-checkbox-inactive() {
+      @content
+    }
+  }
+
+  &__input:checked + &__label {
+    @include flexy-checkbox-active() {
+      @content
+    }
+  }
+}

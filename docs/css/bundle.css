@@ -2814,3 +2814,31 @@ body {
   padding: 10px 0;
   background-color: rgba(95, 162, 255, 0.4);
   color: #000; }
+
+.b-checkbox__input {
+  display: none; }
+
+.b-checkbox__input + .b-checkbox__label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 30px; }
+  .b-checkbox__input + .b-checkbox__label:before {
+    width: 19px;
+    height: 19px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #bdc0c7; }
+
+.b-checkbox__input:checked + .b-checkbox__label:before {
+  background-color: #f38231;
+  border: 1px solid #de772d; }

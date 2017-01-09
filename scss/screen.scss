@@ -25,3 +25,7 @@ body {
 .b-button {
   
 }
+
+.b-checkbox {
+  @include flexy-checkbox();
+}
