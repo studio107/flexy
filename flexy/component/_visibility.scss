@@ -1,5 +1,7 @@
 .#{$flexy-prefix} {
   &-visible {
+    display: none;
+
     $prev: null;
 
     @each $namespace, $px in $flexy-breakpoints {
@@ -7,17 +9,24 @@
       $next: map-next-key($flexy-breakpoints, $namespace);
 
       &_#{$namespace} {
-        display: none;
 
-        $media: ();
-        @if ($next) {
-          $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
-        } @else {
-          $media: (min-width: flexy-breakpoint($namespace));
+        &_only {
+          $media: ();
+          @if ($next) {
+            $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+          } @else {
+            $media: (min-width: flexy-breakpoint($namespace));
+          }
+
+          @include flexy-media-screen($media) {
+            display: block;
+          }
         }
 
-        @include flexy-media-screen($media) {
-          display: block;
+        &_up {
+          @include flexy-media-screen((min-width: flexy-breakpoint($namespace))) {
+            display: block;
+          }
         }
       }
 
@@ -26,8 +35,9 @@
   }
 
   &-hide {
-    $prev: null;
     display: block;
+
+    $prev: null;
 
     @each $namespace, $px in $flexy-breakpoints {
       $prev: map-prev-key($flexy-breakpoints, $namespace);
@@ -35,15 +45,24 @@
 
       &_#{$namespace} {
 
-        $media: ();
-        @if ($next) {
-          $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
-        } @else {
-          $media: (min-width: flexy-breakpoint($namespace));
+        &_only {
+          $media: ();
+          @if ($next) {
+            $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+          } @else {
+            $media: (min-width: flexy-breakpoint($namespace));
+          }
+
+          @include flexy-media-screen($media) {
+            display: none;
+          }
         }
 
-        @include flexy-media-screen($media) {
-          display: none;
+        &_up {
+          @include flexy-media-screen((min-width: flexy-breakpoint($namespace))) {
+            content: '@@@';
+            display: none;
+          }
         }
       }
 

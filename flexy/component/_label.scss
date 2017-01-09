@@ -13,6 +13,7 @@
 
 .#{$flexy-prefix} {
   &-label {
+    position: relative;
     width: 100px;
     border-radius: $flexy-label-border-radius;
     height: 20px;

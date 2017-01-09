@@ -46,13 +46,13 @@ $flexy-grid-columns: 12 !default;
 // $flexy-grid-gutter will inform the grid loops how big eac column's gutters should be.
 $flexy-grid-gutter: 0.5rem !default;
 // $flexy-grid-container-width will inform the grid how many px can contain container
-$flexy-grid-container-width: 100% !default;
+$flexy-grid-wrapper-width: 100% !default;
 // $flexy-grid-class-row string used for the row class
 $flexy-grid-class-row: 'row' !default;
 
 // The grid will name columns, rows, offsets based on these three variables:
 // $flexy-grid-class-container string used for the column container class
-$flexy-grid-class-container: 'container' !default;
+$flexy-grid-class-wrapper: 'wrapper' !default;
 // $flexy-grid-class-col string used for the column class
 $flexy-grid-class-col: 'col' !default;
 // $flexy-grid-class-off string used for the offset class

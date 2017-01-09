@@ -1,26 +1,4 @@
 /**
- * Flex Grid -
- * Version: 0.3.5
- *
- * Simple grid built with flex box and sass.
- *
- * Matthew Simo - matthew.a.simo@gmail.com
- */
-
-/**
- * Grid setup
- *
- * The grid will calculate dimensions based on these two variables:
- */
-
-/**
- * Class Name Defaults
- *
- * Define class names for columns, rows and offsets in case compatibility with other
- * libraries is necessary.
-
-
-/**
  * Calculate column size percentage
  */
 @function flexy-column-percent($column-num) {
@@ -61,11 +39,11 @@
   @include flexy-grid-space($flexy-grid-gutter, padding, horizontal);
 }
 
-@mixin flexy-grid-container() {
+@mixin flexy-grid-wrapper() {
   @include flexy-grid-column;
   flex-grow: 1;
   flex-basis: 0;
-  max-width: $flexy-grid-container-width;
+  max-width: $flexy-grid-wrapper-width;
 }
 
 @mixin flexy-grid-reset() {
@@ -90,7 +68,7 @@
   // Run the loop for as many columns as speficied
   @for $i from 1 through $flexy-grid-columns {
     .#{$flexy-prefix}-#{$flexy-grid-class-col}_#{$namespace} {
-      @include flexy-grid-container;
+      @include flexy-grid-wrapper;
 
       &_#{$i} {
         flex-basis: flexy-column-percent($i);
@@ -125,22 +103,21 @@
   &-#{$flexy-grid-class-col} {
     @include flexy-grid-column;
   }
-  
-  &-grid {
-    &__#{$flexy-grid-class-container} {
-      @include flexy-grid-container;
-      margin: 0 auto;
 
-      &_left {
-        margin: 0;
-      }
+  &-#{$flexy-grid-class-wrapper} {
+    @include flexy-grid-wrapper;
+    margin: 0 auto;
 
-      &_right {
-        margin-left: auto;
-      }
+    &_left {
+      margin-left: 0;
     }
-    &__#{$flexy-grid-class-row} {
-      @include flexy-grid-row();
+
+    &_right {
+      margin: 0 0 0 auto;
     }
+  }
+
+  &-#{$flexy-grid-class-row} {
+    @include flexy-grid-row;
   }
 }
