@@ -504,136 +504,135 @@ h1, h2, h3, h4, h5, h6 {
   height: 32px;
   outline: none;
   padding: 0 10px;
-  border-radius: 4px;
   -webkit-transition: border-color .2s ease;
   transition: border-color .2s ease;
-  border: 1px solid rgba(26, 188, 156, 0.4); }
+  border: 1px solid rgba(26, 188, 156, 0.8); }
   .b-input:not(:focus) {
     cursor: pointer; }
   .b-input:focus, .b-input:focus:hover {
     border-color: #1ABC9C; }
   .b-input:hover {
-    border-color: rgba(26, 188, 156, 0.4); }
+    border-color: #17a689; }
   .b-input_azure {
-    border: 1px solid rgba(26, 188, 156, 0.4); }
+    border: 1px solid rgba(26, 188, 156, 0.8); }
     .b-input_azure:focus, .b-input_azure:focus:hover {
       border-color: #1ABC9C; }
     .b-input_azure:hover {
-      border-color: rgba(26, 188, 156, 0.4); }
+      border-color: #17a689; }
   .b-input_green-sea {
-    border: 1px solid rgba(22, 160, 133, 0.4); }
+    border: 1px solid rgba(22, 160, 133, 0.8); }
     .b-input_green-sea:focus, .b-input_green-sea:focus:hover {
       border-color: #16A085; }
     .b-input_green-sea:hover {
-      border-color: rgba(22, 160, 133, 0.4); }
+      border-color: #138a72; }
   .b-input_emerald {
-    border: 1px solid rgba(46, 204, 113, 0.4); }
+    border: 1px solid rgba(46, 204, 113, 0.8); }
     .b-input_emerald:focus, .b-input_emerald:focus:hover {
       border-color: #2ECC71; }
     .b-input_emerald:hover {
-      border-color: rgba(46, 204, 113, 0.4); }
+      border-color: #29b765; }
   .b-input_nephritis {
-    border: 1px solid rgba(39, 174, 96, 0.4); }
+    border: 1px solid rgba(39, 174, 96, 0.8); }
     .b-input_nephritis:focus, .b-input_nephritis:focus:hover {
       border-color: #27AE60; }
     .b-input_nephritis:hover {
-      border-color: rgba(39, 174, 96, 0.4); }
+      border-color: #229955; }
   .b-input_peter-river {
-    border: 1px solid rgba(52, 152, 219, 0.4); }
+    border: 1px solid rgba(52, 152, 219, 0.8); }
     .b-input_peter-river:focus, .b-input_peter-river:focus:hover {
       border-color: #3498DB; }
     .b-input_peter-river:hover {
-      border-color: rgba(52, 152, 219, 0.4); }
+      border-color: #258cd1; }
   .b-input_belize-hole {
-    border: 1px solid rgba(41, 128, 185, 0.4); }
+    border: 1px solid rgba(41, 128, 185, 0.8); }
     .b-input_belize-hole:focus, .b-input_belize-hole:focus:hover {
       border-color: #2980B9; }
     .b-input_belize-hole:hover {
-      border-color: rgba(41, 128, 185, 0.4); }
+      border-color: #2472a4; }
   .b-input_amethyst {
-    border: 1px solid rgba(155, 89, 182, 0.4); }
+    border: 1px solid rgba(155, 89, 182, 0.8); }
     .b-input_amethyst:focus, .b-input_amethyst:focus:hover {
       border-color: #9B59B6; }
     .b-input_amethyst:hover {
-      border-color: rgba(155, 89, 182, 0.4); }
+      border-color: #8f4bab; }
   .b-input_wisteria {
-    border: 1px solid rgba(142, 68, 173, 0.4); }
+    border: 1px solid rgba(142, 68, 173, 0.8); }
     .b-input_wisteria:focus, .b-input_wisteria:focus:hover {
       border-color: #8E44AD; }
     .b-input_wisteria:hover {
-      border-color: rgba(142, 68, 173, 0.4); }
+      border-color: #7f3d9b; }
   .b-input_wet-asphalt {
-    border: 1px solid rgba(52, 73, 94, 0.4); }
+    border: 1px solid rgba(52, 73, 94, 0.8); }
     .b-input_wet-asphalt:focus, .b-input_wet-asphalt:focus:hover {
       border-color: #34495E; }
     .b-input_wet-asphalt:hover {
-      border-color: rgba(52, 73, 94, 0.4); }
+      border-color: #2b3c4e; }
   .b-input_midnight-blue {
-    border: 1px solid rgba(44, 62, 80, 0.4); }
+    border: 1px solid rgba(44, 62, 80, 0.8); }
     .b-input_midnight-blue:focus, .b-input_midnight-blue:focus:hover {
       border-color: #2C3E50; }
     .b-input_midnight-blue:hover {
-      border-color: rgba(44, 62, 80, 0.4); }
+      border-color: #233140; }
   .b-input_sun-flower {
-    border: 1px solid rgba(241, 196, 15, 0.4); }
+    border: 1px solid rgba(241, 196, 15, 0.8); }
     .b-input_sun-flower:focus, .b-input_sun-flower:focus:hover {
       border-color: #F1C40F; }
     .b-input_sun-flower:hover {
-      border-color: rgba(241, 196, 15, 0.4); }
+      border-color: #dab10d; }
   .b-input_sun {
-    border: 1px solid rgba(243, 156, 18, 0.4); }
+    border: 1px solid rgba(243, 156, 18, 0.8); }
     .b-input_sun:focus, .b-input_sun:focus:hover {
       border-color: #F39C12; }
     .b-input_sun:hover {
-      border-color: rgba(243, 156, 18, 0.4); }
+      border-color: #e08e0b; }
   .b-input_carrot {
-    border: 1px solid rgba(230, 126, 34, 0.4); }
+    border: 1px solid rgba(230, 126, 34, 0.8); }
     .b-input_carrot:focus, .b-input_carrot:focus:hover {
       border-color: #E67E22; }
     .b-input_carrot:hover {
-      border-color: rgba(230, 126, 34, 0.4); }
+      border-color: #d67118; }
   .b-input_pumpkin {
-    border: 1px solid rgba(211, 84, 0, 0.4); }
+    border: 1px solid rgba(211, 84, 0, 0.8); }
     .b-input_pumpkin:focus, .b-input_pumpkin:focus:hover {
       border-color: #D35400; }
     .b-input_pumpkin:hover {
-      border-color: rgba(211, 84, 0, 0.4); }
+      border-color: #ba4a00; }
   .b-input_alizarin {
-    border: 1px solid rgba(231, 76, 60, 0.4); }
+    border: 1px solid rgba(231, 76, 60, 0.8); }
     .b-input_alizarin:focus, .b-input_alizarin:focus:hover {
       border-color: #E74C3C; }
     .b-input_alizarin:hover {
-      border-color: rgba(231, 76, 60, 0.4); }
+      border-color: #e43725; }
   .b-input_pomegranate {
-    border: 1px solid rgba(192, 57, 43, 0.4); }
+    border: 1px solid rgba(192, 57, 43, 0.8); }
     .b-input_pomegranate:focus, .b-input_pomegranate:focus:hover {
       border-color: #C0392B; }
     .b-input_pomegranate:hover {
-      border-color: rgba(192, 57, 43, 0.4); }
+      border-color: #ab3326; }
   .b-input_clouds {
-    border: 1px solid rgba(240, 240, 240, 0.4); }
+    border: 1px solid rgba(240, 240, 240, 0.8); }
     .b-input_clouds:focus, .b-input_clouds:focus:hover {
       border-color: #f0f0f0; }
     .b-input_clouds:hover {
-      border-color: rgba(240, 240, 240, 0.4); }
+      border-color: #e3e3e3; }
   .b-input_silvery {
-    border: 1px solid rgba(189, 195, 199, 0.4); }
+    border: 1px solid rgba(189, 195, 199, 0.8); }
     .b-input_silvery:focus, .b-input_silvery:focus:hover {
       border-color: #BDC3C7; }
     .b-input_silvery:hover {
-      border-color: rgba(189, 195, 199, 0.4); }
+      border-color: #afb6bb; }
   .b-input_concrete {
-    border: 1px solid rgba(149, 165, 166, 0.4); }
+    border: 1px solid rgba(149, 165, 166, 0.8); }
     .b-input_concrete:focus, .b-input_concrete:focus:hover {
       border-color: #95A5A6; }
     .b-input_concrete:hover {
-      border-color: rgba(149, 165, 166, 0.4); }
+      border-color: #87999a; }
   .b-input_asbestos {
-    border: 1px solid rgba(127, 140, 141, 0.4); }
+    border: 1px solid rgba(127, 140, 141, 0.8); }
     .b-input_asbestos:focus, .b-input_asbestos:focus:hover {
       border-color: #7F8C8D; }
     .b-input_asbestos:hover {
-      border-color: rgba(127, 140, 141, 0.4); }
+      border-color: #727f80; }
 
 .b-label {
   position: relative;

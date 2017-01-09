@@ -1,12 +1,12 @@
 @mixin flexy-input($color) {
-  border: 1px solid rgba($color, 0.4);
+  border: 1px solid rgba($color, 0.8);
 
   &:focus, &:focus:hover {
     border-color: $color;
   }
 
   &:hover {
-    border-color: rgba($color, 0.4);
+    border-color: darken($color, 5%);
   }
 }
 
@@ -16,7 +16,6 @@
     height: $flexy-button-height;
     outline: none;
     padding: 0 10px;
-    border-radius: 4px;
     transition: border-color .2s ease;
 
     &:not(:focus) {
