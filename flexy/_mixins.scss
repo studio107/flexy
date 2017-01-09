@@ -12,11 +12,12 @@ $flexy-current-color: null;
 
     @if ($i == 0) {
       @content
-    } @else {
-      &_#{$name} {
-        @content
-      }
     }
+
+    &_#{$name} {
+      @content
+    }
+
     $i: $i + 1;
   }
 }

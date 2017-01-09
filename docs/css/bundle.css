@@ -2702,6 +2702,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1dd2af; }
   .b-button:active {
     background-color: #17a689; }
+  .b-button_default {
+    background-color: #1ABC9C;
+    color: #fff;
+    border-radius: 4px; }
+    .b-button_default:hover {
+      background-color: #1dd2af; }
+    .b-button_default:active {
+      background-color: #17a689; }
   .b-button_azure {
     background-color: #1ABC9C;
     color: #fff;
@@ -2897,6 +2905,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #1ABC9C;
   border-color: #1ABC9C; }
 
+.b-checkbox__input:checked + .b-checkbox__label_default:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
 .b-checkbox__input:checked + .b-checkbox__label_azure:before {
   color: #1ABC9C;
   border-color: #1ABC9C; }
@@ -3008,6 +3020,10 @@ h1, h2, h3, h4, h5, h6 {
   content: "✓"; }
 
 .b-radio__input:checked + .b-radio__label:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-radio__input:checked + .b-radio__label_default:before {
   color: #1ABC9C;
   border-color: #1ABC9C; }
 
