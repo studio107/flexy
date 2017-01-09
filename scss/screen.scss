@@ -23,3 +23,8 @@ body {
   color: #000;
 }
 
+.b-select {
+  @include flexy-input-select(30px, 3px) {
+    //TODO
+  };
+}
