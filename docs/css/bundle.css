@@ -435,17 +435,43 @@ p {
 /*
  * Label component
  */
-body {
-  font-size: 15px; }
+/**
+ * Break point namespace object
+ *
+ * Set the default namespace object with these defaults with the
+ * understanding that you can pass in whatever you might require for your site.
+ *
+ * $fg-breakpoints is a Sass list with nested lists inside. Each sub list defines two things.
+ * 1. The namespace for that breakpoint. (Required) (i.e. xs, sm, md, lg)
+ * 2. The min-width measurement for the breakpoint for that namespace. (i.e. 48em, 62em, 75em)
+ *
+ * Note: These should be in the proper order (at least till libsass handles map keys properly).
+ *
+ * Note: If the measurement is left out then it will be skipped when generating
+ * the grid and applied to global styles.
+ */
+/*
+ * Grid component
+ */
+/*
+ * Divider component
+ */
+/*
+ * Segment component
+ */
+/*
+ * Label component
+ */
+html {
+  height: 100%; }
 
-body, h1, h2, h3, h4, h5, h6 {
+body {
+  min-height: 100%;
+  font-size: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0; }
-
-p:not(:last-child) {
-  margin-bottom: 0; }
 
 .b-input {
   line-height: 28px;
