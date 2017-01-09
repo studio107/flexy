@@ -122,10 +122,11 @@
 }
 
 .#{$flexy-prefix} {
+  &-#{$flexy-grid-class-col} {
+    @include flexy-grid-column;
+  }
+  
   &-grid {
-    &__#{$flexy-grid-class-col} {
-      @include flexy-grid-column;
-    }
     &__#{$flexy-grid-class-container} {
       @include flexy-grid-container;
       margin: 0 auto;

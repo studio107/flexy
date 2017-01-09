@@ -58,5 +58,5 @@ gulp.task('watch', ['server'], function () {
 });
 
 gulp.task('default', function () {
-    return gulp.start('scss');
+    return gulp.start('scss', 'html');
 });
