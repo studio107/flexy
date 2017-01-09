@@ -89,7 +89,7 @@
 @mixin flexy-grid-build($namespace) {
   // Run the loop for as many columns as speficied
   @for $i from 1 through $flexy-grid-columns {
-    .#{$flexy-prefix}-grid__#{$flexy-grid-class-col}_#{$namespace} {
+    .#{$flexy-prefix}-#{$flexy-grid-class-col}_#{$namespace} {
       @include flexy-grid-container;
 
       &_#{$i} {
@@ -100,13 +100,13 @@
 
     // Don't include the .off class for the last column
     @if ($i != $flexy-grid-columns) {
-      .#{$flexy-prefix}-grid__#{$flexy-grid-class-off}-#{$namespace}-#{$i} {
+      .#{$flexy-prefix}-#{$flexy-grid-class-off}-#{$namespace}-#{$i} {
         margin-left: flexy-column-percent($i);
       }
     }
   }
 
-  .#{$flexy-prefix}-grid__#{$flexy-grid-class-off}-#{$namespace}-reset {
+  .#{$flexy-prefix}-#{$flexy-grid-class-off}-#{$namespace}-reset {
     @include flexy-grid-reset;
   }
 }
