@@ -1,0 +1,27 @@
+.b-button {
+  @include flexy-button() {
+    border: {
+      width: 1px;
+      style: solid;
+      color: $flexy-current-color;
+    }
+    color: $flexy-current-color;
+    border-radius: 4px;
+
+    &:hover {
+      border: {
+        color: flexy-button-hover-color($flexy-current-color);
+      }
+    }
+
+    &:active {
+      border: {
+        color: flexy-button-active-color($flexy-current-color);
+      }
+    }
+
+    & ~ & {
+      margin-left: -1px;
+    }
+  }
+}

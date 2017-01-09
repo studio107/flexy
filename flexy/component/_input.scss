@@ -1,23 +1,26 @@
 @mixin flexy-input($color) {
+  border: 1px solid rgba($color, 0.8);
+
   &:focus, &:focus:hover {
-    box-shadow: 0 0 0 1px $color inset;
+    border-color: $color;
   }
 
   &:hover {
-    box-shadow: 0 0 0 1px rgba($color, 0.4) inset;
+    border-color: darken($color, 5%);
   }
 }
 
 .#{$flexy-prefix} {
   &-input {
-    line-height: 28px;
-    height: 32px;
+    line-height: $flexy-button-height - 4px;
+    height: $flexy-button-height;
     outline: none;
-    border: none;
     padding: 0 10px;
-    border-radius: 4px;
-    transition: box-shadow .2s ease;
-    box-shadow: 0 0 1px 0 rgba(#000, 0.4) inset;
+    transition: border-color .2s ease;
+
+    &:not(:focus) {
+      cursor: pointer;
+    }
 
     @each $name, $color in $flexy-colors {
       @if ($name == 'default') {

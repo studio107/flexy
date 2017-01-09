@@ -4,6 +4,7 @@ $flexy-grid-wrapper-width: 1280px;
 $flexy-colors: $flat;
 
 @import "flexy";
+@import "flexy/theme/flat";
 
 body {
   background: {
@@ -17,7 +18,7 @@ body {
   font-size: 14px;
   padding: 10px 0;
   background: {
-    color: rgba(#5fa2ff, .4);
+    color: rgba(#a00, .2);
   }
   color: #000;
 }
