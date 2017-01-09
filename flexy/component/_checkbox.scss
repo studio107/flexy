@@ -1,0 +1,45 @@
+@mixin flexy-input-checkbox-radio-inactive($size) {
+  &__input {
+    display: none;
+  }
+
+  &__input + &__label {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    line-height: $flexy-button-height;
+    padding-left: 30px;
+
+    &:before {
+      width: $size;
+      height: $size;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      line-height: $flexy-button-height / 2;
+      text-align: center;
+      margin-top: -$size/2;
+      background: {
+        color: transparent;
+        position: center;
+        repeat: no-repeat;
+      }
+    }
+
+    @content;
+  }
+}
+
+@mixin flexy-input-checkbox-radio-active($size) {
+  &__input:checked + &__label {
+    &:before {
+      content: "✓";
+    }
+
+    @include flexy-colors {
+      @content;
+    }
+  }
+}

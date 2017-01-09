@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -2701,6 +2702,14 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1dd2af; }
   .b-button:active {
     background-color: #17a689; }
+  .b-button_default {
+    background-color: #1ABC9C;
+    color: #fff;
+    border-radius: 4px; }
+    .b-button_default:hover {
+      background-color: #1dd2af; }
+    .b-button_default:active {
+      background-color: #17a689; }
   .b-button_azure {
     background-color: #1ABC9C;
     color: #fff;
@@ -2861,6 +2870,242 @@ h1, h2, h3, h4, h5, h6 {
       background-color: #8c9899; }
     .b-button_asbestos:active {
       background-color: #727f80; }
+
+.b-checkbox__input {
+  display: none; }
+
+.b-checkbox__input + .b-checkbox__label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  line-height: 32px;
+  padding-left: 30px; }
+  .b-checkbox__input + .b-checkbox__label:before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    line-height: 16px;
+    text-align: center;
+    margin-top: -8px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .b-checkbox__input + .b-checkbox__label:before {
+    border-radius: 2px;
+    border: 1px solid #aaa; }
+
+.b-checkbox__input:checked + .b-checkbox__label:before {
+  content: "✓"; }
+
+.b-checkbox__input:checked + .b-checkbox__label:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-checkbox__input:checked + .b-checkbox__label_default:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-checkbox__input:checked + .b-checkbox__label_azure:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-checkbox__input:checked + .b-checkbox__label_green-sea:before {
+  color: #16A085;
+  border-color: #16A085; }
+
+.b-checkbox__input:checked + .b-checkbox__label_emerald:before {
+  color: #2ECC71;
+  border-color: #2ECC71; }
+
+.b-checkbox__input:checked + .b-checkbox__label_nephritis:before {
+  color: #27AE60;
+  border-color: #27AE60; }
+
+.b-checkbox__input:checked + .b-checkbox__label_peter-river:before {
+  color: #3498DB;
+  border-color: #3498DB; }
+
+.b-checkbox__input:checked + .b-checkbox__label_belize-hole:before {
+  color: #2980B9;
+  border-color: #2980B9; }
+
+.b-checkbox__input:checked + .b-checkbox__label_amethyst:before {
+  color: #9B59B6;
+  border-color: #9B59B6; }
+
+.b-checkbox__input:checked + .b-checkbox__label_wisteria:before {
+  color: #8E44AD;
+  border-color: #8E44AD; }
+
+.b-checkbox__input:checked + .b-checkbox__label_wet-asphalt:before {
+  color: #34495E;
+  border-color: #34495E; }
+
+.b-checkbox__input:checked + .b-checkbox__label_midnight-blue:before {
+  color: #2C3E50;
+  border-color: #2C3E50; }
+
+.b-checkbox__input:checked + .b-checkbox__label_sun-flower:before {
+  color: #F1C40F;
+  border-color: #F1C40F; }
+
+.b-checkbox__input:checked + .b-checkbox__label_sun:before {
+  color: #F39C12;
+  border-color: #F39C12; }
+
+.b-checkbox__input:checked + .b-checkbox__label_carrot:before {
+  color: #E67E22;
+  border-color: #E67E22; }
+
+.b-checkbox__input:checked + .b-checkbox__label_pumpkin:before {
+  color: #D35400;
+  border-color: #D35400; }
+
+.b-checkbox__input:checked + .b-checkbox__label_alizarin:before {
+  color: #E74C3C;
+  border-color: #E74C3C; }
+
+.b-checkbox__input:checked + .b-checkbox__label_pomegranate:before {
+  color: #C0392B;
+  border-color: #C0392B; }
+
+.b-checkbox__input:checked + .b-checkbox__label_clouds:before {
+  color: #f0f0f0;
+  border-color: #f0f0f0; }
+
+.b-checkbox__input:checked + .b-checkbox__label_silvery:before {
+  color: #BDC3C7;
+  border-color: #BDC3C7; }
+
+.b-checkbox__input:checked + .b-checkbox__label_concrete:before {
+  color: #95A5A6;
+  border-color: #95A5A6; }
+
+.b-checkbox__input:checked + .b-checkbox__label_asbestos:before {
+  color: #7F8C8D;
+  border-color: #7F8C8D; }
+
+.b-radio__input {
+  display: none; }
+
+.b-radio__input + .b-radio__label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  line-height: 32px;
+  padding-left: 30px; }
+  .b-radio__input + .b-radio__label:before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    line-height: 16px;
+    text-align: center;
+    margin-top: -8px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .b-radio__input + .b-radio__label:before {
+    border-radius: 100%;
+    border: 1px solid #bdc0c7; }
+
+.b-radio__input:checked + .b-radio__label:before {
+  content: "✓"; }
+
+.b-radio__input:checked + .b-radio__label:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-radio__input:checked + .b-radio__label_default:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-radio__input:checked + .b-radio__label_azure:before {
+  color: #1ABC9C;
+  border-color: #1ABC9C; }
+
+.b-radio__input:checked + .b-radio__label_green-sea:before {
+  color: #16A085;
+  border-color: #16A085; }
+
+.b-radio__input:checked + .b-radio__label_emerald:before {
+  color: #2ECC71;
+  border-color: #2ECC71; }
+
+.b-radio__input:checked + .b-radio__label_nephritis:before {
+  color: #27AE60;
+  border-color: #27AE60; }
+
+.b-radio__input:checked + .b-radio__label_peter-river:before {
+  color: #3498DB;
+  border-color: #3498DB; }
+
+.b-radio__input:checked + .b-radio__label_belize-hole:before {
+  color: #2980B9;
+  border-color: #2980B9; }
+
+.b-radio__input:checked + .b-radio__label_amethyst:before {
+  color: #9B59B6;
+  border-color: #9B59B6; }
+
+.b-radio__input:checked + .b-radio__label_wisteria:before {
+  color: #8E44AD;
+  border-color: #8E44AD; }
+
+.b-radio__input:checked + .b-radio__label_wet-asphalt:before {
+  color: #34495E;
+  border-color: #34495E; }
+
+.b-radio__input:checked + .b-radio__label_midnight-blue:before {
+  color: #2C3E50;
+  border-color: #2C3E50; }
+
+.b-radio__input:checked + .b-radio__label_sun-flower:before {
+  color: #F1C40F;
+  border-color: #F1C40F; }
+
+.b-radio__input:checked + .b-radio__label_sun:before {
+  color: #F39C12;
+  border-color: #F39C12; }
+
+.b-radio__input:checked + .b-radio__label_carrot:before {
+  color: #E67E22;
+  border-color: #E67E22; }
+
+.b-radio__input:checked + .b-radio__label_pumpkin:before {
+  color: #D35400;
+  border-color: #D35400; }
+
+.b-radio__input:checked + .b-radio__label_alizarin:before {
+  color: #E74C3C;
+  border-color: #E74C3C; }
+
+.b-radio__input:checked + .b-radio__label_pomegranate:before {
+  color: #C0392B;
+  border-color: #C0392B; }
+
+.b-radio__input:checked + .b-radio__label_clouds:before {
+  color: #f0f0f0;
+  border-color: #f0f0f0; }
+
+.b-radio__input:checked + .b-radio__label_silvery:before {
+  color: #BDC3C7;
+  border-color: #BDC3C7; }
+
+.b-radio__input:checked + .b-radio__label_concrete:before {
+  color: #95A5A6;
+  border-color: #95A5A6; }
+
+.b-radio__input:checked + .b-radio__label_asbestos:before {
+  color: #7F8C8D;
+  border-color: #7F8C8D; }
 
 body {
   background-color: #f0f3f6; }

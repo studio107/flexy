@@ -27,22 +27,9 @@
   @return if(lightness($color) > 55, $dark, $light);
 }
 
-$flexy-current-color: null;
-
 @mixin flexy-button() {
   @include flexy-button-reset;
-
-  $i: 0;
-  @each $name, $color in $flexy-colors {
-    $flexy-current-color: $color !global;
-
-    @if ($i == 0) {
-      @content
-    } @else {
-      &_#{$name} {
-        @content
-      }
-    }
-    $i: $i + 1;
+  @include flexy-colors {
+    @content;
   }
 }
