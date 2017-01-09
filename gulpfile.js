@@ -8,14 +8,10 @@ var path = require('path'),
 
 var dst = {
     scss: './docs/css',
-    js: './docs/js',
-    images: './docs/images',
     html: './docs/'
 };
 
 var paths = {
-    js: './docs/js/**/*{.js}',
-    images: './images/**/*{.jpg,.jpeg,.png}',
     html: './index.html',
     scss: [
         './scss/**/*.scss'
@@ -28,12 +24,6 @@ var sassOptions = {
         path.join(__dirname, 'flexy')
     ]
 };
-
-gulp.task('images', function () {
-    return gulp.src(paths.images)
-        .pipe(gulp.dest(dst.images))
-        .pipe(browserSync.stream());
-});
 
 gulp.task('scss', function () {
     return gulp.src(paths.scss)
