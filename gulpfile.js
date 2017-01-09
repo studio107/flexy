@@ -4,24 +4,20 @@ var path = require('path'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
-    browserSync = require('browser-sync').create(),
-    flatten = require('gulp-flatten');
+    browserSync = require('browser-sync').create();
 
 var dst = {
     scss: './docs/css',
     js: './docs/js',
     images: './docs/images',
-    fonts: './docs/fonts',
     html: './docs/'
 };
 
 var paths = {
     js: './docs/js/**/*{.js}',
     images: './images/**/*{.jpg,.jpeg,.png}',
-    fonts: './fonts/*/fonts/*{.otf,.eot,.ttf,.svg,.woff,.woff2}',
     html: './index.html',
     scss: [
-        './fonts/**/*.css',
         './scss/**/*.scss'
     ]
 };
@@ -37,12 +33,6 @@ gulp.task('images', function () {
     return gulp.src(paths.images)
         .pipe(gulp.dest(dst.images))
         .pipe(browserSync.stream());
-});
-
-gulp.task('fonts', function () {
-    return gulp.src(paths.fonts)
-        .pipe(flatten())
-        .pipe(gulp.dest(dst.fonts));
 });
 
 gulp.task('scss', function () {
@@ -70,16 +60,13 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', ['server'], function () {
-    gulp.watch(paths.images, ['images']).on('change', browserSync.reload);
-
     gulp.watch(paths.scss, ['scss']);
     gulp.watch(path.join(__dirname, 'flexy') + '/**/*', ['scss']);
 
-    gulp.watch(paths.fonts, ['fonts']);
     gulp.watch(paths.js).on('change', browserSync.reload);
     gulp.watch(paths.html, ['html']).on('change', browserSync.reload);
 });
 
 gulp.task('default', function () {
-    return gulp.start('scss', 'images', 'fonts');
+    return gulp.start('scss');
 });
