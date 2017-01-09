@@ -36,6 +36,15 @@
   flex-grow: 0;
   flex-shrink: 0;
   min-height: 1px;
+  transition-property: flex-basis, max-width, -webkit-flex-basis;
+  transition-duration: 0.2s;
+
+  &_auto {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    max-width: 100%;
+  }
+
   @include flexy-grid-space($flexy-grid-gutter, padding, horizontal);
 }
 
