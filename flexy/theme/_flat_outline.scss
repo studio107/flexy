@@ -25,3 +25,41 @@
     }
   }
 }
+
+.b-checkbox {
+  $size: 14px;
+
+  @include flexy-input-checkbox-radio-inactive($size) {
+    &:before {
+      transition: border-color .2s ease;
+      border-radius: 2px;
+      border: 2px solid #aaa;
+    }
+  }
+
+  @include flexy-input-checkbox-radio-active($size) {
+    &:before {
+      color: $flexy-current-color;
+      border-color: $flexy-current-color;
+    }
+  }
+}
+
+.b-radio {
+  $size: 14px;
+
+  @include flexy-input-checkbox-radio-inactive($size) {
+    &:before {
+      transition: border-color .2s ease;
+      border-radius: 100%;
+      border: 2px solid #bdc0c7;
+    }
+  }
+
+  @include flexy-input-checkbox-radio-active($size) {
+    &:before {
+      color: $flexy-current-color;
+      border-color: $flexy-current-color;
+    }
+  }
+}

@@ -2702,181 +2702,269 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   padding: 0 10px;
   border-radius: 0;
-  background-color: #1ABC9C;
-  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1ABC9C;
+  color: #1ABC9C;
   border-radius: 4px; }
   .b-button:hover {
-    background-color: #1dd2af; }
+    border-color: #1dd2af; }
   .b-button:active {
-    background-color: #17a689; }
+    border-color: #17a689; }
+  .b-button ~ .b-button {
+    margin-left: -1px; }
   .b-button_default {
-    background-color: #1ABC9C;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1ABC9C;
+    color: #1ABC9C;
     border-radius: 4px; }
     .b-button_default:hover {
-      background-color: #1dd2af; }
+      border-color: #1dd2af; }
     .b-button_default:active {
-      background-color: #17a689; }
+      border-color: #17a689; }
+    .b-button_default ~ .b-button_default {
+      margin-left: -1px; }
   .b-button_azure {
-    background-color: #1ABC9C;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1ABC9C;
+    color: #1ABC9C;
     border-radius: 4px; }
     .b-button_azure:hover {
-      background-color: #1dd2af; }
+      border-color: #1dd2af; }
     .b-button_azure:active {
-      background-color: #17a689; }
+      border-color: #17a689; }
+    .b-button_azure ~ .b-button_azure {
+      margin-left: -1px; }
   .b-button_green-sea {
-    background-color: #16A085;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #16A085;
+    color: #16A085;
     border-radius: 4px; }
     .b-button_green-sea:hover {
-      background-color: #19b698; }
+      border-color: #19b698; }
     .b-button_green-sea:active {
-      background-color: #138a72; }
+      border-color: #138a72; }
+    .b-button_green-sea ~ .b-button_green-sea {
+      margin-left: -1px; }
   .b-button_emerald {
-    background-color: #2ECC71;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2ECC71;
+    color: #2ECC71;
     border-radius: 4px; }
     .b-button_emerald:hover {
-      background-color: #40d47e; }
+      border-color: #40d47e; }
     .b-button_emerald:active {
-      background-color: #29b765; }
+      border-color: #29b765; }
+    .b-button_emerald ~ .b-button_emerald {
+      margin-left: -1px; }
   .b-button_nephritis {
-    background-color: #27AE60;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #27AE60;
+    color: #27AE60;
     border-radius: 4px; }
     .b-button_nephritis:hover {
-      background-color: #2cc36b; }
+      border-color: #2cc36b; }
     .b-button_nephritis:active {
-      background-color: #229955; }
+      border-color: #229955; }
+    .b-button_nephritis ~ .b-button_nephritis {
+      margin-left: -1px; }
   .b-button_peter-river {
-    background-color: #3498DB;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3498DB;
+    color: #3498DB;
     border-radius: 4px; }
     .b-button_peter-river:hover {
-      background-color: #4aa3df; }
+      border-color: #4aa3df; }
     .b-button_peter-river:active {
-      background-color: #258cd1; }
+      border-color: #258cd1; }
+    .b-button_peter-river ~ .b-button_peter-river {
+      margin-left: -1px; }
   .b-button_belize-hole {
-    background-color: #2980B9;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2980B9;
+    color: #2980B9;
     border-radius: 4px; }
     .b-button_belize-hole:hover {
-      background-color: #2e8ece; }
+      border-color: #2e8ece; }
     .b-button_belize-hole:active {
-      background-color: #2472a4; }
+      border-color: #2472a4; }
+    .b-button_belize-hole ~ .b-button_belize-hole {
+      margin-left: -1px; }
   .b-button_amethyst {
-    background-color: #9B59B6;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #9B59B6;
+    color: #9B59B6;
     border-radius: 4px; }
     .b-button_amethyst:hover {
-      background-color: #a66bbe; }
+      border-color: #a66bbe; }
     .b-button_amethyst:active {
-      background-color: #8f4bab; }
+      border-color: #8f4bab; }
+    .b-button_amethyst ~ .b-button_amethyst {
+      margin-left: -1px; }
   .b-button_wisteria {
-    background-color: #8E44AD;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #8E44AD;
+    color: #8E44AD;
     border-radius: 4px; }
     .b-button_wisteria:hover {
-      background-color: #9b50ba; }
+      border-color: #9b50ba; }
     .b-button_wisteria:active {
-      background-color: #7f3d9b; }
+      border-color: #7f3d9b; }
+    .b-button_wisteria ~ .b-button_wisteria {
+      margin-left: -1px; }
   .b-button_wet-asphalt {
-    background-color: #34495E;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #34495E;
+    color: #34495E;
     border-radius: 4px; }
     .b-button_wet-asphalt:hover {
-      background-color: #3d566e; }
+      border-color: #3d566e; }
     .b-button_wet-asphalt:active {
-      background-color: #2b3c4e; }
+      border-color: #2b3c4e; }
+    .b-button_wet-asphalt ~ .b-button_wet-asphalt {
+      margin-left: -1px; }
   .b-button_midnight-blue {
-    background-color: #2C3E50;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2C3E50;
+    color: #2C3E50;
     border-radius: 4px; }
     .b-button_midnight-blue:hover {
-      background-color: #354b60; }
+      border-color: #354b60; }
     .b-button_midnight-blue:active {
-      background-color: #233140; }
+      border-color: #233140; }
+    .b-button_midnight-blue ~ .b-button_midnight-blue {
+      margin-left: -1px; }
   .b-button_sun-flower {
-    background-color: #F1C40F;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F1C40F;
+    color: #F1C40F;
     border-radius: 4px; }
     .b-button_sun-flower:hover {
-      background-color: #f2ca27; }
+      border-color: #f2ca27; }
     .b-button_sun-flower:active {
-      background-color: #dab10d; }
+      border-color: #dab10d; }
+    .b-button_sun-flower ~ .b-button_sun-flower {
+      margin-left: -1px; }
   .b-button_sun {
-    background-color: #F39C12;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F39C12;
+    color: #F39C12;
     border-radius: 4px; }
     .b-button_sun:hover {
-      background-color: #f4a62a; }
+      border-color: #f4a62a; }
     .b-button_sun:active {
-      background-color: #e08e0b; }
+      border-color: #e08e0b; }
+    .b-button_sun ~ .b-button_sun {
+      margin-left: -1px; }
   .b-button_carrot {
-    background-color: #E67E22;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E67E22;
+    color: #E67E22;
     border-radius: 4px; }
     .b-button_carrot:hover {
-      background-color: #e98b39; }
+      border-color: #e98b39; }
     .b-button_carrot:active {
-      background-color: #d67118; }
+      border-color: #d67118; }
+    .b-button_carrot ~ .b-button_carrot {
+      margin-left: -1px; }
   .b-button_pumpkin {
-    background-color: #D35400;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #D35400;
+    color: #D35400;
     border-radius: 4px; }
     .b-button_pumpkin:hover {
-      background-color: #ed5e00; }
+      border-color: #ed5e00; }
     .b-button_pumpkin:active {
-      background-color: #ba4a00; }
+      border-color: #ba4a00; }
+    .b-button_pumpkin ~ .b-button_pumpkin {
+      margin-left: -1px; }
   .b-button_alizarin {
-    background-color: #E74C3C;
-    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E74C3C;
+    color: #E74C3C;
     border-radius: 4px; }
     .b-button_alizarin:hover {
-      background-color: #ea6153; }
+      border-color: #ea6153; }
     .b-button_alizarin:active {
-      background-color: #e43725; }
+      border-color: #e43725; }
+    .b-button_alizarin ~ .b-button_alizarin {
+      margin-left: -1px; }
   .b-button_pomegranate {
-    background-color: #C0392B;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #C0392B;
+    color: #C0392B;
     border-radius: 4px; }
     .b-button_pomegranate:hover {
-      background-color: #d14233; }
+      border-color: #d14233; }
     .b-button_pomegranate:active {
-      background-color: #ab3326; }
+      border-color: #ab3326; }
+    .b-button_pomegranate ~ .b-button_pomegranate {
+      margin-left: -1px; }
   .b-button_clouds {
-    background-color: #f0f0f0;
-    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f0f0f0;
+    color: #f0f0f0;
     border-radius: 4px; }
     .b-button_clouds:hover {
-      background-color: #fdfdfd; }
+      border-color: #fdfdfd; }
     .b-button_clouds:active {
-      background-color: #e3e3e3; }
+      border-color: #e3e3e3; }
+    .b-button_clouds ~ .b-button_clouds {
+      margin-left: -1px; }
   .b-button_silvery {
-    background-color: #BDC3C7;
-    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BDC3C7;
+    color: #BDC3C7;
     border-radius: 4px; }
     .b-button_silvery:hover {
-      background-color: #cbd0d3; }
+      border-color: #cbd0d3; }
     .b-button_silvery:active {
-      background-color: #afb6bb; }
+      border-color: #afb6bb; }
+    .b-button_silvery ~ .b-button_silvery {
+      margin-left: -1px; }
   .b-button_concrete {
-    background-color: #95A5A6;
-    color: #000;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #95A5A6;
+    color: #95A5A6;
     border-radius: 4px; }
     .b-button_concrete:hover {
-      background-color: #a3b1b2; }
+      border-color: #a3b1b2; }
     .b-button_concrete:active {
-      background-color: #87999a; }
+      border-color: #87999a; }
+    .b-button_concrete ~ .b-button_concrete {
+      margin-left: -1px; }
   .b-button_asbestos {
-    background-color: #7F8C8D;
-    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #7F8C8D;
+    color: #7F8C8D;
     border-radius: 4px; }
     .b-button_asbestos:hover {
-      background-color: #8c9899; }
+      border-color: #8c9899; }
     .b-button_asbestos:active {
-      background-color: #727f80; }
+      border-color: #727f80; }
+    .b-button_asbestos ~ .b-button_asbestos {
+      margin-left: -1px; }
 
 .b-checkbox__input {
   display: none; }
