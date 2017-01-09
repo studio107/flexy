@@ -4,7 +4,6 @@
       color: $flexy-current-color;
     }
     color: flexy-button-color-detect($flexy-current-color);
-    border-radius: 4px;
 
     &:hover {
       background: {
@@ -54,4 +53,8 @@
       border-color: $flexy-current-color;
     }
   }
+}
+
+.b-select {
+  @include flexy-input-select();
 }

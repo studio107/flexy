@@ -5,23 +5,30 @@
   font-style: normal;
 }
 
-@mixin flexy-input-select($select-height, $select-b-radius) {
+@mixin flexy-input-select() {
   position: relative;
+  display: inline-block;
+  outline: none;
 
   &__elem {
+    border-radius: 0;
     box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     cursor: pointer;
     width: 100%;
-    height: $select-height;
-    padding: 0 10px;
+    height: $flexy-button-height + 2px;
+    padding: 0 $flexy-button-height + 4px 0 10px;
     margin: 0;
+    min-width: 200px;
     outline: none;
     background: none;
     border: 1px solid #bdc0c7;
-    border-radius: $select-b-radius;
+
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+      background-color: #fff;
+    }
 
     &:hover {
       border: 1px solid #f38231;
@@ -30,21 +37,20 @@
 
   &:after {
     font-family: flexy-select;
-    color: black;
+    color: #000;
+    background-color: #fff;
     content: '\f0d7';
     text-align: center;
-    line-height: $select-height;
+    line-height: $flexy-button-height + 2px;
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    width: $select-height;
-    height: $select-height;
+    width: $flexy-button-height;
+    height: $flexy-button-height + 2px;
     border: 1px solid #bdc0c7;
-    border-radius: 0 $select-b-radius $select-b-radius 0;
     box-sizing: border-box;
     pointer-events: none;
-    background: transparent;
   }
 
   &:hover {

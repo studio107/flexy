@@ -25,3 +25,7 @@
     }
   }
 }
+
+.b-select {
+  @include flexy-input-select();
+}
