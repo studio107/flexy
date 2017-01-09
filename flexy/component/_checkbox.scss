@@ -19,7 +19,7 @@
       color: white;
       position: center;
       repeat: no-repeat;
-    };
+    }
     border: 1px solid #bdc0c7;
   }
 
@@ -30,7 +30,7 @@
   &:before {
     background: {
       color: #f38231;
-    };
+    }
     border: 1px solid #de772d;
   }
 
@@ -38,7 +38,6 @@
 }
 
 @mixin flexy-checkbox() {
-
   &__input {
     display: none;
   }
