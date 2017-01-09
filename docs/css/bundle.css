@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -474,6 +473,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0; }
 
+@font-face {
+  font-family: 'flexy-checkbox';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBD8AAAC8AAAAYGNtYXAYVtCJAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zn4huwUAAAF4AAABYGhlYWQGPe1ZAAAC2AAAADZoaGVhB30DyAAAAxAAAAAkaG10eBBKAEUAAAM0AAAAHGxvY2EAmgESAAADUAAAABBtYXhwAAkALwAAA2AAAAAgbmFtZSC8IugAAAOAAAABknBvc3QAAwAAAAAFFAAAACAAAwMTAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADoAgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6AL//f//AAAAAAAg6AD//f//AAH/4xgEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAEUAUQO7AvgAGgAAARQHAQYjIicBJjU0PwE2MzIfAQE2MzIfARYVA7sQ/hQQFhcQ/uMQEE4QFxcQqAF2EBcXEE4QAnMWEP4UEBABHRAXFhBOEBCoAXcQEE4QFwAAAAABAAABbgMlAkkAFAAAARUUBwYjISInJj0BNDc2MyEyFxYVAyUQEBf9SRcQEBAQFwK3FxAQAhJtFxAQEBAXbRcQEBAQFwAAAAABAAAASQMlA24ALAAAARUUBwYrARUUBwYrASInJj0BIyInJj0BNDc2OwE1NDc2OwEyFxYdATMyFxYVAyUQEBfuEBAXbhYQEO4XEBAQEBfuEBAWbhcQEO4XEBACEm0XEBDuFxAQEBAX7hAQF20XEBDuFxAQEBAX7hAQFwAAAQAAAAIAAHRSzT9fDzz1AAsEAAAAAADRsdR3AAAAANGx1HcAAAAAA7sDbgAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADuwABAAAAAAAAAAAAAAAAAAAABwQAAAAAAAAAAAAAAAIAAAAEAABFAyUAAAMlAAAAAAAAAAoAFAAeAE4AcgCwAAEAAAAHAC0AAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAIAAAAAQAAAAAAAgAHAGkAAQAAAAAAAwAIADkAAQAAAAAABAAIAH4AAQAAAAAABQALABgAAQAAAAAABgAIAFEAAQAAAAAACgAaAJYAAwABBAkAAQAQAAgAAwABBAkAAgAOAHAAAwABBAkAAwAQAEEAAwABBAkABAAQAIYAAwABBAkABQAWACMAAwABBAkABgAQAFkAAwABBAkACgA0ALBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhWZXJzaW9uIDIuMABWAGUAcgBzAGkAbwBuACAAMgAuADBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhDaGVja2JveABDAGgAZQBjAGsAYgBvAHhSZWd1bGFyAFIAZQBnAHUAbABhAHJDaGVja2JveABDAGgAZQBjAGsAYgBvAHhGb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format("truetype"); }
+
 .b-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -504,9 +507,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 28px;
   height: 32px;
   outline: none;
+  border: none;
+  background-color: #fff;
   padding: 0 10px;
   -webkit-transition: border-color .2s ease;
   transition: border-color .2s ease;
+  -webkit-appearance: none;
+  border-radius: 0;
   border: 1px solid rgba(26, 188, 156, 0.8); }
   .b-input:not(:focus) {
     cursor: pointer; }
@@ -2881,25 +2888,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 32px;
   padding-left: 30px; }
   .b-checkbox__input + .b-checkbox__label:before {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     content: "";
     display: block;
     position: absolute;
+    padding: 1px;
     top: 50%;
     left: 0;
     line-height: 16px;
     text-align: center;
-    margin-top: -8px;
+    margin-top: -9px;
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat; }
   .b-checkbox__input + .b-checkbox__label:before {
+    -webkit-transition: border-color .2s ease;
+    transition: border-color .2s ease;
     border-radius: 2px;
-    border: 1px solid #aaa; }
+    border: 2px solid #aaa; }
 
 .b-checkbox__input:checked + .b-checkbox__label:before {
-  content: "✓"; }
+  font-family: 'flexy-checkbox';
+  font-size: 11px;
+  /*  UTF Reference
+      .check:before { content: '\e800'; }
+      .dash:before  { content: '\e801'; }
+      .plus:before { content: '\e802'; }
+      */
+  content: '\e800'; }
 
 .b-checkbox__input:checked + .b-checkbox__label:before {
   color: #1ABC9C;
@@ -2999,25 +3016,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 32px;
   padding-left: 30px; }
   .b-radio__input + .b-radio__label:before {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     content: "";
     display: block;
     position: absolute;
+    padding: 1px;
     top: 50%;
     left: 0;
     line-height: 16px;
     text-align: center;
-    margin-top: -8px;
+    margin-top: -9px;
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat; }
   .b-radio__input + .b-radio__label:before {
+    -webkit-transition: border-color .2s ease;
+    transition: border-color .2s ease;
     border-radius: 100%;
-    border: 1px solid #bdc0c7; }
+    border: 2px solid #bdc0c7; }
 
 .b-radio__input:checked + .b-radio__label:before {
-  content: "✓"; }
+  font-family: 'flexy-checkbox';
+  font-size: 11px;
+  /*  UTF Reference
+      .check:before { content: '\e800'; }
+      .dash:before  { content: '\e801'; }
+      .plus:before { content: '\e802'; }
+      */
+  content: '\e800'; }
 
 .b-radio__input:checked + .b-radio__label:before {
   color: #1ABC9C;

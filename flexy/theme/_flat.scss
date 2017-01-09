@@ -21,12 +21,13 @@
 }
 
 .b-checkbox {
-  $size: 16px;
+  $size: 14px;
 
   @include flexy-input-checkbox-radio-inactive($size) {
     &:before {
+      transition: border-color .2s ease;
       border-radius: 2px;
-      border: 1px solid #aaa;
+      border: 2px solid #aaa;
     }
   }
 
@@ -39,12 +40,13 @@
 }
 
 .b-radio {
-  $size: 16px;
+  $size: 14px;
 
   @include flexy-input-checkbox-radio-inactive($size) {
     &:before {
+      transition: border-color .2s ease;
       border-radius: 100%;
-      border: 1px solid #bdc0c7;
+      border: 2px solid #bdc0c7;
     }
   }
 
