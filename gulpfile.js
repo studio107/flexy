@@ -29,7 +29,7 @@ gulp.task('scss', function () {
     return gulp.src(paths.scss)
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
-        // .pipe(csso())
+        .pipe(csso())
         .pipe(concat('bundle.css'))
         .pipe(gulp.dest(dst.scss))
         .pipe(browserSync.stream());
