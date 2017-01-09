@@ -1,4 +1,7 @@
+@import "flexy/colors/schema";
+
 $flexy-grid-wrapper-width: 1280px;
+$flexy-colors: $flat;
 
 @import "flexy";
 
@@ -17,4 +20,8 @@ body {
     color: rgba(#5fa2ff, .4);
   }
   color: #000;
+}
+
+.b-button {
+  
 }

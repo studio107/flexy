@@ -1,0 +1,79 @@
+$flexy-button-radius: 3px !default;
+
+@mixin flexy-button-reset {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  background: {
+    color: transparent;
+  }
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+@function flexy-button-active-color($color) {
+  @return darken($color, 5%);
+}
+
+@function flexy-button-hover-color($color) {
+  @return lighten($color, 5%);
+}
+
+@function flexy-button-color-detect($color, $dark: #000, $light: #fff) {
+  @return if(lightness($color) > 55, $dark, $light);
+}
+
+@mixin flexy-button-basic($color) {
+  background: {
+    color: $color;
+  }
+  color: flexy-button-color-detect($color);
+
+  &:hover {
+    background: {
+      color: flexy-button-hover-color($color);
+    }
+  }
+
+  &:active {
+    background: {
+      color: flexy-button-active-color($color);
+    }
+  }
+
+  @content;
+}
+
+@mixin flexy-button() {
+  @include flexy-button-reset;
+
+  $i: 0;
+  @each $name, $color in $flexy-colors {
+    @if ($i == 0) {
+      @include flexy-button-basic($color) {
+        @content
+      }
+    } @else {
+      &_#{$name} {
+        @include flexy-button-basic($color) {
+          @content
+        }
+      }
+    }
+    $i: $i + 1;
+  }
+}
+
+.#{$flexy-prefix} {
+  &-button {
+    @include flexy-button();
+
+    cursor: pointer;
+    line-height: 32px;
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: $flexy-button-radius;
+  }
+}

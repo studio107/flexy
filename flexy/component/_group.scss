@@ -1,0 +1,20 @@
+.#{$flexy-prefix} {
+  &-group {
+    display: flex;
+    flex-wrap: nowrap;
+
+    :not(:first-child), :not(:last-child), :not(:only-child) {
+      border-radius: 0;
+    }
+
+    :last-child {
+      border-top-right-radius: $flexy-button-radius;
+      border-bottom-right-radius: $flexy-button-radius;
+    }
+
+    :first-child {
+      border-top-left-radius: $flexy-button-radius;
+      border-bottom-left-radius: $flexy-button-radius;
+    }
+  }
+}

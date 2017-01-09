@@ -8,7 +8,7 @@ $flexy-colors: (
         blue: #007fff,
         white: #fff,
         green: #42aa09
-);
+) !default;
 
 // elements
 $flexy-headings: 'h1, h2, h3, h4, h5, h6' !default;

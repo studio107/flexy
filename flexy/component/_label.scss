@@ -1,6 +1,6 @@
 @mixin flexy-label-color($color) {
   background-color: $color;
-  @if (lightness($color) > 50) {
+  @if (lightness($color) > 55) {
     color: #000;
   } @else {
     color: #fff;
