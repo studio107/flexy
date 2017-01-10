@@ -4651,3 +4651,7 @@ img {
   font-size: 14px;
   background-color: rgba(0, 163, 11, 0.2);
   border: 1px solid rgba(0, 163, 11, 0.2); }
+
+.b-footer {
+  font-size: 16px;
+  text-align: center; }
