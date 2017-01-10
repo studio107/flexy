@@ -337,158 +337,206 @@ a {
   font-weight: bold; }
 
 .b-typeset h1, .b-typeset .alpha {
-  line-height: 3rem;
   font-size: 2.33333rem;
+  line-height: 3rem;
   margin-bottom: 0.35166rem;
   padding-top: 0.64834rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.14286rem;
+      font-size: 2.28571rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h1, .b-typeset .alpha {
+      font-size: 2.66667rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h1, .b-typeset .alpha {
+      font-size: 2.94118rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h1, .b-typeset .alpha {
+      font-size: 2.63158rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h1, .b-typeset .alpha {
       margin-bottom: 0.28213rem;
       padding-top: 0.71787rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.13333rem;
       margin-bottom: 0.27866rem;
       padding-top: 0.72134rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.35294rem;
       margin-bottom: 0.35881rem;
       padding-top: 0.64119rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.63158rem;
       margin-bottom: 0.46052rem;
       padding-top: 0.53948rem; } }
 
 .b-typeset h2, .b-typeset .beta {
-  line-height: 3rem;
   font-size: 2.08333rem;
+  line-height: 3rem;
   margin-bottom: 0.26041rem;
   padding-top: 0.73959rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 1.9rem;
+      font-size: 2.00714rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h2, .b-typeset .beta {
+      font-size: 2.36667rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h2, .b-typeset .beta {
+      font-size: 2.58235rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h2, .b-typeset .beta {
+      font-size: 2.31053rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h2, .b-typeset .beta {
       margin-bottom: 0.19349rem;
       padding-top: 0.80651rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 1.87333rem;
       margin-bottom: 0.18376rem;
       padding-top: 0.81624rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 2.08824rem;
       margin-bottom: 0.2622rem;
       padding-top: 0.7378rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 2.31053rem;
       margin-bottom: 0.34333rem;
       padding-top: 0.65667rem; } }
 
 .b-typeset h3, .b-typeset .gamma {
-  line-height: 3rem;
   font-size: 1.86667rem;
+  line-height: 3rem;
   margin-bottom: 0.18132rem;
   padding-top: 0.81868rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 1.71429rem;
+      font-size: 1.82857rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h3, .b-typeset .gamma {
+      font-size: 2rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h3, .b-typeset .gamma {
+      font-size: 2.07647rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h3, .b-typeset .gamma {
+      font-size: 1.85789rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h3, .b-typeset .gamma {
       margin-bottom: 0.1257rem;
       padding-top: 0.8743rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 1.70667rem;
       margin-bottom: 0.12292rem;
       padding-top: 0.87708rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 1.76471rem;
       margin-bottom: 0.14411rem;
       padding-top: 0.85589rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 1.85789rem;
       margin-bottom: 0.17812rem;
       padding-top: 0.82188rem; } }
 
 .b-typeset h4, .b-typeset .delta {
-  line-height: 2rem;
   font-size: 1.66667rem;
+  line-height: 2rem;
   margin-bottom: -0.39168rem;
   padding-top: 0.39168rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.52143rem;
+      font-size: 1.60714rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h4, .b-typeset .delta {
+      font-size: 1.78rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h4, .b-typeset .delta {
+      font-size: 1.82941rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h4, .b-typeset .delta {
+      font-size: 1.63684rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h4, .b-typeset .delta {
       margin-bottom: -0.44469rem;
       padding-top: 0.44469rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.5rem;
       margin-bottom: -0.45251rem;
       padding-top: 0.45251rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.57059rem;
       margin-bottom: -0.42675rem;
       padding-top: 0.42675rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.63684rem;
       margin-bottom: -0.40256rem;
       padding-top: 0.40256rem; } }
 
 .b-typeset h5, .b-typeset .epsilon {
-  line-height: 2rem;
   font-size: 1.49167rem;
+  line-height: 2rem;
   margin-bottom: -0.45555rem;
   padding-top: 0.45555rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.37143rem;
+      font-size: 1.46429rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h5, .b-typeset .epsilon {
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h5, .b-typeset .epsilon {
+      font-size: 1.47059rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h5, .b-typeset .epsilon {
+      font-size: 1.31579rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h5, .b-typeset .epsilon {
       margin-bottom: -0.49944rem;
       padding-top: 0.49944rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.36667rem;
       margin-bottom: -0.50118rem;
       padding-top: 0.50118rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.32353rem;
       margin-bottom: -0.51692rem;
       padding-top: 0.51692rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.31579rem;
       margin-bottom: -0.51975rem;
       padding-top: 0.51975rem; } }
 
 .b-typeset h6, .b-typeset .zeta {
-  line-height: 2rem;
   font-size: 1.33333rem;
+  line-height: 2rem;
   margin-bottom: -0.51334rem;
   padding-top: 0.51334rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.21429rem;
+      font-size: 1.28571rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset h6, .b-typeset .zeta {
+      font-size: 1.33333rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset h6, .b-typeset .zeta {
+      font-size: 1.29412rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset h6, .b-typeset .zeta {
+      font-size: 1.15789rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset h6, .b-typeset .zeta {
       margin-bottom: -0.5568rem;
       padding-top: 0.5568rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.2rem;
       margin-bottom: -0.56201rem;
       padding-top: 0.56201rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.17647rem;
       margin-bottom: -0.5706rem;
       padding-top: 0.5706rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.15789rem;
       margin-bottom: -0.57738rem;
       padding-top: 0.57738rem; } }
 
@@ -586,8 +634,8 @@ a {
     padding-top: 1rem; }
 
 .b-typeset table {
-  line-height: 2rem;
   font-size: 1.19167rem;
+  line-height: 2rem;
   margin-bottom: -0.60676rem;
   padding-top: 0.60676rem;
   font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -598,48 +646,64 @@ a {
   width: 100%; }
   @media screen and (min-width: 48em) {
     .b-typeset table {
-      font-size: 1.09286rem;
+      font-size: 1.16429rem; } }
+  @media screen and (min-width: 62em) {
+    .b-typeset table {
+      font-size: 1.12667rem; } }
+  @media screen and (min-width: 75em) {
+    .b-typeset table {
+      font-size: 1.03529rem; } }
+  @media screen and (min-width: 100em) {
+    .b-typeset table {
+      font-size: 0.92632rem; } }
+  @media screen and (min-width: 48em) {
+    .b-typeset table {
       margin-bottom: -0.63937rem;
       padding-top: 0.63937rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset table {
-      font-size: 1.08667rem;
       margin-bottom: -0.64141rem;
       padding-top: 0.64141rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset table {
-      font-size: 0.99412rem;
       margin-bottom: -0.67195rem;
       padding-top: 0.67195rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset table {
-      font-size: 0.92632rem;
       margin-bottom: -0.69433rem;
       padding-top: 0.69433rem; } }
   .b-typeset table thead th {
-    line-height: 2rem;
     font-size: 1.33333rem;
+    line-height: 2rem;
     margin-bottom: -0.56001rem;
     padding-top: 0.56001rem;
     padding-bottom: 1px; }
     @media screen and (min-width: 48em) {
       .b-typeset table thead th {
-        font-size: 1.21429rem;
+        font-size: 1.28571rem; } }
+    @media screen and (min-width: 62em) {
+      .b-typeset table thead th {
+        font-size: 1.33333rem; } }
+    @media screen and (min-width: 75em) {
+      .b-typeset table thead th {
+        font-size: 1.29412rem; } }
+    @media screen and (min-width: 100em) {
+      .b-typeset table thead th {
+        font-size: 1.15789rem; } }
+    @media screen and (min-width: 48em) {
+      .b-typeset table thead th {
         margin-bottom: -0.5993rem;
         padding-top: 0.5993rem; } }
     @media screen and (min-width: 62em) {
       .b-typeset table thead th {
-        font-size: 1.2rem;
         margin-bottom: -0.60401rem;
         padding-top: 0.60401rem; } }
     @media screen and (min-width: 75em) {
       .b-typeset table thead th {
-        font-size: 1.17647rem;
         margin-bottom: -0.61177rem;
         padding-top: 0.61177rem; } }
     @media screen and (min-width: 100em) {
       .b-typeset table thead th {
-        font-size: 1.15789rem;
         margin-bottom: -0.6179rem;
         padding-top: 0.6179rem; } }
 
@@ -1150,11 +1214,7 @@ img {
   background-image: linear-gradient(to bottom, transparent 0%, transparent 49%, #BDC8CC 50%, transparent 51%, transparent 100%);
   background-repeat: no-repeat;
   background-size: 100% 142%;
-  text-align: center;
-  line-height: 2rem;
-  font-size: 1.33333rem;
-  margin-bottom: 1.43999rem;
-  padding-top: 0.56001rem; }
+  text-align: center; }
   .b-divider:before, .b-divider:after {
     display: table;
     content: "";
@@ -4256,28 +4316,36 @@ img {
   .b-header-menu {
     font-size: 16px; }
     .b-header-menu__item {
-      line-height: 2rem;
       font-size: 1.33333rem;
+      line-height: 2rem;
       margin-bottom: 0.48666rem;
       padding-top: 0.51334rem; }
       @media screen and (min-width: 48em) {
         .b-header-menu__item {
-          font-size: 1.21429rem;
+          font-size: 1.28571rem; } }
+      @media screen and (min-width: 62em) {
+        .b-header-menu__item {
+          font-size: 1.33333rem; } }
+      @media screen and (min-width: 75em) {
+        .b-header-menu__item {
+          font-size: 1.29412rem; } }
+      @media screen and (min-width: 100em) {
+        .b-header-menu__item {
+          font-size: 1.15789rem; } }
+      @media screen and (min-width: 48em) {
+        .b-header-menu__item {
           margin-bottom: 0.4432rem;
           padding-top: 0.5568rem; } }
       @media screen and (min-width: 62em) {
         .b-header-menu__item {
-          font-size: 1.2rem;
           margin-bottom: 0.43799rem;
           padding-top: 0.56201rem; } }
       @media screen and (min-width: 75em) {
         .b-header-menu__item {
-          font-size: 1.17647rem;
           margin-bottom: 0.4294rem;
           padding-top: 0.5706rem; } }
       @media screen and (min-width: 100em) {
         .b-header-menu__item {
-          font-size: 1.15789rem;
           margin-bottom: 0.42262rem;
           padding-top: 0.57738rem; } }
       .b-header-menu__item:not(:last-child) {
@@ -4286,8 +4354,8 @@ img {
 .b-logo {
   color: #000;
   text-decoration: none;
-  line-height: 2rem;
   font-size: 1.86667rem;
+  line-height: 2rem;
   margin-bottom: 0.68132rem;
   padding-top: 0.31868rem;
   -webkit-font-smoothing: antialiased;
@@ -4296,22 +4364,30 @@ img {
   font-weight: 900; }
   @media screen and (min-width: 48em) {
     .b-logo {
-      font-size: 1.71429rem;
+      font-size: 1.82857rem; } }
+  @media screen and (min-width: 62em) {
+    .b-logo {
+      font-size: 2rem; } }
+  @media screen and (min-width: 75em) {
+    .b-logo {
+      font-size: 2.07647rem; } }
+  @media screen and (min-width: 100em) {
+    .b-logo {
+      font-size: 1.85789rem; } }
+  @media screen and (min-width: 48em) {
+    .b-logo {
       margin-bottom: 0.6257rem;
       padding-top: 0.3743rem; } }
   @media screen and (min-width: 62em) {
     .b-logo {
-      font-size: 1.70667rem;
       margin-bottom: 0.62292rem;
       padding-top: 0.37708rem; } }
   @media screen and (min-width: 75em) {
     .b-logo {
-      font-size: 1.76471rem;
       margin-bottom: 0.64411rem;
       padding-top: 0.35589rem; } }
   @media screen and (min-width: 100em) {
     .b-logo {
-      font-size: 1.85789rem;
       margin-bottom: 0.67812rem;
       padding-top: 0.32188rem; } }
 
@@ -4325,10 +4401,6 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 2rem;
-  font-size: 0.95833rem;
-  margin-bottom: 1.31624rem;
-  padding-top: 0.68376rem;
   background-color: rgba(0, 163, 11, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
   padding: 0 5px;

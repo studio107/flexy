@@ -37,7 +37,7 @@ $flexy-colors: $flat;
 
 .b-helper {
   @include ellipsis;
-  @include sassline(iota);
+  //@include sassline(iota);
   background-color: rgba(0, 163, 11, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
   padding: 0 5px;

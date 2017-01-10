@@ -13,7 +13,7 @@
       size: 100% 142%;
     }
     text-align: center;
-    @include sassline(zeta);
+    //@include sassline(zeta);
 
     &:after {
       content: "§";
