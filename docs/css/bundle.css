@@ -292,6 +292,8 @@ table {
   transition: border-color .2s ease;
   -webkit-appearance: none;
   border-radius: 0;
+  font-size: 16px;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   border: 1px solid rgba(41, 128, 185, 0.8); }
   .b-input:not(:focus) {
     cursor: pointer; }

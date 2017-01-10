@@ -23,6 +23,8 @@
     transition: border-color .2s ease;
     -webkit-appearance: none;
     border-radius: 0;
+    font-size: $flexy-typo-base-font-size;
+    font-family: $flexy-font;
 
     &:not(:focus) {
       cursor: pointer;
