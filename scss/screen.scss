@@ -14,7 +14,7 @@ $flexy-colors: $flat;
     font-size: $flexy-typo-base-font-size;
 
     &__item {
-      @include sassline($fontsize: zeta, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
+      @include flexy-typo-rhythm($fontsize: zeta, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
 
       &:not(:last-child) {
         margin-right: $flexy-typo-base-measure;
@@ -26,7 +26,7 @@ $flexy-colors: $flat;
 .b-logo {
   color: #000;
   text-decoration: none;
-  @include sassline($fontsize: gamma, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
+  @include flexy-typo-rhythm($fontsize: gamma, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
   @include antialias;
   font-weight: 900;
 }

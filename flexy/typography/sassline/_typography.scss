@@ -4,8 +4,8 @@
 // Import Sassline base SCSS files in order so variables are read correctly.
 @import "variables";
 @import "modular-scale";
-@import "mixins";
 @import "function";
+@import "mixins";
 @import "base";
 
 // Import your project SCSS module partials.
@@ -32,5 +32,5 @@ img {
 }
 
 .button-align {
-  @include baseline(zeta, 2, 2, all);
+  @include flexy-typo-baseline(zeta, 2, 2, all);
 }

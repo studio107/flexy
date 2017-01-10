@@ -6,16 +6,20 @@
   @return $output;
 }
 
+@function flexy-typo-get-point($i) {
+  @return to-int(nth($points, $i));
+}
+
 @function flexy-typo-get-font-size($font-size, $breakpoint: 0) {
   $value: type-of($font-size);
   $scale: if($breakpoint == all, scale-0, scale-#{$breakpoint});
 
   @if $value == number {
 
-    @return $value;
+    @return $font-size;
     // If using a variable from the scale for fontsize.
 
-  } @else if (type-of($scale) == map && in-modular-scale($scale, $font-size)) {
+  } @else if (type-of($scale) == map & & in-modular-scale($scale, $font-size)) {
 
     // Check if value exists in scale.
 
@@ -30,7 +34,16 @@
 }
 
 @function flexy-rhythm-get-rootsize($i: 1) {
-  @return nth($sizes, if($i == all, 1, $i));
+  $index: if($i == all, 1, $i);
+
+  @if ($index <= 0) {
+    @if ($flexy-debug) {
+      @warn "Index is lte zeo - #{$index}. Use all breakpoints.";
+    }
+    $index: 1;
+  }
+
+  @return nth($sizes, $index);
 }
 
 @function flexy-rhythm-offset-shift($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {

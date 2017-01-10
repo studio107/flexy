@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="b-typeset">
+        <h1>Typeset</h1>
+
+    <hr>
+
+    {% set typesets = [
+    { name: 'Minor second', type: 'minor-second' },
+    { name: 'Major second', type: 'major-second' },
+    { name: 'Minor third', type: 'minor-third' },
+    { name: 'Major third', type: 'major-third' },
+    { name: 'Perfect fourth', type: 'perfect-fourth' },
+    { name: 'Augmented fourth', type: 'augmented-fourth' },
+    { name: 'Perfect fifth', type: 'perfect-fifth' },
+    { name: 'Golden ratio', type: 'golden-ratio' }
+    ]
+    %}
+
+    {% for typeset in typesets %}
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <p>{{ typeset.name }}</p>
+            </div>
+            <div class="b-col b-col_small_10">
+                <div class="pizda pizda_{{ typeset.type }}">
+                    {% for i in range(1, 6) %}
+                        <h{{ i }}>Title</h{{ i }}>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    {% endfor %}
+    </div>
+{% endblock %}

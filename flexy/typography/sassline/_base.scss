@@ -3,7 +3,7 @@
 
 // Setting root sizes and base styles.
 html {
-  @include rootsize;
+  @include flexy-typo-rootsize;
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -11,7 +11,7 @@ html {
 
 // Site-wide base styles.
 body {
-  @include fontsize(zeta, all);
+  @include flexy-typo-fontsize(zeta, all);
 
   font-family: $flexy-font;
   font-style: normal;
@@ -52,7 +52,7 @@ a {
 
   // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
   p {
-    @include baseline($fontsize: zeta, $lineheight: 2, $below: 2, $breakpoint: all);
+    @include flexy-typo-baseline($fontsize: zeta, $lineheight: 2, $below: 2, $breakpoint: all);
 
     font-weight: 300;
     font-feature-settings: 'kern', 'onum', 'liga';
@@ -69,37 +69,37 @@ a {
 
   // Heading level 1.
   h1, .alpha {
-    @include sassline($fontsize: alpha, $lineheight: 3, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
+    @include flexy-typo-rhythm($fontsize: alpha, $lineheight: 3, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
   }
 
   // Heading level 2.
   h2, .beta {
-    @include sassline(beta, 3, 1, all, $heading-cap-height);
+    @include flexy-typo-rhythm(beta, 3, 1, all, $heading-cap-height);
   }
 
   // Heading level 3.
   h3, .gamma {
-    @include sassline(gamma, 3, 1, all, $heading-cap-height);
+    @include flexy-typo-rhythm(gamma, 3, 1, all, $heading-cap-height);
   }
 
   // Heading level 4.
   h4, .delta {
-    @include sassline(delta, 2, 0, all, $heading-cap-height);
+    @include flexy-typo-rhythm(delta, 2, 0, all, $heading-cap-height);
   }
 
   // Heading level 5.
   h5, .epsilon {
-    @include sassline(epsilon, 2, 0, all, $heading-cap-height);
+    @include flexy-typo-rhythm(epsilon, 2, 0, all, $heading-cap-height);
   }
 
   // Heading level 6.
   h6, .zeta {
-    @include sassline(zeta, 2, 0, all, $heading-cap-height);
+    @include flexy-typo-rhythm(zeta, 2, 0, all, $heading-cap-height);
   }
 
   // Lists.
   ul, ol {
-    @include baseline(zeta, 2, 2, all);
+    @include flexy-typo-baseline(zeta, 2, 2, all);
 
     li {
       font-feature-settings: 'kern', 'onum', 'liga';
@@ -190,7 +190,7 @@ a {
 
   // Definition lists.
   dl {
-    @include baseline(zeta, 2, 2, all);
+    @include flexy-typo-baseline(zeta, 2, 2, all);
 
     dt, dd {
       font-feature-settings: 'kern', 'onum', 'liga';
@@ -212,7 +212,7 @@ a {
 
   // Tables.
   table {
-    @include sassline(eta, 2, 0, all);
+    @include flexy-typo-rhythm(eta, 2, 0, all);
 
     font-family: $flexy-typo-heading-font;
     font-feature-settings: 'liga', 'lnum', 'tnum', 'kern';
@@ -223,7 +223,7 @@ a {
     thead {
 
       th {
-        @include sassline(zeta, 2, 0, all);
+        @include flexy-typo-rhythm(zeta, 2, 0, all);
         padding-bottom: 1px;
       }
     }
@@ -241,7 +241,7 @@ a {
 
   // Caption and inline small text.
   small, .caption {
-    @include fontsize(theta, all);
+    @include flexy-typo-fontsize(theta, all);
 
     font-family: $flexy-typo-heading-font;
     font-style: normal;
@@ -253,7 +253,7 @@ a {
   }
 
   .caption {
-    @include baseline(theta, 2, 2, all);
+    @include flexy-typo-baseline(theta, 2, 2, all);
 
     color: $flexy-typo-caption-color;
   }
@@ -264,7 +264,7 @@ a {
   }
 
   .delta + .caption, .epsilon + .caption, .zeta + .caption {
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   // Quotes.
@@ -334,7 +334,7 @@ a {
   }
 
   code {
-    @include fontsize(theta, all);
+    @include flexy-typo-fontsize(theta, all);
 
     line-height: 1rem;
   }

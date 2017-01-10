@@ -248,6 +248,210 @@ table {
  */
 /* CSS compiled from SCSS. */
 /* --------------------------------------- */
+.pizda h6 {
+  font-size: 1.33333pxrem;
+  line-height: 2rem;
+  margin-bottom: 1.43999rem;
+  padding-top: 0.56001rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h6 {
+      font-size: 1.14286pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h6 {
+      font-size: 1.06667pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h6 {
+      font-size: 0.94118pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h6 {
+      font-size: 0.84211pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h6 {
+      margin-bottom: 1.37713rem;
+      padding-top: 0.62287rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h6 {
+      margin-bottom: 1.35199rem;
+      padding-top: 0.64801rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h6 {
+      margin-bottom: 1.31058rem;
+      padding-top: 0.68942rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h6 {
+      margin-bottom: 1.27788rem;
+      padding-top: 0.72212rem; } }
+
+.pizda h5 {
+  font-size: 1.77733pxrem;
+  line-height: 2rem;
+  margin-bottom: 1.58651rem;
+  padding-top: 0.41349rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h5 {
+      font-size: 1.52343pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h5 {
+      font-size: 1.42187pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h5 {
+      font-size: 1.25459pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h5 {
+      font-size: 1.12253pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h5 {
+      margin-bottom: 1.50272rem;
+      padding-top: 0.49728rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h5 {
+      margin-bottom: 1.46921rem;
+      padding-top: 0.53079rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h5 {
+      margin-bottom: 1.414rem;
+      padding-top: 0.586rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h5 {
+      margin-bottom: 1.37042rem;
+      padding-top: 0.62958rem; } }
+
+.pizda h4 {
+  font-size: 2.36919pxrem;
+  line-height: 2rem;
+  margin-bottom: 1.78182rem;
+  padding-top: 0.21818rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h4 {
+      font-size: 2.03073pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h4 {
+      font-size: 1.89535pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h4 {
+      font-size: 1.67237pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h4 {
+      font-size: 1.49633pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h4 {
+      margin-bottom: 1.67013rem;
+      padding-top: 0.32987rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h4 {
+      margin-bottom: 1.62545rem;
+      padding-top: 0.37455rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h4 {
+      margin-bottom: 1.55187rem;
+      padding-top: 0.44813rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h4 {
+      margin-bottom: 1.49378rem;
+      padding-top: 0.50622rem; } }
+
+.pizda h3 {
+  font-size: 3.15812pxrem;
+  line-height: 2rem;
+  margin-bottom: 2.04217rem;
+  padding-top: -0.04217rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h3 {
+      font-size: 2.70696pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h3 {
+      font-size: 2.5265pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h3 {
+      font-size: 2.22926pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h3 {
+      font-size: 1.9946pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h3 {
+      margin-bottom: 1.89329rem;
+      padding-top: 0.10671rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h3 {
+      margin-bottom: 1.83373rem;
+      padding-top: 0.16627rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h3 {
+      margin-bottom: 1.73565rem;
+      padding-top: 0.26435rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h3 {
+      margin-bottom: 1.65821rem;
+      padding-top: 0.34179rem; } }
+
+.pizda h2 {
+  font-size: 4.20978pxrem;
+  line-height: 2rem;
+  margin-bottom: 2.38922rem;
+  padding-top: -0.38922rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h2 {
+      font-size: 3.60838pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h2 {
+      font-size: 3.36782pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h2 {
+      font-size: 2.97161pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h2 {
+      font-size: 2.65881pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h2 {
+      margin-bottom: 2.19076rem;
+      padding-top: -0.19076rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h2 {
+      margin-bottom: 2.11137rem;
+      padding-top: -0.11137rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h2 {
+      margin-bottom: 1.98062rem;
+      padding-top: 0.01938rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h2 {
+      margin-bottom: 1.8774rem;
+      padding-top: 0.1226rem; } }
+
+.pizda h1 {
+  font-size: 5.61164pxrem;
+  line-height: 2rem;
+  margin-bottom: 2.85183rem;
+  padding-top: -0.85183rem; }
+  @media screen and (min-width: 48em) {
+    .pizda h1 {
+      font-size: 4.80997pxrem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h1 {
+      font-size: 4.48931pxrem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h1 {
+      font-size: 3.96115pxrem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h1 {
+      font-size: 3.54419pxrem; } }
+  @media screen and (min-width: 48em) {
+    .pizda h1 {
+      margin-bottom: 2.58728rem;
+      padding-top: -0.58728rem; } }
+  @media screen and (min-width: 62em) {
+    .pizda h1 {
+      margin-bottom: 2.48146rem;
+      padding-top: -0.48146rem; } }
+  @media screen and (min-width: 75em) {
+    .pizda h1 {
+      margin-bottom: 2.30717rem;
+      padding-top: -0.30717rem; } }
+  @media screen and (min-width: 100em) {
+    .pizda h1 {
+      margin-bottom: 2.16957rem;
+      padding-top: -0.16957rem; } }
+
 html {
   font-size: 75%;
   -webkit-text-size-adjust: 100%;
@@ -760,7 +964,7 @@ a {
   margin-top: -1rem; }
 
 .b-typeset .delta + .caption, .b-typeset .epsilon + .caption, .b-typeset .zeta + .caption {
-  margin-top: 0rem; }
+  margin-top: 0; }
 
 .b-typeset blockquote p {
   border-left: 0.15rem solid #2980B9;
@@ -3812,6 +4016,18 @@ img {
   font-size: 1.33333pxrem;
   background-color: #2980B9;
   color: #fff; }
+  @media screen and (min-width: 48em) {
+    .b-button {
+      font-size: 1.14286pxrem; } }
+  @media screen and (min-width: 62em) {
+    .b-button {
+      font-size: 1.06667pxrem; } }
+  @media screen and (min-width: 75em) {
+    .b-button {
+      font-size: 0.94118pxrem; } }
+  @media screen and (min-width: 100em) {
+    .b-button {
+      font-size: 0.84211pxrem; } }
   .b-button:hover {
     background-color: #2e8ece; }
   .b-button:active {

@@ -17,7 +17,7 @@
   height: 32px;
   font-size: $flexy-typo-base-font-size;
   font-family: $flexy-font;
-  @include fontsize($flexy-typo-base-font-size);
+  @include flexy-typo-fontsize($flexy-typo-base-font-size);
 }
 
 @function flexy-button-active-color($color) {

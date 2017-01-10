@@ -1,45 +1,28 @@
 // SCSS mixins
 // ---------------------------------------
 
-// Global variables used in mixins.
-
-// Number of breakpoints.
-$breakpoints-limit: length($breakpoints);
-
-// List of rootsizes, breakpoints, and max-widths.
-$sizes: map-values($rootsizes);
-$points: map-values($breakpoints);
-
 // Breakpoints. Either set one to one of the breakpoint variables, or use a custom value for minor breakpoints.
 // Defaults to min-width, but both min->max and max-width are available too.
 // Parts based on https://gist.github.com/timknight/03e6335b8816aa534cf7
-@mixin breakpoint($break: 0, $max: 0) {
-  // Type of break variable
-  $value: type-of($break);
-
-  // If it is a string (i.e. a breakpoint variable).
-  @if $value == string {
-    // If using 'medium', 'large' etc output the correct breakpoints from map.
-    @if map-has-key($breakpoints, $break) {
-      $breakpoint: to-int(map-get($breakpoints, $break));
-      @media screen and (min-width: #{$breakpoint / 16 * 1em}) {
-        @content;
-      }
-    } @else {
-      @warn "#{$break} is not a set breakpoint variable";
+@mixin breakpoint($breakpoint) {
+  // If using 'medium', 'large' etc output the correct breakpoints from map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: to-int(map-get($breakpoints, $breakpoint));
+    @media screen and (min-width: #{$breakpoint / 16 * 1em}) {
+      @content;
     }
   } @else {
-    @warn "#{$break} is not valid to use as a breakpoint";
+    @warn "#{$breakpoint} is not a set breakpoint variable";
   }
 }
 
 // Root font-size in %, outputted in correct breakpoints.
-@mixin rootsize {
+@mixin flexy-typo-rootsize {
   font-size: nth($sizes, 1) / 16 * 100%;
 
   // Loop through breakpoints.
   @for $i from 2 through $breakpoints-limit {
-    $point: to-int(nth($points, $i));
+    $point: flexy-typo-get-point($i);
     @media screen and (min-width: $point / 16 * 1em) {
       font-size: nth($sizes, $i) / 16 * 100%;
     }
@@ -48,77 +31,23 @@ $points: map-values($breakpoints);
 
 // Font-size in rems. Either set per breakpoint or for all.
 // Use values as you would for pixels i.e. 16 or use values from the modular scale.
-@mixin fontsize($fontsize, $breakpoint: 0) {
-  // Type of chosen variables.
-  $font-value: type-of($fontsize);
-  $break-value: type-of($breakpoint);
+@mixin flexy-typo-fontsize($fontsize, $breakpoint: 0) {
+  $font-value: flexy-typo-get-font-size($fontsize, $breakpoint);
+  font-size: #{$font-value / flexy-rhythm-get-rootsize(1)}rem;
 
-  // Check if value exists in scale.
-  $in-scale: in-modular-scale(scale-0, $fontsize);
-
-  // If specifying a breakpoint to use (and breakpoint exists).
-  @if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint >= 0 {
-
-    // If using a number for fontsize.
-    @if $font-value == number {
-      font-size: #{$fontsize / nth($sizes, ($breakpoint + 1))}rem;
-
-      // If using a variable from the scale for fontsize.
-    } @else if $in-scale == true {
-      $get-scale: map-get($modular-scale, scale-#{$breakpoint});
-      $get-size: map-get($get-scale, $fontsize);
-
-      font-size: #{$get-size / nth($sizes, ($breakpoint + 1))}rem;
-
-    } @else {
-      @warn "#{$fontsize} is not a valid scale variable";
+  @for $i from 2 through $breakpoints-limit {
+    $font-value: flexy-typo-get-font-size($fontsize, $i - 1);
+    $point: flexy-typo-get-point($i);
+    @media screen and (min-width: $point / 16 * 1em) {
+      font-size: #{$font-value / flexy-rhythm-get-rootsize($i)}rem;
     }
-
-    // If want to use value for all breakpoints.
-  } @else if $breakpoint == all {
-
-    // If using a number for fontsize.
-    @if $font-value == number {
-      font-size: #{$fontsize / nth($sizes, 1)}rem;
-
-      // Loop through breakpoints.
-      @for $i from 2 through $breakpoints-limit {
-        $point: to-int(nth($points, $i));
-        @media screen and (min-width: $point / 16 * 1em) {
-          font-size: #{$fontsize / nth($sizes, $i)}rem;
-        }
-      }
-
-      // If using a variable from the scale for fontsize.
-    } @else if $in-scale == true {
-      $get-scale: map-get($modular-scale, scale-0);
-      $get-size: map-get($get-scale, $fontsize);
-      font-size: #{$get-size / nth($sizes, 1)}rem;
-
-      // Loop through breakpoints.
-      @for $i from 2 through $breakpoints-limit {
-        $get-scale: map-get($modular-scale, scale-#{$i - 1});
-        $get-size: map-get($get-scale, $fontsize);
-
-        $point: to-int(nth($points, $i));
-        @media screen and (min-width: $point / 16 * 1em) {
-          font-size: #{$get-size / nth($sizes, $i)}rem;
-        }
-      }
-
-    } @else {
-      @warn "#{$fontsize} is not a valid scale variable";
-    }
-
-  } @else {
-    @warn "#{$breakpoint} is not valid to use as a breakpoint";
   }
 }
 
 // Advanced baseline magic.
 // ! Read the README to help understand what is going on here.
 // Parts based on https://gist.github.com/razwan/10662500
-@mixin baseline($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
+@mixin flexy-typo-baseline($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
   // Set the line-height (if it isn’t set at 0).
   @if $lineheight != 0 {
     line-height: #{$lineheight}rem;
@@ -134,7 +63,7 @@ $points: map-values($breakpoints);
   // Loop through breakpoints.
   @for $i from 2 through $breakpoints-limit {
 
-    $point: to-int(nth($points, $i));
+    $point: flexy-typo-get-point($i);
     @media screen and (min-width: $point / 16 * 1em) {
 
       $font-value: flexy-typo-get-font-size($fontsize, $i - 1);
@@ -147,33 +76,36 @@ $points: map-values($breakpoints);
   }
 }
 
-// Set fontsize and baseline at once. Mix of fontsize and baseline mixin.
-@mixin sassline__fixed($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
-  $font-value: flexy-typo-get-font-size($fontsize, $breakpoint);
-  font-size: #{$font-value / flexy-rhythm-get-rootsize($breakpoint)}rem;
-
-  @for $i from 2 through $breakpoints-limit {
-    $font-value: flexy-typo-get-font-size($fontsize, $i);
-    $point: to-int(nth($points, $i));
-    @media screen and (min-width: $point / 16 * 1em) {
-      font-size: #{$font-value / flexy-rhythm-get-rootsize($i)}rem;
-    }
-  }
-
-  @include baseline($fontsize, $lineheight, $below, $breakpoint, $cap-height);
+@mixin flexy-typo-rhythm($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
+  @include flexy-typo-fontsize($fontsize, $breakpoint);
+  @include flexy-typo-baseline($fontsize, $lineheight, $below, $breakpoint, $cap-height);
 }
 
-@mixin sassline($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
-  $font-value: flexy-typo-get-font-size($fontsize, $breakpoint);
-  font-size: #{$font-value / flexy-rhythm-get-rootsize(1)}rem;
+// Использование:
+// @include flexy-type-scale($flexy-typo-base-font-size, flexy-get-modular-scale(golden-ratio));
+// Генерация размеров заголовков с помощью modular_scale. См _modular_scale.scss
+@mixin flexy-type-scale($base-font-size, $ratio: 1.333) {
+  $temp-font-size: $base-font-size;
 
-  @for $i from 2 through $breakpoints-limit {
-    $font-value: flexy-typo-get-font-size($fontsize, $i - 1);
-    $point: to-int(nth($points, $i));
-    @media screen and (min-width: $point / 16 * 1em) {
-      font-size: #{$font-value / flexy-rhythm-get-rootsize($i)}rem;
+  @for $i from 6 through 1 {
+    h#{$i} {
+      @include flexy-typo-rhythm($temp-font-size);
+      //font-size: to-em($font-size);
+      //@if ($line-height) {
+      //  line-height: $font-size * $ratio;
+      //}
     }
+    $temp-font-size: $temp-font-size * $ratio;
   }
+}
 
-  @include baseline($fontsize, $lineheight, $below, $breakpoint, $cap-height);
+.pizda {
+  @include flexy-type-scale($flexy-typo-base-font-size);
+
+  //$temp: 0;
+  //@each $name, $ratio in $flexy-modular-scale {
+  //  &_#{$name} {
+  //    $temp: $temp + 1;
+  //  }
+  //}
 }
