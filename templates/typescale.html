@@ -4,7 +4,8 @@
     <div class="b-typeset">
         <h1>Typeset</h1>
 
-    <hr>
+        <hr>
+    </div>
 
     {% set typesets = [
     { name: 'Minor second', type: 'minor-second' },
@@ -15,8 +16,7 @@
     { name: 'Augmented fourth', type: 'augmented-fourth' },
     { name: 'Perfect fifth', type: 'perfect-fifth' },
     { name: 'Golden ratio', type: 'golden-ratio' }
-    ]
-    %}
+    ] %}
 
     {% for typeset in typesets %}
         <div class="b-row">
@@ -31,9 +31,6 @@
                 </div>
             </div>
         </div>
-
         <hr>
-
     {% endfor %}
-    </div>
 {% endblock %}

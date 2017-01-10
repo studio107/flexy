@@ -14,12 +14,12 @@
 .#{$flexy-prefix} {
   &-label {
     position: relative;
-    width: 100px;
+    width: 80px;
     border-radius: $flexy-label-border-radius;
-    height: 20px;
-    line-height: 20px;
+    height: 1.2rem;
+    line-height: 1.2rem;
     text-align: center;
-    font-size: 13px;
+    @include flexy-typo-fontsize(iota);
     margin: 0;
     min-width: max-content;
     border-color: rgba(0, 0, 0, .15);

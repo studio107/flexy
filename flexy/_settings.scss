@@ -4,7 +4,7 @@ $flexy-debug: false !default;
 $flexy-prefix: 'b' !default;
 
 // defaults
-$flexy-font: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $flexy-colors: (
         default: #353535,
         blue: #007fff,
@@ -21,8 +21,8 @@ $flexy-typo-heading-size: (
 // this value may vary for each font
 // unitless value relative to 1em
 // See http://jsbin.com/gofexi/edit?html,css,output
-//$flexy-typo-base-cap-height: 0.68;
-$flexy-typo-base-cap-height: 0.73;
+$flexy-typo-base-cap-height: 0.68;
+//$flexy-typo-base-cap-height: 0.73;
 
 $flexy-typo-base-font-size: 16px !default;
 $flexy-typo-base-line-height: 1.5 !default;

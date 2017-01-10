@@ -12,21 +12,16 @@
     cursor: pointer;
     display: block;
     position: relative;
-    line-height: $flexy-button-height;
-    padding-left: 30px;
+    @include flexy-typo-rhythm(eta, 1, 1);
 
     &:before {
-      width: $size;
-      height: $size;
       content: "";
       display: block;
       position: absolute;
       padding: 1px;
       top: 50%;
       left: 0;
-      line-height: $flexy-button-height / 2;
       text-align: center;
-      margin-top: -(($size/2) + 2px);
       background: {
         color: transparent;
         position: center;

@@ -40,6 +40,7 @@
     @if ($flexy-debug) {
       @warn "Index is lte zeo - #{$index}. Use all breakpoints.";
     }
+
     $index: 1;
   }
 

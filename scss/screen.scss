@@ -1,6 +1,5 @@
 @import "flexy/colors/schema";
 
-$flexy-font: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $flexy-grid-wrapper-width: 1280px;
 $flexy-colors: $flat;
 
@@ -47,4 +46,14 @@ $flexy-colors: $flat;
 .b-footer {
   font-size: $flexy-typo-base-font-size;
   text-align: center;
+}
+
+.pizda {
+  $temp: 0;
+  @each $name, $ratio in $flexy-modular-scale {
+    &_#{$name} {
+      @include flexy-type-scale($flexy-typo-base-font-size, $ratio);
+      $temp: $temp + 1;
+    }
+  }
 }

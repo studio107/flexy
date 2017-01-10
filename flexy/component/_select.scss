@@ -18,6 +18,7 @@
   display: inline-flex;
   outline: none;
   height: $flexy-button-height;
+  user-select: none;
 
   $select-height: $flexy-button-height;
 

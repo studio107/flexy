@@ -6,18 +6,19 @@
   background: {
     color: transparent;
   }
-  -webkit-appearance: none;
+  appearance: none;
   box-sizing: border-box;
   display: inline-block;
   cursor: pointer;
   padding: 0 10px;
   border-radius: 0;
 
+  user-select: none;
   line-height: 32px;
   height: 32px;
   font-size: $flexy-typo-base-font-size;
   font-family: $flexy-font;
-  @include flexy-typo-fontsize($flexy-typo-base-font-size);
+  @include flexy-typo-fontsize(theta);
 }
 
 @function flexy-button-active-color($color) {

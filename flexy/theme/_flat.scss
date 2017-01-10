@@ -5,13 +5,15 @@
     }
     color: flexy-button-color-detect($flexy-current-color);
 
-    &:hover {
+    &:hover, &:focus {
+      color: flexy-button-color-detect($flexy-current-color);
       background: {
         color: flexy-button-hover-color($flexy-current-color);
       }
     }
 
     &:active {
+      color: flexy-button-color-detect($flexy-current-color);
       background: {
         color: flexy-button-active-color($flexy-current-color);
       }
@@ -20,43 +22,59 @@
 }
 
 .b-checkbox {
-  $size: 14px;
+  $size: flexy-typo-get-font-size(eta);
 
   @include flexy-input-checkbox-radio-inactive($size) {
+    padding-left: 28px;
+
     &:before {
-      transition: border-color .2s ease;
+      font-size: $size + px;
+      transition: box-shadow .2s ease;
       border-radius: 2px;
-      border: 2px solid #aaa;
+      margin-top: -($size / 2) + px;
+      width: $size + px;
+      height: $size + px;
+      line-height: $size + px;
+      box-shadow: 0 0 0 2px $flexy-typo-caption-color;
     }
   }
 
   @include flexy-input-checkbox-radio-active($size) {
     &:before {
       color: $flexy-current-color;
-      border-color: $flexy-current-color;
+      box-shadow: 0 0 0 2px $flexy-current-color;
     }
   }
 }
 
 .b-radio {
-  $size: 14px;
+  $size: flexy-typo-get-font-size(eta);
 
   @include flexy-input-checkbox-radio-inactive($size) {
+    padding-left: 28px;
+
     &:before {
-      transition: border-color .2s ease;
+      font-size: $size + px;
+      transition: box-shadow .2s ease;
       border-radius: 100%;
-      border: 2px solid #bdc0c7;
+      margin-top: -($size / 2) + px;
+      width: $size + px;
+      height: $size + px;
+      line-height: $size + px;
+      box-shadow: 0 0 0 2px $flexy-typo-caption-color;
     }
   }
 
   @include flexy-input-checkbox-radio-active($size) {
     &:before {
       color: $flexy-current-color;
-      border-color: $flexy-current-color;
+      box-shadow: 0 0 0 2px $flexy-current-color;
     }
   }
 }
 
 .b-select {
-  @include flexy-input-select();
+  @include flexy-input-select {
+
+  }
 }
