@@ -60,7 +60,6 @@
 
         &_up {
           @include flexy-media-screen((min-width: flexy-breakpoint($namespace))) {
-            content: '@@@';
             display: none;
           }
         }

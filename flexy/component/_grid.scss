@@ -21,15 +21,18 @@
 /**
  * Row wrapper class, flex box parent.
  */
-@mixin flexy-grid-row() {
+@mixin flexy-grid-row {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @include flexy-grid-space(-$flexy-grid-gutter, margin, horizontal);
+
+  & & {
+    @include flexy-grid-space(-$flexy-grid-gutter, margin, horizontal);
+  }
 }
 
-@mixin flexy-grid-column() {
+@mixin flexy-grid-column {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

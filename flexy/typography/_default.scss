@@ -1,0 +1,80 @@
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  @include margin-trailer()
+}
+
+@include establish-baseline();
+
+//h1, h2, h3, h4, h5, h6 {
+//  background: {
+//    color: rgba(#a00, 0.2);
+//  }
+//}
+//
+//p {
+//  background: {
+//    color: rgba(#0a0, 0.2);
+//  }
+//}
+//
+//ul, ol {
+//  background: {
+//    color: rgba(#00a, 0.2);
+//  }
+//}
+//
+//h1 {
+//  @include flexy-typo-baseline(50px);
+//}
+//
+//h2 {
+//  @include flexy-typo-baseline(37px);
+//}
+//
+//h3 {
+//  @include flexy-typo-baseline(28px);
+//}
+//
+//h4 {
+//  @include flexy-typo-baseline(22px);
+//}
+//
+//h5 {
+//  @include flexy-typo-baseline(20px);
+//}
+//
+//h6 {
+//  @include flexy-typo-baseline(18px);
+//}
+//
+////hr {
+////  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, $flexy-typo-caption-color 50%);
+////  background-position: 0 50%;
+////  background-repeat: repeat-x;
+////  background-size: 100% 0.15rem;
+////  border: 0;
+////  margin: 0;
+////  padding-bottom: $flexy-typo-base-measure;
+////  padding-top: $flexy-typo-base-measure;
+////}
+//
+//p {
+//  @include flexy-typo-baseline($flexy-typo-base-font-size);
+//}
+//
+//ul, ol {
+//  margin: 0;
+//  padding: 0;
+//  @include flexy-typo-baseline($flexy-typo-base-font-size, 1);
+//
+//  li {
+//    font-feature-settings: 'kern', 'onum', 'liga';
+//    //margin-top: 0.014em;
+//    margin-left: 0;
+//
+//    ol, ul {
+//      padding-top: 1rem;
+//      margin-bottom: 1rem;
+//      margin-left: 2rem;
+//    }
+//  }
+//}

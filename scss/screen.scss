@@ -1,15 +1,26 @@
 @import "flexy/colors/schema";
 
+$flexy-font: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $flexy-grid-wrapper-width: 1280px;
 $flexy-colors: $flat;
 
 @import "flexy";
 @import "flexy/theme/flat_outline";
 
-body {
-  background: {
-    color: #f0f3f6;
-  }
+.b-header {
+  margin: 2rem 2rem 4rem 2rem;
+}
+
+.b-logo {
+  color: #000;
+  text-decoration: none;
+  @include antialias;
+  font-weight: 900;
+}
+
+.b-grid {
+  //@include flexy-typo-draw-rhythm($flexy-typo-base-measure);
+  @include debug-vertical-alignment;
 }
 
 .b-helper {

@@ -1,0 +1,111 @@
+// Lists.
+ul, ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+
+  @include flexy-typo-baseline($flexy-typo-base-font-size);
+
+  li {
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+
+    @include flexy-media-screen((min-width: flexy-breakpoint(map-next-key($flexy-breakpoints, small)))) {
+      margin-left: 0;
+    }
+
+    ol, ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+  }
+}
+
+// Ordered lists.
+ol {
+  list-style-type: none;
+
+  li {
+    counter-increment: top-level;
+
+    &:before {
+      content: counter(top-level) '.';
+      font-feature-settings: 'lnum', 'tnum';
+      margin-left: -3rem;
+      position: absolute;
+      text-align: right;
+      width: 2em;
+    }
+
+    ul {
+      li {
+        &:before {
+          content: '';
+        }
+
+        ol {
+          li {
+            counter-increment: alt-level;
+
+            &:before {
+              content: counter(alt-level) '.';
+            }
+          }
+        }
+      }
+    }
+
+    ol {
+      li {
+        counter-increment: sub-level;
+
+        &:before {
+          content: counter(top-level) '.' counter(sub-level);
+        }
+
+        ul {
+          li {
+            &:before {
+              content: '';
+            }
+          }
+        }
+
+        ol {
+          li {
+            counter-increment: sub-sub-level;
+
+            &:before {
+              content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Definition lists.
+dl {
+  @include flexy-typo-baseline($flexy-typo-base-font-size);
+
+  dt, dd {
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+
+    @include flexy-media-screen((min-width: flexy-breakpoint(map-next-key($flexy-breakpoints, small)))) {
+      margin-left: 0;
+    }
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd + dt {
+    padding-top: 1rem;
+  }
+}

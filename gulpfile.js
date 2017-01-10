@@ -4,16 +4,21 @@ var path = require('path'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
+    flatten = require('gulp-flatten'),
+    nunjucks = require('gulp-nunjucks'),
     browserSync = require('browser-sync').create();
 
 var dst = {
+    font: './docs/font',
     scss: './docs/css',
-    html: './docs/'
+    templates: './docs/'
 };
 
 var paths = {
-    html: './index.html',
+    font: './font/**/*{.eot,.ttf,.woff,.woff2}',
+    templates: './templates/*.html',
     scss: [
+        './font/**/*.css',
         './scss/**/*.scss'
     ]
 };
@@ -21,12 +26,13 @@ var paths = {
 var sassOptions = {
     outputStyle: 'nested',
     includePaths: [
-        path.join(__dirname, 'flexy')
+        path.join(__dirname, 'flexy'),
+        path.join(__dirname, 'node_modules', 'modularscale-sass', 'stylesheets')
     ]
 };
 
 gulp.task('scss', function () {
-    return gulp.src(paths.scss)
+    gulp.src(paths.scss)
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
         // .pipe(csso())
@@ -35,9 +41,18 @@ gulp.task('scss', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('html', function () {
-    return gulp.src(paths.html)
-        .pipe(gulp.dest(dst.html));
+gulp.task('font', function () {
+    gulp.src(paths.font)
+        .pipe(flatten())
+        .pipe(gulp.dest(dst.font));
+});
+
+gulp.task('templates', function () {
+    gulp.src(paths.templates)
+        .pipe(nunjucks.compile({
+
+        }))
+        .pipe(gulp.dest(dst.templates));
 });
 
 gulp.task('server', function() {
@@ -52,11 +67,11 @@ gulp.task('server', function() {
 gulp.task('watch', ['server'], function () {
     gulp.watch(paths.scss, ['scss']);
     gulp.watch(path.join(__dirname, 'flexy') + '/**/*', ['scss']);
+    gulp.watch('./templates/**/*.html', ['templates']);
 
-    gulp.watch(paths.js).on('change', browserSync.reload);
-    gulp.watch(paths.html, ['html']).on('change', browserSync.reload);
+    gulp.watch('./docs/**/*').on('change', browserSync.reload);
 });
 
 gulp.task('default', function () {
-    return gulp.start('scss', 'html');
+    return gulp.start('scss', 'templates');
 });

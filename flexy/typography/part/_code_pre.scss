@@ -1,0 +1,16 @@
+code, pre {
+  background: {
+    color: $flexy-typo-code-background;
+  }
+  font-family: $flexy-typo-code-font;
+}
+
+pre {
+  display: block;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}

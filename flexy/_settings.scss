@@ -9,9 +9,40 @@ $flexy-colors: (
         white: #fff,
         green: #42aa09
 ) !default;
+$flexy-typo-heading-size: (
+        small: 0,
+        medium: 768px,
+        large: 992px,
+        xlarge: 1200px
+);
+
+// this value may vary for each font
+// unitless value relative to 1em
+// See http://jsbin.com/gofexi/edit?html,css,output
+//$flexy-typo-base-cap-height: 0.68;
+$flexy-typo-base-cap-height: 0.73;
+
+$flexy-typo-base-font-size: 16px !default;
+$flexy-typo-base-line-height: 1.5 !default;
+$flexy-typo-base-measure: $flexy-typo-base-font-size * $flexy-typo-base-line-height;
+
+$flexy-typo-link-color: map-get($flexy-colors, default) !default;
+$flexy-typo-link-hover: darken($flexy-typo-link-color, 5%) !default;
+
+$flexy-typo-body-text-color: #494949 !default;
+$flexy-typo-body-background: #FCFCFC !default;
+$flexy-typo-body-font: $flexy-font !default;
+
+$flexy-typo-code-background: #F5F4F2 !default;
+$flexy-typo-code-font: Menlo, monospace !default;
+
+$flexy-typo-caption-color: #BDC8CC !default;
+
+$flexy-typo-heading-color: #2E2E2E !default;
+$flexy-typo-heading-font: $flexy-font !default;
 
 // elements
-$flexy-headings: 'h1, h2, h3, h4, h5, h6' !default;
+$flexy-headings: h1, h2, h3, h4, h5, h6 !default;
 
 // media
 
