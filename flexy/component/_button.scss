@@ -9,12 +9,15 @@
   -webkit-appearance: none;
   box-sizing: border-box;
   display: inline-block;
-  line-height: 32px;
   cursor: pointer;
   padding: 0 10px;
   border-radius: 0;
+
+  line-height: 32px;
+  height: 32px;
   font-size: $flexy-typo-base-font-size;
   font-family: $flexy-font;
+  @include fontsize($flexy-typo-base-font-size);
 }
 
 @function flexy-button-active-color($color) {

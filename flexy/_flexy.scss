@@ -3,14 +3,17 @@
 // Default settings
 @import "settings";
 
+// Functions
+@import "functions/index";
+
 // Default styles
-@import "defaults";
+//@import "defaults";
 
 // Mixins
 @import "mixins";
 
-// Functions
-@import "functions/index";
+@import "typography/debug";
+@import "typography/sassline/typography";
 
 // Components
 @import "component/button";
@@ -25,6 +28,3 @@
 @import "component/grid";
 @import "component/segment";
 @import "component/visibility";
-
-// Typography
-@import "typography/typography";

@@ -3,21 +3,21 @@
     @include clearfix;
 
     margin: $flexy-typo-base-measure auto;
-    padding: 0;
-    height: $flexy-divider-height;
+    border: 0;
     width: 100%;
     display: block;
-    border: none;
-    background: {
-      color: $flexy-divider-color;
-    }
+    height: 1px;
+    background-color: $flexy-divider-color;
+    text-align: center;
 
-    &_medium {
-      height: $flexy-divider-large-medium;
-    }
-
-    &_large {
-      height: $flexy-divider-large-height;
+    &:after {
+      content: "§";
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      @include fontsize($fontsize: zeta, $breakpoint: all);
+      padding: 0 0.25em;
+      background: $flexy-typo-body-background;
     }
   }
 }

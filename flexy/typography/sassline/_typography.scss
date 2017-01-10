@@ -1,0 +1,35 @@
+/* CSS compiled from SCSS. */
+/* --------------------------------------- */
+
+// Import Sassline base SCSS files in order so variables are read correctly.
+@import "variables";
+@import "modular-scale";
+@import "mixins";
+@import "base";
+
+// Import your project SCSS module partials.
+// Global demo styles.
+// ---------------------------------------
+
+body {
+  background-color: $flexy-typo-body-background;
+  color: $flexy-typo-body-text-color;
+  overflow-x: hidden;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+.button-align {
+  @include baseline(zeta, 2, 2, all);
+}

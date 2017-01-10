@@ -1,18 +1,18 @@
 @mixin flexy-input($color) {
-  border: 1px solid rgba($color, 0.8);
+  box-shadow: 0 0 0 1px $flexy-typo-caption-color inset;
 
   &:focus, &:focus:hover {
-    border-color: $color;
+    box-shadow: 0 0 0 1px $color inset;
   }
 
   &:hover {
-    border-color: darken($color, 5%);
+    box-shadow: 0 0 0 1px darken($color, 5%) inset;
   }
 }
 
 .#{$flexy-prefix} {
   &-input {
-    line-height: $flexy-button-height - 4px;
+    line-height: $flexy-button-height;
     height: $flexy-button-height;
     outline: none;
     border: none;
@@ -23,6 +23,7 @@
     transition: border-color .2s ease;
     -webkit-appearance: none;
     border-radius: 0;
+    margin: 0;
     font-size: $flexy-typo-base-font-size;
     font-family: $flexy-font;
 
@@ -30,14 +31,8 @@
       cursor: pointer;
     }
 
-    @each $name, $color in $flexy-colors {
-      @if ($name == 'default') {
-        @include flexy-input($color);
-      } @else {
-        &_#{$name} {
-          @include flexy-input($color);
-        }
-      }
+    @include flexy-colors {
+      @include flexy-input($flexy-current-color);
     }
   }
 }

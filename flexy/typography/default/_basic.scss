@@ -243,3 +243,23 @@ dl {
     padding-top: $flexy-typo-base-measure;
   }
 }
+
+html, body {
+  line-height: $flexy-typo-base-line-height;
+}
+
+body {
+  background-color: $flexy-typo-body-background;
+  color: $flexy-typo-body-text-color;
+
+  font-family: $flexy-typo-body-font;
+  font-style: normal;
+  font-weight: 400;
+  //line-height: $flexy-typo-base-line-height;
+}
+
+.#{$flexy-prefix} {
+  &-typeset {
+    //@import "default";
+  }
+}

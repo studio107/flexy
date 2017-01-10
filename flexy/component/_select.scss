@@ -5,10 +5,21 @@
   font-style: normal;
 }
 
+@mixin flexy-input-select-color($color) {
+  &__elem {
+    &:hover {
+      box-shadow: 0 0 0 1px $color inset;
+    }
+  }
+}
+
 @mixin flexy-input-select() {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   outline: none;
+  height: $flexy-button-height;
+
+  $select-height: $flexy-button-height;
 
   &__elem {
     border-radius: 0;
@@ -16,47 +27,46 @@
     appearance: none;
     cursor: pointer;
     width: 100%;
-    height: $flexy-button-height + 2px;
-    padding: 0 $flexy-button-height + 4px 0 10px;
+    height: $select-height;
+    line-height: $select-height;
+    padding: 0 $select-height 0 10px;
     margin: 0;
     min-width: 200px;
     outline: none;
+    border: none;
     background: none;
-    border: 1px solid #bdc0c7;
+    box-shadow: 0 0 0 1px $flexy-typo-caption-color inset;
+    //border: 1px solid #bdc0c7;
+    font-size: $flexy-typo-base-font-size;
+    font-family: $flexy-font;
 
     &:-moz-focusring {
       color: transparent;
-      text-shadow: 0 0 0 #000;
+      text-shadow: 0 0 0 $flexy-typo-body-text-color;
       background-color: #fff;
-    }
-
-    &:hover {
-      border: 1px solid #f38231;
     }
   }
 
   &:after {
     font-family: flexy-select;
-    color: #000;
-    background-color: #fff;
+    color: $flexy-typo-body-text-color;
     content: '\f0d7';
     text-align: center;
-    line-height: $flexy-button-height + 2px;
     display: block;
     position: absolute;
-    top: 0;
+    top: 50%;
+    font-size: 14px;
+    margin-top: -($select-height/2);
     right: 0;
-    width: $flexy-button-height;
-    height: $flexy-button-height + 2px;
-    border: 1px solid #bdc0c7;
+    width: $select-height;
+    height: $select-height;
+    line-height: $select-height;
     box-sizing: border-box;
     pointer-events: none;
   }
 
-  &:hover {
-    &:after {
-      border: 1px solid #f38231;
-    }
+  @include flexy-colors {
+    @include flexy-input-select-color($flexy-current-color);
   }
 
   @content;
