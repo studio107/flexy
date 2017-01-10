@@ -2,7 +2,7 @@
   &-divider {
     @include clearfix;
 
-    margin: $flexy-divider-margin auto;
+    margin: $flexy-typo-base-measure auto;
     padding: 0;
     height: $flexy-divider-height;
     width: 100%;

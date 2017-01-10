@@ -92,7 +92,7 @@ $flexy-grid-class-off: 'off' !default;
 /*
  * Divider component
  */
-$flexy-divider-color: #e1e1e1 !default;
+$flexy-divider-color: $flexy-typo-caption-color !default;
 $flexy-divider-margin: 20px !default;
 $flexy-divider-height: 1px !default;
 $flexy-divider-large-medium: 3px !default;

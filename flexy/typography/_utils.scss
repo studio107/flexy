@@ -1,155 +1,245 @@
-// This part based on gist - https://gist.github.com/razwan/10662500
-// Article - https://medium.com/written-in-code/aligning-type-to-baseline-the-right-way-using-sass-e258fce47a9b#.1w0l2561t
+$base-font-size: $flexy-typo-base-font-size;
+$base-line-height: $flexy-typo-base-line-height;
+// this value may vary for each font
+// unitless value relative to 1em
+$cap-height: $flexy-typo-base-cap-height;
 
-@function convert-length(
-  $length,
-  $to-unit,
-  $from-context: $flexy-typo-base-font-size,
-  $to-context: $from-context
-) {
-
-  $from-unit: unit($length);
-
-  // Optimize for cases where `from` and `to` units are accidentally the same.
-  @if $from-unit == $to-unit { @return $length; }
-
-  // Context values must be in px so we can determine a conversion ratio for
-  // relative units.
-  @if unit($from-context) != 'px' { @warn "Paremeter $from-context must resolve to a value in pixel units."; }
-  @if unit($to-context) != 'px' { @warn "Parameter $to-context must resolve to a value in pixel units."; }
-
-  // Convert input length to pixels
-  $px-length: $length;
-
-  @if $from-unit != 'px' {
-    // Convert relative units using the from-context parameter.
-    @if      $from-unit == 'em'  { $px-length: $length * $from-context / 1em }
-    @else if $from-unit == 'rem' { $px-length: $length * $flexy-typo-base-font-size / 1rem }
-    @else if $from-unit == '%'   { $px-length: $length * $from-context / 100% }
-    @else if $from-unit == 'ex'  { $px-length: $length * $from-context / 2ex }
-      // Convert absolute units using Sass' conversion table.
-    @else if $from-unit == 'in'  or
-						 $from-unit == 'mm'  or
-						 $from-unit == 'cm'  or
-						 $from-unit == 'pt'  or
-						 $from-unit == 'pc'  { $px-length: 0px + $length }
-      // Certain units can't be converted.
-    @else if $from-unit == 'ch'  or
-						 $from-unit == 'vw'  or
-						 $from-unit == 'vh'  or
-						 $from-unit == 'vmin' {
-      @warn "#{$from-unit} units can't be reliably converted; Returning original value.";
-      @return $length;
-    }
-    @else {
-      @warn "#{$from-unit} is an unknown length unit. Returning original value.";
-      @return $length;
-    }
-  }
-
-  // Convert length in pixels to the output unit
-  $output-length: $px-length;
-  @if $to-unit != 'px' {
-    // Relative units
-    @if      $to-unit == 'em'  { $output-length: $px-length * 1em / $to-context }
-    @else if $to-unit == 'rem' { $output-length: $px-length * 1rem / $flexy-typo-base-font-size }
-    @else if $to-unit == '%'   { $output-length: $px-length * 100% / $to-context }
-    @else if $to-unit == 'ex'  { $output-length: $px-length * 2ex / $to-context }
-      // Absolute units
-    @else if $to-unit == 'in'  { $output-length: 0in + $px-length }
-    @else if $to-unit == 'mm'  { $output-length: 0mm + $px-length }
-    @else if $to-unit == 'cm'  { $output-length: 0cm + $px-length }
-    @else if $to-unit == 'pt'  { $output-length: 0pt + $px-length }
-    @else if $to-unit == 'pc'  { $output-length: 0pc + $px-length }
-      // Non-convertible units
-    @else if $to-unit == 'ch'  or
-						 $to-unit == 'vw'  or
-						 $to-unit == 'vh'  or
-						 $to-unit == 'vmin' {
-      @warn "#{$to-unit} units can't be reliably converted; Returning original value.";
-      @return $length;
-    }
-    @else {
-      @warn "#{$to-unit} is an unknown length unit. Returning original value.";
-      @return $length;
-    }
-  }
-
-  @return $output-length;
-}
-
-// rhythm unit
-@function flexy-typo-vertical-rhythm($scale: 2) {
-  @return $flexy-typo-base-line-height * $flexy-typo-base-font-size / $scale;
-}
-
-@function flexy-typo-rhythm($lines: 1, $font-size: $flexy-typo-base-font-size) {
-  @return convert-length($lines * $flexy-typo-base-measure, 'rem', $font-size);
-}
-
-@function flexy-typo-base-line($line-height, $cap-height: 0.68) {
-  @return ($line-height - $cap-height) / 2;
-}
-
-// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
-// to round the line height to the nearest half line height instead of the
-// nearest integral line height to avoid large spacing between lines.
-$round-to-nearest-half-line: false !default;
-
-// Ensure there is at least this many pixels
-// of vertical padding above and below the text.
-$min-line-padding: 2px !default;
-
-// Calculate the minimum multiple of rhythm units needed to contain the font-size.
-@function flexy-typo-calc-lines($font-size) {
-  $lines: if($round-to-nearest-half-line,
-          ceil(2 * $font-size / $flexy-typo-base-measure) / 2,
-          ceil($font-size / $flexy-typo-base-measure));
-  // If lines are cramped include some extra lead.
-  @if ($lines * $flexy-typo-base-measure - $font-size) < ($min-line-padding * 2) {
-    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
-  }
-  @return $lines;
-}
-
-// $cap-height - this value may vary for each font unitless value relative to 1em
-@mixin flexy-typo-baseline($font-size, $scale: 1, $cap-height: 0.68) {
-  // use the results
-  font-size: $font-size;
-  $rhythm: flexy-typo-vertical-rhythm($scale);
-  $lines: flexy-typo-calc-lines($font-size);
-  @debug flexy-typo-rhythm($lines, $font-size);
-  $line-height: flexy-typo-rhythm($lines, $font-size);
+@mixin font-size($font-size: $flexy-typo-base-font-size) {
+  font-size: $font-size / $flexy-typo-base-font-size + rem;
+  $line-height: ceil($font-size / $flexy-typo-base-measure) * ($flexy-typo-base-measure / $font-size);
   line-height: $line-height;
-
-  $baseline-distance: flexy-typo-base-line($line-height, $cap-height);
-
-  // METHOD 1
-  // this method can relatively move down elements you may not want to
-  // position: relative;
-  // top: $baseline-distance + em;
-
-  // METHOD 2
-  // if you use this mixin only on elements that have one direction margins
-  // http://csswizardry.com/2012/06/single-direction-margin-declarations/
-  // you can use this method with no worries.
-  // this method assumes the direction is down and the margin is $flexy-typo-base-line-height
-  //padding-top: $baseline-distance;
-  //margin-bottom: $line-height - $baseline-distance;
-
-  // normalizer fix
-  //margin-top: 0;
+  margin-bottom: ($flexy-typo-base-measure / $flexy-typo-base-font-size) + rem;
 }
 
-// $measure = $line-height * $font-size
-@mixin flexy-typo-draw-rhythm($measure, $use-basehold: false) {
-  @if ($use-basehold) {
-    // Use a lined background to test the rhythm
-    $measure: to-int($measure);
-    background-image: url(//basehold.it/i/#{$measure}); // 16px * 1.5
-  } @else {
-    background-image: linear-gradient(to bottom, #ccc 0, rgba(255, 255, 255, 0) 1px);
-    background-repeat: repeat-y;
-    background-size: 100% $measure;
+hr {
+  height: 1px;
+  border: none;
+  width: 100%;
+  background-color: $flexy-typo-caption-color;
+  margin: $flexy-typo-base-measure 0 $flexy-typo-base-measure - 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  color: $flexy-typo-heading-color;
+}
+
+h1 {
+  $font-size: 32px;
+  margin-top: $flexy-typo-base-measure;
+  @include font-size($font-size);
+}
+
+h2 {
+  $font-size: 28px;
+  margin-top: $flexy-typo-base-measure;
+  @include font-size($font-size);
+}
+
+h3 {
+  $font-size: 24px;
+  margin-top: $flexy-typo-base-measure;
+  @include font-size($font-size);
+}
+
+h4 {
+  $font-size: 22px;
+  @include font-size($font-size);
+}
+
+h5 {
+  $font-size: 20px;
+  @include font-size($font-size);
+}
+
+h6 {
+  $font-size: 16px;
+  @include font-size($font-size);
+}
+
+p {
+  font-feature-settings: 'kern', 'onum', 'liga';
+  @include font-size();
+  color: $flexy-typo-body-text-color;
+}
+
+code, pre {
+  background: {
+    color: #f4f4f4;
+  }
+}
+
+pre {
+  display: block;
+  padding: $flexy-typo-base-measure;
+  margin-bottom: $flexy-typo-base-measure;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+blockquote {
+  padding: $flexy-typo-base-measure;
+  margin-bottom: $flexy-typo-base-measure;
+  border-left: 2px solid map-get($flexy-colors, default);
+
+  p {
+    &:only-child {
+      margin: 0;
+    }
+  }
+}
+
+.upper {
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+// Real small caps.
+.small-caps {
+  font-feature-settings: 'smcp', 'kern';
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+}
+
+// Consistent height numbers with OpenType.
+.lining-numerals {
+  font-feature-settings: 'lnum', 'kern';
+}
+
+// Ascending and descending numbers with OpenType.
+.oldstyle-numerals {
+  font-feature-settings: 'onum', 'kern';
+}
+
+small, .caption {
+  $font-size: 14px;
+  @include font-size($font-size);
+  color: $flexy-typo-caption-color;
+  font-feature-settings: 'kern', 'onum', 'liga';
+}
+
+// Bold.
+b, strong, .bold {
+  font-weight: bold;
+}
+
+// Italic.
+em, i, .italic {
+  font-style: italic;
+}
+
+// Lists.
+ul, ol {
+  @include font-size();
+
+  li {
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+
+    //@include breakpoint(break-1) {
+    //  margin-left: 0;
+    //}
+
+    ol, ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+  }
+}
+
+// Ordered lists.
+ol {
+  list-style-type: none;
+
+  li {
+    counter-increment: top-level;
+
+    &:before {
+      content: counter(top-level) '.';
+      font-feature-settings: 'lnum', 'tnum';
+      margin-left: -3rem;
+      position: absolute;
+      text-align: right;
+      width: 2em;
+    }
+
+    ul {
+
+      li {
+
+        &:before {
+          content: '';
+        }
+
+        ol {
+
+          li {
+            counter-increment: alt-level;
+
+            &:before {
+              content: counter(alt-level) '.';
+            }
+          }
+        }
+      }
+    }
+
+    ol {
+
+      li {
+        counter-increment: sub-level;
+
+        &:before {
+          content: counter(top-level) '.' counter(sub-level);
+        }
+
+        ul {
+
+          li {
+
+            &:before {
+              content: '';
+            }
+          }
+        }
+
+        ol {
+
+          li {
+            counter-increment: sub-sub-level;
+
+            &:before {
+              content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Definition lists.
+dl {
+  @include font-size();
+
+  dt, dd {
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+
+    @include flexy-media-screen((max-width: flexy-breakpoint(medium))) {
+      margin-left: 0;
+    }
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd + dt {
+    padding-top: $flexy-typo-base-measure;
   }
 }

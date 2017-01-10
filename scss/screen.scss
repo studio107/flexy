@@ -8,7 +8,7 @@ $flexy-colors: $flat;
 @import "flexy/theme/flat_outline";
 
 .b-header {
-  margin: 2rem 2rem 4rem 2rem;
+  margin: $flexy-typo-base-measure $flexy-typo-base-measure $flexy-typo-base-measure * 2 $flexy-typo-base-measure;
 }
 
 .b-logo {
@@ -19,8 +19,7 @@ $flexy-colors: $flat;
 }
 
 .b-grid {
-  //@include flexy-typo-draw-rhythm($flexy-typo-base-measure);
-  @include debug-vertical-alignment;
+  @include flexy-typo-draw-rhythm;
 }
 
 .b-helper {
