@@ -1,3 +1,34 @@
+// Value in scale in $modular-scale?
+// Used in following fontsize mixin.
+@function in-modular-scale($scale, $key) {
+  $map: map-get($modular-scale, $scale);
+  $output: map-has-key($map, $key);
+  @return $output;
+}
+
+@function flexy-typo-get-font-size($font-size, $breakpoint: 0) {
+  $value: type-of($font-size);
+  $scale: if($breakpoint == all, scale-0, scale-#{$breakpoint});
+
+  @if $value == number {
+
+    @return $value;
+    // If using a variable from the scale for fontsize.
+
+  } @else if (type-of($scale) == map && in-modular-scale($scale, $font-size)) {
+
+    // Check if value exists in scale.
+
+    @return map-get(map-get($modular-scale, $scale), $font-size);
+
+  } @else {
+
+    @warn "#{$font-size} with #{$breakpoint} breakpoint is not a valid scale variable";
+    @return null;
+
+  }
+}
+
 @function flexy-rhythm-get-rootsize($i: 1) {
   @return nth($sizes, if($i == all, 1, $i));
 }

@@ -343,13 +343,13 @@ a {
   padding-top: 0.64834rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.28571rem; } }
+      font-size: 2.14286rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.66667rem; } }
+      font-size: 2.13333rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h1, .b-typeset .alpha {
-      font-size: 2.94118rem; } }
+      font-size: 2.35294rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h1, .b-typeset .alpha {
       font-size: 2.63158rem; } }
@@ -377,13 +377,13 @@ a {
   padding-top: 0.73959rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 2.00714rem; } }
+      font-size: 1.9rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 2.36667rem; } }
+      font-size: 1.87333rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h2, .b-typeset .beta {
-      font-size: 2.58235rem; } }
+      font-size: 2.08824rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h2, .b-typeset .beta {
       font-size: 2.31053rem; } }
@@ -411,13 +411,13 @@ a {
   padding-top: 0.81868rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 1.82857rem; } }
+      font-size: 1.71429rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 2rem; } }
+      font-size: 1.70667rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h3, .b-typeset .gamma {
-      font-size: 2.07647rem; } }
+      font-size: 1.76471rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h3, .b-typeset .gamma {
       font-size: 1.85789rem; } }
@@ -445,13 +445,13 @@ a {
   padding-top: 0.39168rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.60714rem; } }
+      font-size: 1.52143rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.78rem; } }
+      font-size: 1.5rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h4, .b-typeset .delta {
-      font-size: 1.82941rem; } }
+      font-size: 1.57059rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h4, .b-typeset .delta {
       font-size: 1.63684rem; } }
@@ -479,13 +479,13 @@ a {
   padding-top: 0.45555rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.46429rem; } }
+      font-size: 1.37143rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.5rem; } }
+      font-size: 1.36667rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h5, .b-typeset .epsilon {
-      font-size: 1.47059rem; } }
+      font-size: 1.32353rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h5, .b-typeset .epsilon {
       font-size: 1.31579rem; } }
@@ -513,13 +513,13 @@ a {
   padding-top: 0.51334rem; }
   @media screen and (min-width: 48em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.28571rem; } }
+      font-size: 1.21429rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.33333rem; } }
+      font-size: 1.2rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset h6, .b-typeset .zeta {
-      font-size: 1.29412rem; } }
+      font-size: 1.17647rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset h6, .b-typeset .zeta {
       font-size: 1.15789rem; } }
@@ -646,13 +646,13 @@ a {
   width: 100%; }
   @media screen and (min-width: 48em) {
     .b-typeset table {
-      font-size: 1.16429rem; } }
+      font-size: 1.09286rem; } }
   @media screen and (min-width: 62em) {
     .b-typeset table {
-      font-size: 1.12667rem; } }
+      font-size: 1.08667rem; } }
   @media screen and (min-width: 75em) {
     .b-typeset table {
-      font-size: 1.03529rem; } }
+      font-size: 0.99412rem; } }
   @media screen and (min-width: 100em) {
     .b-typeset table {
       font-size: 0.92632rem; } }
@@ -680,13 +680,13 @@ a {
     padding-bottom: 1px; }
     @media screen and (min-width: 48em) {
       .b-typeset table thead th {
-        font-size: 1.28571rem; } }
+        font-size: 1.21429rem; } }
     @media screen and (min-width: 62em) {
       .b-typeset table thead th {
-        font-size: 1.33333rem; } }
+        font-size: 1.2rem; } }
     @media screen and (min-width: 75em) {
       .b-typeset table thead th {
-        font-size: 1.29412rem; } }
+        font-size: 1.17647rem; } }
     @media screen and (min-width: 100em) {
       .b-typeset table thead th {
         font-size: 1.15789rem; } }
@@ -4322,13 +4322,13 @@ img {
       padding-top: 0.51334rem; }
       @media screen and (min-width: 48em) {
         .b-header-menu__item {
-          font-size: 1.28571rem; } }
+          font-size: 1.21429rem; } }
       @media screen and (min-width: 62em) {
         .b-header-menu__item {
-          font-size: 1.33333rem; } }
+          font-size: 1.2rem; } }
       @media screen and (min-width: 75em) {
         .b-header-menu__item {
-          font-size: 1.29412rem; } }
+          font-size: 1.17647rem; } }
       @media screen and (min-width: 100em) {
         .b-header-menu__item {
           font-size: 1.15789rem; } }
@@ -4364,13 +4364,13 @@ img {
   font-weight: 900; }
   @media screen and (min-width: 48em) {
     .b-logo {
-      font-size: 1.82857rem; } }
+      font-size: 1.71429rem; } }
   @media screen and (min-width: 62em) {
     .b-logo {
-      font-size: 2rem; } }
+      font-size: 1.70667rem; } }
   @media screen and (min-width: 75em) {
     .b-logo {
-      font-size: 2.07647rem; } }
+      font-size: 1.76471rem; } }
   @media screen and (min-width: 100em) {
     .b-logo {
       font-size: 1.85789rem; } }
