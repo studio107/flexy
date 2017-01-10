@@ -13,6 +13,8 @@
   cursor: pointer;
   padding: 0 10px;
   border-radius: 0;
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
 }
 
 @function flexy-button-active-color($color) {
