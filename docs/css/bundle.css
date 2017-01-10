@@ -308,6 +308,7 @@ a {
   line-height: 2rem;
   margin-bottom: 1.43999rem;
   padding-top: 0.56001rem;
+  font-weight: 300;
   -webkit-font-feature-settings: 'kern', 'onum', 'liga';
           font-feature-settings: 'kern', 'onum', 'liga'; }
   @media screen and (min-width: 48em) {
@@ -1140,38 +1141,34 @@ img {
       border-right-color: #727f80; }
 
 .b-divider {
-  margin: 24px auto;
+  *zoom: 1;
+  display: none;
   border: 0;
+  position: relative;
   width: 100%;
-  display: block;
-  height: 1px;
-  background-color: #BDC8CC;
-  text-align: center; }
+  background-image: -webkit-linear-gradient(top, transparent 0%, transparent 49%, #BDC8CC 50%, transparent 51%, transparent 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 49%, #BDC8CC 50%, transparent 51%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 142%;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1.33333rem;
+  margin-bottom: 1.43999rem;
+  padding-top: 0.56001rem; }
   .b-divider:before, .b-divider:after {
     display: table;
-    content: ""; }
+    content: "";
+    line-height: 0; }
   .b-divider:after {
     clear: both; }
   .b-divider:after {
     content: "§";
     display: inline-block;
     position: relative;
-    top: -0.7em;
-    font-size: 1.33333rem;
+    top: -50%;
     padding: 0 0.25em;
-    background: #FCFCFC; }
-    @media screen and (min-width: 48em) {
-      .b-divider:after {
-        font-size: 1.21429rem; } }
-    @media screen and (min-width: 62em) {
-      .b-divider:after {
-        font-size: 1.2rem; } }
-    @media screen and (min-width: 75em) {
-      .b-divider:after {
-        font-size: 1.17647rem; } }
-    @media screen and (min-width: 100em) {
-      .b-divider:after {
-        font-size: 1.15789rem; } }
+    font-size: 16px;
+    text-shadow: 0.1rem 0 #FCFCFC, 0.15rem 0 #FCFCFC, -0.1rem 0 #FCFCFC, -0.15rem 0 #FCFCFC; }
 
 .b-menu {
   list-style: none;
@@ -1530,12 +1527,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1572,12 +1563,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1614,12 +1599,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1656,12 +1635,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1698,12 +1671,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1740,12 +1707,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1782,12 +1743,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1824,12 +1779,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1866,12 +1815,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1908,12 +1851,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1950,12 +1887,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -1992,12 +1923,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -2035,12 +1960,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2075,12 +1994,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2115,12 +2028,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2155,12 +2062,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2195,12 +2096,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2235,12 +2130,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2275,12 +2164,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2315,12 +2198,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2355,12 +2232,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2395,12 +2266,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2435,12 +2300,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2475,12 +2334,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2517,12 +2370,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2557,12 +2404,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2597,12 +2438,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2637,12 +2472,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2677,12 +2506,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2717,12 +2540,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2757,12 +2574,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2797,12 +2608,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2837,12 +2642,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2877,12 +2676,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2917,12 +2710,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2957,12 +2744,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -2999,12 +2780,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3039,12 +2814,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3079,12 +2848,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3119,12 +2882,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3159,12 +2916,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3199,12 +2950,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3239,12 +2984,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3279,12 +3018,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3319,12 +3052,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3359,12 +3086,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3399,12 +3120,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3439,12 +3154,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3481,12 +3190,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3521,12 +3224,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3561,12 +3258,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3601,12 +3292,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3641,12 +3326,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3681,12 +3360,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3721,12 +3394,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3761,12 +3428,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3801,12 +3462,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3841,12 +3496,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3881,12 +3530,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3921,12 +3564,6 @@ img {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     min-height: 1px;
-    -webkit-transition-property: max-width, -webkit-flex-basis;
-    transition-property: max-width, -webkit-flex-basis;
-    transition-property: flex-basis, max-width;
-    transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-    -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     -webkit-box-flex: 1;
@@ -3962,12 +3599,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   .b-col_auto {
@@ -3991,12 +3622,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   min-height: 1px;
-  -webkit-transition-property: max-width, -webkit-flex-basis;
-  transition-property: max-width, -webkit-flex-basis;
-  transition-property: flex-basis, max-width;
-  transition-property: flex-basis, max-width, -webkit-flex-basis, -ms-flex-preferred-size;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   -webkit-box-flex: 1;
@@ -4627,16 +4252,68 @@ img {
     box-shadow: 0 0 0 1px #7F8C8D inset; }
 
 .b-header {
-  margin: 24px 24px 48px 24px; }
+  margin: 24px 0; }
+  .b-header-menu {
+    font-size: 16px; }
+    .b-header-menu__item {
+      line-height: 2rem;
+      font-size: 1.33333rem;
+      margin-bottom: 0.48666rem;
+      padding-top: 0.51334rem; }
+      @media screen and (min-width: 48em) {
+        .b-header-menu__item {
+          font-size: 1.21429rem;
+          margin-bottom: 0.4432rem;
+          padding-top: 0.5568rem; } }
+      @media screen and (min-width: 62em) {
+        .b-header-menu__item {
+          font-size: 1.2rem;
+          margin-bottom: 0.43799rem;
+          padding-top: 0.56201rem; } }
+      @media screen and (min-width: 75em) {
+        .b-header-menu__item {
+          font-size: 1.17647rem;
+          margin-bottom: 0.4294rem;
+          padding-top: 0.5706rem; } }
+      @media screen and (min-width: 100em) {
+        .b-header-menu__item {
+          font-size: 1.15789rem;
+          margin-bottom: 0.42262rem;
+          padding-top: 0.57738rem; } }
+      .b-header-menu__item:not(:last-child) {
+        margin-right: 24px; }
 
 .b-logo {
   color: #000;
   text-decoration: none;
-  font-size: 32px;
+  line-height: 2rem;
+  font-size: 1.86667rem;
+  margin-bottom: 0.68132rem;
+  padding-top: 0.31868rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-weight: 900; }
+  @media screen and (min-width: 48em) {
+    .b-logo {
+      font-size: 1.71429rem;
+      margin-bottom: 0.6257rem;
+      padding-top: 0.3743rem; } }
+  @media screen and (min-width: 62em) {
+    .b-logo {
+      font-size: 1.70667rem;
+      margin-bottom: 0.62292rem;
+      padding-top: 0.37708rem; } }
+  @media screen and (min-width: 75em) {
+    .b-logo {
+      font-size: 1.76471rem;
+      margin-bottom: 0.64411rem;
+      padding-top: 0.35589rem; } }
+  @media screen and (min-width: 100em) {
+    .b-logo {
+      font-size: 1.85789rem;
+      margin-bottom: 0.67812rem;
+      padding-top: 0.32188rem; } }
 
 .b-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
@@ -4648,9 +4325,14 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
+  line-height: 2rem;
+  font-size: 0.95833rem;
+  margin-bottom: 1.31624rem;
+  padding-top: 0.68376rem;
   background-color: rgba(0, 163, 11, 0.2);
-  border: 1px solid rgba(0, 163, 11, 0.2); }
+  box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
+  padding: 0 5px;
+  margin: 0 -5px; }
 
 .b-footer {
   font-size: 16px;

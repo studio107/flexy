@@ -13,7 +13,10 @@
 @import "mixins";
 
 @import "typography/debug";
+@import "typography/modular_scale";
+@import "typography/type_scale";
 @import "typography/sassline/typography";
+//@import "typography/default/basic";
 
 // Components
 @import "component/button";

@@ -5,3 +5,7 @@
 @function to-int($number) {
   @return $number / ($number * 0 + 1);
 }
+
+@function to-em($pixels, $base-font-size: $flexy-typo-base-font-size) {
+  @return #{$pixels/$base-font-size}em;
+}

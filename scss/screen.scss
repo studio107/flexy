@@ -8,13 +8,25 @@ $flexy-colors: $flat;
 @import "flexy/theme/flat";
 
 .b-header {
-  margin: $flexy-typo-base-measure $flexy-typo-base-measure $flexy-typo-base-measure * 2 $flexy-typo-base-measure;
+  margin: $flexy-typo-base-measure 0;
+
+  &-menu {
+    font-size: $flexy-typo-base-font-size;
+
+    &__item {
+      @include sassline($fontsize: zeta, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
+
+      &:not(:last-child) {
+        margin-right: $flexy-typo-base-measure;
+      }
+    }
+  }
 }
 
 .b-logo {
   color: #000;
   text-decoration: none;
-  font-size: 32px;
+  @include sassline($fontsize: gamma, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
   @include antialias;
   font-weight: 900;
 }
@@ -25,9 +37,11 @@ $flexy-colors: $flat;
 
 .b-helper {
   @include ellipsis;
-  font-size: 14px;
+  @include sassline(iota);
   background-color: rgba(0, 163, 11, 0.2);
-  border: 1px solid rgba(0, 163, 11, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
+  padding: 0 5px;
+  margin: 0 -5px;
 }
 
 .b-footer {

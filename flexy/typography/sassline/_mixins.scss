@@ -91,7 +91,8 @@ $points: map-values($breakpoints);
 
       // Loop through breakpoints.
       @for $i from 2 through $breakpoints-limit {
-        @media screen and (min-width: nth($points, $i) / 16 * 1em) {
+        $point: to-int(nth($points, $i));
+        @media screen and (min-width: $point / 16 * 1em) {
           font-size: #{$fontsize / nth($sizes, $i)}rem;
         }
       }
@@ -122,111 +123,58 @@ $points: map-values($breakpoints);
   }
 }
 
+@function flexy-typo-get-font-size($font-size, $breakpoint: 0) {
+  $value: type-of($font-size);
+  $scale: if($breakpoint == all, scale-0, scale-#{$breakpoint});
+
+  @if $value == number {
+
+    @return $value;
+    // If using a variable from the scale for fontsize.
+
+  } @else if in-modular-scale($scale, $font-size) {
+
+    // Check if value exists in scale.
+
+    @return map-get(map-get($modular-scale, $scale), $font-size);
+
+  } @else {
+
+    @warn "#{$font-size} is not a valid scale variable";
+    @return null;
+
+  }
+}
+
 // Advanced baseline magic.
 // ! Read the README to help understand what is going on here.
 // Parts based on https://gist.github.com/razwan/10662500
-@mixin baseline($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0) {
-  // Type of chosen variables.
-  $font-value: type-of($fontsize);
-  $break-value: type-of($breakpoint);
-
-  // Cap height
-  $cap-height: $base-cap-height;
-
-  // Check if value exists in scale.
-  $in-scale: in-modular-scale(scale-0, $fontsize);
-
+@mixin baseline($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
   // Set the line-height (if it isn’t set at 0).
   @if $lineheight != 0 {
     line-height: #{$lineheight}rem;
   }
+ 
+  $font-value: flexy-typo-get-font-size($fontsize, $breakpoint);
 
-  // If specifying a breakpoint to use (and breakpoint exists).
-  @if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint >= 0 {
+  // Calculate push
+  margin-bottom: flexy-rhythm-offset-push($font-value, $lineheight, $below, $breakpoint, $cap-height);
+  // Calculate shift
+  padding-top: flexy-rhythm-offset-shift($font-value, $lineheight, $below, $breakpoint, $cap-height);
 
-    // If using a number for fontsize.
-    @if $font-value == number {
-      $rootsize: nth($sizes, ($breakpoint + 1));
-      $baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
-      $baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+  // Loop through breakpoints.
+  @for $i from 2 through $breakpoints-limit {
 
-      margin-bottom: #{$baseline-push}rem;
-      padding-top: #{$baseline-shift}rem;
+    $point: to-int(nth($points, $i));
+    @media screen and (min-width: $point / 16 * 1em) {
 
-      // If using a variable from the scale for fontsize.
-    } @else if $in-scale == true {
-      $get-scale: map-get($modular-scale, scale-#{$breakpoint});
-      $get-size: map-get($get-scale, $fontsize);
-      $rootsize: nth($sizes, ($breakpoint + 1));
+      $font-value: flexy-typo-get-font-size($fontsize, $i - 1);
 
-      $baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
-      $baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
-
-      margin-bottom: #{$baseline-push}rem;
-      padding-top: #{$baseline-shift}rem;
-
-    } @else {
-      @warn "#{$fontsize} is not a valid scale variable";
+      // Calculate push
+      margin-bottom: flexy-rhythm-offset-push($font-value, $lineheight, $below, $i, $cap-height);
+      // Calculate shift
+      padding-top: flexy-rhythm-offset-shift($font-value, $lineheight, $below, $i, $cap-height);
     }
-
-    // If want to use value for all breakpoints.
-  } @else if $breakpoint == all {
-
-    // If using a number for fontsize.
-    @if $font-value == number {
-      $rootsize: nth($sizes, 1);
-      $baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
-      $baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
-
-      margin-bottom: #{$baseline-push}rem;
-      padding-top: #{$baseline-shift}rem;
-
-      // Loop through breakpoints.
-      @for $i from 2 through $breakpoints-limit {
-        $rootsize: nth($sizes, $i);
-        $baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
-        $baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
-
-        @media screen and (min-width: nth($points, $i) / 16 * 1em) {
-          margin-bottom: #{$baseline-push}rem;
-          padding-top: #{$baseline-shift}rem;
-        }
-      }
-
-      // If using a variable from the scale for fontsize.
-    } @else if $in-scale == true {
-      $get-scale: map-get($modular-scale, scale-0);
-      $get-size: map-get($get-scale, $fontsize);
-      $rootsize: nth($sizes, 1);
-
-      $baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
-      $baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
-
-      margin-bottom: #{$baseline-push}rem;
-      padding-top: #{$baseline-shift}rem;
-
-      // Loop through breakpoints.
-      @for $i from 2 through $breakpoints-limit {
-        $get-scale: map-get($modular-scale, scale-#{$i - 1});
-        $get-size: map-get($get-scale, $fontsize);
-        $rootsize: nth($sizes, $i);
-
-        $baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
-        $baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
-
-        $point: to-int(nth($points, $i));
-        @media screen and (min-width: $point / 16 * 1em) {
-          margin-bottom: #{$baseline-push}rem;
-          padding-top: #{$baseline-shift}rem;
-        }
-      }
-
-    } @else {
-      @warn "#{$fontsize} is not a valid scale variable";
-    }
-
-  } @else {
-    @warn "#{$breakpoint} is not valid to use as a breakpoint";
   }
 }
 
@@ -276,7 +224,9 @@ $points: map-values($breakpoints);
         $rootsize: nth($sizes, $i);
         $baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
         $baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
-        @media screen and (min-width: nth($points, $i) / 16 * 1em) {
+
+        $point: to-int(nth($points, $i));
+        @media screen and (min-width: $point / 16 * 1em) {
           font-size: #{$fontsize / nth($sizes, $i)}rem;
           margin-bottom: #{$baseline-push}rem;
           padding-top: #{$baseline-shift}rem;
@@ -314,16 +264,5 @@ $points: map-values($breakpoints);
 
   } @else {
     @warn "#{$breakpoint} is not valid to use as a breakpoint";
-  }
-}
-
-// Clearfix.
-@mixin clearfix {
-  &:before, &:after {
-    display: table;
-    content: "";
-  }
-  &:after {
-    clear: both;
   }
 }

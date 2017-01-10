@@ -54,6 +54,7 @@ a {
   p {
     @include baseline($fontsize: zeta, $lineheight: 2, $below: 2, $breakpoint: all);
 
+    font-weight: 300;
     font-feature-settings: 'kern', 'onum', 'liga';
   }
 

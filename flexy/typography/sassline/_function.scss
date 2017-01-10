@@ -1,0 +1,13 @@
+@function flexy-rhythm-get-rootsize($i: 1) {
+  @return nth($sizes, if($i == all, 1, $i));
+}
+
+@function flexy-rhythm-offset-shift($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
+  $rootsize: flexy-rhythm-get-rootsize($breakpoint);
+  @return #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001}rem;
+}
+
+@function flexy-rhythm-offset-push($fontsize, $lineheight: 2, $below: 2, $breakpoint: 0, $cap-height: $base-cap-height) {
+  $rootsize: flexy-rhythm-get-rootsize($breakpoint);
+  @return #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)}rem;
+}
