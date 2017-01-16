@@ -34,5 +34,9 @@
     @include flexy-colors {
       @include flexy-input($flexy-current-color);
     }
+
+    &::-ms-expand {
+      display: none;
+    }
   }
 }

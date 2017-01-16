@@ -46,6 +46,10 @@
       text-shadow: 0 0 0 $flexy-typo-body-text-color;
       background-color: #fff;
     }
+
+    &::-ms-expand {
+      display: none;
+    }
   }
 
   &:after {
