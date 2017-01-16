@@ -892,6 +892,8 @@ img {
       box-shadow: 0 0 0 1px #7F8C8D inset; }
     .b-input_asbestos:hover {
       box-shadow: 0 0 0 1px #727f80 inset; }
+  .b-input::-ms-expand {
+    display: none; }
 
 .b-label {
   position: relative;
@@ -908,6 +910,7 @@ img {
   border-color: rgba(0, 0, 0, 0.15);
   display: inline-block;
   padding: 2px 6px;
+  vertical-align: top;
   background-color: #2980B9;
   color: #fff; }
   @media screen and (min-width: 48em) {
@@ -4214,6 +4217,8 @@ img {
       color: transparent;
       text-shadow: 0 0 0 #494949;
       background-color: #fff; }
+    .b-select__elem::-ms-expand {
+      display: none; }
   .b-select:after {
     font-family: flexy-select;
     color: #494949;
