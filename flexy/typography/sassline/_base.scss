@@ -1,39 +1,39 @@
 // Typography
 // ---------------------------------------
 
-// Setting root sizes and base styles.
-html {
-  @include flexy-typo-rootsize;
+@mixin flexy-typo-init {
+  // Setting root sizes and base styles.
+  html {
+    @include flexy-typo-rootsize;
 
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
 
-// Site-wide base styles.
-body {
-  @include flexy-typo-fontsize(zeta, all);
+  // Site-wide base styles.
+  body {
+    @include flexy-typo-fontsize(zeta, all);
 
-  font-family: $flexy-font;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem;
-}
+    font-family: $flexy-font;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+  }
 
-// Links.
-a {
-  color: $flexy-typo-link-color;
-  text-decoration: none;
-  transition: color .1s, background-color .1s;
-
-  &:hover, &:active, &:focus {
-    color: $flexy-typo-link-hover;
+  // Links.
+  a {
+    color: $flexy-typo-link-color;
     text-decoration: none;
+    transition: color .1s, background-color .1s;
+
+    &:hover, &:active, &:focus {
+      color: $flexy-typo-link-hover;
+      text-decoration: none;
+    }
   }
 }
 
-// Styles for typeset text.
-.b-typeset {
-
+@mixin flexy-typo-typeset {
   // Nice underlines for text links.
   p a, li a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($flexy-typo-link-color, 20%) 50%);
@@ -365,4 +365,10 @@ a {
   .oldstyle-numerals {
     font-feature-settings: 'onum', 'kern';
   }
+}
+
+// Styles for typeset text.
+.b-typeset {
+
+  @include flexy-typo-typeset;
 }
