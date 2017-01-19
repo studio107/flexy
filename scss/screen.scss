@@ -1,10 +1,10 @@
-@import "flexy/colors/schema";
+@import "flexy/colors/schema/flat";
 
 $flexy-grid-wrapper-width: 1280px;
-$flexy-colors: $flat;
+$flexy-colors: $flexy-color-schema;
 
 @import "flexy";
-@import "flexy/theme/flat";
+@import "flexy/theme/flat/flat";
 
 .b-header {
   margin: $flexy-typo-base-measure 0;

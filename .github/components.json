@@ -10,5 +10,17 @@
   {
     "path": "flexy/typography",
     "git": "git@github.com:flexy-framework/typography.git"
+  },
+  {
+    "path": "flexy/colors",
+    "git": "git@github.com:flexy-framework/colors.git"
+  },
+  {
+    "path": "flexy/grid",
+    "git": "git@github.com:flexy-framework/grid.git"
+  },
+  {
+    "path": "flexy/reset",
+    "git": "git@github.com:flexy-framework/reset.git"
   }
 ]

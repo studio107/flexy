@@ -1,0 +1,24 @@
+@import "settings";
+
+@function flexy-breakpoint($breakpoint) {
+  @if (map-has-key($flexy-breakpoints, $breakpoint)) {
+    @return map-get($flexy-breakpoints, $breakpoint);
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+    @return null;
+  }
+}
+
+@function flexy-media-map($map) {
+  $temp: ();
+  @each $prefix, $breakpoint in $map {
+    $temp: append($temp, '(' + $prefix + ': ' + $breakpoint + ')');
+  }
+  @return implode($temp, ' and ');
+}
+
+@mixin flexy-media-screen($media) {
+  @media only screen and #{flexy-media-map($media)} {
+    @content;
+  }
+}

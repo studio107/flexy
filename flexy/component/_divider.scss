@@ -1,31 +1,12 @@
 .#{$flexy-prefix} {
   &-divider {
     @include clearfix;
-    display: none;
-
     border: 0;
     position: relative;
     width: 100%;
-    //display: block;
-    background: {
-      image: linear-gradient(to bottom, transparent 0%, transparent 49%, $flexy-typo-caption-color 50%, transparent 51%, transparent 100%);
-      repeat: no-repeat;
-      size: 100% 142%;
-    }
+    height: 1px;
+    background-color: #e8e8e8;
     text-align: center;
-    //@include sassline(zeta);
-
-    &:after {
-      content: "§";
-      display: inline-block;
-      position: relative;
-      top: -50%;
-      padding: 0 0.25em;
-      font-size: $flexy-typo-base-font-size;
-      text-shadow: 0.1rem 0 $flexy-typo-body-background,
-      0.15rem 0 $flexy-typo-body-background,
-      -0.1rem 0 $flexy-typo-body-background,
-      -0.15rem 0 $flexy-typo-body-background;
-    }
+    margin: 25px 0;
   }
 }

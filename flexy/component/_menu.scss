@@ -59,7 +59,7 @@ $flexy-menu-selector: #{$flexy-prefix}-menu;
       margin-left: auto;
     }
 
-    @each $name, $color in $flexy-colors {
+    @each $name, $color in $flexy-color-schema {
       &.#{modifier($flexy-menu-item-selector, ($name))} {
         border-radius: 4px;
         color: #000;

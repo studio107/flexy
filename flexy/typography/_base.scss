@@ -31,8 +31,7 @@ a {
   }
 }
 
-// Styles for typeset text.
-.b-typeset {
+@mixin flexy-typo-typeset {
 
   // Nice underlines for text links.
   p a, li a {
@@ -365,4 +364,9 @@ a {
   .oldstyle-numerals {
     font-feature-settings: 'onum', 'kern';
   }
+}
+
+// Styles for typeset text.
+.b-typeset {
+  @include flexy-typo-typeset;
 }

@@ -27,6 +27,10 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+  &_center {
+    align-items: center;
+  }
+
   & & {
     @include flexy-grid-space(-$flexy-grid-gutter, margin, horizontal);
   }

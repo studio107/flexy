@@ -1,6 +1,7 @@
-@import "reset";
+@import "reset/reset";
 
 // Default settings
+
 @import "settings";
 
 // Functions
@@ -12,15 +13,12 @@
 // Mixins
 @import "mixins";
 
-@import "typography/debug";
+@import "typescale/typescale";
+@import "colors/colors";
+@import "breakpoint/breakpoint";
 @import "typography/typography";
 
-// Components
-@import "ui/button";
-@import "ui/checkbox";
-@import "ui/select";
-@import "ui/group";
-@import "ui/input";
+@import "ui/ui";
 
 @import "grid/grid";
 

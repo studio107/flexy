@@ -1,16 +1,18 @@
 $flexy-debug: false !default;
 
+@import "grid/settings";
+
 // bem
 $flexy-prefix: 'b' !default;
 
 // defaults
 $flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$flexy-colors: (
+$flexy-color-schema: (
         default: #353535,
         blue: #007fff,
-        white: #fff,
-        green: #42aa09
+        white: #fff
 ) !default;
+
 $flexy-typo-heading-size: (
         small: 0,
         medium: 768px,
@@ -28,7 +30,7 @@ $flexy-typo-base-font-size: 16px !default;
 $flexy-typo-base-line-height: 1.5 !default;
 $flexy-typo-base-measure: $flexy-typo-base-font-size * $flexy-typo-base-line-height;
 
-$flexy-typo-link-color: map-get($flexy-colors, default) !default;
+$flexy-typo-link-color: map-get($flexy-color-schema, default) !default;
 $flexy-typo-link-hover: darken($flexy-typo-link-color, 5%) !default;
 
 $flexy-typo-body-text-color: #494949 !default;
@@ -45,52 +47,6 @@ $flexy-typo-heading-font: $flexy-font !default;
 
 // elements
 $flexy-headings: h1, h2, h3, h4, h5, h6 !default;
-
-// media
-
-/**
- * Break point namespace object
- *
- * Set the default namespace object with these defaults with the
- * understanding that you can pass in whatever you might require for your site.
- *
- * $fg-breakpoints is a Sass list with nested lists inside. Each sub list defines two things.
- * 1. The namespace for that breakpoint. (Required) (i.e. xs, sm, md, lg)
- * 2. The min-width measurement for the breakpoint for that namespace. (i.e. 48em, 62em, 75em)
- *
- * Note: These should be in the proper order (at least till libsass handles map keys properly).
- *
- * Note: If the measurement is left out then it will be skipped when generating
- * the grid and applied to global styles.
- */
-$flexy-breakpoints: (
-        small: 0,
-        medium: 768px,
-        large: 992px,
-        xlarge: 1200px,
-        xxlarge: 1600px
-) !default;
-
-/*
- * Grid component
- */
-
-// $flexy-grid-columns will inform the grid loops how many columns there should be.
-$flexy-grid-columns: 12 !default;
-// $flexy-grid-gutter will inform the grid loops how big eac column's gutters should be.
-$flexy-grid-gutter: 0.5rem !default;
-// $flexy-grid-container-width will inform the grid how many px can contain container
-$flexy-grid-wrapper-width: 100% !default;
-// $flexy-grid-class-row string used for the row class
-$flexy-grid-class-row: 'row' !default;
-
-// The grid will name columns, rows, offsets based on these three variables:
-// $flexy-grid-class-container string used for the column container class
-$flexy-grid-class-wrapper: 'wrapper' !default;
-// $flexy-grid-class-col string used for the column class
-$flexy-grid-class-col: 'col' !default;
-// $flexy-grid-class-off string used for the offset class
-$flexy-grid-class-off: 'off' !default;
 
 /*
  * Divider component

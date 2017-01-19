@@ -1,18 +1,26 @@
-//@import "settings";
+@import "settings";
 
-//html {
-//  // set body 100% height
-//  height: 100%;
-//}
-//
-//body {
-//  // set body 100% height
-//  min-height: 100%;
-//
-//  font-size: 15px;
-//  font-family: $flexy-font;
-//}
-//
-//#{$flexy-headings} {
-//  margin-top: 0;
-//}
+html {
+  // set body 100% height
+  height: 100%;
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  // set body 100% height
+  min-height: 100%;
+
+  font-family: $flexy-font;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+}

@@ -87,20 +87,3 @@
   @include flexy-typo-fontsize($fontsize, $breakpoint);
   @include flexy-typo-baseline($fontsize, $lineheight, $below, $breakpoint, $cap-height);
 }
-
-// Использование:
-// @include flexy-type-scale($flexy-typo-base-font-size, flexy-get-modular-scale(golden-ratio));
-// Генерация размеров заголовков с помощью modular_scale. См _modular_scale.scss
-// Не используйте этот миксин в продакшене вместе с вертикальным ритмом, создан для отладки и примера.
-// С вертикальным ритмом в данный момент не проинтегрирован.
-@mixin flexy-type-scale($base-font-size, $ratio: 1.333) {
-  $temp-font-size: $base-font-size;
-
-  @for $i from 6 through 1 {
-    h#{$i} {
-      font-size: to-em($temp-font-size);
-      line-height: $temp-font-size * $ratio;
-    }
-    $temp-font-size: $temp-font-size * $ratio;
-  }
-}

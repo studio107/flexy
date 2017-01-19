@@ -1,0 +1,19 @@
+@import "settings";
+
+$flexy-current-color: null;
+@mixin flexy-colors {
+  $i: 0;
+  @each $name, $color in $flexy-color-schema {
+    $flexy-current-color: $color !global;
+
+    @if ($i == 0) {
+      @content
+    }
+
+    &_#{$name} {
+      @content
+    }
+
+    $i: $i + 1;
+  }
+}
