@@ -1,0 +1,10 @@
+[
+  {
+    "path": "ui",
+    "git": "git@github.com:flexy-framework/ui.git"
+  },
+  {
+    "path": "rhythm",
+    "git": "git@github.com:flexy-framework/rhythm.git"
+  }
+]

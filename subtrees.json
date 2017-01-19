@@ -1,11 +1,11 @@
 {
   "ui": {
-    "localFolder": "ui",
+    "localFolder": "flexy/ui",
     "repository": "git@github.com:flexy-framework/ui.git",
     "branch": "master"
   },
   "rhythm": {
-    "localFolder": "rhythm",
+    "localFolder": "flexy/rhythm",
     "repository": "git@github.com:flexy-framework/rhythm.git",
     "branch": "master"
   }
