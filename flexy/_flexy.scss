@@ -17,15 +17,17 @@
 //@import "typography/default/basic";
 
 // Components
-@import "component/button";
-@import "component/checkbox";
-@import "component/select";
-@import "component/group";
+@import "ui/button";
+@import "ui/checkbox";
+@import "ui/select";
+@import "ui/group";
+@import "ui/input";
+
+@import "grid/grid";
+
 @import "component/container";
-@import "component/input";
 @import "component/label";
 @import "component/divider";
 @import "component/menu";
-@import "component/grid";
 @import "component/segment";
 @import "component/visibility";
