@@ -32,6 +32,13 @@ a {
 }
 
 @mixin flexy-typo-typeset {
+  img {
+    @include flexy-breakpoint(medium) {
+      margin: 0 auto;
+      max-width: 100%;
+      width: auto;
+    }
+  }
 
   // Nice underlines for text links.
   p a, li a {
@@ -104,7 +111,7 @@ a {
       font-feature-settings: 'kern', 'onum', 'liga';
       margin-left: 2rem;
 
-      @include breakpoint(medium) {
+      @include flexy-breakpoint(medium) {
         margin-left: 0;
       }
 
@@ -195,7 +202,7 @@ a {
       font-feature-settings: 'kern', 'onum', 'liga';
       margin-left: 2rem;
 
-      @include breakpoint(medium) {
+      @include flexy-breakpoint(medium) {
         margin-left: 0;
       }
     }
@@ -302,7 +309,7 @@ a {
       }
     }
 
-    @include breakpoint(medium) {
+    @include flexy-breakpoint(medium) {
       margin-left: -1rem;
     }
   }

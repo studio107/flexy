@@ -24,3 +24,9 @@ img {
   vertical-align: middle;
   width: 100%;
 }
+
+#{$flexy-headings} {
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-style: normal;
+  font-weight: bold;
+}

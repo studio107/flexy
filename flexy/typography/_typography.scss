@@ -17,14 +17,6 @@ body {
   color: $flexy-typo-body-text-color;
 }
 
-img {
-  @include breakpoint(medium) {
-    margin: 0 auto;
-    max-width: 100%;
-    width: auto;
-  }
-}
-
 .button-align {
   @include flexy-typo-baseline(zeta, 2, 2, all);
 }

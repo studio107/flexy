@@ -8,21 +8,6 @@
   background-size: 100% 1rem;
 }
 
-// Breakpoints. Either set one to one of the breakpoint variables, or use a custom value for minor breakpoints.
-// Defaults to min-width, but both min->max and max-width are available too.
-// Parts based on https://gist.github.com/timknight/03e6335b8816aa534cf7
-@mixin breakpoint($breakpoint) {
-  // If using 'medium', 'large' etc output the correct breakpoints from map.
-  @if map-has-key($breakpoints, $breakpoint) {
-    $breakpoint: to-int(map-get($breakpoints, $breakpoint));
-    @media screen and (min-width: #{$breakpoint / 16 * 1em}) {
-      @content;
-    }
-  } @else {
-    @warn "#{$breakpoint} is not a set breakpoint variable";
-  }
-}
-
 // Root font-size in %, outputted in correct breakpoints.
 @mixin flexy-typo-rootsize {
   font-size: nth($sizes, 1) / 16 * 100%;

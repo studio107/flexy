@@ -1,6 +1,6 @@
 @import "settings";
 
-@function flexy-breakpoint($breakpoint) {
+@function flexy-get-breakpoint($breakpoint) {
   @if (map-has-key($flexy-breakpoints, $breakpoint)) {
     @return map-get($flexy-breakpoints, $breakpoint);
   } @else {
@@ -20,5 +20,16 @@
 @mixin flexy-media-screen($media) {
   @media only screen and #{flexy-media-map($media)} {
     @content;
+  }
+}
+
+@mixin flexy-breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: to-int(map-get($breakpoints, $breakpoint));
+    @media screen and (min-width: #{$breakpoint / 16 * 1em}) {
+      @content;
+    }
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
   }
 }

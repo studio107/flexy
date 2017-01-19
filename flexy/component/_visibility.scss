@@ -13,9 +13,9 @@
         &_only {
           $media: ();
           @if ($next) {
-            $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - 1px);
           } @else {
-            $media: (min-width: flexy-breakpoint($namespace));
+            $media: (min-width: flexy-get-breakpoint($namespace));
           }
 
           @include flexy-media-screen($media) {
@@ -24,7 +24,7 @@
         }
 
         &_up {
-          @include flexy-media-screen((min-width: flexy-breakpoint($namespace))) {
+          @include flexy-media-screen((min-width: flexy-get-breakpoint($namespace))) {
             display: block;
           }
         }
@@ -48,9 +48,9 @@
         &_only {
           $media: ();
           @if ($next) {
-            $media: (min-width: flexy-breakpoint($namespace), max-width: flexy-breakpoint($next) - 1px);
+            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - 1px);
           } @else {
-            $media: (min-width: flexy-breakpoint($namespace));
+            $media: (min-width: flexy-get-breakpoint($namespace));
           }
 
           @include flexy-media-screen($media) {
@@ -59,7 +59,7 @@
         }
 
         &_up {
-          @include flexy-media-screen((min-width: flexy-breakpoint($namespace))) {
+          @include flexy-media-screen((min-width: flexy-get-breakpoint($namespace))) {
             display: none;
           }
         }
