@@ -1,10 +1,14 @@
 [
   {
-    "path": "ui",
+    "path": "flexy/ui",
     "git": "git@github.com:flexy-framework/ui.git"
   },
   {
-    "path": "rhythm",
+    "path": "flexy/rhythm",
     "git": "git@github.com:flexy-framework/rhythm.git"
+  },
+  {
+    "path": "flexy/typography",
+    "git": "git@github.com:flexy-framework/typography.git"
   }
 ]

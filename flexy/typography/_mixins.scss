@@ -1,6 +1,13 @@
 // SCSS mixins
 // ---------------------------------------
 
+// $measure = $line-height * $font-size
+@mixin flexy-typo-draw-rhythm($use-basehold: false) {
+  background-image: linear-gradient(to bottom, cyan 0, rgba(255,255,255,0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+}
+
 // Breakpoints. Either set one to one of the breakpoint variables, or use a custom value for minor breakpoints.
 // Defaults to min-width, but both min->max and max-width are available too.
 // Parts based on https://gist.github.com/timknight/03e6335b8816aa534cf7
