@@ -26,8 +26,162 @@ img {
   width: 100%;
 }
 
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
 #{$flexy-headings} {
   font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
+}
+
+ul, ol {
+  li {
+    font-size: $flexy-typo-base-font-size;
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+    line-height: $flexy-typo-base-line-height;
+
+    ol, ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+  }
+}
+
+ol {
+  list-style-type: none;
+
+  li {
+    counter-increment: top-level;
+
+    &:before {
+      content: counter(top-level) '.';
+      font-feature-settings: 'lnum', 'tnum';
+      margin-left: -3rem;
+      position: absolute;
+      text-align: right;
+      width: 2em;
+    }
+
+    ul {
+      li {
+        &:before {
+          content: '';
+        }
+
+        ol {
+          li {
+            counter-increment: alt-level;
+
+            &:before {
+              content: counter(alt-level) '.';
+            }
+          }
+        }
+      }
+    }
+
+    ol {
+      li {
+        counter-increment: sub-level;
+
+        &:before {
+          content: counter(top-level) '.' counter(sub-level);
+        }
+
+        ul {
+          li {
+            &:before {
+              content: '';
+            }
+          }
+        }
+
+        ol {
+          li {
+            counter-increment: sub-sub-level;
+
+            &:before {
+              content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+dl {
+  font-size: $flexy-typo-base-font-size;
+
+  dt, dd {
+    font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd + dt {
+    padding-top: 1rem;
+  }
+}
+
+// Code block.
+code, pre {
+  //background-color: $flexy-typo-code-background;
+  font-family: $flexy-typo-code-font;
+}
+
+pre {
+  display: block;
+  margin: 1rem 0;
+  //padding: 1rem;
+  line-height: 1.4rem;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+code {
+  font-size: $flexy-typo-base-font-size;
+  line-height: 1rem;
+}
+
+@include flexy-type-scale() {
+
+}
+
+::-webkit-input-placeholder {
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+}
+
+:-ms-input-placeholder {
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
 }

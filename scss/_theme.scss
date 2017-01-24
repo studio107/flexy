@@ -1,0 +1,10 @@
+.b-theme {
+
+  &_simple {
+    @import "theme_simple";
+  }
+
+  &_studio107 {
+    @import "theme_studio107";
+  }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexy SCSS framework</title>
+    <link rel="stylesheet" href="/css/bundle.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="b-header">
+    <div class="b-row">
+        <div class="b-col b-col_small_2">
+            <a class="b-logo" href="/flexy/">Flexy</a>
+        </div>
+        <div class="b-col b-col_small_10">
+            <ul class="b-menu b-header-menu">
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/grid.html">Grid system</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/typography.html">Typography</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/typescale.html">Typescale</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/visibility.html">Visibility</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/themes.html">Themes</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/breakpoint.html">Breakpoint</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <button id="show-grid" class="b-button">Show grid</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="b-wrapper" id="wrapper">
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            
+    <h1>Breakpoint</h1>
+
+    <div class="b-divider"></div>
+
+    <h3>Оглавление</h3>
+
+    <ol>
+        <li><a href="#description">Описание</a></li>
+        <li><a href="#settings">Настройки</a></li>
+        <li>
+            <a href="#usage">Использование</a>
+            <ol>
+                <li><a href="#flexy-breakpoint">flexy-breakpoint</a></li>
+                <li><a href="#flexy-media">flexy-media</a></li>
+            </ol>
+        </li>
+    </ol>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="description"/>Описание</h3>
+
+    <p>Миксины и функции созданы для облегчения работы с @media</p>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="settings"/>Настройки:</h3>
+
+    <pre>$flexy-breakpoints: (
+        small: 0,
+        medium: 768px,
+        large: 992px,
+        xlarge: 1200px,
+        xxlarge: 1600px
+) !default;</pre>
+
+    <ol>
+        <li>small - от 0 до 767px</li>
+        <li>medium - от 768px до 991px</li>
+        <li>large - от 992px до 1199px</li>
+        <li>xlarge - от 1200px до 1599px</li>
+        <li>xxlarge - от 1600px</li>
+    </ol>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="usage"/>Использование:</h3>
+
+    <div class="b-divider"></div>
+
+    <h4><a name="flexy-breakpoint"/>flexy-breakpoint</h4>
+
+    <pre>@include flexy-breakpoint(large, print);</pre>
+
+    <pre>.b-breakpoint {
+  padding: 10px;
+  text-align: center;
+
+  @include flexy-breakpoint(small) {
+    background-color: gray;
+  }
+
+  @include flexy-breakpoint(medium) {
+    background-color: green;
+  }
+
+  @include flexy-breakpoint(large) {
+    background-color: blue;
+  }
+
+  @include flexy-breakpoint(xlarge) {
+    background-color: yellow;
+  }
+
+  @include flexy-breakpoint(xxlarge) {
+    background-color: orange;
+  }
+}</pre>
+
+    <p>Результат</p>
+    <pre>.b-breakpoint {
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 0) {
+  .b-breakpoint {
+    background-color: gray;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .b-breakpoint {
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .b-breakpoint {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .b-breakpoint {
+    background-color: yellow;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .b-breakpoint {
+    background-color: orange;
+  }
+}</pre>
+
+    <p>Пример:</p>
+    <div class="b-breakpoint">
+        Hello world
+    </div>
+
+    <div class="b-divider"></div>
+
+    <h4><a name="flexy-media"/>flexy-media</h4>
+
+    <pre>@include flexy-media((min-width: 600px, max-width: 700px), print);</pre>
+
+    <p>Код:</p>
+    <pre>.b-media {
+  @include flexy-media((min-width: 600px, max-width: 700px)) {
+    background-color: purple;
+  }
+}</pre>
+
+    <p>Результат:</p>
+    <pre>@media screen and (min-width: 600px) and (max-width: 700px) {
+  .b-media {
+    background-color: purple;
+  }
+}</pre>
+
+    <p>Пример:</p>
+    <div class="b-media">
+        Hello world
+    </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="b-row">
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div class="b-divider"></div>
+            <div>
+                &copy; <a href="https://github.com/max107" target="_blank">max107</a> & <a
+                        href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Grid toggle
+    function changeClass() {
+        var wrapper = document.getElementById('wrapper');
+        if (wrapper.className.match(/(?:^|\s)b-grid(?!\S)/)) {
+            wrapper.className = wrapper.className.replace(/(?:^|\s)b-grid(?!\S)/g, '')
+        } else {
+            wrapper.className += " b-grid";
+        }
+    }
+    document.getElementById("show-grid").addEventListener('click', changeClass);
+</script>
+
+</body>
+</html>

@@ -1,241 +1,113 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="b-typeset">
-        <h1>Grid</h1>
+    <h1>Grid</h1>
 
-        <div class="b-divider"></div>
+    <div class="b-divider"></div>
 
-        <h3>Auto column</h3>
+    <h3>Оглавление</h3>
 
-        <div class="b-row">
-            <div class="b-col b-col_auto">
-                <div class="b-helper">b-col b-col_auto</div>
-            </div>
-            <div class="b-col b-col_auto">
-                <div class="b-helper">b-col b-col_auto</div>
-            </div>
-            <div class="b-col b-col_auto">
-                <div class="b-helper">b-col b-col_auto</div>
-            </div>
+    <ol>
+        <li><a href="#description">Описание</a></li>
+        <li><a href="#settings">Настройки</a></li>
+        <li>
+            <a href="#usage">Использование</a>
+            <ol>
+                <li><a href="#auto">Автоматические колонки</a></li>
+                <li><a href="#standart">Стандартная сетка</a></li>
+                <li><a href="#nested">Вложенная сетка</a></li>
+                <li><a href="#responsive">Адаптивная сетка</a></li>
+            </ol>
+        </li>
+    </ol>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="description"/>Описание</h3>
+
+    <p>Сетка с использованием flex. Для корректной работы требует <a href="/breakpoint.html">flexy-breakpoint</a></p>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="settings"/>Настройки</h3>
+
+    <pre><code class="sass">{% filter escape %}// Количество колонок
+$flexy-grid-columns: 12 !default;
+
+// Отступ между колонками
+$flexy-grid-gutter: 0.5rem !default;
+
+// Максимальная ширина контейнера
+$flexy-grid-wrapper-width: 100% !default;
+
+// Класс для строки
+$flexy-grid-class-row: 'row' !default;
+
+// Класс для контейнера (wrapper)
+$flexy-grid-class-wrapper: 'wrapper' !default;
+
+// Класс для колонки
+$flexy-grid-class-col: 'col' !default;
+
+// Класс для отступов
+$flexy-grid-class-off: 'off' !default;
+{% endfilter %}</code></pre>
+
+    <div class="b-divider"></div>
+
+    <h2><a name="usage"/>Использование</h2>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="auto"/>Автоматические колонки</h3>
+
+    <div class="b-divider"></div>
+
+    <div class="b-row">
+        <div class="b-col b-col_auto">
+            <div class="b-helper">b-col b-col_auto</div>
         </div>
-
-        <div class="b-divider"></div>
-
-        <h3>Standart grid</h3>
-
-        <div class="b-row">
-            <div class="b-col b-col_small_12">
-                <div class="b-helper">b-col b-col_small_12</div>
-            </div>
-
-            <div class="b-col b-col_small_6">
-                <div class="b-helper">b-col b-col_small_6</div>
-            </div>
-            <div class="b-col b-col_small_6">
-                <div class="b-helper">b-col b-col_small_6</div>
-            </div>
-
-            <div class="b-col b-col_small_4">
-                <div class="b-helper">b-col b-col_small_4</div>
-            </div>
-            <div class="b-col b-col_small_4">
-                <div class="b-helper">b-col b-col_small_4</div>
-            </div>
-            <div class="b-col b-col_small_4">
-                <div class="b-helper">b-col b-col_small_4</div>
-            </div>
-
-            <div class="b-col b-col_small_3">
-                <div class="b-helper">b-col b-col_small_3</div>
-            </div>
-            <div class="b-col b-col_small_3">
-                <div class="b-helper">b-col b-col_small_3</div>
-            </div>
-            <div class="b-col b-col_small_3">
-                <div class="b-helper">b-col b-col_small_3</div>
-            </div>
-            <div class="b-col b-col_small_3">
-                <div class="b-helper">b-col b-col_small_3</div>
-            </div>
-
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-            <div class="b-col b-col_small_2">
-                <div class="b-helper">b-col b-col_small_2</div>
-            </div>
-
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
-            <div class="b-col b-col_small_1">
-                <div class="b-helper">b-col b-col_small_1</div>
-            </div>
+        <div class="b-col b-col_auto">
+            <div class="b-helper">b-col b-col_auto</div>
         </div>
-
-        <div class="b-divider"></div>
-
-        <h3>Nested grid</h3>
-
-        <div class="b-row">
-            <div class="b-col b-col_small_12">
-                <div class="b-helper">
-                    b-col b-col_small_12
-
-                    <div class="b-row">
-                        <div class="b-col b-col_small_12 b-col_medium_6">
-                            <div class="b-helper">
-                                b-col b-col_small_12 b-col_medium_6
-
-                                <div class="b-row">
-                                    <div class="b-col b-col_small_12 b-col_large_4">
-                                        <div class="b-helper">b-col_small_12 b-col_large_4</div>
-                                    </div>
-                                    <div class="b-col b-col_small_12 b-col_large_4">
-                                        <div class="b-helper">b-col_small_12 b-col_large_4</div>
-                                    </div>
-                                    <div class="b-col b-col_small_12 b-col_large_4">
-                                        <div class="b-helper">b-col_small_12 b-col_large_4</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="b-col b-col_small_12 b-col_medium_3 b-col_large_4">
-                            <div class="b-helper">
-                                b-col b-col_small_12 b-col_medium_3 b-col_large_4
-
-                                <div class="b-row">
-                                    <div class="b-col b-col_small_12 b-col_medium_6">
-                                        <div class="b-helper">
-                                            b-col b-col_small_12 b-col_medium_6
-
-                                            <div class="b-row">
-                                                <div class="b-col b-col_small_12 b-col_medium_6">
-                                                    <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
-                                                </div>
-                                                <div class="b-col b-col_small_12 b-col_medium_6">
-                                                    <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-col b-col_small_12 b-col_medium_6">
-                                        <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="b-col b-col_small_12 b-col_medium_3 b-col_large_2">
-                            <div class="b-helper">
-                                b-col b-col_small_12 b-col_medium_3 b-col_large_2
-
-                                <div class="b-row">
-                                    <div class="b-col b-col_small_12 b-col_medium_6">
-                                        <div class="b-helper">
-                                            b-col b-col_small_6
-
-                                            <div class="b-row">
-                                                <div class="b-col b-col_small_12 b-col_medium_6">
-                                                    <div class="b-helper">b-col b-col_small_6</div>
-                                                </div>
-                                                <div class="b-col b-col_small_12 b-col_medium_6">
-                                                    <div class="b-helper">b-col b-col_small_6</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="b-col b-col_small_12 b-col_medium_6">
-                                        <div class="b-helper">b-col b-col_small_6</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="b-divider"></div>
-
-        <h3>Responsive</h3>
-
-        <div class="b-row">
-            <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
-                <div class="b-helper">
-                    b-col b-col_small_12<br/>
-                    b-col b-col_medium_6<br/>
-                    b-col b-col_large_4<br/>
-                    b-col b-col_xlarge_3
-                </div>
-            </div>
-            <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
-                <div class="b-helper">
-                    b-col b-col_small_12<br/>
-                    b-col b-col_medium_6<br/>
-                    b-col b-col_large_4<br/>
-                    b-col b-col_xlarge_3
-                </div>
-            </div>
-            <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
-                <div class="b-helper">
-                    b-col b-col_small_12<br/>
-                    b-col b-col_medium_6<br/>
-                    b-col b-col_large_4<br/>
-                    b-col b-col_xlarge_3
-                </div>
-            </div>
-            <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
-                <div class="b-helper">
-                    b-col b-col_small_12<br/>
-                    b-col b-col_medium_6<br/>
-                    b-col b-col_large_4<br/>
-                    b-col b-col_xlarge_3
-                </div>
-            </div>
+        <div class="b-col b-col_auto">
+            <div class="b-helper">b-col b-col_auto</div>
         </div>
     </div>
+
+    <pre><code class="html">{% filter escape %}<div class="b-row">
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+</div>{% endfilter %}</code></pre>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="standart"/>Стандартная сетка</h3>
+
+    {% include "_grid_standart.html" %}
+
+    <pre><code class="html">{% filter escape %}{% include "_grid_standart.html" %}{% endfilter %}</code></pre>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="nested"/>Вложенная сетка</h3>
+
+    {% include "_grid_nested.html" %}
+
+    <pre><code class="html">{% filter escape %}{% include "_grid_nested.html" %}{% endfilter %}</code></pre>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="responsive"/>Адаптивная сетка</h3>
+
+    {% include "_grid_responsive.html" %}
+
+    <pre><code class="html">{% filter escape %}{% include "_grid_responsive.html" %}{% endfilter %}</code></pre>
 {% endblock %}

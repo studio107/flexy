@@ -1,37 +1,147 @@
 {% extends "base.html" %}
 
+{% macro visible(component, breakpoint, state) %}<div class="b-{{ component }} b-{{ component }}_{{ breakpoint }}_{{ state }}">
+    <div class="b-helper">b-{{ component }} b-{{ component }}_{{ breakpoint }}_{{ state }}</div>
+</div>{% endmacro %}
+
 {% block content %}
-    <div class="b-typeset">
-        <h1>Visibility</h1>
+    <h1>Visibility</h1>
 
-        <div class="b-helper">
-            <div class="b-visible b-visible_small_only">b-visible b-visible_small_only</div>
-            <div class="b-visible b-visible_medium_only">b-visible b-visible_medium_only</div>
-            <div class="b-visible b-visible_large_only">b-visible b-visible_large_only</div>
-            <div class="b-visible b-visible_xlarge_only">b-visible b-visible_xlarge_only</div>
-        </div>
+    <div class="b-divider"></div>
 
-        <div class="b-helper">
-            <div class="b-visible b-visible_small_up">b-visible b-visible_small_up</div>
-            <div class="b-visible b-visible_medium_up">b-visible b-visible_medium_up</div>
-            <div class="b-visible b-visible_large_up">b-visible b-visible_large_up</div>
-            <div class="b-visible b-visible_xlarge_up">b-visible b-visible_xlarge_up</div>
-        </div>
+    <h3>Оглавление</h3>
 
-        <div class="b-divider b-divider_typo"></div>
+    <ol>
+        <li><a href="#description">Описание</a></li>
+        <li>
+            <a href="#usage">Использование</a>
+            <ol>
+                <li><a href="#visible">Отображение (visible)</a></li>
+                <li><a href="#hide">Скрытие (hide)</a></li>
+            </ol>
+        </li>
+    </ol>
 
-        <div class="b-helper">
-            <div class="b-hide b-hide_small_only">b-hide b-hide_small_only</div>
-            <div class="b-hide b-hide_medium_only">b-hide b-hide_medium_only</div>
-            <div class="b-hide b-hide_large_only">b-hide b-hide_large_only</div>
-            <div class="b-hide b-hide_xlarge_only">b-hide b-hide_xlarge_only</div>
-        </div>
+    <div class="b-divider"></div>
 
-        <div class="b-helper">
-            <div class="b-hide b-hide_small_up">b-hide b-hide_small_up</div>
-            <div class="b-hide b-hide_medium_up">b-hide b-hide_medium_up</div>
-            <div class="b-hide b-hide_large_up">b-hide b-hide_large_up</div>
-            <div class="b-hide b-hide_xlarge_up">b-hide b-hide_xlarge_up</div>
-        </div>
-    </div>
+    <h3><a name="description"/>Описание</h3>
+
+    <p>Отображение и скрытие блоков в зависимости от <code>flexy-breakpoint</code></p>
+
+    <div class="b-divider"></div>
+
+    <h2><a name="usage"/>Использование</h2>
+
+    <h3><a name="visible"/>Отображение</h3>
+
+    <p>Отображать для small</p>
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'only') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'small', 'only') }}
+
+    <div class="b-divider"></div>
+
+    <p>Отображать для small и выше</p>
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'up') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'small', 'up') }}
+
+    <div class="b-divider"></div>
+
+    <p>Отображать для <code>medium</code></p>
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'medium', 'only') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'medium', 'only') }}
+
+    <div class="b-divider"></div>
+
+    <p>Отображать для <code>medium</code> и выше</p>
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'medium', 'up') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'medium', 'up') }}
+
+    <div class="b-divider"></div>
+
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'only') }}
+{{ visible('visible', 'medium', 'only') }}
+{{ visible('visible', 'large', 'only') }}
+{{ visible('visible', 'xlarge', 'only') }}
+{{ visible('visible', 'xxlarge', 'only') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'small', 'only') }}
+    {{ visible('visible', 'medium', 'only') }}
+    {{ visible('visible', 'large', 'only') }}
+    {{ visible('visible', 'xlarge', 'only') }}
+    {{ visible('visible', 'xxlarge', 'only') }}
+
+    <div class="b-divider"></div>
+
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'only') }}
+{{ visible('visible', 'medium', 'up') }}
+{{ visible('visible', 'large', 'up') }}
+{{ visible('visible', 'xlarge', 'up') }}
+{{ visible('visible', 'xxlarge', 'up') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('visible', 'small', 'up') }}
+    {{ visible('visible', 'medium', 'up') }}
+    {{ visible('visible', 'large', 'up') }}
+    {{ visible('visible', 'xlarge', 'up') }}
+    {{ visible('visible', 'xxlarge', 'up') }}
+
+    <div class="b-divider"></div>
+
+    <h3><a name="hide"/>Скрытие</h3>
+
+    <div class="b-divider"></div>
+
+    <p>Скрывать для <code>medium</code></p>
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('hide', 'medium', 'only') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('hide', 'medium', 'only') }}
+
+    <div class="b-divider"></div>
+
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'only') }}
+{{ visible('hide', 'medium', 'only') }}
+{{ visible('hide', 'large', 'only') }}
+{{ visible('hide', 'xlarge', 'only') }}
+{{ visible('hide', 'xxlarge', 'only') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('hide', 'small', 'only') }}
+    {{ visible('hide', 'medium', 'only') }}
+    {{ visible('hide', 'large', 'only') }}
+    {{ visible('hide', 'xlarge', 'only') }}
+    {{ visible('hide', 'xxlarge', 'only') }}
+
+    <div class="b-divider"></div>
+
+    <p>Код:</p>
+    <pre><code class="html">{% filter escape %}{{ visible('visible', 'small', 'only') }}
+{{ visible('hide', 'medium', 'up') }}
+{{ visible('hide', 'large', 'up') }}
+{{ visible('hide', 'xlarge', 'up') }}
+{{ visible('hide', 'xxlarge', 'up') }}{% endfilter %}</code></pre>
+
+    <p>Пример (изменяйте размер браузера):</p>
+    {{ visible('hide', 'small', 'up') }}
+    {{ visible('hide', 'medium', 'up') }}
+    {{ visible('hide', 'large', 'up') }}
+    {{ visible('hide', 'xlarge', 'up') }}
+    {{ visible('hide', 'xxlarge', 'up') }}
 {% endblock %}

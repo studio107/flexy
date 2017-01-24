@@ -18,13 +18,13 @@
             $media: (min-width: flexy-get-breakpoint($namespace));
           }
 
-          @include flexy-media-screen($media) {
+          @include flexy-media($media) {
             display: block;
           }
         }
 
         &_up {
-          @include flexy-media-screen((min-width: flexy-get-breakpoint($namespace))) {
+          @include flexy-media((min-width: flexy-get-breakpoint($namespace))) {
             display: block;
           }
         }
@@ -53,13 +53,13 @@
             $media: (min-width: flexy-get-breakpoint($namespace));
           }
 
-          @include flexy-media-screen($media) {
+          @include flexy-media($media) {
             display: none;
           }
         }
 
         &_up {
-          @include flexy-media-screen((min-width: flexy-get-breakpoint($namespace))) {
+          @include flexy-media((min-width: flexy-get-breakpoint($namespace))) {
             display: none;
           }
         }

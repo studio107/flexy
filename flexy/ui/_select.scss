@@ -5,15 +5,28 @@
   font-style: normal;
 }
 
-@mixin flexy-input-select-color($color) {
-  &__elem {
-    &:hover {
-      box-shadow: 0 0 0 1px $color inset;
-    }
+@mixin flexy-select-reset() {
+  box-sizing: border-box;
+  appearance: none;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 0;
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+    background-color: #fff;
+  }
+
+  &::-ms-expand {
+    display: none;
   }
 }
 
-@mixin flexy-input-select() {
+@mixin flexy-input-select($schema: $flexy-color-schema) {
   position: relative;
   display: inline-flex;
   outline: none;
@@ -23,33 +36,17 @@
   $select-height: $flexy-button-height;
 
   &__elem {
-    border-radius: 0;
-    box-sizing: border-box;
-    appearance: none;
-    cursor: pointer;
+    @include flexy-select-reset;
+
     width: 100%;
     height: $select-height;
     line-height: $select-height;
     padding: 0 $select-height 0 10px;
-    margin: 0;
     min-width: 200px;
-    outline: none;
-    border: none;
-    background: none;
     box-shadow: 0 0 0 1px $flexy-typo-caption-color inset;
     //border: 1px solid #bdc0c7;
     font-size: $flexy-typo-base-font-size;
     font-family: $flexy-font;
-
-    &:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 $flexy-typo-body-text-color;
-      background-color: #fff;
-    }
-
-    &::-ms-expand {
-      display: none;
-    }
   }
 
   &:after {
@@ -70,9 +67,7 @@
     pointer-events: none;
   }
 
-  @include flexy-colors {
-    @include flexy-input-select-color($flexy-current-color);
+  @include flexy-colors($schema) {
+    @content;
   }
-
-  @content;
 }

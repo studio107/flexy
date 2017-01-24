@@ -17,16 +17,22 @@
   @return implode($temp, ' and ');
 }
 
-@mixin flexy-media-screen($media) {
-  @media only screen and #{flexy-media-map($media)} {
+@mixin flexy-media($map, $media: 'screen') {
+  @media #{$media} and #{flexy-media-map($map)} {
     @content;
   }
 }
 
-@mixin flexy-breakpoint($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $breakpoint: to-int(map-get($breakpoints, $breakpoint));
-    @media screen and (min-width: #{$breakpoint / 16 * 1em}) {
+@mixin flexy-media-screen($media) {
+  @warn 'deprecated';
+  @include flexy-media($media) {
+    @content;
+  }
+}
+
+@mixin flexy-breakpoint($breakpoint, $media: 'screen') {
+  @if map-has-key($flexy-breakpoints, $breakpoint) {
+    @media #{$media} and (min-width: #{map-get($flexy-breakpoints, $breakpoint)}) {
       @content;
     }
   } @else {

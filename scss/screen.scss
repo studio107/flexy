@@ -4,7 +4,6 @@ $flexy-grid-wrapper-width: 1280px;
 $flexy-colors: $flexy-color-schema;
 
 @import "flexy";
-@import "flexy/theme/flat/flat";
 
 .b-header {
   margin: $flexy-typo-base-measure 0;
@@ -13,8 +12,6 @@ $flexy-colors: $flexy-color-schema;
     font-size: $flexy-typo-base-font-size;
 
     &__item {
-      @include flexy-typo-rhythm($fontsize: zeta, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
-
       &:not(:last-child) {
         margin-right: $flexy-typo-base-measure;
       }
@@ -25,18 +22,15 @@ $flexy-colors: $flexy-color-schema;
 .b-logo {
   color: #000;
   text-decoration: none;
-  @include flexy-typo-rhythm($fontsize: gamma, $lineheight: 2, $below: 1, $breakpoint: all, $cap-height: $heading-cap-height);
   @include antialias;
   font-weight: 900;
 }
 
 .b-grid {
-  @include flexy-typo-draw-rhythm;
 }
 
 .b-helper {
   @include ellipsis;
-  //@include sassline(iota);
   background-color: rgba(0, 163, 11, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
   padding: 0 5px;
@@ -48,7 +42,7 @@ $flexy-colors: $flexy-color-schema;
   text-align: center;
 }
 
-.pizda {
+.b-typescale {
   $temp: 0;
   @each $name, $ratio in $flexy-modular-scale {
     &_#{$name} {
@@ -57,3 +51,36 @@ $flexy-colors: $flexy-color-schema;
     }
   }
 }
+
+.b-breakpoint {
+  padding: 10px;
+  text-align: center;
+
+  @include flexy-breakpoint(small) {
+    background-color: gray;
+  }
+  @include flexy-breakpoint(medium) {
+    background-color: green;
+  }
+  @include flexy-breakpoint(large) {
+    background-color: blue;
+  }
+  @include flexy-breakpoint(xlarge) {
+    background-color: yellow;
+  }
+  @include flexy-breakpoint(xxlarge) {
+    background-color: orange;
+  }
+}
+
+.b-media {
+  padding: 10px;
+  text-align: center;
+  background-color: gray;
+
+  @include flexy-media((min-width: 600px, max-width: 700px)) {
+    background-color: purple;
+  }
+}
+
+@import "theme";

@@ -32,9 +32,9 @@
   @return if(lightness($color) > 55, $dark, $light);
 }
 
-@mixin flexy-button() {
+@mixin flexy-button($schema: $flexy-color-schema) {
   @include flexy-button-reset;
-  @include flexy-colors {
+  @include flexy-colors($schema) {
     @content;
   }
 }

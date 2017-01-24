@@ -1,44 +1,51 @@
-@mixin flexy-input($color) {
-  box-shadow: 0 0 0 1px $flexy-typo-caption-color inset;
+@mixin flexy-input-reset() {
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  appearance: none;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px silver inset;
 
-  &:focus, &:focus:hover {
-    box-shadow: 0 0 0 1px $color inset;
+  &:not(:focus) {
+    cursor: pointer;
   }
 
-  &:hover {
-    box-shadow: 0 0 0 1px darken($color, 5%) inset;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@mixin flexy-input($schema: $flexy-color-schema) {
+  @include flexy-input-reset;
+
+  line-height: $flexy-button-height;
+  height: $flexy-button-height;
+  background: {
+    color: #fff;
+  }
+  padding: 0 10px;
+  width: 100%;
+  font-size: $flexy-typo-base-font-size;
+  font-family: $flexy-font;
+
+  @include flexy-colors($schema) {
+    @content;
   }
 }
 
-.#{$flexy-prefix} {
-  &-input {
-    line-height: $flexy-button-height;
-    height: $flexy-button-height;
-    outline: none;
-    border: none;
-    background: {
-      color: #fff;
-    }
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px;
-    transition: border-color .2s ease;
-    -webkit-appearance: none;
-    border-radius: 0;
-    margin: 0;
-    font-size: $flexy-typo-base-font-size;
-    font-family: $flexy-font;
-
-    &:not(:focus) {
-      cursor: pointer;
-    }
-
-    @include flexy-colors {
-      @include flexy-input($flexy-current-color);
-    }
-
-    &::-ms-expand {
-      display: none;
-    }
-  }
-}
+//.#{$flexy-prefix} {
+//  &-input {
+//    @include flexy-input {
+//      box-shadow: 0 0 0 1px $flexy-current-color inset;
+//
+//      &:focus, &:focus:hover {
+//        box-shadow: 0 0 0 1px lighten($flexy-current-color, 10%) inset;
+//      }
+//
+//      &:hover {
+//        box-shadow: 0 0 0 1px darken($flexy-current-color, 5%) inset;
+//      }
+//    }
+//  }
+//}

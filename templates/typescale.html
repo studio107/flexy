@@ -1,12 +1,64 @@
 {% extends "base.html" %}
 
+{% macro typescale(name) %}@include flexy-type-scale(16px, flexy-modular-scale({{ name }}));{% endmacro %}
+
 {% block content %}
-    <div class="b-typeset">
-        <h1>Typeset</h1>
+    <h1>Typescale</h1>
 
-        <hr>
-    </div>
+    <div class="b-divider"></div>
 
+    <h3>Оглавление</h3>
+
+    <ol>
+        <li><a href="#description">Описание</a></li>
+        <li><a href="#usage">Использование</a></li>
+    </ol>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="description"/>Описание</h3>
+
+    <p>Миксины для использования Modular Scale</p>
+
+    <div class="b-divider"></div>
+
+    <h2><a name="usage"/>Использование</h2>
+
+    <p>Код:</p>
+    <pre><code class="scss">{% filter escape %}@include flexy-type-scale(16px, flexy-modular-scale(perfect-fourth));{% endfilter %}</code></pre>
+
+    <p>Результат:</p>
+    <pre><code class="css">{% filter escape %}h6 {
+  font-size: 0.8002em;
+  line-height: 16px;
+}
+
+h5 {
+  font-size: 1.06667em;
+  line-height: 21.328px;
+}
+
+h4 {
+  font-size: 1.42187em;
+  line-height: 28.43022px;
+}
+
+h3 {
+  font-size: 1.89535em;
+  line-height: 37.89749px;
+}
+
+h2 {
+  font-size: 2.5265em;
+  line-height: 50.51735px;
+}
+
+h1 {
+  font-size: 3.36782em;
+  line-height: 67.33963px;
+}{% endfilter %}</code></pre>
+
+    <p>Примеры:</p>
     {% set typesets = [
     { name: 'Minor second', type: 'minor-second' },
     { name: 'Major second', type: 'major-second' },
@@ -20,17 +72,18 @@
 
     {% for typeset in typesets %}
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>{{ typeset.name }}</p>
+            <div class="b-col b-col_small_8">
+                <h4>{{ typeset.name }}</h4>
+                <pre><code class="scss">{% filter escape %}{{ typescale(typeset.type) }}{% endfilter %}</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_{{ typeset.type }}">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_{{ typeset.type }}">
                     {% for i in range(1, 6) %}
                         <h{{ i }}>Title</h{{ i }}>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     {% endfor %}
 {% endblock %}

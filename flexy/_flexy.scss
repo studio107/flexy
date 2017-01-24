@@ -6,6 +6,7 @@
 
 // Functions
 @import "functions/index";
+@import "typescale/typescale";
 
 // Default styles
 @import "defaults";
@@ -13,7 +14,6 @@
 // Mixins
 @import "mixins";
 
-@import "typescale/typescale";
 @import "colors/colors";
 @import "breakpoint/breakpoint";
 //@import "typography/typography";
@@ -22,9 +22,6 @@
 
 @import "grid/grid";
 
-@import "component/container";
-@import "component/ribbon";
-@import "component/divider";
 @import "component/menu";
 @import "component/segment";
 @import "component/visibility";

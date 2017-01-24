@@ -109,7 +109,7 @@
   @if ($width == 0) {
     @include flexy-grid-build($namespace);
   } @else {
-    @include flexy-media-screen((min-width: $width)) {
+    @include flexy-media((min-width: $width)) {
       @include flexy-grid-build($namespace);
     }
   }

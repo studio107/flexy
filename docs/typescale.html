@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexy SCSS framework</title>
-    <link rel="stylesheet" href="css/bundle.css">
+    <link rel="stylesheet" href="/css/bundle.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <div class="b-header">
@@ -14,16 +18,22 @@
         <div class="b-col b-col_small_10">
             <ul class="b-menu b-header-menu">
                 <li class="b-menu__item b-header-menu__item">
-                    <a href="grid.html">Grid system</a>
+                    <a href="/grid.html">Grid system</a>
                 </li>
                 <li class="b-menu__item b-header-menu__item">
-                    <a href="typography.html">Typography</a>
+                    <a href="/typography.html">Typography</a>
                 </li>
                 <li class="b-menu__item b-header-menu__item">
-                    <a href="visibility.html">Visibility</a>
+                    <a href="/typescale.html">Typescale</a>
                 </li>
                 <li class="b-menu__item b-header-menu__item">
-                    <a href="ui.html">UI</a>
+                    <a href="/visibility.html">Visibility</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/themes.html">Themes</a>
+                </li>
+                <li class="b-menu__item b-header-menu__item">
+                    <a href="/breakpoint.html">Breakpoint</a>
                 </li>
                 <li class="b-menu__item b-header-menu__item">
                     <button id="show-grid" class="b-button">Show grid</button>
@@ -37,21 +47,72 @@
     <div class="b-row">
         <div class="b-col b-col_small_12">
             
-    <div class="b-typeset">
-        <h1>Typeset</h1>
+    <h1>Typescale</h1>
 
-        <hr>
-    </div>
+    <div class="b-divider"></div>
+
+    <h3>Оглавление</h3>
+
+    <ol>
+        <li><a href="#description">Описание</a></li>
+        <li><a href="#usage">Использование</a></li>
+    </ol>
+
+    <div class="b-divider"></div>
+
+    <h3><a name="description"/>Описание</h3>
+
+    <p>Миксины для использования Modular Scale</p>
+
+    <div class="b-divider"></div>
+
+    <h2><a name="usage"/>Использование</h2>
+
+    <p>Код:</p>
+    <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(perfect-fourth));</code></pre>
+
+    <p>Результат:</p>
+    <pre><code class="css">h6 {
+  font-size: 0.8002em;
+  line-height: 16px;
+}
+
+h5 {
+  font-size: 1.06667em;
+  line-height: 21.328px;
+}
+
+h4 {
+  font-size: 1.42187em;
+  line-height: 28.43022px;
+}
+
+h3 {
+  font-size: 1.89535em;
+  line-height: 37.89749px;
+}
+
+h2 {
+  font-size: 2.5265em;
+  line-height: 50.51735px;
+}
+
+h1 {
+  font-size: 3.36782em;
+  line-height: 67.33963px;
+}</code></pre>
+
+    <p>Примеры:</p>
+    
 
     
-
-    
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Minor second</p>
+            <div class="b-col b-col_small_8">
+                <h4>Minor second</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(minor-second));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_minor-second">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_minor-second">
                     
                         <h1>Title</h1>
                     
@@ -66,14 +127,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Major second</p>
+            <div class="b-col b-col_small_8">
+                <h4>Major second</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(major-second));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_major-second">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_major-second">
                     
                         <h1>Title</h1>
                     
@@ -88,14 +150,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Minor third</p>
+            <div class="b-col b-col_small_8">
+                <h4>Minor third</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(minor-third));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_minor-third">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_minor-third">
                     
                         <h1>Title</h1>
                     
@@ -110,14 +173,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Major third</p>
+            <div class="b-col b-col_small_8">
+                <h4>Major third</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(major-third));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_major-third">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_major-third">
                     
                         <h1>Title</h1>
                     
@@ -132,14 +196,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Perfect fourth</p>
+            <div class="b-col b-col_small_8">
+                <h4>Perfect fourth</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(perfect-fourth));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_perfect-fourth">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_perfect-fourth">
                     
                         <h1>Title</h1>
                     
@@ -154,14 +219,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Augmented fourth</p>
+            <div class="b-col b-col_small_8">
+                <h4>Augmented fourth</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(augmented-fourth));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_augmented-fourth">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_augmented-fourth">
                     
                         <h1>Title</h1>
                     
@@ -176,14 +242,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Perfect fifth</p>
+            <div class="b-col b-col_small_8">
+                <h4>Perfect fifth</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(perfect-fifth));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_perfect-fifth">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_perfect-fifth">
                     
                         <h1>Title</h1>
                     
@@ -198,14 +265,15 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
         <div class="b-row">
-            <div class="b-col b-col_small_2">
-                <p>Golden ratio</p>
+            <div class="b-col b-col_small_8">
+                <h4>Golden ratio</h4>
+                <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(golden-ratio));</code></pre>
             </div>
-            <div class="b-col b-col_small_10">
-                <div class="pizda pizda_golden-ratio">
+            <div class="b-col b-col_small_4">
+                <div class="b-typescale b-typescale_golden-ratio">
                     
                         <h1>Title</h1>
                     
@@ -220,7 +288,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <div class="b-divider"></div>
     
 
         </div>
