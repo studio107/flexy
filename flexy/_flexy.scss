@@ -8,7 +8,7 @@
 @import "functions/index";
 
 // Default styles
-//@import "defaults";
+@import "defaults";
 
 // Mixins
 @import "mixins";
@@ -16,7 +16,7 @@
 @import "typescale/typescale";
 @import "colors/colors";
 @import "breakpoint/breakpoint";
-@import "typography/typography";
+//@import "typography/typography";
 
 @import "ui/ui";
 
