@@ -17,7 +17,7 @@
     cursor: pointer;
     display: block;
     position: relative;
-    @include flexy-typo-rhythm(eta, 1, 1);
+    @include flexy-typo-rhythm(theta, 1, 1);
 
     &:before {
       content: "";
