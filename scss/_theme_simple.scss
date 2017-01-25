@@ -47,6 +47,7 @@ $ui-border-radius: 3px;
       color: $flexy-current-color;
     }
     color: flexy-button-color-detect($flexy-current-color);
+    border-radius: $ui-border-radius;
 
     &:hover, &:focus {
       color: flexy-button-color-detect($flexy-current-color);
