@@ -8,18 +8,13 @@
 /**
  * Spacing mixin to create uniform margin/padding
  */
-@mixin flexy-grid-space($value, $type: margin, $orientation: vertical) {
-  @if $orientation == vertical {
-    #{$type}-top: $value;
-    #{$type}-bottom: $value;
-  } @else {
-    #{$type}-left: $value;
-    #{$type}-right: $value;
-  }
+@mixin flexy-grid-space($value, $type: margin) {
+  #{$type}-left: $value;
+  #{$type}-right: $value;
 }
 
 /**
- * Row wrapper class, flex box parent.
+ * Row flex box parent.
  */
 @mixin flexy-grid-row {
   box-sizing: border-box;
@@ -28,11 +23,15 @@
   flex-wrap: wrap;
 
   &_center {
-    align-items: center;
+    justify-content: center;
+  }
+
+  &_space {
+    justify-content: space-between;
   }
 
   & & {
-    @include flexy-grid-space(-$flexy-grid-gutter, margin, horizontal);
+    @include flexy-grid-space(-$flexy-grid-gutter, margin);
   }
 }
 
@@ -52,14 +51,7 @@
     max-width: 100%;
   }
 
-  @include flexy-grid-space($flexy-grid-gutter, padding, horizontal);
-}
-
-@mixin flexy-grid-wrapper() {
-  @include flexy-grid-column;
-  flex-grow: 1;
-  flex-basis: 0;
-  max-width: $flexy-grid-wrapper-width;
+  @include flexy-grid-space($flexy-grid-gutter, padding);
 }
 
 @mixin flexy-grid-reset() {
@@ -69,10 +61,10 @@
 /**
  * Generate a set of grid column classes using a namespace
  *
- * .#{$flexy-grid-class-col}-[namespace] for intelligent column division
- * .#{$flexy-grid-class-col}-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
- * .#{$flexy-grid-class-off}-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
- * .#{$flexy-grid-class-off}-[namespace]-reset for resetting a col's offset for that and larger namespaces
+ * col-[namespace] for intelligent column division
+ * col-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+ * off-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+ * off-[namespace]-reset for resetting a col's offset for that and larger namespaces
  */
 
 /**
@@ -83,8 +75,10 @@
 @mixin flexy-grid-build($namespace) {
   // Run the loop for as many columns as speficied
   @for $i from 1 through $flexy-grid-columns {
-    .#{$flexy-prefix}-#{$flexy-grid-class-col}_#{$namespace} {
-      @include flexy-grid-wrapper;
+    .#{$flexy-prefix}-col_#{$namespace} {
+      @include flexy-grid-column;
+      flex-grow: 1;
+      flex-basis: 0;
 
       &_#{$i} {
         flex-basis: flexy-column-percent($i);
@@ -94,13 +88,13 @@
 
     // Don't include the .off class for the last column
     @if ($i != $flexy-grid-columns) {
-      .#{$flexy-prefix}-#{$flexy-grid-class-off}-#{$namespace}-#{$i} {
+      .#{$flexy-prefix}-off-#{$namespace}-#{$i} {
         margin-left: flexy-column-percent($i);
       }
     }
   }
 
-  .#{$flexy-prefix}-#{$flexy-grid-class-off}-#{$namespace}-reset {
+  .#{$flexy-prefix}-off-#{$namespace}-reset {
     @include flexy-grid-reset;
   }
 }
@@ -116,24 +110,21 @@
 }
 
 .#{$flexy-prefix} {
-  &-#{$flexy-grid-class-col} {
+  &-col {
     @include flexy-grid-column;
   }
 
-  &-#{$flexy-grid-class-wrapper} {
-    @include flexy-grid-wrapper;
-    margin: 0 auto;
-
-    &_left {
-      margin-left: 0;
-    }
-
-    &_right {
-      margin: 0 0 0 auto;
-    }
+  &-row {
+    @include flexy-grid-row;
   }
 
-  &-#{$flexy-grid-class-row} {
-    @include flexy-grid-row;
+  &-wrapper {
+    margin: 0 auto;
+    max-width: $flexy-grid-wrapper-max-width;
+    min-width: $flexy-grid-wrapper-min-width;
+
+    &_left {
+      margin: 0;
+    }
   }
 }

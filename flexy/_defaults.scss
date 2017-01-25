@@ -1,30 +1,21 @@
-@import "settings";
-
 html {
-  // set body 100% height
   height: 100%;
-
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 body {
-  // set body 100% height
   min-height: 100%;
-  background-color: $flexy-typo-body-background;
-  color: $flexy-typo-body-text-color;
-  font-size: $flexy-typo-base-font-size;
+  color: $flexy-body-text-color;
+  font-size: $flexy-body-font-size;
   font-family: $flexy-font;
   font-style: normal;
-  font-weight: 400;
-  line-height: 2rem;
+  font-weight: normal;
+  line-height: $flexy-body-line-height;
 }
 
 img {
   -ms-interpolation-mode: bicubic;
-  height: auto;
-  vertical-align: middle;
-  width: 100%;
 }
 
 label {
@@ -33,78 +24,37 @@ label {
 }
 
 p {
-  font-weight: 400;
   font-feature-settings: 'kern', 'onum', 'liga';
-  line-height: 2em;
+  font-weight: normal;
 }
 
-// Bold.
-b, strong {
-  font-weight: bold;
-}
-
-// Italic.
-em, i {
-  font-style: italic;
-}
-
-small {
-  line-height: 1rem;
-  font-size: $flexy-typo-base-font-size * .9;
-}
-
-.b-caption {
-  font-size: $flexy-typo-base-font-size * .9;
-  color: $flexy-typo-caption-color;
-}
-
-#{$flexy-headings} {
+h1, h2, h3, h4, h5, h6 {
   font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
-  margin-bottom: .5em;
+  color: $flexy-heading-text-color;
+  font-family: $flexy-heading-font;
 }
 
-h1 + .b-caption {
-  margin-top: -2.5em;
-}
-
-h2 + .b-caption {
-  margin-top: -1.5em;
-}
-
-h3 + .b-caption {
-  margin-top: -1.5em;
-}
-
-@include flexy-type-scale() {
-
+@mixin flexy-placeholder-reset {
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-size: $flexy-body-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
 }
 
 ::-webkit-input-placeholder {
-  font-feature-settings: 'liga', 'lnum', 'kern';
-  font-size: $flexy-typo-base-font-size;
-  font-family: $flexy-font;
-  font-style: normal;
+  @include flexy-placeholder-reset;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  font-feature-settings: 'liga', 'lnum', 'kern';
-  font-size: $flexy-typo-base-font-size;
-  font-family: $flexy-font;
-  font-style: normal;
+  @include flexy-placeholder-reset;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-  font-feature-settings: 'liga', 'lnum', 'kern';
-  font-size: $flexy-typo-base-font-size;
-  font-family: $flexy-font;
-  font-style: normal;
+  @include flexy-placeholder-reset;
 }
 
 :-ms-input-placeholder {
-  font-feature-settings: 'liga', 'lnum', 'kern';
-  font-size: $flexy-typo-base-font-size;
-  font-family: $flexy-font;
-  font-style: normal;
+  @include flexy-placeholder-reset;
 }

@@ -1,17 +1,14 @@
-@import "flexy/colors/schema/flat";
-
-$flexy-grid-wrapper-width: 1280px;
-$flexy-colors: $flexy-color-schema;
+$flexy-grid-wrapper-max-width: 978px;
 
 @import "flexy";
 
 .b-header {
   margin: 0 0 25px 0;
-  border-bottom: 1px solid $flexy-typo-caption-color;
+  border-bottom: 1px solid #e8e8e8;
   padding: 20px 0;
 
   &-menu {
-    font-size: $flexy-typo-base-font-size;
+    font-size: $flexy-body-font-size;
 
     &__item {
       font-size: 18px;
@@ -44,18 +41,8 @@ $flexy-colors: $flexy-color-schema;
 }
 
 .b-footer {
-  font-size: $flexy-typo-base-font-size;
+  font-size: $flexy-body-font-size;
   text-align: center;
-}
-
-.b-typescale {
-  $temp: 0;
-  @each $name, $ratio in $flexy-modular-scale {
-    &_#{$name} {
-      @include flexy-type-scale($flexy-typo-base-font-size, $ratio);
-      $temp: $temp + 1;
-    }
-  }
 }
 
 .b-breakpoint {
@@ -88,5 +75,3 @@ $flexy-colors: $flexy-color-schema;
     background-color: purple;
   }
 }
-
-@import "theme";

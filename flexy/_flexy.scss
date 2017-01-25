@@ -1,27 +1,11 @@
-@import "reset/reset";
-
-// Default settings
+@import "reset";
 
 @import "settings";
 
-// Functions
-@import "functions/index";
-@import "typescale/typescale";
-
-// Default styles
-@import "defaults";
-
-// Mixins
+@import "functions";
 @import "mixins";
+@import "breakpoint";
+@import "grid";
+@import "visibility";
 
-@import "colors/colors";
-@import "breakpoint/breakpoint";
-//@import "typography/typography";
-
-@import "ui/ui";
-
-@import "grid/grid";
-
-@import "component/menu";
-@import "component/segment";
-@import "component/visibility";
+@import "defaults";

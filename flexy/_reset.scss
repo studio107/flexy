@@ -34,6 +34,10 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  background: {
+    color: #fff;
+  }
+  color: #000;
   line-height: 1;
 }
 
@@ -50,4 +54,12 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
 }

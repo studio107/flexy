@@ -1,7 +1,0 @@
-@function get-color($name) {
-  @if (map-has-key($flexy-color-schema, $name)) {
-    @return map-get($flexy-color-schema, $name);
-  }
-
-  @return null;
-}
