@@ -2,13 +2,13 @@
 
 {% block content %}
     <h1>Breakpoint</h1>
+    <p class="b-caption">Миксины и функции созданы для облегчения работы с @media</p>
 
     <div class="b-divider"></div>
 
     <h3>Оглавление</h3>
 
     <ol>
-        <li><a href="#description">Описание</a></li>
         <li><a href="#settings">Настройки</a></li>
         <li>
             <a href="#usage">Использование</a>
@@ -21,21 +21,15 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"/>Описание</h3>
+    <h3><a name="settings"></a>Настройки:</h3>
 
-    <p>Миксины и функции созданы для облегчения работы с @media</p>
-
-    <div class="b-divider"></div>
-
-    <h3><a name="settings"/>Настройки:</h3>
-
-    <pre>$flexy-breakpoints: (
+    <pre><code class="scss">{% filter escape %}$flexy-breakpoints: (
         small: 0,
         medium: 768px,
         large: 992px,
         xlarge: 1200px,
         xxlarge: 1600px
-) !default;</pre>
+) !default;{% endfilter %}</code></pre>
 
     <ol>
         <li>small - от 0 до 767px</li>
@@ -47,15 +41,15 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="usage"/>Использование:</h3>
+    <h3><a name="usage"></a>Использование:</h3>
 
     <div class="b-divider"></div>
 
-    <h4><a name="flexy-breakpoint"/>flexy-breakpoint</h4>
+    <h4><a name="flexy-breakpoint"></a>flexy-breakpoint</h4>
 
-    <pre>@include flexy-breakpoint(large, print);</pre>
+    <pre><code class="css">{% filter escape %}@include flexy-breakpoint(large, print);{% endfilter %}</code></pre>
 
-    <pre>.b-breakpoint {
+    <pre><code class="css">{% filter escape %}.b-breakpoint {
   padding: 10px;
   text-align: center;
 
@@ -78,10 +72,10 @@
   @include flexy-breakpoint(xxlarge) {
     background-color: orange;
   }
-}</pre>
+}{% endfilter %}</code></pre>
 
     <p>Результат</p>
-    <pre>.b-breakpoint {
+    <pre><code class="css">{% filter escape %}.b-breakpoint {
   padding: 10px;
   text-align: center;
 }
@@ -114,7 +108,7 @@
   .b-breakpoint {
     background-color: orange;
   }
-}</pre>
+}{% endfilter %}</code></pre>
 
     <p>Пример:</p>
     <div class="b-breakpoint">
@@ -123,23 +117,23 @@
 
     <div class="b-divider"></div>
 
-    <h4><a name="flexy-media"/>flexy-media</h4>
+    <h4><a name="flexy-media"></a>flexy-media</h4>
 
-    <pre>@include flexy-media((min-width: 600px, max-width: 700px), print);</pre>
+    <pre><code class="css">{% filter escape %}@include flexy-media((min-width: 600px, max-width: 700px), print);{% endfilter %}</code></pre>
 
     <p>Код:</p>
-    <pre>.b-media {
+    <pre><code class="css">{% filter escape %}.b-media {
   @include flexy-media((min-width: 600px, max-width: 700px)) {
     background-color: purple;
   }
-}</pre>
+}{% endfilter %}</code></pre>
 
     <p>Результат:</p>
-    <pre>@media screen and (min-width: 600px) and (max-width: 700px) {
+    <pre><code class="css">{% filter escape %}@media screen and (min-width: 600px) and (max-width: 700px) {
   .b-media {
     background-color: purple;
   }
-}</pre>
+}{% endfilter %}</code></pre>
 
     <p>Пример:</p>
     <div class="b-media">
