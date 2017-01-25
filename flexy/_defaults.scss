@@ -73,11 +73,19 @@ small {
   font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
-  margin-bottom: .5rem;
+  margin-bottom: .5em;
+}
 
-  & + .b-caption {
-    margin-top: -1rem;
-  }
+h1 + .b-caption {
+  margin-top: -2.5em;
+}
+
+h2 + .b-caption {
+  margin-top: -1.5em;
+}
+
+h3 + .b-caption {
+  margin-top: -1.5em;
 }
 
 // Nice underlines for text links.
@@ -100,6 +108,7 @@ p a, li a {
 blockquote {
   border-left: 0.15rem solid $flexy-typo-link-color;
   padding-left: 1rem;
+  margin: 1em 0;
 
   p {
     font-style: italic;
@@ -117,6 +126,8 @@ hr {
 }
 
 ul, ol {
+  margin: 1em 0;
+
   li {
     font-size: $flexy-typo-base-font-size;
     font-feature-settings: 'kern', 'onum', 'liga';
@@ -196,6 +207,7 @@ ol {
 
 dl {
   font-size: $flexy-typo-base-font-size;
+  margin: 1em 0;
 
   dt, dd {
     font-feature-settings: 'kern', 'onum', 'liga';
@@ -219,7 +231,7 @@ code, pre {
 
 pre {
   display: block;
-  margin: .5rem 0;
+  margin: 1em 0;
   //padding: 1rem;
   line-height: 1.4rem;
   white-space: pre;

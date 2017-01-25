@@ -121,9 +121,16 @@ h1, h2, h3, h4, h5, h6 {
           font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
-  margin-bottom: .5rem; }
-  h1 + .b-caption, h2 + .b-caption, h3 + .b-caption, h4 + .b-caption, h5 + .b-caption, h6 + .b-caption {
-    margin-top: -1rem; }
+  margin-bottom: .5em; }
+
+h1 + .b-caption {
+  margin-top: -2.5em; }
+
+h2 + .b-caption {
+  margin-top: -1.5em; }
+
+h3 + .b-caption {
+  margin-top: -1.5em; }
 
 p a, li a {
   background-image: -webkit-linear-gradient(top, transparent 50%, #6ab0de 50%);
@@ -138,7 +145,8 @@ p a, li a {
 
 blockquote {
   border-left: 0.15rem solid #2980B9;
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  margin: 1em 0; }
   blockquote p {
     font-style: italic; }
 
@@ -151,16 +159,18 @@ hr {
   margin-bottom: 3rem;
   margin-top: 3rem; }
 
-ul li, ol li {
-  font-size: 15px;
-  -webkit-font-feature-settings: 'kern', 'onum', 'liga';
-          font-feature-settings: 'kern', 'onum', 'liga';
-  margin-left: 2rem;
-  line-height: 1.5; }
-  ul li ol, ul li ul, ol li ol, ol li ul {
-    padding-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 2rem; }
+ul, ol {
+  margin: 1em 0; }
+  ul li, ol li {
+    font-size: 15px;
+    -webkit-font-feature-settings: 'kern', 'onum', 'liga';
+            font-feature-settings: 'kern', 'onum', 'liga';
+    margin-left: 2rem;
+    line-height: 1.5; }
+    ul li ol, ul li ul, ol li ol, ol li ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem; }
 
 ol {
   list-style-type: none; }
@@ -192,7 +202,8 @@ ol {
           content: counter(top-level) "." counter(sub-level) "." counter(sub-sub-level); }
 
 dl {
-  font-size: 15px; }
+  font-size: 15px;
+  margin: 1em 0; }
   dl dt, dl dd {
     -webkit-font-feature-settings: 'kern', 'onum', 'liga';
             font-feature-settings: 'kern', 'onum', 'liga';
@@ -207,7 +218,7 @@ code, pre {
 
 pre {
   display: block;
-  margin: .5rem 0;
+  margin: 1em 0;
   line-height: 1.4rem;
   white-space: pre;
   white-space: pre-wrap;
