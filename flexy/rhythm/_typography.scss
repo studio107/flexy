@@ -7,16 +7,3 @@
 @import "function";
 @import "mixins";
 @import "base";
-
-// Import your project SCSS module partials.
-// Global demo styles.
-// ---------------------------------------
-
-body {
-  background-color: $flexy-typo-body-background;
-  color: $flexy-typo-body-text-color;
-}
-
-.button-align {
-  @include flexy-typo-baseline(zeta, 2, 2, all);
-}

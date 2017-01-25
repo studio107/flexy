@@ -10,35 +10,37 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-<div class="b-header">
-    <div class="b-row">
-        <div class="b-col b-col_small_2">
-            <a class="b-logo" href="/flexy/">Flexy</a>
-        </div>
-        <div class="b-col b-col_small_10">
-            <ul class="b-menu b-header-menu">
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/grid.html">Grid system</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typography.html">Typography</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typescale.html">Typescale</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/visibility.html">Visibility</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/themes.html">Themes</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/breakpoint.html">Breakpoint</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <button id="show-grid" class="b-button">Show grid</button>
-                </li>
-            </ul>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <a class="b-logo" href="/flexy/">Flexy</a>
+            </div>
+            <div class="b-col b-col_small_10">
+                <ul class="b-menu b-header-menu">
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/grid.html">Grid</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typography.html">Typography</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typescale.html">Typescale</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/visibility.html">Visibility</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/themes.html">Themes</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/breakpoint.html">Breakpoint</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <button id="show-grid" class="b-button">Show grid</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -48,6 +50,10 @@
         <div class="b-col b-col_small_12">
             
     <h1>Grid</h1>
+
+    <blockquote>
+        hello world
+    </blockquote>
 
     <div class="b-divider"></div>
 
@@ -69,13 +75,13 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"/>Описание</h3>
+    <h3><a name="description"></a>Описание</h3>
 
     <p>Сетка с использованием flex. Для корректной работы требует <a href="/breakpoint.html">flexy-breakpoint</a></p>
 
     <div class="b-divider"></div>
 
-    <h3><a name="settings"/>Настройки</h3>
+    <h3><a name="settings"></a>Настройки</h3>
 
     <pre><code class="sass">// Количество колонок
 $flexy-grid-columns: 12 !default;
@@ -101,11 +107,11 @@ $flexy-grid-class-off: &#39;off&#39; !default;
 
     <div class="b-divider"></div>
 
-    <h2><a name="usage"/>Использование</h2>
+    <h2><a name="usage"></a>Использование</h2>
 
     <div class="b-divider"></div>
 
-    <h3><a name="auto"/>Автоматические колонки</h3>
+    <h3><a name="auto"></a>Автоматические колонки</h3>
 
     <div class="b-divider"></div>
 
@@ -135,7 +141,7 @@ $flexy-grid-class-off: &#39;off&#39; !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="standart"/>Стандартная сетка</h3>
+    <h3><a name="standart"></a>Стандартная сетка</h3>
 
     <div class="b-row">
     <div class="b-col b-col_small_12">
@@ -323,7 +329,7 @@ $flexy-grid-class-off: &#39;off&#39; !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="nested"/>Вложенная сетка</h3>
+    <h3><a name="nested"></a>Вложенная сетка</h3>
 
     <div class="b-row">
     <div class="b-col b-col_small_12">
@@ -485,7 +491,7 @@ $flexy-grid-class-off: &#39;off&#39; !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="responsive"/>Адаптивная сетка</h3>
+    <h3><a name="responsive"></a>Адаптивная сетка</h3>
 
     <div class="b-row">
     <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">

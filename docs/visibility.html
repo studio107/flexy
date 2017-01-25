@@ -10,35 +10,37 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-<div class="b-header">
-    <div class="b-row">
-        <div class="b-col b-col_small_2">
-            <a class="b-logo" href="/flexy/">Flexy</a>
-        </div>
-        <div class="b-col b-col_small_10">
-            <ul class="b-menu b-header-menu">
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/grid.html">Grid system</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typography.html">Typography</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typescale.html">Typescale</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/visibility.html">Visibility</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/themes.html">Themes</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/breakpoint.html">Breakpoint</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <button id="show-grid" class="b-button">Show grid</button>
-                </li>
-            </ul>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <a class="b-logo" href="/flexy/">Flexy</a>
+            </div>
+            <div class="b-col b-col_small_10">
+                <ul class="b-menu b-header-menu">
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/grid.html">Grid</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typography.html">Typography</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typescale.html">Typescale</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/visibility.html">Visibility</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/themes.html">Themes</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/breakpoint.html">Breakpoint</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <button id="show-grid" class="b-button">Show grid</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -47,14 +49,14 @@
     <div class="b-row">
         <div class="b-col b-col_small_12">
             
-    <h1>Visibility</h1>
+    <h1>Flexy visibility</h1>
+    <p class="b-caption">Отображение и скрытие блоков в зависимости от flexy-breakpoint</p>
 
     <div class="b-divider"></div>
 
     <h3>Оглавление</h3>
 
     <ol>
-        <li><a href="#description">Описание</a></li>
         <li>
             <a href="#usage">Использование</a>
             <ol>
@@ -66,70 +68,74 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"/>Описание</h3>
+    <h2><a name="usage"></a>Использование</h2>
 
-    <p>Отображение и скрытие блоков в зависимости от <code>flexy-breakpoint</code></p>
+    <h3><a name="visible"></a>Отображение</h3>
 
-    <div class="b-divider"></div>
-
-    <h2><a name="usage"/>Использование</h2>
-
-    <h3><a name="visible"/>Отображение</h3>
-
-    <p>Отображать для small</p>
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Отображать для small</p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_only&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_small_only">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_small_only">
     <div class="b-helper">b-visible b-visible_small_only</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
-
-    <p>Отображать для small и выше</p>
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_up&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Отображать для small и выше</p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_up&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_up&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_small_up">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_small_up">
     <div class="b-helper">b-visible b-visible_small_up</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
-
-    <p>Отображать для <code>medium</code></p>
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_medium_only&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Отображать для <code>medium</code></p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_medium_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_medium_only&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_medium_only">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_medium_only">
     <div class="b-helper">b-visible b-visible_medium_only</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
-
-    <p>Отображать для <code>medium</code> и выше</p>
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_medium_up&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Отображать для <code>medium</code> и выше</p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_medium_up&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_medium_up&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_medium_up">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_medium_up">
     <div class="b-helper">b-visible b-visible_medium_up</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
-
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Полный пример для only</p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_only&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;b-visible b-visible_medium_only&quot;&gt;
@@ -145,28 +151,31 @@
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_xxlarge_only&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_small_only">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_small_only">
     <div class="b-helper">b-visible b-visible_small_only</div>
 </div>
-    <div class="b-visible b-visible_medium_only">
+        <div class="b-visible b-visible_medium_only">
     <div class="b-helper">b-visible b-visible_medium_only</div>
 </div>
-    <div class="b-visible b-visible_large_only">
+        <div class="b-visible b-visible_large_only">
     <div class="b-helper">b-visible b-visible_large_only</div>
 </div>
-    <div class="b-visible b-visible_xlarge_only">
+        <div class="b-visible b-visible_xlarge_only">
     <div class="b-helper">b-visible b-visible_xlarge_only</div>
 </div>
-    <div class="b-visible b-visible_xxlarge_only">
+        <div class="b-visible b-visible_xxlarge_only">
     <div class="b-helper">b-visible b-visible_xxlarge_only</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
-
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
-    &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_only&lt;/div&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Полный пример для up</p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_up&quot;&gt;
+    &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_up&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;b-visible b-visible_medium_up&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_medium_up&lt;/div&gt;
@@ -181,44 +190,52 @@
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_xxlarge_up&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-visible b-visible_small_up">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-visible b-visible_small_up">
     <div class="b-helper">b-visible b-visible_small_up</div>
 </div>
-    <div class="b-visible b-visible_medium_up">
+        <div class="b-visible b-visible_medium_up">
     <div class="b-helper">b-visible b-visible_medium_up</div>
 </div>
-    <div class="b-visible b-visible_large_up">
+        <div class="b-visible b-visible_large_up">
     <div class="b-helper">b-visible b-visible_large_up</div>
 </div>
-    <div class="b-visible b-visible_xlarge_up">
+        <div class="b-visible b-visible_xlarge_up">
     <div class="b-helper">b-visible b-visible_xlarge_up</div>
 </div>
-    <div class="b-visible b-visible_xxlarge_up">
+        <div class="b-visible b-visible_xxlarge_up">
     <div class="b-helper">b-visible b-visible_xxlarge_up</div>
 </div>
+    </div>
 
     <div class="b-divider"></div>
 
-    <h3><a name="hide"/>Скрытие</h3>
+    <h3><a name="hide"></a>Скрытие</h3>
 
-    <div class="b-divider"></div>
-
-    <p>Скрывать для <code>medium</code></p>
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-hide b-hide_medium_only&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Скрывать для <code>medium</code></p>
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-hide b-hide_medium_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-hide b-hide_medium_only&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-hide b-hide_medium_only">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-hide b-hide_medium_only">
     <div class="b-helper">b-hide b-hide_medium_only</div>
 </div>
+    </div>
 
     <div class="b-divider"></div>
 
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Полный пример для <code>only</code></p>
+
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_only&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;b-hide b-hide_medium_only&quot;&gt;
@@ -234,27 +251,31 @@
     &lt;div class=&quot;b-helper&quot;&gt;b-hide b-hide_xxlarge_only&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-hide b-hide_small_only">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-hide b-hide_small_only">
     <div class="b-helper">b-hide b-hide_small_only</div>
 </div>
-    <div class="b-hide b-hide_medium_only">
+        <div class="b-hide b-hide_medium_only">
     <div class="b-helper">b-hide b-hide_medium_only</div>
 </div>
-    <div class="b-hide b-hide_large_only">
+        <div class="b-hide b-hide_large_only">
     <div class="b-helper">b-hide b-hide_large_only</div>
 </div>
-    <div class="b-hide b-hide_xlarge_only">
+        <div class="b-hide b-hide_xlarge_only">
     <div class="b-helper">b-hide b-hide_xlarge_only</div>
 </div>
-    <div class="b-hide b-hide_xxlarge_only">
+        <div class="b-hide b-hide_xxlarge_only">
     <div class="b-helper">b-hide b-hide_xxlarge_only</div>
 </div>
+    </div>
 
-    <div class="b-divider"></div>
+    <div class="b-segment">
+        <p class="b-ribbon b-ribbon_offset">Полный пример для <code>up</code></p>
 
-    <p>Код:</p>
-    <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
+        <p>Код:</p>
+        <pre><code class="html">&lt;div class=&quot;b-visible b-visible_small_only&quot;&gt;
     &lt;div class=&quot;b-helper&quot;&gt;b-visible b-visible_small_only&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;b-hide b-hide_medium_up&quot;&gt;
@@ -270,22 +291,25 @@
     &lt;div class=&quot;b-helper&quot;&gt;b-hide b-hide_xxlarge_up&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-    <p>Пример (изменяйте размер браузера):</p>
-    <div class="b-hide b-hide_small_up">
+        <div class="b-divider b-divider_offset"></div>
+
+        <p>Пример (изменяйте размер браузера):</p>
+        <div class="b-hide b-hide_small_up">
     <div class="b-helper">b-hide b-hide_small_up</div>
 </div>
-    <div class="b-hide b-hide_medium_up">
+        <div class="b-hide b-hide_medium_up">
     <div class="b-helper">b-hide b-hide_medium_up</div>
 </div>
-    <div class="b-hide b-hide_large_up">
+        <div class="b-hide b-hide_large_up">
     <div class="b-helper">b-hide b-hide_large_up</div>
 </div>
-    <div class="b-hide b-hide_xlarge_up">
+        <div class="b-hide b-hide_xlarge_up">
     <div class="b-helper">b-hide b-hide_xlarge_up</div>
 </div>
-    <div class="b-hide b-hide_xxlarge_up">
+        <div class="b-hide b-hide_xxlarge_up">
     <div class="b-helper">b-hide b-hide_xxlarge_up</div>
 </div>
+    </div>
 
         </div>
     </div>

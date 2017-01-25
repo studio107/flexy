@@ -3,6 +3,10 @@
 {% block content %}
     <h1>Grid</h1>
 
+    <blockquote>
+        hello world
+    </blockquote>
+
     <div class="b-divider"></div>
 
     <h3>Оглавление</h3>
@@ -23,13 +27,13 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"/>Описание</h3>
+    <h3><a name="description"></a>Описание</h3>
 
     <p>Сетка с использованием flex. Для корректной работы требует <a href="/breakpoint.html">flexy-breakpoint</a></p>
 
     <div class="b-divider"></div>
 
-    <h3><a name="settings"/>Настройки</h3>
+    <h3><a name="settings"></a>Настройки</h3>
 
     <pre><code class="sass">{% filter escape %}// Количество колонок
 $flexy-grid-columns: 12 !default;
@@ -55,11 +59,11 @@ $flexy-grid-class-off: 'off' !default;
 
     <div class="b-divider"></div>
 
-    <h2><a name="usage"/>Использование</h2>
+    <h2><a name="usage"></a>Использование</h2>
 
     <div class="b-divider"></div>
 
-    <h3><a name="auto"/>Автоматические колонки</h3>
+    <h3><a name="auto"></a>Автоматические колонки</h3>
 
     <div class="b-divider"></div>
 
@@ -89,7 +93,7 @@ $flexy-grid-class-off: 'off' !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="standart"/>Стандартная сетка</h3>
+    <h3><a name="standart"></a>Стандартная сетка</h3>
 
     {% include "_grid_standart.html" %}
 
@@ -97,7 +101,7 @@ $flexy-grid-class-off: 'off' !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="nested"/>Вложенная сетка</h3>
+    <h3><a name="nested"></a>Вложенная сетка</h3>
 
     {% include "_grid_nested.html" %}
 
@@ -105,7 +109,7 @@ $flexy-grid-class-off: 'off' !default;
 
     <div class="b-divider"></div>
 
-    <h3><a name="responsive"/>Адаптивная сетка</h3>
+    <h3><a name="responsive"></a>Адаптивная сетка</h3>
 
     {% include "_grid_responsive.html" %}
 

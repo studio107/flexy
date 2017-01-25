@@ -6,7 +6,7 @@ $flexy-debug: false !default;
 $flexy-prefix: 'b' !default;
 
 // defaults
-$flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-font: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $flexy-color-schema: (
         default: #353535,
         blue: #007fff,
@@ -34,7 +34,7 @@ $flexy-typo-link-color: map-get($flexy-color-schema, default) !default;
 $flexy-typo-link-hover: darken($flexy-typo-link-color, 5%) !default;
 
 $flexy-typo-body-text-color: #494949 !default;
-$flexy-typo-body-background: #FCFCFC !default;
+$flexy-typo-body-background: #fff !default;
 $flexy-typo-body-font: $flexy-font !default;
 
 $flexy-typo-code-background: #F5F4F2 !default;
@@ -44,6 +44,8 @@ $flexy-typo-caption-color: #BDC8CC !default;
 
 $flexy-typo-heading-color: #2E2E2E !default;
 $flexy-typo-heading-font: $flexy-font !default;
+
+$flexy-ui-divider-background-color: #e8e8e8 !default;
 
 // elements
 $flexy-headings: h1, h2, h3, h4, h5, h6 !default;

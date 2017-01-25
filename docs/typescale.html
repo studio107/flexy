@@ -10,35 +10,37 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
-<div class="b-header">
-    <div class="b-row">
-        <div class="b-col b-col_small_2">
-            <a class="b-logo" href="/flexy/">Flexy</a>
-        </div>
-        <div class="b-col b-col_small_10">
-            <ul class="b-menu b-header-menu">
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/grid.html">Grid system</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typography.html">Typography</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/typescale.html">Typescale</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/visibility.html">Visibility</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/themes.html">Themes</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <a href="/breakpoint.html">Breakpoint</a>
-                </li>
-                <li class="b-menu__item b-header-menu__item">
-                    <button id="show-grid" class="b-button">Show grid</button>
-                </li>
-            </ul>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <a class="b-logo" href="/flexy/">Flexy</a>
+            </div>
+            <div class="b-col b-col_small_10">
+                <ul class="b-menu b-header-menu">
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/grid.html">Grid</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typography.html">Typography</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/typescale.html">Typescale</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/visibility.html">Visibility</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/themes.html">Themes</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <a href="/breakpoint.html">Breakpoint</a>
+                    </li>
+                    <li class="b-menu__item b-header-menu__item">
+                        <button id="show-grid" class="b-button">Show grid</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -60,13 +62,13 @@
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"/>Описание</h3>
+    <h3><a name="description"></a>Описание</h3>
 
     <p>Миксины для использования Modular Scale</p>
 
     <div class="b-divider"></div>
 
-    <h2><a name="usage"/>Использование</h2>
+    <h2><a name="usage"></a>Использование</h2>
 
     <p>Код:</p>
     <pre><code class="scss">@include flexy-type-scale(16px, flexy-modular-scale(perfect-fourth));</code></pre>

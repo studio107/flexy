@@ -11,7 +11,8 @@ html {
 body {
   // set body 100% height
   min-height: 100%;
-
+  background-color: $flexy-typo-body-background;
+  color: $flexy-typo-body-text-color;
   font-size: $flexy-typo-base-font-size;
   font-family: $flexy-font;
   font-style: normal;
@@ -31,10 +32,88 @@ label {
   cursor: pointer;
 }
 
+// Links.
+a {
+  color: $flexy-typo-link-color;
+  text-decoration: none;
+  transition: color .1s, background-color .1s;
+
+  &:hover, &:active, &:focus {
+    color: $flexy-typo-link-hover;
+    text-decoration: none;
+  }
+}
+
+p {
+  font-weight: 400;
+  font-feature-settings: 'kern', 'onum', 'liga';
+}
+
+// Bold.
+b, strong {
+  font-weight: bold;
+}
+
+// Italic.
+em, i {
+  font-style: italic;
+}
+
+small {
+  line-height: 1rem;
+  font-size: $flexy-typo-base-font-size * .9;
+}
+
+.b-caption {
+  font-size: $flexy-typo-base-font-size * .9;
+  color: $flexy-typo-caption-color;
+}
+
 #{$flexy-headings} {
   font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
+  margin-bottom: .5rem;
+
+  & + .b-caption {
+    margin-top: -1rem;
+  }
+}
+
+// Nice underlines for text links.
+p a, li a {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($flexy-typo-link-color, 20%) 50%);
+  background-position: 0 93%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  text-shadow: 0.1rem 0 $flexy-typo-body-background,
+  0.15rem 0 $flexy-typo-body-background,
+  -0.1rem 0 $flexy-typo-body-background,
+  -0.15rem 0 $flexy-typo-body-background;
+
+  &:hover, &:active, &:focus {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($flexy-typo-link-hover, 20%) 50%);
+  }
+}
+
+// Quotes.
+blockquote {
+  border-left: 0.15rem solid $flexy-typo-link-color;
+  padding-left: 1rem;
+
+  p {
+    font-style: italic;
+  }
+}
+
+hr {
+  background-color: $flexy-ui-divider-background-color;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 ul, ol {
@@ -140,17 +219,21 @@ code, pre {
 
 pre {
   display: block;
-  margin: 1rem 0;
+  margin: .5rem 0;
   //padding: 1rem;
   line-height: 1.4rem;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
+
+  code {
+    line-height: 1.4rem;
+  }
 }
 
 code {
-  font-size: $flexy-typo-base-font-size;
+  font-size: $flexy-typo-base-font-size * .9;
   line-height: 1rem;
 }
 

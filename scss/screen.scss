@@ -6,14 +6,18 @@ $flexy-colors: $flexy-color-schema;
 @import "flexy";
 
 .b-header {
-  margin: $flexy-typo-base-measure 0;
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid $flexy-typo-caption-color;
+  padding: 20px 0;
 
   &-menu {
     font-size: $flexy-typo-base-font-size;
 
     &__item {
+      font-size: 18px;
+
       &:not(:last-child) {
-        margin-right: $flexy-typo-base-measure;
+        margin-right: 15px;
       }
     }
   }
@@ -23,7 +27,8 @@ $flexy-colors: $flexy-color-schema;
   color: #000;
   text-decoration: none;
   @include antialias;
-  font-weight: 900;
+  font-weight: bold;
+  font-size: 32px;
 }
 
 .b-grid {
@@ -34,7 +39,8 @@ $flexy-colors: $flexy-color-schema;
   background-color: rgba(0, 163, 11, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
   padding: 0 5px;
-  margin: 0 -5px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .b-footer {

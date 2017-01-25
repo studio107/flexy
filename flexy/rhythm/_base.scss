@@ -19,40 +19,12 @@ body {
   line-height: 2rem;
 }
 
-// Links.
-a {
-  color: $flexy-typo-link-color;
-  text-decoration: none;
-  transition: color .1s, background-color .1s;
-
-  &:hover, &:active, &:focus {
-    color: $flexy-typo-link-hover;
-    text-decoration: none;
-  }
-}
-
 @mixin flexy-typo-typeset {
   img {
     @include flexy-breakpoint(medium) {
       margin: 0 auto;
       max-width: 100%;
       width: auto;
-    }
-  }
-
-  // Nice underlines for text links.
-  p a, li a {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($flexy-typo-link-color, 20%) 50%);
-    background-position: 0 93%;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15rem;
-    text-shadow: 0.1rem 0 $flexy-typo-body-background,
-    0.15rem 0 $flexy-typo-body-background,
-    -0.1rem 0 $flexy-typo-body-background,
-    -0.15rem 0 $flexy-typo-body-background;
-
-    &:hover, &:active, &:focus {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, lighten($flexy-typo-link-hover, 20%) 50%);
     }
   }
 
@@ -197,23 +169,6 @@ a {
   // Definition lists.
   dl {
     @include flexy-typo-baseline(zeta, 2, 2, all);
-
-    dt, dd {
-      font-feature-settings: 'kern', 'onum', 'liga';
-      margin-left: 2rem;
-
-      @include flexy-breakpoint(medium) {
-        margin-left: 0;
-      }
-    }
-
-    dt {
-      font-weight: bold;
-    }
-
-    dd + dt {
-      padding-top: 1rem;
-    }
   }
 
   // Tables.
@@ -238,16 +193,6 @@ a {
     }
   }
 
-  // Bold.
-  b, strong, .bold {
-    font-weight: bold;
-  }
-
-  // Italic.
-  em, i, .italic {
-    font-style: italic;
-  }
-
   // Caption and inline small text.
   small, .caption {
     @include flexy-typo-fontsize(theta, all);
@@ -255,10 +200,6 @@ a {
     font-family: $flexy-typo-heading-font;
     font-style: normal;
     font-weight: 400;
-  }
-
-  small {
-    line-height: 1rem;
   }
 
   .caption {

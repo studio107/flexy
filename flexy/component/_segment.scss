@@ -7,11 +7,5 @@
     background: {
       color: #fff;
     }
-
-    .#{$flexy-prefix}-divider {
-      margin-left: -$flexy-segment-padding;
-      margin-right: -$flexy-segment-padding;
-      padding: 0 $flexy-segment-padding;
-    }
   }
 }
