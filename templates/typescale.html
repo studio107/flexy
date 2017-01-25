@@ -3,27 +3,22 @@
 {% macro typescale(name) %}@include flexy-type-scale(16px, flexy-modular-scale({{ name }}));{% endmacro %}
 
 {% block content %}
-    <h1>Typescale</h1>
+    <h1>Flexy typescale</h1>
+    <p class="b-caption">Миксины для использования Modular Scale</p>
 
     <div class="b-divider"></div>
 
     <h3>Оглавление</h3>
 
     <ol>
-        <li><a href="#description">Описание</a></li>
         <li><a href="#usage">Использование</a></li>
     </ol>
 
     <div class="b-divider"></div>
 
-    <h3><a name="description"></a>Описание</h3>
-
-    <p>Миксины для использования Modular Scale</p>
-
-    <div class="b-divider"></div>
-
     <h2><a name="usage"></a>Использование</h2>
 
+    <div class="b-segment">
     <p>Код:</p>
     <pre><code class="scss">{% filter escape %}@include flexy-type-scale(16px, flexy-modular-scale(perfect-fourth));{% endfilter %}</code></pre>
 
@@ -57,8 +52,14 @@ h1 {
   font-size: 3.36782em;
   line-height: 67.33963px;
 }{% endfilter %}</code></pre>
+    </div>
 
-    <p>Примеры:</p>
+    <div class="b-divider"></div>
+
+    <h3>Примеры:</h3>
+
+    <div class="b-divider"></div>
+
     {% set typesets = [
     { name: 'Minor second', type: 'minor-second' },
     { name: 'Major second', type: 'major-second' },
