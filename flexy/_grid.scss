@@ -122,6 +122,7 @@
     margin: 0 auto;
     max-width: $flexy-grid-wrapper-max-width;
     min-width: $flexy-grid-wrapper-min-width;
+    box-sizing: border-box;
 
     &_left {
       margin: 0;

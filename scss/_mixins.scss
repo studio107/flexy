@@ -1,0 +1,147 @@
+@mixin flexy-typeset {
+  p {
+    margin-bottom: 1em;
+  }
+
+  // Lists.
+  ul, ol {
+    font-size: $flexy-body-font-size;
+    margin-left: 2rem;
+    margin-bottom: 1em;
+
+    li {
+      font-feature-settings: 'kern', 'onum', 'liga';
+
+      @include flexy-breakpoint(small) {
+        margin-left: 0;
+      }
+
+      @include flexy-breakpoint(medium) {
+        margin-left: 1rem;
+      }
+
+      ol, ul {
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  // Ordered lists.
+  ol {
+    list-style-type: none;
+
+    li {
+      counter-increment: top-level;
+
+      &:before {
+        content: counter(top-level) '.';
+        font-feature-settings: 'lnum', 'tnum';
+        margin-left: -3rem;
+        position: absolute;
+        text-align: right;
+        width: 2em;
+      }
+
+      ul {
+
+        li {
+
+          &:before {
+            content: '';
+          }
+
+          ol {
+
+            li {
+              counter-increment: alt-level;
+
+              &:before {
+                content: counter(alt-level) '.';
+              }
+            }
+          }
+        }
+      }
+
+      ol {
+
+        li {
+          counter-increment: sub-level;
+
+          &:before {
+            content: counter(top-level) '.' counter(sub-level);
+          }
+
+          ul {
+
+            li {
+
+              &:before {
+                content: '';
+              }
+            }
+          }
+
+          ol {
+
+            li {
+              counter-increment: sub-sub-level;
+
+              &:before {
+                content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Horizontal rule.
+  hr {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, silver 50%);
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+    background-size: 100% 0.15rem;
+    border: 0;
+    margin: 0;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  // Code block.
+  code, pre {
+    box-shadow: 0 0 0 1px rgba(#ecf0f1, 0.2) inset;
+    background-color: #ecf0f1;
+    font-size: $flexy-body-font-size * .9;
+    font-family: Consolas, Menlo, Monospaced, monospace;
+  }
+
+  pre {
+    margin-bottom: 1em;
+    display: block;
+    padding: 10px;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+
+    & > code {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  blockquote {
+    margin-bottom: 1em;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-left: 3px solid #e74c3c;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

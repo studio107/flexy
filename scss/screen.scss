@@ -1,6 +1,92 @@
-$flexy-grid-wrapper-max-width: 978px;
+$flexy-font: 'Lato';
+$flexy-grid-wrapper-max-width: 1280px;
 
 @import "flexy";
+@import "theme";
+@import "mixins";
+@import "icon";
+
+a {
+  color: #000;
+
+  &:hover {
+    color: #8e44ad;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include antialias;
+  margin-bottom: .5em;
+  cursor: default;
+  line-height: 1em;
+  padding-bottom: .25em;
+
+  &:hover {
+    .b-anchor {
+      opacity: 1;
+    }
+  }
+
+  & + .b-caption {
+    margin-top: -1em;
+    margin-bottom: 1em;
+  }
+}
+
+h1 {
+  font-size: 3.157em;
+}
+
+h2 {
+  font-size: 2.369em;
+}
+
+h3 {
+  font-size: 1.777em;
+  border-bottom: 1px solid silver;
+}
+
+h4 {
+  font-size: 1.333em;
+  border-bottom: 1px solid silver;
+}
+
+h5 {
+  font-size: 1em;
+  border-bottom: 1px solid silver;
+}
+
+h6 {
+  font-size: 0.75em;
+}
+
+.b-anchor {
+  $size: 16px;
+
+  opacity: 0;
+  transition: opacity .2s linear;
+  float: left;
+  margin-left: -($size + 10px);
+  width: $size;
+  height: $size;
+  cursor: pointer;
+  text-decoration: none;
+  color: silver;
+  outline: none;
+
+  &::before {
+    width: $size;
+    height: $size;
+    display: block;
+    font-family: 'Icons';
+    content: "\f0c1";
+    font-size: $size;
+  }
+}
+
+.b-caption {
+  color: #8e8e8e;
+}
 
 .b-header {
   margin: 0 0 25px 0;
@@ -9,10 +95,14 @@ $flexy-grid-wrapper-max-width: 978px;
 
   &-menu {
     font-size: $flexy-body-font-size;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     &__item {
-      font-size: 18px;
-
       &:not(:last-child) {
         margin-right: 15px;
       }
@@ -28,50 +118,90 @@ $flexy-grid-wrapper-max-width: 978px;
   font-size: 32px;
 }
 
+.b-typeset {
+  @include flexy-typeset;
+}
+
 .b-grid {
 }
 
 .b-helper {
   @include ellipsis;
-  background-color: rgba(0, 163, 11, 0.2);
-  box-shadow: 0 0 0 1px rgba(0, 163, 11, 0.2) inset;
+  background-color: rgba(#8e44ad, 0.2);
+  box-shadow: 0 0 0 1px rgba(#8e44ad, 0.2) inset;
   padding: 0 5px;
   margin: 0;
   box-sizing: border-box;
 }
 
+.b-segment {
+  margin: 1em 0 3em 0;
+}
+
 .b-footer {
   font-size: $flexy-body-font-size;
-  text-align: center;
+  color: #8e8e8e;
+  padding: 15px 0;
+
+  &__link {
+    color: #8e8e8e;
+  }
 }
 
 .b-breakpoint {
   padding: 10px;
   text-align: center;
 
-  @include flexy-breakpoint(small) {
-    background-color: gray;
-  }
-  @include flexy-breakpoint(medium) {
-    background-color: green;
-  }
-  @include flexy-breakpoint(large) {
-    background-color: blue;
-  }
-  @include flexy-breakpoint(xlarge) {
-    background-color: yellow;
-  }
-  @include flexy-breakpoint(xxlarge) {
-    background-color: orange;
+  $breakpoint-colors: (
+          small: #3498db,
+          medium: #27ae60,
+          large: #e67e22,
+          xlarge: #e74c3c,
+          xxlarge: #8e44ad,
+  );
+
+  @each $breakpoint, $color in $breakpoint-colors {
+    @include flexy-breakpoint($breakpoint) {
+      background-color: rgba($color, .8);
+      box-shadow: 0 0 0 1px rgba($color, .2) inset;
+    }
   }
 }
 
 .b-media {
   padding: 10px;
   text-align: center;
-  background-color: gray;
+  background-color: #3498db;
 
   @include flexy-media((min-width: 600px, max-width: 700px)) {
-    background-color: purple;
+    background-color: #8e44ad;
   }
+}
+
+.b-divider {
+  background: {
+    color: #bdc3c7;
+  }
+  height: 1px;
+  width: 100%;
+  padding: 0;
+  margin: 20px 0;
+  border: none;
+}
+
+.b-feature {
+  padding-bottom: 20px;
+}
+
+.b-coming {
+  background: {
+    color: #c0392b;
+  }
+  color: #fff;
+  font-size: $flexy-body-font-size * .7;
+  top: -20px;
+  left: 5px;
+  position: relative;
+  padding: 2px 4px;
+  border-radius: 3px;
 }

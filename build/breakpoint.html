@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakpoint - Flexy SCSS framework</title>
+    <meta name="keywords" content="media, responsive, adaptive, css3, mixin, utils">
+    <meta name="description" content="Breakpoint component for @media">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+            <div class="b-col b-col_small_10">
+                <ul class="b-header-menu">
+                    <li class="b-header-menu__item">
+                        <a href="/grid.html">Grid</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/block_grid.html">Block grid</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/visibility.html">Visibility</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/reset.html">Reset</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/breakpoint.html">Breakpoint</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            <div class="b-typeset">
+                <h1><a name="anchor11" class="b-anchor" href="#anchor11"></a>Настройки</h1><pre><code class="hljs scss"><span class="hljs-variable">$flexy-breakpoints</span>: (
+    small: <span class="hljs-number">0</span>,
+    medium: <span class="hljs-number">768px</span>,
+    large: <span class="hljs-number">992px</span>,
+    xlarge: <span class="hljs-number">1200px</span>,
+    xxlarge: <span class="hljs-number">1600px</span>
+) !default;</code></pre><p><code>$flexy-breakpoints</code> это <code>map</code> из sass где в качестве ключа выступает любое удобное для вас название media</p>
+<h3><a name="anchor12" class="b-anchor" href="#anchor12"></a>Пример</h3><pre><code class="hljs scss"><span class="hljs-variable">$flexy-breakpoints</span>: (
+    foo: <span class="hljs-number">100px</span>,
+    bar: <span class="hljs-number">350px</span>
+);
+
+...
+
+<span class="hljs-selector-class">.my-class</span> {
+    <span class="hljs-attribute">font-weight</span>: normal;
+
+    @<span class="hljs-keyword">include</span> flexy-breakpoint(bar) {
+        <span class="hljs-attribute">font-weight</span>: bold;
+        ...
+    }
+}</code></pre><h3><a name="anchor13" class="b-anchor" href="#anchor13"></a>Описание функций и миксинов</h3><h4><a name="anchor14" class="b-anchor" href="#anchor14"></a>flexy-breakpoint</h4><p>Принимает в качестве аргументов <code>(string, string)</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.my-class</span> {
+    @<span class="hljs-keyword">include</span> flexy-breakpoint(bar, print) {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><pre><code class="hljs css">@<span class="hljs-keyword">media</span> print and (min-width: <span class="hljs-number">350px</span>) {
+    <span class="hljs-selector-class">.my-class</span> {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><h4><a name="anchor15" class="b-anchor" href="#anchor15"></a>flexy-media</h4><p>Принимает в качестве аргументов <code>(map, string)</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.my-class</span> {
+    @<span class="hljs-keyword">include</span> flexy-media((min-width: 100px, max-width: 110px), print) {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><pre><code class="hljs css">@<span class="hljs-keyword">media</span> print and (min-width: <span class="hljs-number">100px</span>) and (max-width: <span class="hljs-number">110px</span>) {
+    <span class="hljs-selector-class">.my-class</span> {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><h4><a name="anchor16" class="b-anchor" href="#anchor16"></a>flexy-get-breakpoint</h4><p>Функция принимает в качестве аргументов <code>(string)</code></p>
+<pre><code class="hljs scss">flexy-get-breakpoint(foo);</code></pre><pre><code class="hljs css">350<span class="hljs-selector-tag">px</span></code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017 <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex> at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

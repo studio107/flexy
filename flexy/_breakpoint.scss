@@ -21,13 +21,6 @@
   }
 }
 
-@mixin flexy-media-screen($media) {
-  @warn 'deprecated';
-  @include flexy-media($media) {
-    @content;
-  }
-}
-
 @mixin flexy-breakpoint($breakpoint, $media: 'screen') {
   @if map-has-key($flexy-breakpoints, $breakpoint) {
     @media #{$media} and (min-width: #{map-get($flexy-breakpoints, $breakpoint)}) {

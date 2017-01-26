@@ -25,10 +25,26 @@
         &__#{$namespace}_#{$i} {
           @include flexy-breakpoint($namespace) {
             width: 100% / $i;
+          }
 
-            &_fluid {
-              width: auto;
-              flex: 1 0 100% / $i;
+          &_fluid {
+            width: auto;
+            flex: 1 0 100% / $i;
+          }
+
+          &_only {
+            $prev: map-prev-key($flexy-breakpoints, $namespace);
+            $next: map-next-key($flexy-breakpoints, $namespace);
+
+            $media: ();
+            @if ($next) {
+              $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
+            } @else {
+              $media: (min-width: flexy-get-breakpoint($namespace));
+            }
+
+            @include flexy-media($media) {
+              width: 100% / $i;
             }
           }
         }

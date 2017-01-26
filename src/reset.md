@@ -1,3 +1,91 @@
+---
+title: Reset css
+keywords: flex, reset, css3
+description: Reset css
+---
+
+# Reset full
+
+`reset` состоит из 2 частей.
+
+### _reset_base.scss
+
+Предназначена для сброса общих стилей страницы.
+
+```scss
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+table, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  background: {
+    color: #fff;
+  }
+  color: #000;
+  line-height: 1em;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
+}
+```
+
+### _reset_form.scss
+
+Предназначена для сброса стилей form, input, button, textarea, select и всевдо элементов
+::placeholder. Так же убирает outline.
+
+```scss
 input,
 label,
 select,
@@ -129,3 +217,4 @@ select {
   font-family: Arial, sans-serif;
   font-style: normal;
 }
+```

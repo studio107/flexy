@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flexy SCSS framework</title>
+    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
+    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
+    <meta name="description" content="<%= file.meta.description || '' %>">
     <link rel="stylesheet" href="/css/bundle.css">
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <div class="b-wrapper">
@@ -17,27 +15,21 @@
                 <a class="b-logo" href="/">Flexy</a>
             </div>
             <div class="b-col b-col_small_10">
-                <ul class="b-menu b-header-menu">
-                    <li class="b-menu__item b-header-menu__item">
+                <ul class="b-header-menu">
+                    <li class="b-header-menu__item">
                         <a href="/grid.html">Grid</a>
                     </li>
-                    <li class="b-menu__item b-header-menu__item">
-                        <a href="/typography.html">Typography</a>
+                    <li class="b-header-menu__item">
+                        <a href="/block_grid.html">Block grid</a>
                     </li>
-                    <li class="b-menu__item b-header-menu__item">
-                        <a href="/typescale.html">Typescale</a>
-                    </li>
-                    <li class="b-menu__item b-header-menu__item">
+                    <li class="b-header-menu__item">
                         <a href="/visibility.html">Visibility</a>
                     </li>
-                    <li class="b-menu__item b-header-menu__item">
-                        <a href="/themes.html">Themes</a>
+                    <li class="b-header-menu__item">
+                        <a href="/reset.html">Reset</a>
                     </li>
-                    <li class="b-menu__item b-header-menu__item">
+                    <li class="b-header-menu__item">
                         <a href="/breakpoint.html">Breakpoint</a>
-                    </li>
-                    <li class="b-menu__item b-header-menu__item">
-                        <button id="show-grid" class="b-button">Show grid</button>
                     </li>
                 </ul>
             </div>
@@ -45,33 +37,22 @@
     </div>
     <div class="b-row">
         <div class="b-col b-col_small_12">
-            {% block content %}
-            {% endblock %}
+            <div class="b-typeset">
+                <%= contents %>
+            </div>
         </div>
     </div>
     <div class="b-col b-col_small_12">
         <div class="b-footer">
-            <div class="b-divider"></div>
             <div>
-                &copy; <a href="https://github.com/max107" target="_blank">max107</a> & <a
-                        href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                &copy; 2017 <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex> at
+                <a href="https://studio107.ru">studio107.ru</a>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    // Grid toggle
-    function changeClass() {
-        var wrapper = document.getElementById('wrapper');
-        if (wrapper.className.match(/(?:^|\s)b-grid(?!\S)/)) {
-            wrapper.className = wrapper.className.replace(/(?:^|\s)b-grid(?!\S)/g, '')
-        } else {
-            wrapper.className += " b-grid";
-        }
-    }
-    document.getElementById("show-grid").addEventListener('click', changeClass);
-</script>
-
 </body>
 </html>
