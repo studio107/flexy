@@ -6,6 +6,8 @@ $flexy-grid-gutter: 0.5em !default;
 $flexy-grid-wrapper-max-width: 100% !default;
 $flexy-grid-wrapper-min-width: auto !default;
 
+$flexy-block-grid-count: 25 !default;
+
 // defaults
 $flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $flexy-breakpoints: (

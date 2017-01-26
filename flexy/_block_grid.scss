@@ -1,0 +1,38 @@
+.#{$flexy-prefix} {
+  &-block-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    &_left {
+      justify-content: flex-start;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+
+    &_space {
+      justify-content: space-between;
+    }
+
+    &_right {
+      justify-content: flex-end;
+    }
+
+    @for $i from 1 through $flexy-block-grid-count {
+
+      @each $namespace, $width in $flexy-breakpoints {
+        &__#{$namespace}_#{$i} {
+          @include flexy-breakpoint($namespace) {
+            width: 100% / $i;
+
+            &_fluid {
+              width: auto;
+              flex: 1 0 100% / $i;
+            }
+          }
+        }
+      }
+    }
+  }
+}
