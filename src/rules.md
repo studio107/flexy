@@ -1,7 +1,7 @@
 ---
-title: Grid system
-keywords: flex, css3, grid, system
-description: Grid system with flex and css3
+title: Rules
+keywords: rules, guide, bem, flexbox, structure, css3
+description: Rules and guides for flexy framework
 ---
 
 # Rules

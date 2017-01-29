@@ -1,7 +1,7 @@
 ---
-title: Grid system
-keywords: flex, css3, grid, system
-description: Grid system with flex and css3
+title: Theme system
+keywords: flex, css3, theme, system
+description: Theme system for flexy
 ---
 
 # Темизация
