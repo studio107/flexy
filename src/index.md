@@ -47,7 +47,7 @@ description: Block grid with flexbox and css3
     </div>
     <div class="b-col b-col_small_12 b-col_medium_6">
         <div class="b-feature">
-            <h2><a href="/theme.html">Themes</a><span class="b-coming">Скоро</span></h2>
+            <h2><a href="/theme.html">Themes</a></h2>
             <p class="b-caption">Стилизация и темизация.</p>
             <p>Готовые примеры стилизации и тем. Стилизованные checkbox, radio, select. Кнопки и группы кнопок.</p>
             <p><a href="/theme.html" class="b-button b-button_disabled">Скоро...</a></p>
