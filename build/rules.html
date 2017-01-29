@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, grid, system">
+    <meta name="description" content="Grid system with flex and css3">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_2">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+            <div class="b-col b-col_small_10">
+                <ul class="b-header-menu">
+                    <li class="b-header-menu__item">
+                        <a href="/grid.html">Grid</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/block_grid.html">Block grid</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/visibility.html">Visibility</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/reset.html">Reset</a>
+                    </li>
+                    <li class="b-header-menu__item">
+                        <a href="/breakpoint.html">Breakpoint</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            <div class="b-typeset">
+                <h1><a name="anchor33" class="b-anchor" href="#anchor33"></a>Rules</h1><h2><a name="anchor34" class="b-anchor" href="#anchor34"></a>Об организации кода</h2><p>Flexy использует идеологию и методологию BEM, но не в полной мере. Мы стараемся соблюдать плоскую структуру там, где это
+возможно. Без фанатизма. Плоская структура блоков позволяет переиспользовать блоки не только в рамках одного проекта,
+но так же позволяет переносить блоки из проекта в проект. Так же это положительно влияет на скорость отрисовки страницы.</p>
+<h3><a name="anchor35" class="b-anchor" href="#anchor35"></a>Рекомендуемая структура проекта</h3><pre><code class="hljs undefined">├── _global.scss
+├── _mixins.scss
+├── _functions.scss
+├── _settings.scss
+├── _theme.scss
+├── block
+│   ├── cart
+│   │   └── _cart-list.scss
+│   └── page
+│       ├── _page-item.scss
+│       ├── _page-list.scss
+│       └── _page-typography.scss
+└── screen.scss</code></pre><ul>
+<li><code>_global.scss</code> - глобальные стили проекта</li>
+<li><code>_mixins.scss</code> - миксины используемые в проекте</li>
+<li><code>_functions.scss</code> - функции используемые в проекте</li>
+<li><code>screen.scss</code> - основная разметка</li>
+<li><code>_theme.scss</code> - UI для проекта</li>
+<li><code>block</code> - директория для блоков</li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017 <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex> at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

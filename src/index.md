@@ -50,15 +50,15 @@ description: Block grid with flexbox and css3
             <h2><a href="/theme.html">Themes</a></h2>
             <p class="b-caption">Стилизация и темизация.</p>
             <p>Готовые примеры стилизации и тем. Стилизованные checkbox, radio, select. Кнопки и группы кнопок.</p>
-            <p><a href="/theme.html" class="b-button b-button_disabled">Скоро...</a></p>
+            <p><a href="/theme.html" class="b-button b-button_disabled">Подробнее</a></p>
         </div>
     </div>
     <div class="b-col b-col_small_12 b-col_medium_6">
         <div class="b-feature">
-            <h2><a href="/rules.html">Rules</a><span class="b-coming">Скоро</span></h2>
+            <h2><a href="/rules.html">Rules</a></h2>
             <p class="b-caption">Структура, правила и рекомендации по ведению разработки.</p>
-            <p>Описание структуры проекта, правила, boilerplate для gulp + webpack.</p>
-            <p><a href="/rules.html" class="b-button b-button_disabled">Скоро...</a></p>
+            <p>Рекомендации по структуре проекта, написанию кода.</p>
+            <p><a href="/rules.html" class="b-button b-button_disabled">Подробнее</a></p>
         </div>
     </div>
 </div>
