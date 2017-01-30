@@ -88,13 +88,13 @@
 
     // Don't include the .off class for the last column
     @if ($i != $flexy-grid-columns) {
-      .#{$flexy-prefix}-off-#{$namespace}-#{$i} {
+      .#{$flexy-prefix}-off_#{$namespace}_#{$i} {
         margin-left: flexy-column-percent($i);
       }
     }
   }
 
-  .#{$flexy-prefix}-off-#{$namespace}-reset {
+  .#{$flexy-prefix}-off_#{$namespace}_reset {
     @include flexy-grid-reset;
   }
 }
