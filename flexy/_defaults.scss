@@ -24,12 +24,10 @@ label {
 }
 
 p {
-  font-feature-settings: 'kern', 'onum', 'liga';
   font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-feature-settings: 'liga', 'lnum', 'kern';
   font-style: normal;
   font-weight: bold;
   color: $flexy-heading-text-color;
@@ -37,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @mixin flexy-placeholder-reset {
-  font-feature-settings: 'liga', 'lnum', 'kern';
   font-size: $flexy-body-font-size;
   font-family: $flexy-font;
   font-style: normal;
