@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, theme, system">
+    <meta name="description" content="Theme system for flexy">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                <h1><a name="anchor36" class="b-anchor" href="#anchor36"></a>Аватар</h1><p>Компонент поддерживает <a href="/ui_size.html">размеры</a>
+Компонент поддерживает <a href="/ui_color.html">цвета</a></p>
+<h2><a name="anchor37" class="b-anchor" href="#anchor37"></a>Настройки</h2><pre><code class="hljs scss"><span class="hljs-variable">$flexy-theme-avatar</span>: (
+        default: (
+                background-color: <span class="hljs-number">#2c3e50</span>,
+                color: <span class="hljs-number">#fff</span>
+        ),
+        primary: (
+                background-color: map-get(<span class="hljs-variable">$flexy-theme-colors</span>, primary),
+                color: <span class="hljs-number">#fff</span>
+        ),
+        error: (
+                background-color: map-get(<span class="hljs-variable">$flexy-theme-colors</span>, error),
+                color: <span class="hljs-number">#fff</span>
+        ),
+        success: (
+                background-color: map-get(<span class="hljs-variable">$flexy-theme-colors</span>, success),
+                color: <span class="hljs-number">#fff</span>
+        )
+) !default;</code></pre><p><img class="b-avatar m-size_xxlarge" src="https://unsplash.it/500/500?random" />
+<img class="b-avatar m-size_xlarge" src="https://unsplash.it/500/500?random" />
+<img class="b-avatar m-size_large" src="https://unsplash.it/500/500?random" />
+<img class="b-avatar m-size_medium" src="https://unsplash.it/500/500?random" />
+<img class="b-avatar m-size_small" src="https://unsplash.it/500/500?random" />
+<img class="b-avatar m-size_xsmall" src="https://unsplash.it/500/500?random" /></p>
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_xxlarge"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_xlarge"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_large"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_medium"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar m-size_xsmall"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unsplash.it/500/500?random"</span> /&gt;</span></code></pre><h2><a name="anchor38" class="b-anchor" href="#anchor38"></a>Инициалы</h2><div data-avatar="MF" class="b-avatar b-avatar_text m-size_xxlarge"></div>
+<div data-avatar="MF" class="b-avatar b-avatar_text m-size_xlarge"></div>
+<div data-avatar="MF" class="b-avatar b-avatar_text m-size_large"></div>
+<div data-avatar="MF" class="b-avatar b-avatar_text m-size_medium"></div>
+<div data-avatar="MF" class="b-avatar b-avatar_text m-size_small"></div>
+<div data-avatar="MF" class="b-avatar b-avatar_text m-size_xsmall"></div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_xxlarge"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_xlarge"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_large"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_medium"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_small"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"MF"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text m-size_xsmall"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h2><a name="anchor39" class="b-anchor" href="#anchor39"></a>Цвета</h2><div class="b-avatar b-avatar_text" data-avatar="VI"></div>
+<div class="b-avatar b-avatar_text b-avatar_primary" data-avatar="VA"></div>
+<div class="b-avatar b-avatar_text b-avatar_error" data-avatar="SC"></div>
+<div class="b-avatar b-avatar_text b-avatar_success" data-avatar="SS"></div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text"</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"VI"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text b-avatar_primary"</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"VA"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text b-avatar_error"</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"SC"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-avatar b-avatar_text b-avatar_success"</span> <span class="hljs-attr">data-avatar</span>=<span class="hljs-string">"SS"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
