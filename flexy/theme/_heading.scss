@@ -1,0 +1,53 @@
+.#{$flexy-prefix}-heading {
+  &__caption {
+    margin-top: -1em;
+    margin-bottom: 1em;
+    font-size: $flexy-body-font-size * .9;
+    color: #aaa;
+  }
+
+  &__sub {
+    padding: 0;
+    font-size: .8em;
+    opacity: .6;
+    color: #2c3e50
+  }
+}
+
+@mixin flexy-heading {
+  h1 {
+    @extend .b-heading;
+    @extend .m-size_xxlarge;
+    @content;
+  }
+
+  h2 {
+    @extend .b-heading;
+    @extend .m-size_xlarge;
+    @content;
+  }
+
+  h3 {
+    @extend .b-heading;
+    @extend .m-size_large;
+    @content;
+  }
+
+  h4 {
+    @extend .b-heading;
+    @extend .m-size_medium;
+    @content;
+  }
+
+  h5 {
+    @extend .b-heading;
+    @extend .m-size_small;
+    @content;
+  }
+
+  h6 {
+    @extend .b-heading;
+    @extend .m-size_xsmall;
+    @content;
+  }
+}

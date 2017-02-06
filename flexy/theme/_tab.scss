@@ -1,0 +1,35 @@
+.#{$flexy-prefix}-tab {
+  display: block;
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 -2px 0 0 #e5eaec;
+  }
+
+  &__tab {
+    margin: 0;
+    padding: 1em;
+
+    &_active {
+      box-shadow: inset 0 -2px 0 0 #96a8b2;
+    }
+
+    &_disabled {
+      background-color: initial;
+      color: #96a8b2;
+      cursor: not-allowed;
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: 1em;
+
+    &_active {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.#{$flexy-prefix}-input-group {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &_right {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+  }
+
+  & > .b-input, & > .b-button {
+    border-radius: 0;
+
+    &:not(:first-child) {
+      margin-left: -$flexy-theme-border-size;
+    }
+
+    &:first-child {
+      border-bottom-left-radius: $flexy-theme-border-radius;
+      border-top-left-radius: $flexy-theme-border-radius;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: $flexy-theme-border-radius;
+      border-top-right-radius: $flexy-theme-border-radius;
+    }
+  }
+}

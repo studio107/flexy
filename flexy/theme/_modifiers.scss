@@ -1,0 +1,36 @@
+.m-padding {
+  &_medium {
+    padding: 0 10px;
+  }
+}
+
+.m-shadow {
+  border-radius: $flexy-theme-border-radius;
+  box-shadow: 0 20px 55px -8px hsla(0, 0%, 7%, .4), 0 0 0 1px hsla(0, 0%, 7%, .1) inset;
+}
+
+.m-size {
+  &_xsmall {
+    font-size: .67em !important;
+  }
+
+  &_small {
+    font-size: .83em !important;
+  }
+
+  &_medium {
+    font-size: 1em !important;
+  }
+
+  &_large {
+    font-size: 1.17em !important;
+  }
+
+  &_xlarge {
+    font-size: 1.5em !important;
+  }
+
+  &_xxlarge {
+    font-size: 2em !important;
+  }
+}

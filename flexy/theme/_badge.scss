@@ -1,0 +1,15 @@
+.#{$flexy-prefix}-badge {
+  @include antialias;
+  display: inline-block;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: $flexy-theme-border-radius;
+  font-size: .9em;
+  box-sizing: border-box;
+
+  @include flexy-colors {
+    background: {
+      color: $flexy-current-color;
+    }
+  }
+}

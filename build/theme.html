@@ -2,56 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grid system - Flexy SCSS framework</title>
-    <meta name="keywords" content="flex, css3, grid, system">
-    <meta name="description" content="Grid system with flex and css3">
+    <title>Theme system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, theme, system">
+    <meta name="description" content="Theme system for flexy">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/css/bundle.css">
 </head>
 <body>
 <div class="b-wrapper">
     <div class="b-header">
         <div class="b-row">
-            <div class="b-col b-col_small_2">
+            <div class="b-col b-col_small_12">
                 <a class="b-logo" href="/">Flexy</a>
-            </div>
-            <div class="b-col b-col_small_10">
-                <ul class="b-header-menu">
-                    <li class="b-header-menu__item">
-                        <a href="/grid.html">Grid</a>
-                    </li>
-                    <li class="b-header-menu__item">
-                        <a href="/block_grid.html">Block grid</a>
-                    </li>
-                    <li class="b-header-menu__item">
-                        <a href="/visibility.html">Visibility</a>
-                    </li>
-                    <li class="b-header-menu__item">
-                        <a href="/reset.html">Reset</a>
-                    </li>
-                    <li class="b-header-menu__item">
-                        <a href="/breakpoint.html">Breakpoint</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
     <div class="b-row">
-        <div class="b-col b-col_small_12">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
             <div class="b-typeset">
                 <h1><a name="anchor36" class="b-anchor" href="#anchor36"></a>Темизация</h1><p>Темизация представляет собой 1 файл <code>_theme.scss</code> который не включен в framework и подключается отдельно.
 Листинг кода с примером предоставлен в конце раздела или в репозитории.</p>
 <hr>
-<h2><a name="anchor37" class="b-anchor" href="#anchor37"></a>Button</h2><p>Link <a href="#" class="b-button">button</a> or button <button class="b-button">Hello world</button></p>
+<h2><a name="anchor37" class="b-anchor" href="#anchor37"></a>Button</h2><p>Link <a href="javascript:void(0)" class="b-button">button</a> or button <button class="b-button">Hello world</button></p>
 <hr>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre><hr>
-<h2><a name="anchor38" class="b-anchor" href="#anchor38"></a>Group</h2><div class="b-group">
-    <a href="#" class="b-button">button</a>
-    <a href="#" class="b-button">button</a>
-    <a href="#" class="b-button">button</a>
-    <input type="text" placeholder="Hello world" class="b-input__input" />
-    <div class="b-select">
-        <select class="b-select__select">
+<h2><a name="anchor38" class="b-anchor" href="#anchor38"></a>Input group</h2><div class="b-input-group">
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <input type="text" placeholder="Hello world" class="b-input" />
+    <select class="b-input b-input_select">
+        <option>Hello world 1</option>
+        <option>Hello world 2</option>
+        <option>Hello world 3</option>
+        <option>Hello world 4</option>
+        <option>Hello world 5</option>
+    </select>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input b-input_select"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<h2><a name="anchor39" class="b-anchor" href="#anchor39"></a>Group</h2><div class="b-group">
+    <div class="b-input-group">
+        <a href="javascript:void(0)" role="button" class="b-button">button</a>
+        <a href="javascript:void(0)" role="button" class="b-button">button</a>
+        <a href="javascript:void(0)" role="button" class="b-button">button</a>
+    </div>
+    <div class="b-input-group">
+        <input type="text" placeholder="Hello world" class="b-input" />
+        <select class="b-input b-input_select">
             <option>Hello world 1</option>
             <option>Hello world 2</option>
             <option>Hello world 3</option>
@@ -59,16 +97,30 @@
             <option>Hello world 5</option>
         </select>
     </div>
+    <div class="b-input-group">
+        <input type="search" placeholder="Hello world" class="b-input" />
+        <a href="javascript:void(0)" role="button" class="b-button b-button_icon b-button_primary">
+            <i class="icon search"></i>
+        </a>
+    </div>
+    <div class="b-input-group">
+        <input type="search" placeholder="Hello world" class="b-input" />
+        <a href="javascript:void(0)" role="button" class="b-button b-button_primary">
+            Search
+        </a>
+    </div>
 </div>
 
 <hr>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-group"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input__input"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-select"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-select__select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input b-input_select"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
@@ -76,74 +128,18 @@
             <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
-<h2><a name="anchor39" class="b-anchor" href="#anchor39"></a>Container</h2><div class="b-container">
-    <div class="b-group">
-        <a href="#" class="b-button">button</a>
-        <a href="#" class="b-button">button</a>
-        <a href="#" class="b-button">button</a>
-    </div>
-    <div class="b-group">
-        <input type="text" placeholder="Hello world" class="b-input__input" />
-        <div class="b-select">
-            <select class="b-select__select">
-                <option>Hello world 1</option>
-                <option>Hello world 2</option>
-                <option>Hello world 3</option>
-                <option>Hello world 4</option>
-                <option>Hello world 5</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-<hr>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-container"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-group"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button"</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button b-button_icon b-button_primary"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon search"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-group"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input__input"</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-select"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-select__select"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Hello world 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Hello world"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-input"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0)"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-button b-button_primary"</span>&gt;</span>
+            Search
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
-<h2><a name="anchor40" class="b-anchor" href="#anchor40"></a>Checkbox</h2><div class="b-checkbox">
-    <input type="checkbox" class="b-checkbox__checkbox" id="checkbox1" />
-    <label class="b-checkbox__label" for="checkbox1">Label</label>
-</div>
-
-<hr>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-checkbox"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-checkbox__checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"checkbox1"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-checkbox__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"checkbox1"</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
-<h2><a name="anchor41" class="b-anchor" href="#anchor41"></a>Radio</h2><div class="b-radio">
-    <input type="radio" class="b-radio__radio" name="radio" id="radio1" />
-    <label class="b-radio__label" for="radio1">Radio 1</label>
-</div>
-<div class="b-radio">
-    <input type="radio" class="b-radio__radio" name="radio" id="radio2" />
-    <label class="b-radio__label" for="radio2">Radio 2</label>
-</div>
-
-<hr>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio__radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio1"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio1"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio__radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"radio2"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-radio__label"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"radio2"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
             </div>
         </div>
@@ -151,10 +147,12 @@
     <div class="b-col b-col_small_12">
         <div class="b-footer">
             <div>
-                &copy; 2017 <noindex>
+                &copy; 2017
+                <noindex>
                     <a href="https://github.com/max107" target="_blank">max107</a> &&
                     <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
-                </noindex> at
+                </noindex>
+                at
                 <a href="https://studio107.ru">studio107.ru</a>
             </div>
         </div>

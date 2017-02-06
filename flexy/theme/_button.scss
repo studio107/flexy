@@ -1,0 +1,77 @@
+.#{$flexy-prefix}-button {
+  border: 0;
+  background-color: #96a8b2;
+  color: #fff;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: .5em;
+  border-radius: $flexy-theme-border-radius;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+  appearance: none;
+  user-select: none;
+
+  // todo fixme
+  min-width: 32px;
+
+  &_block {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &_icon {
+    .icon {
+      margin: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+  }
+
+  @include flexy-colors {
+    color: #fff;
+    background-color: $flexy-current-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: lighten($flexy-current-color, 10%);
+    }
+
+    &:active {
+      color: #fff;
+      background-color: darken($flexy-current-color, 10%);
+    }
+  }
+
+  &[type="submit"] {
+    @include flexy-colors((default: map-get($flexy-theme-colors, primary))) {
+      color: #fff;
+      background-color: $flexy-current-color;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: lighten($flexy-current-color, 10%);
+      }
+
+      &:active {
+        color: #fff;
+        background-color: darken($flexy-current-color, 10%);
+      }
+    }
+  }
+
+  &:not(.#{$flexy-prefix}-button_icon) > .icon {
+    margin: 0 5px 0 0;
+  }
+}

@@ -1,0 +1,139 @@
+.#{$flexy-prefix}-card {
+  padding: 0;
+  list-style: none;
+  display: block;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 20px 55px -8px hsla(0, 0%, 7%, .3), 0 0 0 1px hsla(0, 0%, 7%, .1) inset;
+
+  &__header {
+    padding: .5em .5em 0;
+
+    .b-heading {
+      padding: 0;
+    }
+  }
+
+  &__divider {
+    background-color: #c8c8c8;
+    color: #fff;
+    height: 1px;
+    display: block;
+    font-weight: 700
+  }
+
+  &__item {
+    padding: .5em;
+    display: block;
+    text-decoration: none;
+
+    &_caption {
+      text-transform: uppercase;
+      font-size: .9em;
+      text-decoration: none;
+      color: #888;
+
+      &:not(:first-child) {
+        margin-top: .5em;
+      }
+    }
+
+    &_disabled {
+      cursor: not-allowed;
+      opacity: .6
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(202, 212, 216, .5)
+    }
+
+    &_grouped {
+      &:not(:last-child) {
+        border-bottom: 0
+      }
+    }
+  }
+
+  &__footer {
+    padding: .5em;
+
+    .b-button {
+      &:first-child {
+        border-top-left-radius: 0 !important;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0 !important;
+      }
+    }
+
+    &_block {
+      padding: .5em 0 0;
+
+      .b-input-group .b-button:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+      }
+
+      .b-input-group .b-button:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+      }
+    }
+  }
+
+  & > .b-image:not(:first-child) {
+    padding: 1em 0 0
+  }
+
+  & + .b-card {
+    margin: .5em 0 0
+  }
+
+  &__body {
+    padding: .5em;
+  }
+
+  &__item + .b-card__footer_block {
+    padding: 0
+  }
+
+  &_accordion {
+    label.b-card__item {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding-left: 2em;
+      cursor: pointer
+    }
+
+    label.b-card__item:before {
+      position: absolute;
+      left: .75em;
+      content: "+"
+    }
+
+    & > input, & > input + .b-card__item + .b-card__item {
+      display: none
+    }
+
+    & > input:checked + .b-card__item + .b-card__item {
+      display: block
+    }
+
+    & > input:checked + .b-card__item:before {
+      transform: rotate(45deg)
+    }
+
+    label.b-card__item:not(.b-card__item_disabled):not(.b-card__item_divider):hover {
+      background-color: #e5eaec;
+      cursor: pointer
+    }
+
+    & > input:checked + .b-card__item, .b-card__item_active {
+      background-color: rgba(202, 212, 216, .5);
+      font-weight: 700
+    }
+  }
+}
