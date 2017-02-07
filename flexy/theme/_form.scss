@@ -1,6 +1,8 @@
 .#{$flexy-prefix}-form {
   &__row {
-    margin-bottom: 15px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 
   &__help {
