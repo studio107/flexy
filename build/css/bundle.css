@@ -3808,7 +3808,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .9em; }
 
 .b-input {
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin: 0;
   padding: .5em;
   border: none;
@@ -4034,7 +4035,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-right: 5px; }
 
 .b-label {
-  display: inline-block;
+  display: block;
   cursor: pointer;
   font-family: inherit;
   font-size: 1em;

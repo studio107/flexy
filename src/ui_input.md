@@ -14,11 +14,12 @@ description: Theme system for flexy
 ## Text, search, url, textarea, etc...
 
 <div>
-    <label for="input1" class="b-label">Label</label><br/>
+    <label for="input1" class="b-label">Label</label>
     <input id="input1" type="text" class="b-input" placeholder="Hello world" />
 </div>
+<br/>
 <div>
-    <label for="input2" class="b-label">Label</label><br/>
+    <label for="input2" class="b-label">Label</label>
     <textarea id="input2" class="b-input b-input_textarea" placeholder="Hello world"></textarea>
 </div>
 
@@ -26,11 +27,12 @@ description: Theme system for flexy
 
 ```html
 <div>
-    <label for="input1" class="b-label">Label</label><br/>
+    <label for="input1" class="b-label">Label</label>
     <input id="input1" type="text" class="b-input" placeholder="Hello world" />
 </div>
+<br/>
 <div>
-    <label for="input2" class="b-label">Label</label><br/>
+    <label for="input2" class="b-label">Label</label>
     <textarea id="input2" class="b-input b-input_textarea" placeholder="Hello world"></textarea>
 </div>
 ```
@@ -40,7 +42,7 @@ description: Theme system for flexy
 ## Select
 
 <div>
-    <label for="select1" class="b-label">Label</label><br/>
+    <label for="select1" class="b-label">Label</label>
     <select id="select1" class="b-input b-input_select">
         <option value="foo">foo</option>
         <option value="bar">bar</option>
