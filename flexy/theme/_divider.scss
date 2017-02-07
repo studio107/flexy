@@ -1,0 +1,10 @@
+hr,
+.#{$flexy-prefix}-divider {
+  @include clearfix;
+
+  margin: 1em 0;
+  height: 1px;
+  width: 100%;
+  border: 0;
+  background-color: silver;
+}

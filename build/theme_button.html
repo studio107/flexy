@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
-    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
-    <meta name="description" content="<%= file.meta.description || '' %>">
+    <title>Theme system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, theme, system">
+    <meta name="description" content="Theme system for flexy">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/css/bundle.css">
 </head>
@@ -40,13 +40,20 @@
                 <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
                 <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
                 <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <a href="/theme.html" class="b-card__item b-card__item_grouped">Theme</a>
+                <a href="/theme_button.html" class="b-card__item b-card__item_grouped">Theme button</a>
+                <a href="/theme_card.html" class="b-card__item b-card__item_grouped">Card</a>
+                <a href="/theme_tooltip.html" class="b-card__item b-card__item_grouped">Tooltip</a>
                 <div class="b-card__item b-card__item_caption">Документация</div>
                 <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
             </div>
         </div>
         <div class="b-col b-col_small_9">
             <div class="b-typeset">
-                <%= contents %>
+                <h1><a name="anchor40" class="b-anchor" href="#anchor40"></a>Темизация</h1><p>Темизация представляет собой 1 файл <code>_theme.scss</code> который не включен в framework и подключается отдельно.
+Листинг кода с примером предоставлен в конце раздела или в репозитории.</p>
+<hr>
+
             </div>
         </div>
     </div>

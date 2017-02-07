@@ -1,0 +1,12 @@
+.#{$flexy-prefix}-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > .#{$flexy-prefix}-input-group {
+    margin-bottom: 5px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

@@ -101,14 +101,7 @@
 
   // Horizontal rule.
   hr {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, silver 50%);
-    background-position: 0 50%;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15rem;
-    border: 0;
-    margin: 0;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    @extend .b-divider;
   }
 
   // Code block.

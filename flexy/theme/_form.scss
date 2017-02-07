@@ -1,0 +1,10 @@
+.#{$flexy-prefix}-form {
+  &__row {
+    margin-bottom: 15px;
+  }
+
+  &__help {
+    font-size: .9em;
+    color: #aaa;
+  }
+}

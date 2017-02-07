@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
-    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
-    <meta name="description" content="<%= file.meta.description || '' %>">
+    <title>Theme system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, theme, system">
+    <meta name="description" content="Theme system for flexy">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/css/bundle.css">
 </head>
@@ -46,7 +46,35 @@
         </div>
         <div class="b-col b-col_small_9">
             <div class="b-typeset">
-                <%= contents %>
+                <h1><a name="anchor51" class="b-anchor" href="#anchor51"></a>Заголовки</h1><p>Миксин для указания стилей заголовкам.</p>
+<pre><code class="hljs scss">@<span class="hljs-keyword">include</span> flexy-heading {
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid silver;
+}</code></pre><p>Результатом выполнения будет сгенерированные стили для
+<code>h1, h2, h3, h4, h5, h6</code> с применением размеров и стилей которые вы укажите.</p>
+<pre><code class="hljs css">h1 {
+    font-size: 2em; // xxlarge
+    border-bottom: 1px solid silver;
+}
+h2 {
+    font-size: 1.5em; // xxlarge
+    border-bottom: 1px solid silver;
+}
+// ... etc</code></pre><h2><a name="anchor52" class="b-anchor" href="#anchor52"></a>Использование с блоками</h2><div class="b-heading m-size_xxlarge">Hello world</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-heading m-size_xxlarge"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<div class="b-heading m-size_xlarge">Hello world</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-heading m-size_large"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<div class="b-heading m-size_medium">Hello world</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-heading m-size_medium"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<div class="b-heading m-size_small">Hello world</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-heading m-size_small"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<div class="b-heading m-size_xsmall">Hello world</div>
+
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-heading m-size_xsmall"</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+
             </div>
         </div>
     </div>

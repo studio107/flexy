@@ -30,20 +30,15 @@
     justify-content: space-between;
   }
 
-  & & {
-    @include flexy-grid-space(-$flexy-grid-gutter, margin);
-  }
+  @include flexy-grid-space(-$flexy-grid-gutter, margin);
 }
 
 @mixin flexy-grid-column {
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
   min-height: 1px;
-  //transition-property: flex-basis, max-width, -webkit-flex-basis;
-  //transition-duration: 0.2s;
 
   &_auto {
     -webkit-box-flex: 1;
@@ -123,6 +118,7 @@
     max-width: $flexy-grid-wrapper-max-width;
     min-width: $flexy-grid-wrapper-min-width;
     box-sizing: border-box;
+    @include flexy-grid-space($flexy-grid-gutter, padding);
 
     &_left {
       margin: 0;
