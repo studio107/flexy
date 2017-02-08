@@ -53,24 +53,6 @@
     }
   }
 
-  &[type="submit"] {
-    @include flexy-colors((default: map-get($flexy-theme-colors, primary))) {
-      color: #fff;
-      background-color: $flexy-current-color;
-
-      &:hover,
-      &:focus {
-        color: #fff;
-        background-color: lighten($flexy-current-color, 10%);
-      }
-
-      &:active {
-        color: #fff;
-        background-color: darken($flexy-current-color, 10%);
-      }
-    }
-  }
-
   &:not(.#{$flexy-prefix}-button_icon) > .icon {
     margin: 0 5px 0 0;
   }
