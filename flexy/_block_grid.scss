@@ -29,7 +29,7 @@ $flexy-block-grid-padding: 1em;
     @for $i from 1 through $flexy-block-grid-count {
 
       @each $namespace, $width in $flexy-breakpoints {
-        &__#{$namespace}_#{$i} .#{$flexy-prefix}-block-grid__item {
+        &_#{$namespace}_#{$i} .#{$flexy-prefix}-block-grid__item {
           box-sizing: border-box;
           padding: 0 $flexy-block-grid-padding $flexy-block-grid-padding * 3;
 
