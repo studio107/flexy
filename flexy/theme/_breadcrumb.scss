@@ -5,16 +5,20 @@ $flexy-breadcrumb-symbol: '/' !default;
     display: inline-block;
     width: auto;
     padding: 0;
+  }
 
-    &:not(:last-child)::after {
-      padding: 0 .5em;
-      color: #96a8b2;
-      content: $flexy-breadcrumb-symbol;
-    }
+  &__symbol {
+    padding: 0 .5em;
+    color: #96a8b2;
+    content: $flexy-breadcrumb-symbol;
   }
 
   &__link {
     color: $flexy-theme-input-focus-color;
     text-decoration: none;
+  }
+
+  .icon {
+    margin: 0;
   }
 }

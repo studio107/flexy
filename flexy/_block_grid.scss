@@ -1,7 +1,14 @@
+$flexy-block-grid-padding: 1em;
+
 .#{$flexy-prefix} {
   &-block-grid {
     display: flex;
     flex-wrap: wrap;
+
+    //&::after {
+    //  content: "";
+    //  flex: auto;
+    //}
 
     &_left {
       justify-content: flex-start;
@@ -22,9 +29,12 @@
     @for $i from 1 through $flexy-block-grid-count {
 
       @each $namespace, $width in $flexy-breakpoints {
-        &__#{$namespace}_#{$i} {
+        &__#{$namespace}_#{$i} .#{$flexy-prefix}-block-grid__item {
+          box-sizing: border-box;
+          padding: 0 $flexy-block-grid-padding $flexy-block-grid-padding * 3;
+
           @include flexy-breakpoint($namespace) {
-            width: 100% / $i;
+            width: (100% / $i);
           }
 
           &_fluid {
