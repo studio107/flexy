@@ -4,6 +4,7 @@ $flexy-block-grid-padding: 1em;
   &-block-grid {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -$flexy-block-grid-padding;
 
     //&::after {
     //  content: "";
