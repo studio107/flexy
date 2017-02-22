@@ -32,6 +32,7 @@ $flexy-theme-avatar: (
       left: 50%;
       transform: translate(-50%, -50%);
       content: attr(data-avatar);
+      text-transform: uppercase;
     }
   }
 
