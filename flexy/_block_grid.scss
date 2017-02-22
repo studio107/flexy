@@ -6,11 +6,6 @@ $flexy-block-grid-padding: 1em;
     flex-wrap: wrap;
     margin: 0 (-$flexy-block-grid-padding);
 
-    //&::after {
-    //  content: "";
-    //  flex: auto;
-    //}
-
     &_left {
       justify-content: flex-start;
     }
