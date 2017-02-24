@@ -10,7 +10,10 @@ $flexy-breadcrumb-symbol: '/' !default;
   &__symbol {
     padding: 0 .5em;
     color: #96a8b2;
-    content: $flexy-breadcrumb-symbol;
+
+    &::after {
+      content: $flexy-breadcrumb-symbol;
+    }
   }
 
   &__link {
