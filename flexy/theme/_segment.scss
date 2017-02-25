@@ -1,5 +1,13 @@
 .#{$flexy-prefix}-segment {
-  border-radius: $flexy-theme-border-radius;
-  box-shadow: 0 20px 55px -8px hsla(0, 0%, 7%, .4), 0 0 0 1px hsla(0, 0%, 7%, .1) inset;
+  border-radius: 0;
   padding: 1em;
+  background: {
+    color: #fff;
+  }
+  position: relative;
+
+  hr, .b-divider {
+    margin-left: -1em;
+    padding: 0 1em;
+  }
 }
