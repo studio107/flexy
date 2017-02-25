@@ -50,6 +50,15 @@
     &_tbody {
       border: 1px solid $flexy-table-th-td-border-color;
     }
+
+    &_actions {
+      width: 100px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+    }
   }
 
   &__th {
