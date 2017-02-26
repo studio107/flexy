@@ -1,11 +1,15 @@
 .b-info {
+  margin-bottom: 1em;
+
   &__label {
     color: gray;
     font-size: .85em;
+    text-decoration: none;
+    display: block;
   }
 
   &__text {
-    @include ellipsis;
+    text-decoration: none;
     display: block;
     font-weight: bold;
     color: #000;
