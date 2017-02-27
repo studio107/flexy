@@ -2,8 +2,14 @@
   margin: 0;
   padding: 0 0 .5em;
   text-decoration: none;
+  color: $flexy-heading-text-color;
+
+  & > a {
+    color: $flexy-heading-text-color;
+  }
   
   &__caption {
+    display: block;
     margin-top: -.5em;
     margin-bottom: 1em;
     font-size: .9em;
