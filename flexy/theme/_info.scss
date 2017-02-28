@@ -2,8 +2,9 @@
   margin-bottom: 1em;
 
   &__label {
+    @include antialias;
     color: gray;
-    font-size: .85em;
+    font-size: .95em;
     text-decoration: none;
     display: block;
   }

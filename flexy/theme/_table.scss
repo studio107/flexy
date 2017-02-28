@@ -5,7 +5,6 @@
   width: 100%;
   background: #FFFFFF;
   margin: 1em 0;
-  border: 1px solid $flexy-table-th-td-border-color;
   box-shadow: none;
   text-align: left;
   color: rgba(0, 0, 0, .87);
@@ -19,7 +18,7 @@
     margin-bottom: 0;
   }
 
-  &__thead {
+  &__thead, &__tfoot {
     box-shadow: none;
   }
 
@@ -35,6 +34,7 @@
   }
 
   &__td, &__th {
+    border: 1px solid $flexy-table-th-td-border-color;
     padding: $flexy-table-th-td-padding;
     text-align: inherit;
     vertical-align: inherit;
@@ -64,36 +64,6 @@
   &__th {
     background: #F9FAFB;
     font-weight: bold;
-
-    &_thead {
-      border: 1px solid $flexy-table-th-td-border-color;
-    }
-
-    &_tbody {
-      border: 1px solid $flexy-table-th-td-border-color;
-    }
-  }
-
-  /* Footer */
-  &__tfoot {
-    box-shadow: none;
-  }
-
-  tfoot th {
-    cursor: auto;
-    border-top: 1px solid rgba(34, 36, 38, .15);
-    background: #F9FAFB;
-    text-align: inherit;
-    color: rgba(0, 0, 0, .87);
-    padding: .78571429em .78571429em;
-    vertical-align: middle;
-    font-style: normal;
-    font-weight: normal;
-    text-transform: none;
-  }
-
-  tfoot tr > th:first-child {
-    border-left: none;
   }
 
   &__link {

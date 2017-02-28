@@ -17,7 +17,7 @@
     margin: 0;
   }
 
-  &:after {
+  &::after {
     content: "";
     font-size: 0.5em;
     position: absolute;
@@ -31,7 +31,7 @@
     transition: height 0.5s;
   }
 
-  &:before {
+  &::before {
     content: "";
     font-size: 0.5em;
     position: absolute;
@@ -43,7 +43,7 @@
     z-index: -1;
   }
 
-  &:hover:after {
+  &:hover::after {
     border: 1.5em solid #EF5350;
     border-bottom-color: transparent;
     height: 3.2em;

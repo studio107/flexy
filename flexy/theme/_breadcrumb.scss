@@ -9,7 +9,7 @@ $flexy-breadcrumb-symbol: '/' !default;
 
   &__symbol {
     padding: 0 .5em;
-    color: #96a8b2;
+    color: $flexy-theme-breadcrumb-link-color;
 
     &::after {
       content: $flexy-breadcrumb-symbol;
@@ -17,8 +17,12 @@ $flexy-breadcrumb-symbol: '/' !default;
   }
 
   &__link {
-    color: $flexy-theme-input-focus-color;
+    color: $flexy-theme-breadcrumb-link-color;
     text-decoration: none;
+
+    &:hover {
+      color: darken($flexy-theme-breadcrumb-link-color, 10%);
+    }
   }
 
   .icon {

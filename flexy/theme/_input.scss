@@ -255,6 +255,11 @@
     }
   }
 
+  &_textarea {
+    height: auto;
+    min-height: 4.2em;
+  }
+
   &_file {
     // TODO
   }

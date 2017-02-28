@@ -16,6 +16,8 @@ $flexy-theme-input-focus-color: #2196f3 !default;
 $flexy-theme-input-hover-color: darken($flexy-theme-input-color, 20%) !default;
 $flexy-theme-blockquote-border-size: 3px !default;
 
+$flexy-theme-breadcrumb-link-color: #96a8b2 !default;
+
 @import "modifiers";
 @import "colors";
 @import "form";
