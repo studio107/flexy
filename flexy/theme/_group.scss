@@ -1,0 +1,21 @@
+.#{$flexy-prefix}-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+
+  &_space_between {
+    justify-content: space-between;
+  }
+
+  &_space_around {
+    justify-content: space-around;
+  }
+
+  & > .#{$flexy-prefix}-input-group {
+    margin-bottom: 5px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

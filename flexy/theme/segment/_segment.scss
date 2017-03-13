@@ -1,0 +1,27 @@
+.#{$flexy-prefix}-segment {
+  border-radius: 0;
+  padding: 1em;
+  background: $flexy-block-segment-background;
+  position: relative;
+  margin-bottom: 1em;
+
+  .b-divider {
+    padding: 0 1em;
+    left: -1em;
+    right: -1em;
+    background: $flexy-block-segment-divider-color;
+  }
+
+  &__panel {
+    position: relative;
+    left: -1em;
+    right: -1em;
+    margin-bottom: -1em;
+    padding: 1em;
+    width: 100%;
+
+    @each $key, $value in $flexy-block-segment-panel {
+      #{$key}: #{$value};
+    }
+  }
+}

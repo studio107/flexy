@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visibility component - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, framework, css3, visibility">
+    <meta name="description" content="Visibility component with flex and css3">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                <h2><a name="anchor66" class="b-anchor" href="#anchor66"></a>Использование visibility</h2><p>Компонент <code>visibility</code> позволяет отображать и скрывать блоки в зависимости от media.
+Компонент не имеет настроек и зависит от настроек для <code>flexy-breakpoint</code> и имеет 2 модификатора
+состояния.</p>
+<ul>
+<li><code>_only</code> - Только для текущего media</li>
+<li><code>_up</code> - Для текущего media и выше</li>
+</ul>
+<h4><a name="anchor67" class="b-anchor" href="#anchor67"></a>Отображать для N и выше</h4><div class="b-visible b-visible_small_up">
+    <div class="b-helper">b-visible b-visible_small_up</div>
+</div>
+<div class="b-visible b-visible_medium_up">
+    <div class="b-helper">b-visible b-visible_medium_up</div>
+</div>
+<div class="b-visible b-visible_large_up">
+    <div class="b-helper">b-visible b-visible_large_up</div>
+</div>
+<div class="b-visible b-visible_xlarge_up">
+    <div class="b-helper">b-visible b-visible_xlarge_up</div>
+</div>
+<div class="b-visible b-visible_xxlarge_up">
+    <div class="b-helper">b-visible b-visible_xxlarge_up</div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_small_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_small_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_medium_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_medium_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_large_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_large_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_xlarge_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_xlarge_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_xxlarge_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_xxlarge_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h4><a name="anchor68" class="b-anchor" href="#anchor68"></a>Отображать для N</h4><div class="b-visible b-visible_small_only">
+    <div class="b-helper">b-visible b-visible_small_only</div>
+</div>
+<div class="b-visible b-visible_medium_only">
+    <div class="b-helper">b-visible b-visible_medium_only</div>
+</div>
+<div class="b-visible b-visible_large_only">
+    <div class="b-helper">b-visible b-visible_large_only</div>
+</div>
+<div class="b-visible b-visible_xlarge_only">
+    <div class="b-helper">b-visible b-visible_xlarge_only</div>
+</div>
+<div class="b-visible b-visible_xxlarge_only">
+    <div class="b-helper">b-visible b-visible_xxlarge_only</div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_small_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_small_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_medium_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_medium_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_large_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_large_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_xlarge_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_xlarge_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-visible b-visible_xxlarge_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-visible b-visible_xxlarge_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h4><a name="anchor69" class="b-anchor" href="#anchor69"></a>Скрывать для N и выше</h4><div class="b-hide b-hide_small_up">
+    <div class="b-helper">b-hide b-hide_small_up</div>
+</div>
+<div class="b-hide b-hide_medium_up">
+    <div class="b-helper">b-hide b-hide_medium_up</div>
+</div>
+<div class="b-hide b-hide_large_up">
+    <div class="b-helper">b-hide b-hide_large_up</div>
+</div>
+<div class="b-hide b-hide_xlarge_up">
+    <div class="b-helper">b-hide b-hide_xlarge_up</div>
+</div>
+<div class="b-hide b-hide_xxlarge_up">
+    <div class="b-helper">b-hide b-hide_xxlarge_up</div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_small_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_small_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_medium_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_medium_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_large_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_large_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_xlarge_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_xlarge_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_xxlarge_up"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_xxlarge_up<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h4><a name="anchor70" class="b-anchor" href="#anchor70"></a>Скрывать для N</h4><div class="b-hide b-hide_small_only">
+    <div class="b-helper">b-hide b-hide_small_only</div>
+</div>
+<div class="b-hide b-hide_medium_only">
+    <div class="b-helper">b-hide b-hide_medium_only</div>
+</div>
+<div class="b-hide b-hide_large_only">
+    <div class="b-helper">b-hide b-hide_large_only</div>
+</div>
+<div class="b-hide b-hide_xlarge_only">
+    <div class="b-helper">b-hide b-hide_xlarge_only</div>
+</div>
+<div class="b-hide b-hide_xxlarge_only">
+    <div class="b-helper">b-hide b-hide_xxlarge_only</div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_small_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_small_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_medium_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_medium_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_large_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_large_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_xlarge_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_xlarge_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-hide b-hide_xxlarge_only"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-hide b-hide_xxlarge_only<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

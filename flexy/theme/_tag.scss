@@ -1,0 +1,23 @@
+.b-tag {
+  $size: 1.4em;
+
+  margin: 0 0 .5em 0;
+  @include antialias;
+  display: flex;
+  line-height: $size;
+  font-size: .9em;
+  font-weight: bold;
+
+  &__label {
+    border-radius: $flexy-theme-border-radius;
+    box-sizing: border-box;
+    margin: 0 .5em 0 0;
+    position: relative;
+  }
+
+  &__tag {
+    margin: 0 .5em 0 0;
+    text-decoration: underline;
+    color: #96a8b2;
+  }
+}

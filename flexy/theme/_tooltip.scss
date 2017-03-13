@@ -1,0 +1,181 @@
+$tooltip-z-index: 5;
+$tooltip-arrow-width: .6em;
+$tooltip-body-padding: 5px;
+$tooltip-body-background-color: #333;
+$tooltip-body-color: #fff;
+$tooltip-line-height: 1.45;
+$tooltip-body-border-width: 1px;
+$tooltip-body-border-style: solid;
+$tooltip-body-border-color: $tooltip-body-background-color;
+$tooltip-body-border-radius: $flexy-theme-border-radius;
+
+$flexy-tooltip-background-color: #353535;
+$flexy-tooltip-color: #fff;
+$flexy-theme-tooltip: (
+        default: (
+                background-color: #000,
+                color: #fff
+        ),
+        white: (
+                background-color: #f4f4f4,
+                color: #535353
+        ),
+        error: (
+                background-color: map-get($flexy-theme-colors, error),
+                color: #fff
+        ),
+        primary: (
+                background-color: map-get($flexy-theme-colors, primary),
+                color: #fff
+        ),
+        success: (
+                background-color: map-get($flexy-theme-colors, success),
+                color: #fff
+        )
+);
+
+.#{$flexy-prefix}-tooltip {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+
+  &::before,
+  &::after {
+    transition: all .2s ease, opacity .2s ease;
+    font-size: .9rem;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: $tooltip-z-index;
+  }
+
+  &::before {
+    position: absolute;
+    border: $tooltip-arrow-width solid transparent;
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    padding: .25em .5em;
+    border-radius: $flexy-theme-border-radius;
+    line-height: $tooltip-line-height;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    visibility: hidden;
+    border: $tooltip-body-border-width $tooltip-body-border-style $flexy-tooltip-background-color;
+    background-color: $flexy-tooltip-background-color;
+    color: $flexy-tooltip-color;
+  }
+
+  @each $name, $styles in $flexy-theme-tooltip {
+    &_#{$name}::after {
+      border: $tooltip-body-border-width $tooltip-body-border-style map-get($styles, background-color);
+      background-color: map-get($styles, background-color);
+      color: map-get($styles, color);
+    }
+
+    &_#{$name}.b-tooltip_top::before {
+      border-top-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_right::before {
+      border-right-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_bottom::before {
+      border-bottom-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_left::before {
+      border-left-color: map-get($styles, background-color) !important;
+    }
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+  }
+
+  &_top {
+    &::before,
+    &::after {
+      margin-top: -10px;
+    }
+
+    &::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -1em);
+      border-top-color: $tooltip-body-border-color;
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -3em);
+    }
+  }
+
+  &_right {
+    &::before,
+    &::after {
+      margin-left: -10px;
+    }
+
+    &::before {
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+      border-right-color: $tooltip-body-border-color;
+    }
+
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translate(1em, -50%);
+    }
+  }
+
+  &_bottom {
+    &::before,
+    &::after {
+      margin-bottom: -10px;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 1em);
+      border-bottom-color: $tooltip-body-border-color;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 3em);
+    }
+  }
+
+  &_left {
+    &::before,
+    &::after {
+      margin-right: -10px;
+    }
+
+    &::before {
+      top: 50%;
+      right: 100%;
+      transform: translate(0, -50%);
+      border-left-color: $tooltip-body-border-color;
+    }
+
+    &::after {
+      top: 50%;
+      right: 100%;
+      transform: translate(-1em, -50%);
+    }
+  }
+}

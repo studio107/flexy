@@ -1,0 +1,25 @@
+.#{$flexy-prefix}-input-helper {
+  display: block;
+  min-width: 32px;
+  height: 2.2em;
+  margin: 0;
+  padding: .5em;
+  border: none;
+  border-radius: $flexy-theme-border-radius;
+  outline: none;
+  background-color: lighten(#c8c8c8, 10%);
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 400;
+  resize: vertical;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.b-input + .b-input-helper {
+  border-radius: 0 $flexy-theme-border-radius $flexy-theme-border-radius 0;
+}
+
+.b-input-helper + .b-input {
+  border-radius: $flexy-theme-border-radius 0 0 $flexy-theme-border-radius;
+}

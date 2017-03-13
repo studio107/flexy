@@ -1,0 +1,199 @@
+$flexy-font: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-grid-wrapper-max-width: 1280px;
+$flexy-grid-gutter: 1em;
+ 
+@import "flexy";
+@import "flexy/theme/default";
+@import "mixins";
+@import "icon";
+
+a {
+  color: #000;
+
+  &:hover {
+    color: $flexy-theme-input-focus-color;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5em;
+  cursor: default;
+  line-height: 1em;
+  padding-bottom: .25em;
+  font-weight: 400;
+
+  &:hover {
+    .b-anchor {
+      opacity: 1;
+    }
+  }
+
+  & + .b-caption {
+    margin-top: -1em;
+    margin-bottom: 1em;
+  }
+}
+
+h1 {
+  @extend .b-heading;
+  @extend .m-size_xxlarge;
+}
+
+h2 {
+  @extend .b-heading;
+  @extend .m-size_xlarge;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+h3 {
+  @extend .b-heading;
+  @extend .m-size_large;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+h4 {
+  @extend .b-heading;
+  @extend .m-size_medium;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+h5 {
+  @extend .b-heading;
+  @extend .m-size_small;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+h6 {
+  @extend .b-heading;
+  @extend .m-size_xsmall;
+}
+
+.b-anchor {
+  $size: 16px;
+
+  opacity: 0;
+  transition: opacity .2s linear;
+  float: left;
+  margin-left: -($size + 10px);
+  width: $size;
+  height: $size;
+  cursor: pointer;
+  text-decoration: none;
+  color: silver;
+  outline: none;
+
+  &::before {
+    width: $size;
+    height: $size;
+    display: block;
+    font-family: 'Icons';
+    content: "\f0c1";
+    font-size: $size;
+  }
+}
+
+.b-caption {
+  color: #8e8e8e;
+}
+
+.b-header {
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
+
+.b-logo {
+  color: #000;
+  text-decoration: none;
+  @include antialias;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.b-typeset {
+  @include flexy-typeset;
+}
+
+.b-grid {
+}
+
+.b-helper {
+  @include ellipsis;
+  background-color: rgba(#8e44ad, 0.2);
+  box-shadow: 0 0 0 1px rgba(#8e44ad, 0.2) inset;
+  padding: 0 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.b-segment {
+  margin: 1em 0 3em 0;
+}
+
+.b-footer {
+  font-size: $flexy-body-font-size;
+  color: #8e8e8e;
+  padding: 15px 0;
+
+  &__link {
+    color: #8e8e8e;
+  }
+}
+
+.b-breakpoint {
+  padding: 10px;
+  text-align: center;
+
+  $breakpoint-colors: (
+          small: #3498db,
+          medium: #27ae60,
+          large: #e67e22,
+          xlarge: #e74c3c,
+          xxlarge: #8e44ad,
+  );
+
+  @each $breakpoint, $color in $breakpoint-colors {
+    @include flexy-breakpoint($breakpoint) {
+      background-color: rgba($color, .8);
+      box-shadow: 0 0 0 1px rgba($color, .2) inset;
+    }
+  }
+}
+
+.b-media {
+  padding: 10px;
+  text-align: center;
+  background-color: #3498db;
+
+  @include flexy-media((min-width: 600px, max-width: 700px)) {
+    background-color: #8e44ad;
+  }
+}
+
+.b-divider {
+  background: {
+    color: #bdc3c7;
+  }
+  height: 1px;
+  width: 100%;
+  padding: 0;
+  margin: 20px 0;
+  border: none;
+}
+
+.b-feature {
+  padding-bottom: 20px;
+}
+
+.b-coming {
+  background: {
+    color: #c0392b;
+  }
+  color: #fff;
+  font-size: $flexy-body-font-size * .7;
+  top: -20px;
+  left: 5px;
+  position: relative;
+  padding: 2px 4px;
+  border-radius: 3px;
+}

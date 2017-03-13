@@ -1,0 +1,61 @@
+$flexy-theme-height: 32px !default;
+
+$flexy-theme-sizes: (
+        xsmall: .67em,
+        small: .83em,
+        medium: 1em,
+        large: 1.17em,
+        xlarge: 1.5em,
+        xxlarge: 2em
+) !default;
+
+$flexy-theme-colors: (
+        default: #96a8b2,
+        error: #dd162d,
+        success: #4caf50,
+        primary: #2196f3
+) !default;
+$flexy-theme-font-mono: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace !default;
+$flexy-theme-border-radius: 2px !default;
+$flexy-theme-button-padding: 0 10px !default;
+$flexy-theme-border-size: 1px !default;
+$flexy-theme-group-offset: 5px !default;
+$flexy-theme-placeholder-color: #c8c8c8 !default;
+$flexy-theme-input-color: #c8c8c8 !default;
+$flexy-theme-input-focus-color: #2196f3 !default;
+$flexy-theme-input-hover-color: darken($flexy-theme-input-color, 20%) !default;
+$flexy-theme-blockquote-border-size: 3px !default;
+
+$flexy-theme-divider-color: #ebf1f8 !default;
+
+@import "modifiers";
+@import "colors";
+@import "form";
+@import "image";
+@import "heading";
+@import "card";
+@import "avatar";
+@import "embed";
+@import "blockquote";
+@import "input";
+@import "input-helper";
+@import "input-group";
+@import "group";
+@import "label";
+@import "info";
+@import "tag";
+@import "close_ribbon";
+@import "button";
+@import "divider";
+@import "table";
+@import "dropdown";
+@import "kbd";
+@import "errors";
+@import "tooltip";
+@import "typeset";
+
+@import "pager/index";
+@import "breadcrumb/index";
+@import "tab/index";
+@import "segment/index";
+@import "badge/index";

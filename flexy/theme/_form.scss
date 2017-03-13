@@ -1,0 +1,12 @@
+.#{$flexy-prefix}-form {
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__help {
+    font-size: .9em;
+    color: #aaa;
+  }
+}

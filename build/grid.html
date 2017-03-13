@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid system - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, css3, grid, system">
+    <meta name="description" content="Grid system with flex and css3">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                <h1><a name="anchor17" class="b-anchor" href="#anchor17"></a>Сетка с использованием flex</h1><h2><a name="anchor18" class="b-anchor" href="#anchor18"></a>Настройки</h2><pre><code class="hljs scss"><span class="hljs-comment">// Максимальное количество колонок</span>
+<span class="hljs-variable">$flexy-grid-columns</span>: <span class="hljs-number">12</span> !default;
+<span class="hljs-comment">// Отступы между колонками</span>
+<span class="hljs-variable">$flexy-grid-gutter</span>: <span class="hljs-number">0.5em</span> !default;
+<span class="hljs-comment">// Максимальная ширина контейнера</span>
+<span class="hljs-variable">$flexy-grid-wrapper-max-width</span>: <span class="hljs-number">100%</span> !default;
+<span class="hljs-comment">// Минимальная ширина контейнера</span>
+<span class="hljs-variable">$flexy-grid-wrapper-min-width</span>: auto !default;</code></pre><p>Сетка использует названия из настроек <code>flexy-breakpoint</code> в качестве модификаторов.</p>
+<blockquote>
+<p><strong>Внимание</strong></p>
+<p>отступы (padding) заданы у класса <code>b-helper</code> который является вспомогательным</p>
+<p>блоком. У колонок внутренние отступы отсутствуют.</p>
+</blockquote>
+<div class="b-helper">
+    b-helper
+    <div class="b-helper">
+        b-helper
+    </div>
+</div>
+
+<hr>
+<h2><a name="anchor19" class="b-anchor" href="#anchor19"></a>Контейнер</h2><h3><a name="anchor20" class="b-anchor" href="#anchor20"></a>Ограничения по ширине</h3><p>Для того, чтобы создать фиксированный по ширине контейнер, нужно указать
+в настройках:</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$flexy-grid-wrapper-max-width</span>: <span class="hljs-number">1280px</span>; <span class="hljs-comment">// Нужное вам значение в px|em|rem</span></code></pre><p>Использование:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3><a name="anchor21" class="b-anchor" href="#anchor21"></a>Выравнивание</h3><p>Контейнер можно прижать к краям с помощью модификаторов <code>_left</code> и <code>_right</code>.
+По умолчанию контейнер позиционируется по центру.</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-wrapper b-wrapper_left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-wrapper b-wrapper_right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-wrapper b-wrapper_center"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3><a name="anchor22" class="b-anchor" href="#anchor22"></a>Отключение отзывчивости (выключение media query)</h3><p>Для отключения media query и фиксации контейнера по ширине укажите в настройках
+максимальную ширину и минимальную ширину</p>
+<pre><code class="hljs undefined">$flexy-grid-wrapper-max-width: 978px;
+$flexy-grid-wrapper-min-width: $flexy-grid-wrapper-max-width;</code></pre><p>После изменения настроек контейнер не будет изменяться, следовательно и сетка внутри
+не будет перестраиваться.</p>
+<h2><a name="anchor23" class="b-anchor" href="#anchor23"></a>Сетка</h2><h3><a name="anchor24" class="b-anchor" href="#anchor24"></a>Пример</h3><div class="b-row">
+    <div class="b-col b-col_small_12">
+        <div class="b-helper">b-col b-col_small_12</div>
+    </div>
+    <div class="b-col b-col_small_6">
+        <div class="b-helper">b-col b-col_small_6</div>
+    </div>
+    <div class="b-col b-col_small_6">
+        <div class="b-helper">b-col b-col_small_6</div>
+    </div>
+    <div class="b-col b-col_small_4">
+        <div class="b-helper">b-col b-col_small_4</div>
+    </div>
+    <div class="b-col b-col_small_4">
+        <div class="b-helper">b-col b-col_small_4</div>
+    </div>
+    <div class="b-col b-col_small_4">
+        <div class="b-helper">b-col b-col_small_4</div>
+    </div>
+    <div class="b-col b-col_small_3">
+        <div class="b-helper">b-col b-col_small_3</div>
+    </div>
+    <div class="b-col b-col_small_3">
+        <div class="b-helper">b-col b-col_small_3</div>
+    </div>
+    <div class="b-col b-col_small_3">
+        <div class="b-helper">b-col b-col_small_3</div>
+    </div>
+    <div class="b-col b-col_small_3">
+        <div class="b-helper">b-col b-col_small_3</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_2">
+        <div class="b-helper">b-col b-col_small_2</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+    <div class="b-col b-col_small_1">
+        <div class="b-helper">b-col b-col_small_1</div>
+    </div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_12<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3><a name="anchor25" class="b-anchor" href="#anchor25"></a>Авто позиционирование</h3><div class="b-row">
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+    <div class="b-col b-col_auto">
+        <div class="b-helper">b-col b-col_auto</div>
+    </div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3><a name="anchor26" class="b-anchor" href="#anchor26"></a>Вложенная сетка</h3><div class="b-row">
+    <div class="b-col b-col_small_12">
+        <div class="b-helper">
+            b-col b-col_small_12
+            <div class="b-row">
+                <div class="b-col b-col_small_12 b-col_medium_6">
+                    <div class="b-helper">
+                        b-col b-col_small_12 b-col_medium_6
+                        <div class="b-row">
+                            <div class="b-col b-col_small_12 b-col_large_4">
+                                <div class="b-helper">b-col_small_12 b-col_large_4</div>
+                            </div>
+                            <div class="b-col b-col_small_12 b-col_large_4">
+                                <div class="b-helper">b-col_small_12 b-col_large_4</div>
+                            </div>
+                            <div class="b-col b-col_small_12 b-col_large_4">
+                                <div class="b-helper">b-col_small_12 b-col_large_4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-col b-col_small_12 b-col_medium_3 b-col_large_4">
+                    <div class="b-helper">
+                        b-col b-col_small_12 b-col_medium_3 b-col_large_4
+                        <div class="b-row">
+                            <div class="b-col b-col_small_12 b-col_medium_6">
+                                <div class="b-helper">
+                                    b-col b-col_small_12 b-col_medium_6
+
+                                    <div class="b-row">
+                                        <div class="b-col b-col_small_12 b-col_medium_6">
+                                            <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
+                                        </div>
+                                        <div class="b-col b-col_small_12 b-col_medium_6">
+                                            <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-col b-col_small_12 b-col_medium_6">
+                                <div class="b-helper">b-col b-col_small_12 b-col_medium_6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-col b-col_small_12 b-col_medium_3 b-col_large_2">
+                    <div class="b-helper">
+                        b-col b-col_small_12 b-col_medium_3 b-col_large_2
+                        <div class="b-row">
+                            <div class="b-col b-col_small_12 b-col_medium_6">
+                                <div class="b-helper">
+                                    b-col b-col_small_6
+                                    <div class="b-row">
+                                        <div class="b-col b-col_small_12 b-col_medium_6">
+                                            <div class="b-helper">b-col b-col_small_6</div>
+                                        </div>
+                                        <div class="b-col b-col_small_12 b-col_medium_6">
+                                            <div class="b-helper">b-col b-col_small_6</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-col b-col_small_12 b-col_medium_6">
+                                <div class="b-helper">b-col b-col_small_6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+            b-col b-col_small_12
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+                        b-col b-col_small_12 b-col_medium_6
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_large_4"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col_small_12 b-col_large_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_large_4"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col_small_12 b-col_large_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_large_4"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col_small_12 b-col_large_4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_3 b-col_large_4"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+                        b-col b-col_small_12 b-col_medium_3 b-col_large_4
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+                                    b-col b-col_small_12 b-col_medium_6
+
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_12 b-col_medium_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_12 b-col_medium_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_12 b-col_medium_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_3 b-col_large_2"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+                        b-col b-col_small_12 b-col_medium_3 b-col_large_2
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+                                    b-col b-col_small_6
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>b-col b-col_small_6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><h3><a name="anchor27" class="b-anchor" href="#anchor27"></a>Пример с отзывчивой сеткой</h3><div class="b-row">
+    <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
+        <div class="b-helper">
+            b-col b-col_small_12<br/>
+            b-col b-col_medium_6<br/>
+            b-col b-col_large_4<br/>
+            b-col b-col_xlarge_3
+        </div>
+    </div>
+    <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
+        <div class="b-helper">
+            b-col b-col_small_12<br/>
+            b-col b-col_medium_6<br/>
+            b-col b-col_large_4<br/>
+            b-col b-col_xlarge_3
+        </div>
+    </div>
+    <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
+        <div class="b-helper">
+            b-col b-col_small_12<br/>
+            b-col b-col_medium_6<br/>
+            b-col b-col_large_4<br/>
+            b-col b-col_xlarge_3
+        </div>
+    </div>
+    <div class="b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3">
+        <div class="b-helper">
+            b-col b-col_small_12<br/>
+            b-col b-col_medium_6<br/>
+            b-col b-col_large_4<br/>
+            b-col b-col_xlarge_3
+        </div>
+    </div>
+</div>
+
+<hr>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+            b-col b-col_small_12<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_medium_6<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_large_4<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_xlarge_3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+            b-col b-col_small_12<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_medium_6<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_large_4<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_xlarge_3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+            b-col b-col_small_12<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_medium_6<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_large_4<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_xlarge_3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12 b-col_medium_6 b-col_large_4 b-col_xlarge_3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-helper"</span>&gt;</span>
+            b-col b-col_small_12<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_medium_6<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_large_4<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+            b-col b-col_xlarge_3
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<h2><a name="anchor28" class="b-anchor" href="#anchor28"></a>Частые ошибки</h2><blockquote>
+<p>Не следует вкладывать <code>b-row</code> внутрь <code>b-row</code> без дополнительной обертки в виде <code>b_col</code></p>
+</blockquote>
+<p><strong>Плохо</strong>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12"</span>&gt;</span>
+            Hello world
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><p><strong>Хорошо</strong>:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-row"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b-col b-col_small_12"</span>&gt;</span> <span class="hljs-comment">&lt;!-- !!! --!&gt;
+
+        &lt;div class="b-row"&gt;
+            &lt;div class="b-col b-col_small_12"&gt;
+                Hello world
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</span></code></pre><hr>
+<blockquote>
+<p>Не следует фиксировать размер для <code>b_row</code></p>
+</blockquote>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.b-row</span> {
+    <span class="hljs-comment">// Bad practice</span>
+    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">700px</span>;
+}</code></pre><hr>
+<h2><a name="anchor29" class="b-anchor" href="#anchor29"></a>Известные проблемы</h2><ul>
+<li>Выравнивание по правому краю может не соответствовать на 1px</li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

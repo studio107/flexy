@@ -1,0 +1,26 @@
+[
+  {
+    "path": "flexy/ui",
+    "git": "git@github.com:flexy-framework/ui.git"
+  },
+  {
+    "path": "flexy/rhythm",
+    "git": "git@github.com:flexy-framework/rhythm.git"
+  },
+  {
+    "path": "flexy/typography",
+    "git": "git@github.com:flexy-framework/typography.git"
+  },
+  {
+    "path": "flexy/colors",
+    "git": "git@github.com:flexy-framework/colors.git"
+  },
+  {
+    "path": "flexy/grid",
+    "git": "git@github.com:flexy-framework/grid.git"
+  },
+  {
+    "path": "flexy/reset",
+    "git": "git@github.com:flexy-framework/reset.git"
+  }
+]

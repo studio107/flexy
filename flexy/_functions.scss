@@ -1,0 +1,96 @@
+@function to-string($value) {
+  @return inspect($value);
+}
+
+@function to-int($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function to-em($pixels, $base-font-size) {
+  @return #{$pixels/$base-font-size}em;
+}
+
+@function implode($pieces, $glue: "") {
+  $result: null;
+  @each $piece in $pieces {
+    @if type-of($piece) == list {
+      $result: unquote("#{$result}#{$glue}#{implode($piece, $glue)}");
+    } @else {
+      $result: unquote("#{$result}#{$glue}#{$piece}");
+    }
+  }
+  @if $result != null {
+    $result: str-slice($result, str-length($glue) + 1, -1);
+  }
+  @return $result;
+}
+
+// Return list-map from `$list` and ensure input list-map is list-of-lists
+@function map-convert($list) {
+  @if length($list) == 2 and length(nth($list, 1)) == 1 {
+    @return append((), $list, 'comma');
+  }
+
+  @return $list;
+}
+
+// Return previous key from list-map
+@function map-prev-key($list, $key) {
+  @if map-has-key($list, $key) {
+    $list: map-convert($list);
+    $keys: map-keys($list);
+    $index: index($keys, $key) - 1;
+
+    @return if($index <= 0, null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}
+
+// Return next key from list-map
+@function map-next-key($list, $key) {
+  @if map-has-key($list, $key) {
+    $list: map-convert($list);
+    $keys: map-keys($list);
+    $index: index($keys, $key) + 1;
+
+    @return if($index > length($list), null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}
+
+// If a native exponent function doesnt exist
+// this one is needed.
+@function pow($base, $exponent) {
+  // reset value
+  $value: $base;
+  // positive intergers get multiplied
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  }
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+  // return the last value written
+  @return $value;
+}
+
+@function reverse($list, $recursive: false) {
+  $result: ();
+
+  @for $i from length($list)*-1 through -1 {
+    @if type-of(nth($list, abs($i))) == list and $recursive {
+      $result: append($result, reverse(nth($list, abs($i)), $recursive));
+    } @else {
+      $result: append($result, nth($list, abs($i)));
+    }
+  }
+
+  @return $result;
+}

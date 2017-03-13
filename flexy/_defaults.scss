@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  color: $flexy-body-text-color;
+  font-size: $flexy-body-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $flexy-body-line-height;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+p {
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: normal;
+  font-weight: bold;
+  color: $flexy-heading-text-color;
+  font-family: $flexy-heading-font;
+}
+
+@mixin flexy-placeholder-reset {
+  font-size: $flexy-body-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+}
+
+::-webkit-input-placeholder {
+  @include flexy-placeholder-reset;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  @include flexy-placeholder-reset;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  @include flexy-placeholder-reset;
+}
+
+:-ms-input-placeholder {
+  @include flexy-placeholder-reset;
+}

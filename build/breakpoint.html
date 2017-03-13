@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakpoint - Flexy SCSS framework</title>
+    <meta name="keywords" content="media, responsive, adaptive, css3, mixin, utils">
+    <meta name="description" content="Breakpoint component for @media">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                <h1><a name="anchor11" class="b-anchor" href="#anchor11"></a>Настройки</h1><pre><code class="hljs scss"><span class="hljs-variable">$flexy-breakpoints</span>: (
+    small: <span class="hljs-number">0</span>,
+    medium: <span class="hljs-number">768px</span>,
+    large: <span class="hljs-number">992px</span>,
+    xlarge: <span class="hljs-number">1200px</span>,
+    xxlarge: <span class="hljs-number">1600px</span>
+) !default;</code></pre><p><code>$flexy-breakpoints</code> это <code>map</code> из sass где в качестве ключа выступает любое удобное для вас название media</p>
+<h3><a name="anchor12" class="b-anchor" href="#anchor12"></a>Пример</h3><pre><code class="hljs scss"><span class="hljs-variable">$flexy-breakpoints</span>: (
+    foo: <span class="hljs-number">100px</span>,
+    bar: <span class="hljs-number">350px</span>
+);
+
+...
+
+<span class="hljs-selector-class">.my-class</span> {
+    <span class="hljs-attribute">font-weight</span>: normal;
+
+    @<span class="hljs-keyword">include</span> flexy-breakpoint(bar) {
+        <span class="hljs-attribute">font-weight</span>: bold;
+        ...
+    }
+}</code></pre><h3><a name="anchor13" class="b-anchor" href="#anchor13"></a>Описание функций и миксинов</h3><h4><a name="anchor14" class="b-anchor" href="#anchor14"></a>flexy-breakpoint</h4><p>Принимает в качестве аргументов <code>(string, string)</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.my-class</span> {
+    @<span class="hljs-keyword">include</span> flexy-breakpoint(bar, print) {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><pre><code class="hljs css">@<span class="hljs-keyword">media</span> print and (min-width: <span class="hljs-number">350px</span>) {
+    <span class="hljs-selector-class">.my-class</span> {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><h4><a name="anchor15" class="b-anchor" href="#anchor15"></a>flexy-media</h4><p>Принимает в качестве аргументов <code>(map, string)</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.my-class</span> {
+    @<span class="hljs-keyword">include</span> flexy-media((min-width: 100px, max-width: 110px), print) {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><pre><code class="hljs css">@<span class="hljs-keyword">media</span> print and (min-width: <span class="hljs-number">100px</span>) and (max-width: <span class="hljs-number">110px</span>) {
+    <span class="hljs-selector-class">.my-class</span> {
+        <span class="hljs-attribute">color</span>: red;
+    }
+}</code></pre><h4><a name="anchor16" class="b-anchor" href="#anchor16"></a>flexy-get-breakpoint</h4><p>Функция принимает в качестве аргументов <code>(string)</code></p>
+<pre><code class="hljs scss">flexy-get-breakpoint(foo);</code></pre><pre><code class="hljs css">350<span class="hljs-selector-tag">px</span></code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

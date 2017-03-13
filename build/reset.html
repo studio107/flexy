@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset css - Flexy SCSS framework</title>
+    <meta name="keywords" content="flex, reset, css3">
+    <meta name="description" content="Reset css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-card">
+                <div class="b-card__item b-card__item_caption">Сброс</div>
+                <a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a>
+                <div class="b-card__item b-card__item_caption">Сетка</div>
+                <a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a>
+                <a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a>
+                <a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a>
+                <a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a>
+                <div class="b-card__item b-card__item_caption">UI</div>
+                <a href="/ui_heading.html" class="b-card__item b-card__item_grouped">Заголовки</a>
+                <a href="/ui_badge.html" class="b-card__item b-card__item_grouped">Значек</a>
+                <a href="/ui_tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a>
+                <a href="/ui_kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a>
+                <a href="/ui_breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a>
+                <a href="/ui_divider.html" class="b-card__item b-card__item_grouped">Разделитель</a>
+                <a href="/ui_table.html" class="b-card__item b-card__item_grouped">Таблица</a>
+                <a href="/ui_tab.html" class="b-card__item b-card__item_grouped">Вкладки</a>
+                <a href="/ui_image.html" class="b-card__item b-card__item_grouped">Изображение</a>
+                <a href="/ui_avatar.html" class="b-card__item b-card__item_grouped">Аватар</a>
+                <a href="/ui_button.html" class="b-card__item b-card__item_grouped">Кнопка</a>
+                <a href="/ui_input.html" class="b-card__item b-card__item_grouped">Поля</a>
+                <div class="b-card__item b-card__item_caption">Документация</div>
+                <a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                <h1><a name="anchor30" class="b-anchor" href="#anchor30"></a>Reset full</h1><p><code>reset</code> состоит из 2 частей.</p>
+<h3><a name="anchor31" class="b-anchor" href="#anchor31"></a>_reset_base.scss</h3><p>Предназначена для сброса общих стилей страницы.</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span>, <span class="hljs-selector-tag">div</span>, <span class="hljs-selector-tag">span</span>, applet, <span class="hljs-selector-tag">object</span>, <span class="hljs-selector-tag">iframe</span>,
+<span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">p</span>, <span class="hljs-selector-tag">blockquote</span>, <span class="hljs-selector-tag">pre</span>,
+<span class="hljs-selector-tag">a</span>, <span class="hljs-selector-tag">abbr</span>, <span class="hljs-selector-tag">acronym</span>, <span class="hljs-selector-tag">address</span>, <span class="hljs-selector-tag">big</span>, <span class="hljs-selector-tag">cite</span>, <span class="hljs-selector-tag">code</span>,
+<span class="hljs-selector-tag">del</span>, <span class="hljs-selector-tag">dfn</span>, <span class="hljs-selector-tag">em</span>, <span class="hljs-selector-tag">img</span>, <span class="hljs-selector-tag">ins</span>, <span class="hljs-selector-tag">kbd</span>, <span class="hljs-selector-tag">q</span>, s, <span class="hljs-selector-tag">samp</span>,
+<span class="hljs-selector-tag">small</span>, <span class="hljs-selector-tag">strike</span>, <span class="hljs-selector-tag">strong</span>, <span class="hljs-selector-tag">sub</span>, <span class="hljs-selector-tag">sup</span>, <span class="hljs-selector-tag">tt</span>, <span class="hljs-selector-tag">var</span>,
+<span class="hljs-selector-tag">b</span>, u, <span class="hljs-selector-tag">i</span>, center,
+<span class="hljs-selector-tag">dl</span>, <span class="hljs-selector-tag">dt</span>, <span class="hljs-selector-tag">dd</span>, <span class="hljs-selector-tag">ol</span>, <span class="hljs-selector-tag">ul</span>, <span class="hljs-selector-tag">li</span>,
+<span class="hljs-selector-tag">fieldset</span>, <span class="hljs-selector-tag">form</span>, <span class="hljs-selector-tag">label</span>, <span class="hljs-selector-tag">legend</span>,
+<span class="hljs-selector-tag">caption</span>, <span class="hljs-selector-tag">article</span>, <span class="hljs-selector-tag">aside</span>, <span class="hljs-selector-tag">canvas</span>, <span class="hljs-selector-tag">details</span>, <span class="hljs-selector-tag">embed</span>,
+<span class="hljs-selector-tag">figure</span>, <span class="hljs-selector-tag">figcaption</span>, <span class="hljs-selector-tag">footer</span>, <span class="hljs-selector-tag">header</span>, <span class="hljs-selector-tag">hgroup</span>,
+menu, <span class="hljs-selector-tag">nav</span>, <span class="hljs-selector-tag">output</span>, <span class="hljs-selector-tag">ruby</span>, <span class="hljs-selector-tag">section</span>, summary,
+<span class="hljs-selector-tag">time</span>, <span class="hljs-selector-tag">mark</span>, <span class="hljs-selector-tag">audio</span>, <span class="hljs-selector-tag">video</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">font</span>: inherit;
+  <span class="hljs-attribute">vertical-align</span>: baseline;
+}
+
+<span class="hljs-selector-tag">table</span>, <span class="hljs-selector-tag">tbody</span>, <span class="hljs-selector-tag">tfoot</span>, <span class="hljs-selector-tag">thead</span>, <span class="hljs-selector-tag">tr</span>, <span class="hljs-selector-tag">th</span>, <span class="hljs-selector-tag">td</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">font</span>: inherit;
+  <span class="hljs-attribute">vertical-align</span>: top;
+}
+
+<span class="hljs-comment">/* HTML5 display-role reset for older browsers */</span>
+<span class="hljs-selector-tag">article</span>, <span class="hljs-selector-tag">aside</span>, <span class="hljs-selector-tag">details</span>, <span class="hljs-selector-tag">figcaption</span>, <span class="hljs-selector-tag">figure</span>,
+<span class="hljs-selector-tag">footer</span>, <span class="hljs-selector-tag">header</span>, <span class="hljs-selector-tag">hgroup</span>, menu, <span class="hljs-selector-tag">nav</span>, <span class="hljs-selector-tag">section</span> {
+  <span class="hljs-attribute">display</span>: block;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background</span>: {
+    color: <span class="hljs-number">#fff</span>;
+  }
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1em</span>;
+}
+
+<span class="hljs-selector-tag">blockquote</span>, <span class="hljs-selector-tag">q</span> {
+  <span class="hljs-attribute">quotes</span>: none;
+}
+
+<span class="hljs-selector-tag">blockquote</span>:before, <span class="hljs-selector-tag">blockquote</span>:after,
+<span class="hljs-selector-tag">q</span>:before, <span class="hljs-selector-tag">q</span>:after {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">content</span>: none;
+}
+
+<span class="hljs-selector-tag">table</span> {
+  <span class="hljs-attribute">border-collapse</span>: collapse;
+  <span class="hljs-attribute">border-spacing</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">b</span>, <span class="hljs-selector-tag">strong</span> {
+  <span class="hljs-attribute">font-weight</span>: bold;
+}
+
+<span class="hljs-selector-tag">em</span>, <span class="hljs-selector-tag">i</span> {
+  <span class="hljs-attribute">font-style</span>: italic;
+}</code></pre><h3><a name="anchor32" class="b-anchor" href="#anchor32"></a>_reset_form.scss</h3><p>Предназначена для сброса стилей form, input, button, textarea, select и всевдо элементов
+::placeholder. Так же убирает outline.</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">input</span>,
+<span class="hljs-selector-tag">label</span>,
+<span class="hljs-selector-tag">select</span>,
+<span class="hljs-selector-tag">button</span>,
+<span class="hljs-selector-tag">textarea</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">vertical-align</span>: middle;
+  <span class="hljs-attribute">white-space</span>: normal;
+  <span class="hljs-attribute">background</span>: none;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+
+  <span class="hljs-comment">/* Browsers have different default form fonts */</span>
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+}
+
+<span class="hljs-comment">/* Box Sizing Reset
+-----------------------------------------------*/</span>
+
+<span class="hljs-comment">/* All of our custom controls should be what we expect them to be */</span>
+<span class="hljs-selector-tag">input</span>,
+<span class="hljs-selector-tag">textarea</span> {
+  <span class="hljs-attribute">box-sizing</span>: content-box;
+}
+
+<span class="hljs-comment">/* These elements are usually rendered a certain way by the browser */</span>
+<span class="hljs-selector-tag">button</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=reset]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=button]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=submit]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span>,
+<span class="hljs-selector-tag">select</span> {
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+
+<span class="hljs-selector-tag">button</span>,
+<span class="hljs-selector-tag">input</span>,
+<span class="hljs-selector-tag">textarea</span>,
+<span class="hljs-selector-tag">select</span> {
+  <span class="hljs-comment">/* Remove the stupid outer glow in Webkit */</span>
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">/* Button Controls
+-----------------------------------------------*/</span>
+
+<span class="hljs-selector-tag">input</span> {
+  &amp;<span class="hljs-selector-attr">[type=checkbox]</span>, &amp;<span class="hljs-selector-attr">[type=radio]</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">13px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">13px</span>;
+  }
+
+  &amp;<span class="hljs-selector-attr">[type=search]</span> {
+    <span class="hljs-comment">/* Make webkit render the search input like a normal text field */</span>
+    appearance: textfield;
+    <span class="hljs-attribute">box-sizing</span>: content-box;
+  }
+}
+
+<span class="hljs-comment">/* Turn off the recent search for webkit. It adds about 15px padding on the left */</span>
+::-webkit-search-decoration {
+  display: none;
+}
+
+<span class="hljs-comment">/* Buttons
+-----------------------------------------------*/</span>
+
+<span class="hljs-selector-tag">button</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=reset]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=button]</span>,
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=submit]</span> {
+  <span class="hljs-comment">/* Fix IE7 display bug */</span>
+  <span class="hljs-attribute">overflow</span>: visible;
+  <span class="hljs-attribute">width</span>: auto;
+}
+
+<span class="hljs-comment">/* IE8 and FF freak out if this rule is within another selector */</span>
+::-webkit-file-upload-button {
+  padding: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: none;
+}
+
+<span class="hljs-comment">/* Textarea
+-----------------------------------------------*/</span>
+
+<span class="hljs-selector-tag">textarea</span> {
+  <span class="hljs-comment">/* Move the label to the top */</span>
+  <span class="hljs-attribute">vertical-align</span>: top;
+
+  <span class="hljs-comment">/* Turn off scroll bars in IE unless needed */</span>
+  <span class="hljs-attribute">overflow</span>: auto;
+}
+
+<span class="hljs-comment">/* Selects
+-----------------------------------------------*/</span>
+
+<span class="hljs-selector-tag">select</span> {
+  &amp;<span class="hljs-selector-attr">[multiple]</span> {
+    <span class="hljs-comment">/* Move the label to the top */</span>
+    <span class="hljs-attribute">vertical-align</span>: top;
+  }
+}
+
+::-webkit-input-placeholder {
+  font-size: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-style</span>: normal;
+}
+
+:-moz-placeholder { /* Firefox <span class="hljs-number">18</span>- */
+  font-size: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-style</span>: normal;
+}
+
+::-moz-placeholder { /* Firefox <span class="hljs-number">19</span>+ */
+  font-size: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-style</span>: normal;
+}
+
+:-ms-input-placeholder {
+  font-size: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+  <span class="hljs-attribute">font-style</span>: normal;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a> &&
+                    <a href="https://github.com/KirillUrgant" target="_blank">KirillUrgant</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

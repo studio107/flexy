@@ -1,0 +1,26 @@
+$flexy-current-color: none !default;
+@mixin flexy-colors($schema: $flexy-theme-colors) {
+  @each $name, $color in $schema {
+    $flexy-current-name: $name !global;
+    $flexy-current-color: $color !global;
+    @if $name == default {
+      @content;
+    } @else {
+      &_#{$flexy-current-name} {
+        @content;
+      }
+    }
+  }
+}
+
+.m-bg {
+  @include flexy-colors() {
+    background-color: $flexy-current-color !important;
+  }
+}
+
+.m-color {
+  @include flexy-colors() {
+    color: $flexy-current-color !important;
+  }
+}

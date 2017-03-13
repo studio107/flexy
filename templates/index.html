@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Оглавление</h1>
+
+    <h2>Grid</h2>
+    {% include "_grid_standart.html" %}
+    <p><a href="/grid.html" class="b-button">Read more</a></p>
+    <div class="b-divider"></div>
+
+    <h2>Block grid</h2>
+    {% include "_block_grid.html" %}
+    <p><a href="/block_grid.html" class="b-button">Read more</a></p>
+    <div class="b-divider"></div>
+{% endblock %}
