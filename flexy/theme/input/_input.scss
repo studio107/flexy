@@ -36,7 +36,7 @@
   margin: 0;
   padding: .5em;
   border: none;
-  border-radius: $flexy-theme-border-radius;
+  border-radius: $flexy-block-input-border-radius;
   outline: none;
   background-color: #fff;
   font-family: inherit;
@@ -49,18 +49,18 @@
   background: {
     color: #fff;
   }
-  box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-color inset;
+  box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-color inset;
 
   &[type="search"] {
     box-sizing: border-box;
   }
 
   &:hover:not(:focus) {
-    box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-hover-color inset;
+    box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-hover-color inset;
   }
 
   &:active, &:focus {
-    box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-focus-color inset;
+    box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-focus-color inset;
   }
 
   &:hover, &:focus {
@@ -72,7 +72,7 @@
   }
 
   @include flexy-input-placeholder {
-    color: $flexy-theme-placeholder-color;
+    color: $flexy-block-input-placeholder-color;
     font-size: 1em;
   }
 
@@ -107,7 +107,7 @@
 
     &:active {
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 1px $flexy-theme-input-focus-color inset, 0 1px 2px rgba(#000, .6);
+        box-shadow: 0 0 0 1px $flexy-block-input-focus-color inset, 0 1px 2px rgba(#000, .6);
       }
     }
 
@@ -213,7 +213,7 @@
 
     &[type="checkbox"] + .#{$flexy-prefix}-label {
       &::before {
-        border-radius: $flexy-theme-border-radius;
+        border-radius: $flexy-block-input-border-radius;
       }
     }
 
@@ -232,12 +232,12 @@
         width: $flexy-theme-height/1.5;
         height: $flexy-theme-height/1.5;
         line-height: $flexy-theme-height/1.5;
-        box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-color inset;
+        box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-color inset;
       }
 
       &:hover {
         &::before {
-          box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-hover-color inset;
+          box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-hover-color inset;
         }
       }
     }
@@ -246,10 +246,10 @@
       &[type="checkbox"] + .#{$flexy-prefix}-label,
       &[type="radio"] + .#{$flexy-prefix}-label {
         &::before {
-          color: $flexy-theme-input-focus-color;
+          color: $flexy-block-input-focus-color;
           font-size: $flexy-body-font-size;
           content: "\2713";
-          box-shadow: 0 0 0 $flexy-theme-border-size $flexy-theme-input-focus-color inset;
+          box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-focus-color inset;
         }
       }
     }
