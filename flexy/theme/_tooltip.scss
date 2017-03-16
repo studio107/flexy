@@ -1,13 +1,15 @@
-$tooltip-z-index: 5;
-$tooltip-arrow-width: .6em;
-$tooltip-body-padding: 5px;
-$tooltip-body-background-color: #333;
-$tooltip-body-color: #fff;
-$tooltip-line-height: 1.45;
-$tooltip-body-border-width: 1px;
-$tooltip-body-border-style: solid;
-$tooltip-body-border-color: $tooltip-body-background-color;
-$tooltip-body-border-radius: $flexy-theme-border-radius;
+$tooltip-z-index: 5 !default;
+$tooltip-arrow-width: .6em !default;
+$tooltip-body-padding: 5px !default;
+$tooltip-body-background-color: #333 !default;
+$tooltip-body-color: #fff !default;
+$tooltip-font-size: .9em !default;
+$tooltip-antialias: false !default;
+$tooltip-line-height: 1.45 !default;
+$tooltip-body-border-width: 1px !default;
+$tooltip-body-border-style: solid !default;
+$tooltip-body-border-color: $tooltip-body-background-color !default;
+$tooltip-body-border-radius: $flexy-theme-border-radius !default;
 
 $flexy-tooltip-background-color: #353535;
 $flexy-tooltip-color: #fff;
@@ -42,11 +44,16 @@ $flexy-theme-tooltip: (
   &::before,
   &::after {
     transition: all .2s ease, opacity .2s ease;
-    font-size: .9rem;
+    font-family: $flexy-font;
+    font-size: $tooltip-font-size;
+    font-style: normal;
+    font-weight: normal;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     z-index: $tooltip-z-index;
+
+    @include antialias($tooltip-antialias);
   }
 
   &::before {
