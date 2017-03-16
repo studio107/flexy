@@ -4,7 +4,7 @@ $tooltip-body-padding: 5px !default;
 $tooltip-body-background-color: #333 !default;
 $tooltip-body-color: #fff !default;
 $tooltip-font-size: .9em !default;
-$tooltip-antialias: false !default;
+$tooltip-antialias: true !default;
 $tooltip-line-height: 1.45 !default;
 $tooltip-body-border-width: 1px !default;
 $tooltip-body-border-style: solid !default;
@@ -47,7 +47,7 @@ $flexy-theme-tooltip: (
     font-family: $flexy-font;
     font-size: $tooltip-font-size;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
