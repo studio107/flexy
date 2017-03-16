@@ -37,3 +37,17 @@
     }
   }
 }
+
+.m-text {
+  &_left {
+    text-align: left;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}

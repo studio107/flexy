@@ -22,13 +22,10 @@ $flexy-theme-border-size: 1px !default;
 $flexy-theme-group-offset: 5px !default;
 $flexy-theme-blockquote-border-size: 3px !default;
 
-$flexy-theme-divider-color: #ebf1f8 !default;
-
 @import "modifiers";
 @import "colors";
 @import "form";
 @import "image";
-@import "heading";
 @import "card";
 @import "avatar";
 @import "embed";
@@ -41,7 +38,6 @@ $flexy-theme-divider-color: #ebf1f8 !default;
 @import "tag";
 @import "close_ribbon";
 @import "button";
-@import "divider";
 @import "table";
 @import "dropdown";
 @import "kbd";
@@ -49,9 +45,11 @@ $flexy-theme-divider-color: #ebf1f8 !default;
 @import "tooltip";
 @import "typeset";
 
+@import "divider/index";
 @import "pager/index";
 @import "breadcrumb/index";
 @import "tab/index";
 @import "segment/index";
 @import "badge/index";
 @import "input/index";
+@import "heading/index";
