@@ -1,0 +1,30 @@
+// Префикс для всех классов
+$flexy-prefix: 'b' !default;
+
+// Максимальное количество колонок
+$flexy-grid-columns: 12 !default;
+// Отступы между колонками
+$flexy-grid-gutter: 0.5em !default;
+// Максимальная ширина контейнера
+$flexy-grid-wrapper-max-width: 100% !default;
+// Минимальная ширина контейнера
+$flexy-grid-wrapper-min-width: auto !default;
+
+// Максимальное количество блоков в block grid
+$flexy-block-grid-count: 25 !default;
+
+// Шрифты
+$flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-breakpoints: (
+        small: 0,
+        medium: 768px,
+        large: 992px,
+        xlarge: 1200px,
+        xxlarge: 1600px
+) !default;
+
+$flexy-body-font-size: 16px !default;
+$flexy-body-line-height: 1.5 !default;
+$flexy-body-text-color: #000 !default;
+$flexy-heading-text-color: $flexy-body-text-color !default;
+$flexy-heading-font: $flexy-font !default;

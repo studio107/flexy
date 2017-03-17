@@ -1,0 +1,86 @@
+.#{$flexy-prefix}-heading {
+  margin: 0;
+  padding: 0 0 .5em;
+  text-decoration: none;
+  color: $flexy-heading-text-color;
+
+  &_center {
+    text-align: center;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  & > a {
+    color: $flexy-heading-text-color;
+  }
+
+  &__caption {
+    display: inline-block;
+    margin-top: -.5em;
+    margin-bottom: 1em;
+    font-size: .9em;
+    color: $flexy-block-heading-caption-color;
+
+    &_center {
+      text-align: center;
+    }
+
+    &_right {
+      text-align: right;
+    }
+  }
+
+  &__sub {
+    padding: 0;
+    font-size: 1rem;
+    color: map-get($flexy-theme-colors, dark);
+
+    &_center {
+      text-align: center;
+    }
+
+    &_right {
+      text-align: right;
+    }
+  }
+}
+
+@mixin flexy-heading {
+  h1 {
+    @extend .b-heading;
+    @extend .m-size_xxlarge;
+    @content;
+  }
+
+  h2 {
+    @extend .b-heading;
+    @extend .m-size_xlarge;
+    @content;
+  }
+
+  h3 {
+    @extend .b-heading;
+    @extend .m-size_large;
+    @content;
+  }
+
+  h4 {
+    @extend .b-heading;
+    @extend .m-size_medium;
+    @content;
+  }
+
+  h5 {
+    @extend .b-heading;
+    @extend .m-size_small;
+    @content;
+  }
+
+  h6 {
+    @extend .b-heading;
+    @extend .m-size_xsmall;
+    @content;
+  }
+}

@@ -1,0 +1,127 @@
+/**
+ * Calculate column size percentage
+ */
+@function flexy-column-percent($column-num) {
+  @return $column-num / $flexy-grid-columns * 100%;
+}
+
+/**
+ * Spacing mixin to create uniform margin/padding
+ */
+@mixin flexy-grid-space($value, $type: margin) {
+  #{$type}-left: $value;
+  #{$type}-right: $value;
+}
+
+/**
+ * Row flex box parent.
+ */
+@mixin flexy-grid-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &_center {
+    justify-content: center;
+  }
+
+  &_space {
+    justify-content: space-between;
+  }
+
+  @include flexy-grid-space(-$flexy-grid-gutter, margin);
+}
+
+@mixin flexy-grid-column {
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 1px;
+
+  &_auto {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    max-width: 100%;
+  }
+
+  @include flexy-grid-space($flexy-grid-gutter, padding);
+}
+
+@mixin flexy-grid-reset() {
+  margin-left: 0;
+}
+
+/**
+ * Generate a set of grid column classes using a namespace
+ *
+ * col-[namespace] for intelligent column division
+ * col-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+ * off-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+ * off-[namespace]-reset for resetting a col's offset for that and larger namespaces
+ */
+
+/**
+ * Build the grid in two steps, to help minimize file size
+ * Step 1, for each namespace, create the grid-base
+ * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+ */
+@mixin flexy-grid-build($namespace) {
+  // Run the loop for as many columns as speficied
+  @for $i from 1 through $flexy-grid-columns {
+    .#{$flexy-prefix}-col_#{$namespace} {
+      @include flexy-grid-column;
+      flex-grow: 1;
+      flex-basis: 0;
+
+      &_#{$i} {
+        flex-basis: flexy-column-percent($i);
+        max-width: flexy-column-percent($i);
+      }
+    }
+
+    // Don't include the .off class for the last column
+    @if ($i != $flexy-grid-columns) {
+      .#{$flexy-prefix}-off_#{$namespace}_#{$i} {
+        margin-left: flexy-column-percent($i);
+      }
+    }
+  }
+
+  .#{$flexy-prefix}-off_#{$namespace}_reset {
+    @include flexy-grid-reset;
+  }
+}
+
+@each $namespace, $width in $flexy-breakpoints {
+  @if ($width == 0) {
+    @include flexy-grid-build($namespace);
+  } @else {
+    @include flexy-media((min-width: $width)) {
+      @include flexy-grid-build($namespace);
+    }
+  }
+}
+
+.#{$flexy-prefix} {
+  &-col {
+    @include flexy-grid-column;
+  }
+
+  &-row {
+    @include flexy-grid-row;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: $flexy-grid-wrapper-max-width;
+    min-width: $flexy-grid-wrapper-min-width;
+    box-sizing: border-box;
+    @include flexy-grid-space($flexy-grid-gutter, padding);
+
+    &_left {
+      margin: 0;
+    }
+  }
+}

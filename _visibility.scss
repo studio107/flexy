@@ -1,0 +1,71 @@
+.#{$flexy-prefix} {
+  &-visible {
+    display: none;
+
+    $prev: null;
+
+    @each $namespace, $px in $flexy-breakpoints {
+      $prev: map-prev-key($flexy-breakpoints, $namespace);
+      $next: map-next-key($flexy-breakpoints, $namespace);
+
+      &_#{$namespace} {
+
+        &_only {
+          $media: ();
+          @if ($next) {
+            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
+          } @else {
+            $media: (min-width: flexy-get-breakpoint($namespace));
+          }
+
+          @include flexy-media($media) {
+            display: block;
+          }
+        }
+
+        &_up {
+          @include flexy-media((min-width: flexy-get-breakpoint($namespace))) {
+            display: block;
+          }
+        }
+      }
+
+      $prev: $namespace;
+    }
+  }
+
+  &-hide {
+    display: block;
+
+    $prev: null;
+
+    @each $namespace, $px in $flexy-breakpoints {
+      $prev: map-prev-key($flexy-breakpoints, $namespace);
+      $next: map-next-key($flexy-breakpoints, $namespace);
+
+      &_#{$namespace} {
+
+        &_only {
+          $media: ();
+          @if ($next) {
+            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - 1px);
+          } @else {
+            $media: (min-width: flexy-get-breakpoint($namespace));
+          }
+
+          @include flexy-media($media) {
+            display: none;
+          }
+        }
+
+        &_up {
+          @include flexy-media((min-width: flexy-get-breakpoint($namespace))) {
+            display: none;
+          }
+        }
+      }
+
+      $prev: $namespace;
+    }
+  }
+}

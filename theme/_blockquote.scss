@@ -1,0 +1,13 @@
+.#{$flexy-prefix}-blockquote {
+  padding: 1em;
+  margin: 0 0 1em 0;
+
+  @include flexy-colors {
+    border-left: $flexy-theme-blockquote-border-size solid $flexy-current-color;
+  }
+
+  &__footer {
+    font-style: italic;
+    font-size: .9em;
+  }
+}

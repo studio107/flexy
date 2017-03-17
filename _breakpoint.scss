@@ -1,0 +1,32 @@
+@function flexy-get-breakpoint($breakpoint) {
+  @if (map-has-key($flexy-breakpoints, $breakpoint)) {
+    @return map-get($flexy-breakpoints, $breakpoint);
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+    @return null;
+  }
+}
+
+@function flexy-media-map($map) {
+  $temp: ();
+  @each $prefix, $breakpoint in $map {
+    $temp: append($temp, '(' + $prefix + ': ' + $breakpoint + ')');
+  }
+  @return implode($temp, ' and ');
+}
+
+@mixin flexy-media($map, $media: 'screen') {
+  @media #{$media} and #{flexy-media-map($map)} {
+    @content;
+  }
+}
+
+@mixin flexy-breakpoint($breakpoint, $media: 'screen') {
+  @if map-has-key($flexy-breakpoints, $breakpoint) {
+    @media #{$media} and (min-width: #{map-get($flexy-breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+  }
+}
