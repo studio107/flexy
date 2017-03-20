@@ -1,0 +1,52 @@
+.#{$flexy-prefix}-card {
+  padding: 0;
+  list-style: none;
+  display: block;
+
+  &__header {
+    padding: 1em 1em 0;
+
+    .b-heading {
+      @include ellipsis;
+    }
+  }
+
+  &__divider {
+    background-color: $flexy-block-card-divider-color;
+    height: 1px;
+    display: block;
+  }
+
+  &__footer {
+    padding: 1em;
+    color: map-get($flexy-theme-colors, gray);
+
+    .b-button {
+      &:first-child {
+        border-top-left-radius: 0 !important;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0 !important;
+      }
+    }
+
+    &_block {
+      padding: 1em 0 0;
+
+      .b-input-group .b-button:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+      }
+
+      .b-input-group .b-button:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+      }
+    }
+  }
+
+  &__body {
+    padding: 1em 1em 0;
+  }
+}

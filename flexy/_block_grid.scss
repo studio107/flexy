@@ -1,56 +1,104 @@
-$flexy-block-grid-padding: 1em;
+$flexy-block-grid-padding: 1em !default;
+$flexy-block-grid-flexbox: true !default;
+
+@mixin flexy-block-grid-offset() {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 ($flexy-block-grid-padding/2) $flexy-block-grid-padding;
+}
+
+@mixin flexy-block-grid-calc-legacy($per-row: false) {
+  @if $per-row {
+    & > .b-block-grid__item {
+      width: 100% / $per-row;
+      @include flexy-block-grid-offset;
+
+      &:nth-of-type(1n) {
+        clear: none;
+      }
+
+      &:nth-of-type(#{$per-row}n+1) {
+        clear: both;
+      }
+    }
+  }
+}
 
 .b-block-grid {
-  display: flex;
+  list-style: none;
   padding: 0;
-  flex-wrap: wrap;
+  margin: 0 (-$flexy-block-grid-padding/2);
+  @include clearfix;
 
-  &_left {
-    justify-content: flex-start;
-  }
+  @if $flexy-block-grid-flexbox {
+    display: flex;
+    flex-wrap: wrap;
 
-  &_center {
-    justify-content: center;
-  }
+    &_left {
+      justify-content: flex-start;
+    }
 
-  &_space {
-    justify-content: space-between;
-  }
+    &_center {
+      justify-content: center;
+    }
 
-  &_right {
-    justify-content: flex-end;
-  }
+    &_space {
+      justify-content: space-between;
+    }
 
-  @for $i from 1 through $flexy-block-grid-count {
+    &_right {
+      justify-content: flex-end;
+    }
 
     @each $namespace, $width in $flexy-breakpoints {
-      &_#{$namespace}_#{$i} .#{$flexy-prefix}-block-grid__item {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0 $flexy-block-grid-padding $flexy-block-grid-padding * 3;
+      @for $i from 1 through $flexy-block-grid-count {
 
-        @include flexy-breakpoint($namespace) {
-          width: (100% / $i);
-        }
+        &_#{$namespace}_#{$i} > .#{$flexy-prefix}-block-grid__item {
+          @include flexy-block-grid-offset;
 
-        &_fluid {
-          width: auto;
-          flex: 1 0 100% / $i;
-        }
-
-        &_only {
-          $prev: map-prev-key($flexy-breakpoints, $namespace);
-          $next: map-next-key($flexy-breakpoints, $namespace);
-
-          $media: ();
-          @if ($next) {
-            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
-          } @else {
-            $media: (min-width: flexy-get-breakpoint($namespace));
+          @include flexy-breakpoint($namespace) {
+            width: (100% / $i);
           }
 
-          @include flexy-media($media) {
-            width: 100% / $i;
+          &_fluid {
+            width: auto;
+            flex: 1 0 100% / $i;
+          }
+
+          &_only {
+            $prev: map-prev-key($flexy-breakpoints, $namespace);
+            $next: map-next-key($flexy-breakpoints, $namespace);
+
+            $media: ();
+            @if ($next) {
+              $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
+            } @else {
+              $media: (min-width: flexy-get-breakpoint($namespace));
+            }
+
+            @include flexy-media($media) {
+              width: 100% / $i;
+            }
+          }
+        }
+
+      }
+    }
+  } @else {
+    display: block;
+
+    & > .b-block-grid__item {
+      display: block;
+      height: auto;
+      float: left;
+      @include flexy-block-grid-offset;
+    }
+
+    @each $namespace, $width in $flexy-breakpoints {
+      @include flexy-breakpoint($namespace) {
+        @for $i from 1 through $flexy-block-grid-count {
+          &_#{$namespace}_#{$i} {
+            @include flexy-block-grid-calc-legacy($i);
           }
         }
       }

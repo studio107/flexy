@@ -10,6 +10,12 @@
   }
 }
 
+@mixin apply-styles($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: #{$value};
+  }
+}
+
 @mixin disable-user-select {
   -webkit-touch-callout: none;
   user-select: none;
@@ -22,8 +28,7 @@
     text-indent: $wider-than-any-screen * $approximate-em-value;
     overflow: hidden;
     text-align: left;
-  }
-  @else {
+  } @else {
     // slightly wider than the box prevents issues with inline-block elements
     text-indent: 110%;
     white-space: nowrap;
@@ -60,8 +65,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-  @else {
+  } @else {
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
     text-rendering: auto;
