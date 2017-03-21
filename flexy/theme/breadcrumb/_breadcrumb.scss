@@ -1,5 +1,8 @@
-
 .#{$flexy-prefix}-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   &__item {
     display: inline-block;
     width: auto;
