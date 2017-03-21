@@ -1,3 +1,7 @@
+@function flexy-color($name) {
+  @return map-get($flexy-theme-colors, $name);
+}
+
 @mixin clearfix {
   *zoom: 1;
   &:before, &:after {

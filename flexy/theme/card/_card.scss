@@ -19,7 +19,7 @@
 
   &__footer {
     padding: 1em;
-    color: map-get($flexy-theme-colors, gray);
+    color: flexy-color(gray);
 
     .b-button {
       &:first-child {
