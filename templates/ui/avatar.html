@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="b-heading">Аватар</h1>
+
+    <h2 class="b-heading">Настройки</h2>
+
+    <pre>$flexy-theme-avatar: (
+        default: (
+                background-color: #2c3e50,
+                color: #fff
+        ),
+        primary: (
+                background-color: map-get($flexy-theme-colors, primary),
+                color: #fff
+        ),
+        error: (
+                background-color: map-get($flexy-theme-colors, error),
+                color: #fff
+        ),
+        success: (
+                background-color: map-get($flexy-theme-colors, success),
+                color: #fff
+        )
+) !default;</pre>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            {% include "example/ui/_avatar_image.html" %}
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            {% set itemHtml %}{% include "example/ui/_avatar_image.html" %}{% endset %}
+            <pre>{{ itemHtml|escape }}</pre>
+        </div>
+    </div>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            {% include "example/ui/_avatar_text.html" %}
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            {% set itemHtml %}{% include "example/ui/_avatar_text.html" %}{% endset %}
+            <pre>{{ itemHtml|escape }}</pre>
+        </div>
+    </div>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            {% include "example/ui/_avatar_color.html" %}
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            {% set itemHtml %}{% include "example/ui/_avatar_color.html" %}{% endset %}
+            <pre>{{ itemHtml|escape }}</pre>
+        </div>
+    </div>
+{% endblock %}

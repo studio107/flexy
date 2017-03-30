@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
+    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
+    <meta name="description" content="<%= file.meta.description || '' %>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-info">
+                <div class="b-info__label">RESET</div>
+                <div class="b-info__value">
+                    <p><a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">GRID</div>
+                <div class="b-info__value">
+                    <p><a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a></p>
+                    <p><a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a></p>
+                    <p><a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a></p>
+                    <p><a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">UI</div>
+                <div class="b-info__value">
+                    <p><a href="/ui/heading.html" class="b-card__item b-card__item_grouped">Заголовки</a></p>
+                    <p><a href="/ui/badge.html" class="b-card__item b-card__item_grouped">Значек</a></p>
+                    <p><a href="/ui/tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a></p>
+                    <p><a href="/ui/kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a></p>
+                    <p><a href="/ui/breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a></p>
+                    <p><a href="/ui/divider.html" class="b-card__item b-card__item_grouped">Разделитель</a></p>
+                    <p><a href="/ui/table.html" class="b-card__item b-card__item_grouped">Таблица</a></p>
+                    <p><a href="/ui/tab.html" class="b-card__item b-card__item_grouped">Вкладки</a></p>
+                    <p><a href="/ui/image.html" class="b-card__item b-card__item_grouped">Изображение</a></p>
+                    <p><a href="/ui/avatar.html" class="b-card__item b-card__item_grouped">Аватар</a></p>
+                    <p><a href="/ui/button.html" class="b-card__item b-card__item_grouped">Кнопка</a></p>
+                    <p><a href="/ui/input.html" class="b-card__item b-card__item_grouped">Поля</a></p>
+                    <p><a href="/ui/input_group.html" class="b-card__item b-card__item_grouped">Группы элементов</a></p>
+                    <p><a href="/ui/group.html" class="b-card__item b-card__item_grouped">Группы</a></p>
+                    <p><a href="/ui/info_group.html" class="b-card__item b-card__item_grouped">Группы лейблов</a></p>
+                    <p><a href="/ui/card.html" class="b-card__item b-card__item_grouped">Карточка</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">GUIDE</div>
+                <div class="b-info__value">
+                    <p><a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                
+    <h1 class="b-heading">Поля</h1>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div>
+    <label for="input1" class="b-label">Label</label>
+    <input id="input1" type="text" class="b-input" placeholder="Hello world" />
+</div>
+<br/>
+<div>
+    <label for="input2" class="b-label">Label</label>
+    <textarea id="input2" class="b-input b-input_textarea" placeholder="Hello world"></textarea>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div&gt;
+    &lt;label for=&quot;input1&quot; class=&quot;b-label&quot;&gt;Label&lt;/label&gt;
+    &lt;input id=&quot;input1&quot; type=&quot;text&quot; class=&quot;b-input&quot; placeholder=&quot;Hello world&quot; /&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+&lt;div&gt;
+    &lt;label for=&quot;input2&quot; class=&quot;b-label&quot;&gt;Label&lt;/label&gt;
+    &lt;textarea id=&quot;input2&quot; class=&quot;b-input b-input_textarea&quot; placeholder=&quot;Hello world&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div>
+    <input type="checkbox" class="b-input b-input_choice" id="checkbox1" />
+    <label class="b-label" for="checkbox1">Label</label>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;b-input b-input_choice&quot; id=&quot;checkbox1&quot; /&gt;
+    &lt;label class=&quot;b-label&quot; for=&quot;checkbox1&quot;&gt;Label&lt;/label&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div>
+    <input type="radio" class="b-input b-input_choice" name="radio" id="radio1" />
+    <label class="b-label" for="radio1">Radio 1</label>
+</div>
+<div>
+    <input type="radio" class="b-input b-input_choice" name="radio" id="radio2" />
+    <label class="b-label" for="radio2">Radio 2</label>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div&gt;
+    &lt;input type=&quot;radio&quot; class=&quot;b-input b-input_choice&quot; name=&quot;radio&quot; id=&quot;radio1&quot; /&gt;
+    &lt;label class=&quot;b-label&quot; for=&quot;radio1&quot;&gt;Radio 1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;input type=&quot;radio&quot; class=&quot;b-input b-input_choice&quot; name=&quot;radio&quot; id=&quot;radio2&quot; /&gt;
+    &lt;label class=&quot;b-label&quot; for=&quot;radio2&quot;&gt;Radio 2&lt;/label&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div>
+    <label for="select1" class="b-label">Label</label>
+    <select id="select1" class="b-input b-input_select">
+        <option value="foo">foo</option>
+        <option value="bar">bar</option>
+    </select>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div&gt;
+    &lt;label for=&quot;select1&quot; class=&quot;b-label&quot;&gt;Label&lt;/label&gt;
+    &lt;select id=&quot;select1&quot; class=&quot;b-input b-input_select&quot;&gt;
+        &lt;option value=&quot;foo&quot;&gt;foo&lt;/option&gt;
+        &lt;option value=&quot;bar&quot;&gt;bar&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="b-source">
+    <h1 class="b-heading">Source code</h1>
+    <div class="b-source__content">
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>
+</html>

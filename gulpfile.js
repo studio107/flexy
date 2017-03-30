@@ -1,16 +1,12 @@
 var path = require('path'),
-    highlightjs = require('highlight.js'),
     gulp = require('gulp'),
+    data = require('gulp-data'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     csso = require('gulp-csso'),
     flatten = require('gulp-flatten'),
     nunjucks = require('gulp-nunjucks'),
-    frontMatter = require('gulp-front-matter'),
-    wrap = require('gulp-wrap'),
-    marked = require('marked'),
-    markdown = require('gulp-marked'),
     browserSync = require('browser-sync').create();
 
 var dst = {
@@ -20,7 +16,6 @@ var dst = {
 };
 
 var paths = {
-    pages: './src/**/*.md',
     font: './font/**/*{.eot,.ttf,.woff,.woff2}',
     templates: './templates/**/*.html',
     scss: [
@@ -53,33 +48,14 @@ gulp.task('font', function () {
 });
 
 gulp.task('templates', function () {
-    var counter = 0;
-    var renderer = new marked.Renderer();
-    renderer.heading = function (text, level) {
-        counter += 1;
-        return '<h' + level + '><a name="anchor' + counter + '" class="b-anchor" href="#anchor' + counter + '"></a>' + text + '</h' + level + '>';
-    };
-    renderer.code = function (code, language) {
-        // Check whether the given language is valid for highlight.js.
-        var validLang = !!(language && highlightjs.getLanguage(language));
-        // Highlight only if the language is valid.
-        var highlighted = validLang ? highlightjs.highlight(language, code).value : code;
-        // Render the highlighted code with `hljs` class.
-        return '<pre><code class="hljs ' + language + '">' + highlighted + '</code></pre>';
-    };
-
-    gulp.src(paths.pages)
-        .pipe(frontMatter({
-            property: 'meta'
+    return gulp.src('templates/**/*.html')
+        .pipe(data(() => {
+            return {
+                version: require(path.join(__dirname, 'package.json')).version
+            }
         }))
-        .pipe(markdown({
-            sanitize: false,
-            renderer: renderer
-        }))
-        .pipe(wrap({
-            src: './templates/base.html'
-        }))
-        .pipe(gulp.dest(dst.templates));
+        .pipe(nunjucks.compile())
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('server', function () {
@@ -95,11 +71,11 @@ gulp.task('watch', ['server'], function () {
     gulp.watch(paths.scss, ['scss']);
     gulp.watch(path.join(__dirname, 'flexy') + '/**/*', ['scss']);
     gulp.watch([
-        './templates/**/*.html',
-        './src/**/*.md'
+        './templates/**/*.html'
     ], ['templates']);
 
-    gulp.watch('./build/**/*').on('change', browserSync.reload);
+    gulp.watch(path.join(__dirname, 'build') + '/**/*')
+        .on('change', browserSync.reload);
 });
 
 gulp.task('default', function () {

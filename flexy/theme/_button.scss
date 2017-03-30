@@ -18,6 +18,7 @@
   appearance: none;
   user-select: none;
   box-sizing: border-box;
+  @include ellipsis;
 
   // todo fixme
   min-width: 32px;

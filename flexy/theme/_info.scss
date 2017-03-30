@@ -1,8 +1,8 @@
 .b-info {
   margin-bottom: 1em;
+  @include antialias;
 
   &__label {
-    @include antialias;
     color: gray;
     font-size: .95em;
     text-decoration: none;

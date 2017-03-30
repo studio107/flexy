@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="b-heading">Группы</h1>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            {% include "example/ui/_group.html" %}
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            {% set itemHtml %}{% include "example/ui/_group.html" %}{% endset %}
+            <pre>{{ itemHtml|escape }}</pre>
+        </div>
+    </div>
+{% endblock %}

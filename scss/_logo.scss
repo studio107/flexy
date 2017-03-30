@@ -1,0 +1,8 @@
+.b-logo {
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  @include antialias;
+  font-weight: bold;
+  font-size: 32px;
+}

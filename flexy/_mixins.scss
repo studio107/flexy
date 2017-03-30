@@ -1,4 +1,4 @@
-@function flexy-color($name) {
+@function flexy-color($name: default) {
   @return map-get($flexy-theme-colors, $name);
 }
 

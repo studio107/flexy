@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
+    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
+    <meta name="description" content="<%= file.meta.description || '' %>">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bundle.css">
+</head>
+<body>
+<div class="b-wrapper">
+    <div class="b-header">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <a class="b-logo" href="/">Flexy</a>
+            </div>
+        </div>
+    </div>
+    <div class="b-row">
+        <div class="b-col b-col_small_3">
+            <div class="b-info">
+                <div class="b-info__label">RESET</div>
+                <div class="b-info__value">
+                    <p><a href="/reset.html" class="b-card__item b-card__item_grouped">Reset</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">GRID</div>
+                <div class="b-info__value">
+                    <p><a href="/grid.html" class="b-card__item b-card__item_grouped">Grid</a></p>
+                    <p><a href="/block_grid.html" class="b-card__item b-card__item_grouped">Block grid</a></p>
+                    <p><a href="/visibility.html" class="b-card__item b-card__item_grouped">Visibility</a></p>
+                    <p><a href="/breakpoint.html" class="b-card__item b-card__item_grouped">Breakpoint</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">UI</div>
+                <div class="b-info__value">
+                    <p><a href="/ui/heading.html" class="b-card__item b-card__item_grouped">Заголовки</a></p>
+                    <p><a href="/ui/badge.html" class="b-card__item b-card__item_grouped">Значек</a></p>
+                    <p><a href="/ui/tooltip.html" class="b-card__item b-card__item_grouped">Подсказка</a></p>
+                    <p><a href="/ui/kbd.html" class="b-card__item b-card__item_grouped">Сочетания клавиш</a></p>
+                    <p><a href="/ui/breadcrumb.html" class="b-card__item b-card__item_grouped">Хлебные крошки</a></p>
+                    <p><a href="/ui/divider.html" class="b-card__item b-card__item_grouped">Разделитель</a></p>
+                    <p><a href="/ui/table.html" class="b-card__item b-card__item_grouped">Таблица</a></p>
+                    <p><a href="/ui/tab.html" class="b-card__item b-card__item_grouped">Вкладки</a></p>
+                    <p><a href="/ui/image.html" class="b-card__item b-card__item_grouped">Изображение</a></p>
+                    <p><a href="/ui/avatar.html" class="b-card__item b-card__item_grouped">Аватар</a></p>
+                    <p><a href="/ui/button.html" class="b-card__item b-card__item_grouped">Кнопка</a></p>
+                    <p><a href="/ui/input.html" class="b-card__item b-card__item_grouped">Поля</a></p>
+                    <p><a href="/ui/input_group.html" class="b-card__item b-card__item_grouped">Группы элементов</a></p>
+                    <p><a href="/ui/group.html" class="b-card__item b-card__item_grouped">Группы</a></p>
+                    <p><a href="/ui/info_group.html" class="b-card__item b-card__item_grouped">Группы лейблов</a></p>
+                    <p><a href="/ui/card.html" class="b-card__item b-card__item_grouped">Карточка</a></p>
+                </div>
+            </div>
+            <div class="b-info">
+                <div class="b-info__label">GUIDE</div>
+                <div class="b-info__value">
+                    <p><a href="/rules.html" class="b-card__item b-card__item_grouped">Правила</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="b-col b-col_small_9">
+            <div class="b-typeset">
+                
+    <h1 class="b-heading">Группы элементов</h1>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div class="b-input-group">
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <a href="javascript:void(0)" class="b-button">button</a>
+    <input type="text" placeholder="Hello world" class="b-input" />
+    <select class="b-input b-input_select">
+        <option>Hello world 1</option>
+        <option>Hello world 2</option>
+        <option>Hello world 3</option>
+        <option>Hello world 4</option>
+        <option>Hello world 5</option>
+    </select>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div class=&quot;b-input-group&quot;&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;b-button&quot;&gt;button&lt;/a&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;b-button&quot;&gt;button&lt;/a&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;b-button&quot;&gt;button&lt;/a&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Hello world&quot; class=&quot;b-input&quot; /&gt;
+    &lt;select class=&quot;b-input b-input_select&quot;&gt;
+        &lt;option&gt;Hello world 1&lt;/option&gt;
+        &lt;option&gt;Hello world 2&lt;/option&gt;
+        &lt;option&gt;Hello world 3&lt;/option&gt;
+        &lt;option&gt;Hello world 4&lt;/option&gt;
+        &lt;option&gt;Hello world 5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="b-col b-col_small_12">
+        <div class="b-footer">
+            <div>
+                &copy; 2017
+                <noindex>
+                    <a href="https://github.com/max107" target="_blank">max107</a>
+                </noindex>
+                at
+                <a href="https://studio107.ru">studio107.ru</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="b-source">
+    <h1 class="b-heading">Source code</h1>
+    <div class="b-source__content">
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div class="b-block-grid b-block-grid_small_2 b-block-grid_medium_3 b-block-grid_large_4">
+    {% for i in range(0, 7) -%}
+        <div class="b-block-grid__item">
+            <div class="b-card m-shadow" id="card">
+                <img class="b-image" src="https://unsplash.it/320/240?random"/>
+                <div class="b-card__body">
+                    Hello card body
+                </div>
+                <div class="b-card__footer">
+                    Footer
+                </div>
+            </div>
+        </div>
+    {%- endfor %}
+</div>
