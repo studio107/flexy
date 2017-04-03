@@ -28,7 +28,6 @@ $flexy-block-grid-flexbox: true !default;
   list-style: none;
   padding: 0;
   margin: 0 (-$flexy-block-grid-padding/2);
-  @include clearfix;
 
   @if $flexy-block-grid-flexbox {
     display: flex;
@@ -85,6 +84,7 @@ $flexy-block-grid-flexbox: true !default;
       }
     }
   } @else {
+    @include clearfix;
     display: block;
 
     & > .b-block-grid__item {
