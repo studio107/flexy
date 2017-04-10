@@ -20,21 +20,19 @@
   &__link {
     box-sizing: border-box;
     border-radius: $flexy-block-pager-border-radius;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
     text-align: center;
     display: block;
+    padding: 0 .2em;
     text-decoration: none;
     color: $flexy-block-pager-link-color;
+    transition: color .2s ease;
 
     &_disabled {
       cursor: not-allowed;
     }
 
     &:hover {
-      background-color: map-get($flexy-theme-colors, default);
-      color: #fff;
+      color: $flexy-block-pager-link-active-color;
     }
   }
 
@@ -45,20 +43,10 @@
   &__item {
     margin: 0 5px;
 
-    &_next {
-
-    }
-
-    &_prev {
-
-    }
-
     &_current {
       .b-pager__link {
-        color: #fff;
         cursor: not-allowed;
-        box-shadow: 0 0 0 2px map-get($flexy-theme-colors, default) inset;
-        background-color: map-get($flexy-theme-colors, default);
+        color: $flexy-block-pager-link-active-color;
       }
     }
   }
