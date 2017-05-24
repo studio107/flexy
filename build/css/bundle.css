@@ -2139,18 +2139,11 @@ select[multiple] {
   list-style: none;
   padding: 0;
   margin: 0 -0.5em;
-  *zoom: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .b-block-grid:before, .b-block-grid:after {
-    display: table;
-    content: "";
-    line-height: 0; }
-  .b-block-grid:after {
-    clear: both; }
   .b-block-grid_left {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -4111,7 +4104,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    -webkit-transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
   .m-shadow:hover::after {
     opacity: 1; }
@@ -4312,7 +4304,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2px 4px;
   font-size: .9em;
   text-align: center;
-  background: -webkit-linear-gradient(top, #fff, rgba(255, 255, 255, 0)) left no-repeat, center no-repeat #f5f8fa;
   background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0)) left no-repeat, center no-repeat #f5f8fa;
   box-shadow: inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 0 rgba(16, 22, 26, 0.1);
   color: #182026; }
@@ -4369,7 +4360,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: .5em 0;
   width: 1.5em;
   line-height: 0.5em;
-  -webkit-transition: line-height 0.5s;
   transition: line-height 0.5s;
   text-align: center; }
   .b-close-ribbon > .icon {
@@ -4383,7 +4373,6 @@ h1, h2, h3, h4, h5, h6 {
     top: -1em;
     border-top-width: 1.5em;
     right: 0;
-    -webkit-transition: height 0.5s;
     transition: height 0.5s; }
   .b-close-ribbon::before {
     content: "";
@@ -4397,11 +4386,9 @@ h1, h2, h3, h4, h5, h6 {
   .b-close-ribbon:hover::after {
     border-bottom-color: transparent;
     height: 3.2em;
-    -webkit-transition: height 0.5s;
     transition: height 0.5s; }
   .b-close-ribbon:hover {
     line-height: 0.9em;
-    -webkit-transition: line-height 0.5s;
     transition: line-height 0.5s; }
   .b-close-ribbon::after {
     border-width: 1.5em;
@@ -4548,7 +4535,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: inherit;
     vertical-align: inherit;
     cursor: auto;
-    -webkit-transition: background .1s ease, color .1s ease;
     transition: background .1s ease, color .1s ease;
     text-transform: none;
     color: rgba(0, 0, 0, 0.87); }
@@ -4640,7 +4626,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1B242E;
     color: #fff;
     padding: 10px 0;
-    -webkit-transition: all .2s ease;
     transition: all .2s ease;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0); }
@@ -4669,7 +4654,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .b-kbd {
   display: inline;
-  background: -webkit-linear-gradient(top, #fff, rgba(255, 255, 255, 0)) left no-repeat, center no-repeat #f5f8fa;
   background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0)) left no-repeat, center no-repeat #f5f8fa;
   box-shadow: inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 0 rgba(16, 22, 26, 0.1);
   color: #182026;
@@ -4688,7 +4672,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: visible; }
   .b-tooltip::before, .b-tooltip::after {
-    -webkit-transition: all .2s ease, opacity .2s ease;
     transition: all .2s ease, opacity .2s ease;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 0.9em;
@@ -5269,6 +5252,7 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 2px; }
     .b-input_choice[type="radio"] + .b-label::before,
     .b-input_choice[type="checkbox"] + .b-label::before {
+      font-family: "Material Icons";
       color: #fff;
       text-align: center;
       content: "";
@@ -5289,7 +5273,7 @@ h1, h2, h3, h4, h5, h6 {
     .b-input_choice:checked[type="radio"] + .b-label::before {
       color: #2196f3;
       font-size: 16px;
-      content: "\2713";
+      content: "done";
       box-shadow: 0 0 0 1px #2196f3 inset; }
   .b-input_textarea {
     height: auto;
@@ -5427,7 +5411,6 @@ i.link.icon,
 i.link.icons {
   cursor: pointer;
   opacity: 0.8;
-  -webkit-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease; }
 
 i.link.icon:hover,
@@ -8748,13 +8731,11 @@ img.mfp-img {
   /* animate in */ }
   .mfp-zoom-in .mfp-with-anim {
     opacity: 0;
-    -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     -webkit-transform: scale(0.8);
             transform: scale(0.8); }
   .mfp-zoom-in.mfp-bg {
     opacity: 0;
-    -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out; }
   .mfp-zoom-in.mfp-ready .mfp-with-anim {
     opacity: 1;
@@ -8843,7 +8824,6 @@ h6 {
 
 .b-anchor {
   opacity: 0;
-  -webkit-transition: opacity .2s linear;
   transition: opacity .2s linear;
   float: left;
   margin-left: -26px;

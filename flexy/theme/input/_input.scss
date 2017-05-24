@@ -220,9 +220,10 @@
     &[type="radio"] + .#{$flexy-prefix}-label,
     &[type="checkbox"] + .#{$flexy-prefix}-label {
       &::before {
+        font-family: $flexy-block-input-icon-font-family;
         color: #fff;
         text-align: center;
-        content: "";
+        content: $flexy-block-input-icon-uncheck;
         display: block;
         box-sizing: border-box;
         position: absolute;
@@ -248,7 +249,7 @@
         &::before {
           color: $flexy-block-input-focus-color;
           font-size: $flexy-body-font-size;
-          content: "\2713";
+          content: $flexy-block-input-icon-check;
           box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-focus-color inset;
         }
       }
