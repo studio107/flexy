@@ -9,21 +9,44 @@
 
 @function flexy-media-map($map) {
   $temp: ();
-  @each $prefix, $breakpoint in $map {
-    $temp: append($temp, '(' + $prefix + ': ' + $breakpoint + ')');
+  @each $key, $value in $map {
+    $temp: append($temp, "(#{$key}: #{$value})");
   }
-  @return implode($temp, ' and ');
+  @return implode(reverse($temp), ' and ');
 }
 
-@mixin flexy-media($map, $media: 'screen') {
+@mixin flexy-media($map, $media: 'only screen') {
   @media #{$media} and #{flexy-media-map($map)} {
     @content;
   }
 }
 
-@mixin flexy-breakpoint($breakpoint, $media: 'screen') {
+@mixin flexy-breakpoint($breakpoint, $media: 'only screen') {
   @if map-has-key($flexy-breakpoints, $breakpoint) {
-    @media #{$media} and (min-width: #{map-get($flexy-breakpoints, $breakpoint)}) {
+    $minWidth: map-get($flexy-breakpoints, $breakpoint);
+    @media #{$media} and (min-width: #{$minWidth}) {
+      @content;
+    }
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+  }
+}
+
+@mixin flexy-breakpoint-limit($breakpoint, $limit: null, $media: 'only screen') {
+  @if map-has-key($flexy-breakpoints, $breakpoint) {
+    $list: ();
+
+    $list: append($list, $media);
+
+    $minWidth: map-get($flexy-breakpoints, $breakpoint);
+    $list: append($list, "(min-width: #{$minWidth})");
+
+    @if ($limit and map-has-key($flexy-breakpoints, $limit)) {
+      $maxWidth: flexy-get-breakpoint($limit) - .1px;
+      $list: append($list, "(max-width: #{$maxWidth})");
+    }
+
+    @media #{implode($list, ' and ')} {
       @content;
     }
   } @else {
