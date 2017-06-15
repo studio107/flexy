@@ -16,7 +16,7 @@ var dst = {
 };
 
 var paths = {
-    font: './font/**/*{.eot,.ttf,.woff,.woff2}',
+    font: './fonts/**/*{.eot,.ttf,.woff,.woff2}',
     templates: './templates/**/*.html',
     scss: [
         './font/**/*.css',

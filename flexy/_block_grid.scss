@@ -1,121 +1,127 @@
-$flexy-block-grid-padding: 1em !default;
+$flexy-block-grid-padding: $flexy-grid-gutter !default;
 $flexy-block-grid-flexbox: true !default;
 
-@mixin flexy-block-grid-offset() {
+@mixin _block-grid-offset() {
   margin: 0;
   box-sizing: border-box;
   padding: 0 ($flexy-block-grid-padding/2) $flexy-block-grid-padding;
 }
 
-@mixin flexy-block-grid-calc-legacy($per-row: false) {
-  @if $per-row {
-    & > .b-block-grid__item {
-      width: 100% / $per-row;
-      @include flexy-block-grid-offset;
+@mixin _block-grid-calc-legacy($row-num: false) {
+  width: 100% / $row-num;
 
-      &:nth-of-type(1n) {
-        clear: none;
-      }
+  &:nth-of-type(1n) {
+    clear: none;
+  }
 
-      &:nth-of-type(#{$per-row}n+1) {
-        clear: both;
-      }
-    }
+  &:nth-of-type(#{$row-num}n+1) {
+    clear: both;
   }
 }
 
-.b-block-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0 (-$flexy-block-grid-padding/2);
+@function _block-grid-media-map($namespace) {
+  $prev: map-prev-key($flexy-breakpoints, $namespace);
+  $next: map-next-key($flexy-breakpoints, $namespace);
 
-  @if $flexy-block-grid-flexbox {
-    display: flex;
-    flex-wrap: wrap;
-
-    &_left {
-      justify-content: flex-start;
-    }
-
-    &_center {
-      justify-content: center;
-    }
-
-    &_space {
-      justify-content: space-between;
-    }
-
-    &_right {
-      justify-content: flex-end;
-    }
-
-    @each $namespace, $width in $flexy-breakpoints {
-      @for $i from 1 through $flexy-block-grid-count {
-
-        &_#{$namespace}_#{$i} > .#{$flexy-prefix}-block-grid__item {
-          @include flexy-block-grid-offset;
-
-          @include flexy-breakpoint($namespace) {
-            width: (100% / $i);
-          }
-
-          &_fluid {
-            width: auto;
-            flex: 1 0 100% / $i;
-          }
-
-          &_only {
-            $prev: map-prev-key($flexy-breakpoints, $namespace);
-            $next: map-next-key($flexy-breakpoints, $namespace);
-
-            $media: ();
-            @if ($next) {
-              $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
-            } @else {
-              $media: (min-width: flexy-get-breakpoint($namespace));
-            }
-
-            @include flexy-media($media) {
-              width: 100% / $i;
-            }
-          }
-        }
-      }
-    }
-
-    @each $namespace, $params in $flexy-devices {
-      @for $i from 1 through $flexy-block-grid-count {
-
-        &_#{$namespace}_#{$i} > .#{$flexy-prefix}-block-grid__item {
-          @include flexy-block-grid-offset;
-
-          @include flexy-device($namespace) {
-            width: (100% / $i);
-          }
-
-          &_fluid {
-            width: auto;
-            flex: 1 0 100% / $i;
-          }
-        }
-      }
-    }
+  $media: ();
+  @if ($next) {
+    $media: (
+            min-width: flexy-get-breakpoint($namespace),
+            max-width: flexy-get-breakpoint($next) - .1px
+    );
   } @else {
-    @include clearfix;
-    display: block;
+    $media: (
+            min-width: flexy-get-breakpoint($namespace)
+    );
+  }
 
-    & > .b-block-grid__item {
+  @return $media;
+}
+
+.#{$flexy-prefix} {
+  &-block-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 (-$flexy-block-grid-padding/2);
+
+    & > &__item {
       display: block;
       height: auto;
-      float: left;
-      @include flexy-block-grid-offset;
+      @include _block-grid-offset;
     }
 
-    @each $namespace, $width in $flexy-breakpoints {
-      @include flexy-breakpoint($namespace) {
-        @for $i from 1 through $flexy-block-grid-count {
-          &_#{$namespace}_#{$i} {
-            @include flexy-block-grid-calc-legacy($i);
+    @if $flexy-block-grid-flexbox {
+      display: flex;
+      flex-wrap: wrap;
+
+      &_left {
+        justify-content: flex-start;
+      }
+
+      &_center {
+        justify-content: center;
+      }
+
+      &_space {
+        justify-content: space-between;
+      }
+
+      &_right {
+        justify-content: flex-end;
+      }
+
+      @for $i from 1 through $flexy-block-grid-count {
+        & > &__item {
+          &_fluid {
+            width: auto;
+            flex: 1 0 100% / $i;
+          }
+        }
+
+        @each $namespace, $width in $flexy-breakpoints {
+          &_#{$namespace}_#{$i} > &__item {
+            @include flexy-breakpoint($namespace) {
+              width: (100% / $i);
+            }
+
+            &_only {
+              @include flexy-media(_block-grid-media-map($namespace)) {
+                width: 100% / $i;
+              }
+            }
+          }
+        }
+
+        @each $namespace, $params in $flexy-devices {
+          &_#{$namespace}_#{$i} > &__item {
+            @include flexy-device($namespace) {
+              width: (100% / $i);
+            }
+          }
+        }
+      }
+    } @else {
+      @include clearfix;
+      display: block;
+
+      & > &__item {
+        float: left;
+      }
+
+      @for $i from 1 through $flexy-block-grid-count {
+        @each $namespace, $width in $flexy-breakpoints {
+          @include flexy-breakpoint($namespace) {
+            &_#{$namespace}_#{$i} > &__item {
+              @include _block-grid-calc-legacy($i);
+            }
+          }
+        }
+
+        @each $namespace, $params in $flexy-devices {
+          @include flexy-device($namespace) {
+            &_#{$namespace}_#{$i} > &__item {
+              @include _block-grid-calc-legacy($i);
+            }
           }
         }
       }
