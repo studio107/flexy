@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><% print(file.meta.title ? file.meta.title + ' - ' : '') %>Flexy SCSS framework</title>
-    <meta name="keywords" content="<%= file.meta.keywords || '' %>">
-    <meta name="description" content="<%= file.meta.description || '' %>">
+    <title>Flexy SCSS framework</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="/css/bundle.css">
 </head>
@@ -256,6 +256,74 @@ $flexy-block-grid-count: 25 !default;</pre>
     &lt;/div&gt;
     &lt;div class=&quot;b-block-grid__item&quot;&gt;
         &lt;div class=&quot;b-helper&quot;&gt;small_4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+
+    <h2 class="b-heading">Устройства</h2>
+
+    <p>small: 1, medium: 3, large: 4, ipad-1-2-portrait: 2, ipad-1-2-landscape: 3</p>
+
+    <div class="b-tab">
+        <div class="b-tab__header">
+            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
+            <div class="b-tab__tab" data-tab="source">Source</div>
+        </div>
+        <div data-tab="example" class="b-tab__content b-tab__content_active">
+            <div class="b-block-grid b-block-grid_small_1 b-block-grid_medium_3 b-block-grid_large_4 b-block-grid_ipad-1-2-portrait_2 b-block-grid_ipad-1-2-landscape_3">
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+    <div class="b-block-grid__item">
+        <div class="b-helper">item</div>
+    </div>
+</div>
+        </div>
+        <div data-tab="source" class="b-tab__content">
+            
+            <pre>&lt;div class=&quot;b-block-grid b-block-grid_small_1 b-block-grid_medium_3 b-block-grid_large_4 b-block-grid_ipad-1-2-portrait_2 b-block-grid_ipad-1-2-landscape_3&quot;&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;b-block-grid__item&quot;&gt;
+        &lt;div class=&quot;b-helper&quot;&gt;item&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
         </div>

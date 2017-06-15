@@ -80,7 +80,24 @@ $flexy-block-grid-flexbox: true !default;
             }
           }
         }
+      }
+    }
 
+    @each $namespace, $params in $flexy-devices {
+      @for $i from 1 through $flexy-block-grid-count {
+
+        &_#{$namespace}_#{$i} > .#{$flexy-prefix}-block-grid__item {
+          @include flexy-block-grid-offset;
+
+          @include flexy-device($namespace) {
+            width: (100% / $i);
+          }
+
+          &_fluid {
+            width: auto;
+            flex: 1 0 100% / $i;
+          }
+        }
       }
     }
   } @else {
