@@ -233,6 +233,9 @@
         height: $flexy-theme-height/1.5;
         line-height: $flexy-theme-height/1.5;
         box-shadow: 0 0 0 $flexy-theme-border-size $flexy-block-input-color inset;
+        background: {
+          color: #fff;
+        }
       }
 
       &:hover {

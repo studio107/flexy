@@ -5991,7 +5991,8 @@ h1, h2, h3, h4, h5, h6 {
       width: 21.33333px;
       height: 21.33333px;
       line-height: 21.33333px;
-      box-shadow: 0 0 0 1px #c8c8c8 inset; }
+      box-shadow: 0 0 0 1px #c8c8c8 inset;
+      background-color: #fff; }
     .b-input_choice[type="radio"] + .b-label:hover::before,
     .b-input_choice[type="checkbox"] + .b-label:hover::before {
       box-shadow: 0 0 0 1px #959595 inset; }
