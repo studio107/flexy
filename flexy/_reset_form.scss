@@ -106,26 +106,24 @@ select {
   }
 }
 
-::-webkit-input-placeholder {
+%flexy-placeholder {
   font-size: 15px;
   font-family: Arial, sans-serif;
   font-style: normal;
+}
+
+::-webkit-input-placeholder {
+  @extend %flexy-placeholder;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  font-size: 15px;
-  font-family: Arial, sans-serif;
-  font-style: normal;
+  @extend %flexy-placeholder;
 }
 
 ::-moz-placeholder { /* Firefox 19+ */
-  font-size: 15px;
-  font-family: Arial, sans-serif;
-  font-style: normal;
+  @extend %flexy-placeholder;
 }
 
 :-ms-input-placeholder {
-  font-size: 15px;
-  font-family: Arial, sans-serif;
-  font-style: normal;
+  @extend %flexy-placeholder;
 }

@@ -1,42 +1,10 @@
-@mixin flexy-input-placeholder {
-  &::-webkit-input-placeholder {
-    @content;
-  }
-
-  &:-moz-placeholder {
-    @content;
-  }
-
-  &::-moz-placeholder {
-    @content;
-  }
-
-  &:-ms-input-placeholder {
-    @content;
-  }
-}
-
-@mixin flexy-input-track() {
-  &::-webkit-slider-runnable-track {
-    @content;
-  }
-
-  &::-moz-range-track {
-    @content;
-  }
-
-  &::-ms-track {
-    @content;
-  }
-}
-
 .#{$flexy-prefix}-input {
   display: block;
   width: 100%;
   margin: 0;
   padding: .5em;
   border: none;
-  border-radius: $flexy-block-input-border-radius;
+  border-radius: $flexy-theme-border-radius;
   outline: none;
   background-color: #fff;
   font-family: inherit;

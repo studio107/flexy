@@ -33,7 +33,7 @@
 .m-size {
   @each $name, $size in $flexy-theme-sizes {
     &_#{$name} {
-      font-size: #{$size} !important;
+      font-size: #{$size};
     }
   }
 }

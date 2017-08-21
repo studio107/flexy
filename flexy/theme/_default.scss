@@ -1,12 +1,12 @@
 $flexy-theme-height: 32px !default;
 
 $flexy-theme-sizes: (
-        xsmall: .67em,
-        small: .83em,
-        medium: 1em,
-        large: 1.17em,
-        xlarge: 1.5em,
-        xxlarge: 2em
+        xsmall: 0.707em,
+        small: 1em,
+        medium: 1.414em,
+        large: 1.999em,
+        xlarge: 2.827em,
+        xxlarge: 3.998em
 ) !default;
 
 $flexy-theme-colors: (
@@ -36,7 +36,6 @@ $flexy-theme-blockquote-border-size: 3px !default;
 @import "info";
 @import "tag";
 @import "close_ribbon";
-@import "button";
 @import "table";
 @import "dropdown";
 @import "kbd";
@@ -44,6 +43,7 @@ $flexy-theme-blockquote-border-size: 3px !default;
 @import "tooltip";
 @import "typeset";
 
+@import "button/index";
 @import "divider/index";
 @import "pager/index";
 @import "breadcrumb/index";

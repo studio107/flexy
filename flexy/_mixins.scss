@@ -2,6 +2,44 @@
   @return map-get($flexy-theme-colors, $name);
 }
 
+@mixin flexy-input-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin flexy-input-track() {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+}
+
+@mixin flexy-placeholder-reset {
+  font-size: $flexy-body-font-size;
+  font-family: $flexy-font;
+  font-style: normal;
+}
+
 @mixin clearfix {
   *zoom: 1;
   &:before, &:after {

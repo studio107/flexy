@@ -1,12 +1,12 @@
 .#{$flexy-prefix}-button {
   border: 0;
-  background-color: #96a8b2;
+  background-color: $flexy-block-button-background-color;
   color: #fff;
   display: inline-block;
   max-width: 100%;
   margin: 0;
   padding: .5em;
-  border-radius: $flexy-theme-border-radius;
+  border-radius: $flexy-block-button-border-radius;
   outline: 0;
   font-family: inherit;
   font-size: 1em;
@@ -30,12 +30,6 @@
     width: 100% !important;
   }
 
-  &_icon {
-    .icon {
-      margin: 0;
-    }
-  }
-
   &:hover,
   &:focus {
     z-index: 2;
@@ -55,9 +49,32 @@
       color: #fff;
       background-color: darken($flexy-current-color, 10%);
     }
+
+    &_outline {
+      color: $flexy-current-color;
+      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color inset;
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        color: lighten($flexy-current-color, 10%);
+        box-shadow: 0 0 0 $flexy-block-button-outline-width lighten($flexy-current-color, 10%) inset;
+        background-color: transparent;
+      }
+
+      &:active {
+        color: darken($flexy-current-color, 10%);
+        box-shadow: 0 0 0 $flexy-block-button-outline-width darken($flexy-current-color, 10%) inset;
+        background-color: transparent;
+      }
+    }
   }
 
   &:not(.#{$flexy-prefix}-button_icon) > .icon {
     margin: 0 5px 0 0;
+  }
+
+  &__icon {
+    margin: 0;
   }
 }
