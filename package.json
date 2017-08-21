@@ -1,30 +1,33 @@
 {
-  "name": "flexy-framework",
-  "license": "MIT",
-  "version": "4.1.5",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm-run-all -p watch webpack",
-    "watch": "gulp watch",
-    "webpack": "webpack --progress --colors --watch --config=./webpack.config.js",
-    "build": "NODE_ENV=production gulp && webpack --progress --colors --config=./webpack.config.js"
-  },
-  "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "browser-sync": "^2.18.5",
-    "front-matter": "^2.1.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^2.0.0",
-    "gulp-data": "^1.2.1",
-    "gulp-flatten": "^0.3.1",
-    "gulp-markdown-docs": "^0.1.5",
-    "gulp-nunjucks": "^3.0.0",
-    "gulp-sass": "^3.0.0",
-    "jquery": "^3.2.1",
-    "npm-run-all": "^4.0.2",
-    "webpack": "^2.3.2"
-  }
+    "name": "flexy-framework",
+    "license": "MIT",
+    "version": "4.1.5",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npm-run-all -p watch webpack",
+        "watch": "gulp watch",
+        "webpack": "webpack --progress --colors --watch --config=./webpack.config.js",
+        "build:webpack": "webpack --progress --colors --config=./webpack.config.js",
+        "build:gulp": "gulp",
+        "build": "cross-env NODE_ENV=production npm-run-all build:gulp build:webpack"
+    },
+    "devDependencies": {
+        "babel-core": "^6.24.0",
+        "babel-loader": "^6.4.1",
+        "browser-sync": "^2.18.5",
+        "cross-env": "^5.0.5",
+        "front-matter": "^2.1.2",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-csso": "^2.0.0",
+        "gulp-data": "^1.2.1",
+        "gulp-flatten": "^0.3.1",
+        "gulp-markdown-docs": "^0.1.5",
+        "gulp-nunjucks": "^3.0.0",
+        "gulp-sass": "^3.0.0",
+        "jquery": "^3.2.1",
+        "npm-run-all": "^4.0.2",
+        "webpack": "^2.3.2"
+    }
 }
