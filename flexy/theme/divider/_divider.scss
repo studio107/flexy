@@ -5,18 +5,19 @@
   margin: 1em 0;
   width: 100%;
   border: 0;
+  background-color: $flexy-block-divider-default-color;
+
+  @include flexy-colors($flexy-theme-colors, false) {
+    background-color: $flexy-current-color;
+  }
 
   @each $name, $size in $flexy-block-divider-sizes {
     @if $name == 'default' {
       height: $size;
-    } @else {
-      &_#{$name} {
-        height: $size;
-      }
     }
-  }
 
-  @include flexy-colors() {
-    background-color: $flexy-current-color;
+    &_#{$name} {
+      height: $size;
+    }
   }
 }

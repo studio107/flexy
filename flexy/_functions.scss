@@ -6,10 +6,6 @@
   @return $number / ($number * 0 + 1);
 }
 
-@function to-em($pixels, $base-font-size) {
-  @return #{$pixels/$base-font-size}em;
-}
-
 @function implode($pieces, $glue: "") {
   $result: null;
   @each $piece in $pieces {
@@ -111,7 +107,7 @@
 /// @param {Number} $base [null] - Base for pixel conversion.
 ///
 /// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
-@function to-rem($value, $base: null) {
+@function __to-rem($value, $base: null) {
   // Check if the value is a number
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
@@ -143,7 +139,7 @@
 /// @param {Number} $base [null] - Base for pixel conversion.
 ///
 /// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
-@function to-em($value, $base: null) {
+@function __to-em($value, $base: null) {
   // Check if the value is a number
   @if type-of($value) != 'number' {
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
@@ -186,7 +182,7 @@
     $base: strip-unit($base) * 16px;
   }
 
-  @return to-rem($value, $base);
+  @return __to-rem($value, $base);
 }
 
 @function em-calc($value, $base: $flexy-body-font-size) {
@@ -206,5 +202,5 @@
     $value: strip-unit($value) * 16px;
   }
 
-  @return to-em($value, $base);
+  @return __to-em($value, $base);
 }

@@ -1,9 +1,9 @@
 $flexy-current-color: none !default;
-@mixin flexy-colors($schema: $flexy-theme-colors) {
+@mixin flexy-colors($schema: $flexy-theme-colors, $includeDefault: true) {
   @each $name, $color in $schema {
     $flexy-current-name: $name !global;
     $flexy-current-color: $color !global;
-    @if $name == default {
+    @if $includeDefault and $name == default {
       @content;
     } @else {
       &_#{$flexy-current-name} {
