@@ -4983,6 +4983,9 @@ h1, h2, h3, h4, h5, h6 {
             align-items: stretch;
     -ms-flex-line-pack: stretch;
         align-content: stretch; }
+  .b-input-group > .b-button {
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
   .b-input-group > .b-input, .b-input-group > .b-button {
     border-radius: 0; }
     .b-input-group > .b-input:not(:first-child), .b-input-group > .b-button:not(:first-child) {

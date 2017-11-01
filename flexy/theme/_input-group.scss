@@ -10,7 +10,11 @@
     align-content: stretch;
   }
 
-  & > .b-input, & > .b-button {
+  & > .#{$flexy-prefix}-button {
+    flex-shrink: 0;
+  }
+
+  & > .#{$flexy-prefix}-input, & > .#{$flexy-prefix}-button {
     border-radius: 0;
 
     &:not(:first-child) {
