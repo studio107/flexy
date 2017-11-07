@@ -5,28 +5,29 @@
 
     <h2 class="b-heading">Настройки</h2>
 
-    <pre>// Максимальное количество колонок
-$flexy-grid-columns: 12 !default;
-// Отступы между колонками
-$flexy-grid-gutter: 0.5em !default;
-// Максимальная ширина контейнера
-$flexy-grid-wrapper-max-width: 100% !default;
-// Минимальная ширина контейнера
-$flexy-grid-wrapper-min-width: auto !default;</pre>
-
-    <p>Сетка использует названия из настроек `flexy-breakpoint` в качестве модификаторов.</p>
-
-    <h2 class="b-heading">Внимание</h2>
-
-    <p>отступы (padding) заданы у класса `b-helper` который является вспомогательным блоком. У колонок внутренние
-        отступы отсутствуют.</p>
-
-    <div class="b-tab">
-        <div class="b-tab__header">
-            <div class="b-tab__tab b-tab__tab_active" data-tab="example">Example</div>
-            <div class="b-tab__tab" data-tab="source">Source</div>
+    <div class="b-row">
+        <div class="b-col b-col_small_6">
+            {% set output -%}
+$flexy-grid-columns: 12 !default; // Максимальное количество колонок
+$flexy-grid-gutter: 0.5em !default; // Отступы между колонками
+$flexy-grid-wrapper-max-width: 100% !default; // Максимальная ширина контейнера
+$flexy-grid-wrapper-min-width: auto !default; // Минимальная ширина контейнера
+            {%- endset %}
+            {% set lang = 'scss' %}
+            {% include "block/_code.html" %}
         </div>
-        <div data-tab="example" class="b-tab__content b-tab__content_active">
+        <div class="b-col b-col_small_6">
+            <p>Сетка использует названия из настроек `flexy-breakpoint` в качестве модификаторов.</p>
+        </div>
+    </div>
+
+    <div class="b-divider b-divider_divider"></div>
+
+    <div class="b-row">
+        <div class="b-col b-col_small_6">
+            <p><strong>Отступы (padding) заданы у класса `b-helper` который является вспомогательным блоком. У колонок внутренние
+                отступы отсутствуют.</strong></p>
+
             <div class="b-helper">
                 b-helper
                 <div class="b-helper">
@@ -34,14 +35,17 @@ $flexy-grid-wrapper-min-width: auto !default;</pre>
                 </div>
             </div>
         </div>
-        <div data-tab="source" class="b-tab__content">
-            {% set itemHtml %}<div class="b-helper">
+        <div class="b-col b-col_small_6">
+            {% set output -%}
+<div class="b-helper">
     b-helper
     <div class="b-helper">
         b-helper
     </div>
-</div>{% endset %}
-            <pre>{{ itemHtml|escape }}</pre>
+</div>
+            {%- endset %}
+            {% set lang = 'html' %}
+            {% include "block/_code.html" %}
         </div>
     </div>
 
@@ -142,8 +146,8 @@ $flexy-grid-wrapper-min-width: $flexy-grid-wrapper-max-width;</pre>
             {% include "example/_grid_responsive.html" %}
         </div>
         <div data-tab="source" class="b-tab__content">
-            {% set itemHtml %}{% include "example/_grid_responsive.html" %}{% endset %}
-            <pre>{{ itemHtml|escape }}</pre>
+            {% set output %}{% include "example/_grid_responsive.html" %}{% endset %}
+            {% include "block/_code.html" %}
         </div>
     </div>
 

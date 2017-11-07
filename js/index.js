@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import hljs from 'highlight.js';
 
 $(document)
     .on('click', '.b-tab__tab', e => {
@@ -21,3 +22,9 @@ $(document)
 
         $currentTab.addClass('b-tab__tab_active');
     });
+
+$(() => {
+    $('.b-code').each((i, block) => {
+        hljs.highlightBlock(block);
+    });
+});

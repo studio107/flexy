@@ -1,0 +1,13 @@
+.b-link {
+  color: flexy-color();
+
+  &_external {
+    &::after {
+      font-family: 'Material Icons';
+      content: 'call_made';
+      position: relative;
+      top: .17em;
+      margin-left: .2em;
+    }
+  }
+}

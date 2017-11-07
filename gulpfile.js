@@ -1,64 +1,81 @@
-var path = require('path'),
+let path = require('path'),
     gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
     data = require('gulp-data'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    csso = require('gulp-csso'),
+    autoprefixer = require('autoprefixer'),
+    postcss = require('gulp-postcss'),
+    flexbugs = require('postcss-flexbugs-fixes'),
+    csso = require('postcss-csso'),
     flatten = require('gulp-flatten'),
     nunjucks = require('gulp-nunjucks'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    version = require(path.join(__dirname, 'package.json')).version;
 
-var dst = {
-    font: './build/font',
-    scss: './build/css',
+let dst = {
+    font: './build/fonts',
+    css: './build/css',
     templates: './build'
 };
 
-var paths = {
-    font: './fonts/**/*{.eot,.ttf,.woff,.woff2}',
+let paths = {
+    font: [
+        './node_modules/material-design-icons/iconfont/*{.eot,.ttf,.woff,.woff2}',
+        './fonts/**/*{.eot,.ttf,.woff,.woff2}',
+    ],
     templates: './templates/**/*.html',
-    scss: [
-        './font/**/*.css',
-        './scss/**/*.scss'
-    ]
+    css: './scss/**/*.scss'
 };
 
-var sassOptions = {
+let sassOptions = {
     outputStyle: 'nested',
     includePaths: [
         path.join(__dirname, 'flexy')
     ]
 };
 
-gulp.task('scss', function () {
-    gulp.src(paths.scss)
+gulp.task('css', () => {
+    const plugins = [
+        flexbugs,
+        autoprefixer({
+            browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9' // React doesn't support IE8 anyway
+            ],
+            // cascade: false,
+            flexbox: 'no-2009'
+        }),
+        csso
+    ];
+
+    return gulp.src(paths.css)
+        .pipe(plumber())
         .pipe(sass(sassOptions).on('error', sass.logError))
-        .pipe(autoprefixer())
-        // .pipe(csso())
+        .pipe(postcss(plugins))
         .pipe(concat('bundle.css'))
-        .pipe(gulp.dest(dst.scss))
+        .pipe(gulp.dest(dst.css))
         .pipe(browserSync.stream());
 });
 
-gulp.task('font', function () {
+gulp.task('font', () => {
     gulp.src(paths.font)
         .pipe(flatten())
         .pipe(gulp.dest(dst.font));
 });
 
-gulp.task('templates', function () {
+gulp.task('templates', () => {
     return gulp.src('templates/**/*.html')
         .pipe(data(() => {
-            return {
-                version: require(path.join(__dirname, 'package.json')).version
-            }
+            return { version }
         }))
         .pipe(nunjucks.compile())
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('server', function () {
+gulp.task('server', () => {
     browserSync.init({
         server: {
             baseDir: "./build"
@@ -67,9 +84,12 @@ gulp.task('server', function () {
     });
 });
 
-gulp.task('watch', ['server'], function () {
-    gulp.watch(paths.scss, ['scss']);
-    gulp.watch(path.join(__dirname, 'flexy') + '/**/*', ['scss']);
+gulp.task('watch', ['server'], () => {
+    gulp.watch([
+        path.join(__dirname, 'flexy') + '/**/*',
+        paths.css
+    ], ['css']);
+
     gulp.watch([
         './templates/**/*.html'
     ], ['templates']);
@@ -78,6 +98,6 @@ gulp.task('watch', ['server'], function () {
         .on('change', browserSync.reload);
 });
 
-gulp.task('default', function () {
-    return gulp.start('scss', 'templates');
+gulp.task('default', () => {
+    return gulp.start('css', 'templates');
 });

@@ -18,6 +18,11 @@
       background: {
         color: rgba($flexy-block-tab-color, .5);
       }
+      @if (lightness($flexy-block-tab-color) > 50) {
+        color: #000000;
+      } @else {
+        color: #ffffff;
+      }
     }
 
     &_active {
@@ -25,10 +30,20 @@
       background: {
         color: $flexy-block-tab-color;
       }
+      @if (lightness($flexy-block-tab-color) > 50) {
+        color: #000000;
+      } @else {
+        color: #ffffff;
+      }
 
       &:hover {
         background: {
           color: $flexy-block-tab-color;
+        }
+        @if (lightness($flexy-block-tab-color) > 50) {
+          color: #000000;
+        } @else {
+          color: #ffffff;
         }
       }
     }

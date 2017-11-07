@@ -1,0 +1,19 @@
+.b-breakpoint {
+  padding: 10px;
+  text-align: center;
+
+  $breakpoint-colors: (
+          small: #3498db,
+          medium: #27ae60,
+          large: #e67e22,
+          xlarge: #e74c3c,
+          xxlarge: #8e44ad,
+  );
+
+  @each $breakpoint, $color in $breakpoint-colors {
+    @include flexy-breakpoint($breakpoint) {
+      background-color: rgba($color, .8);
+      box-shadow: 0 0 0 1px rgba($color, .2) inset;
+    }
+  }
+}

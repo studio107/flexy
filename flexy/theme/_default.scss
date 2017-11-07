@@ -10,13 +10,12 @@ $flexy-theme-sizes: (
 ) !default;
 
 $flexy-theme-colors: (
-        default: #8e44ad,
-        gray: #96a8b2,
+        default: #338FFF,
+        gray: #cae2ef,
         error: #dd162d,
         success: #4caf50,
         primary: #2196f3
 ) !default;
-$flexy-theme-font-mono: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace !default;
 $flexy-theme-border-radius: 2px !default;
 $flexy-theme-button-padding: 0 10px !default;
 $flexy-theme-border-size: 1px !default;

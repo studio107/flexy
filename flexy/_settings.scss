@@ -15,6 +15,7 @@ $flexy-block-grid-count: 25 !default;
 
 // Шрифты
 $flexy-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$flexy-theme-font-mono: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace !default;
 $flexy-breakpoints: (
         small: 0,
         medium: 769px,

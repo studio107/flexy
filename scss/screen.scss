@@ -1,140 +1,25 @@
-$flexy-font: 'Clear Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$flexy-grid-wrapper-max-width: 1280px;
-
+@import "settings";
 @import "flexy";
 @import "flexy/theme/default";
+
+@import "global";
 @import "mixins";
-@import "icon";
-@import "logo";
-@import "source";
 
-a {
-  color: flexy-color();
-  text-decoration: none;
-}
+@import "font/material_icon";
 
-@include flexy-heading {
-  font-weight: bold;
+@import "block/link";
+@import "block/anchor";
+@import "block/breakpoint";
+@import "block/caption";
+@import "block/coming";
+@import "block/feature";
+@import "block/footer";
+@import "block/header";
+@import "block/helper";
+@import "block/hljs";
+@import "block/logo";
+@import "block/media";
+@import "block/segment";
+@import "block/source";
+@import "block/typeset";
 
-  &:hover {
-    .b-anchor {
-      opacity: 1;
-    }
-  }
-
-  & + .b-caption {
-    margin-top: -1em;
-    margin-bottom: 1em;
-  }
-}
-
-.b-anchor {
-  $size: 16px;
-
-  opacity: 0;
-  transition: opacity .2s linear;
-  float: left;
-  margin-left: -($size + 10px);
-  width: $size;
-  height: $size;
-  cursor: pointer;
-  text-decoration: none;
-  color: silver;
-  outline: none;
-
-  &::before {
-    width: $size;
-    height: $size;
-    display: block;
-    font-family: 'Icons';
-    content: "\f0c1";
-    font-size: $size;
-  }
-}
-
-.b-caption {
-  color: #8e8e8e;
-}
-
-.b-header {
-  margin: 0 0 25px 0;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
-}
-
-.b-typeset {
-  @include flexy-typeset;
-}
-
-.b-grid {
-}
-
-.b-helper {
-  @include ellipsis;
-  background-color: rgba(#8e44ad, 0.2);
-  box-shadow: 0 0 0 1px rgba(#8e44ad, 0.2) inset;
-  padding: 0 5px;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.b-segment {
-  margin: 1em 0 3em 0;
-}
-
-.b-footer {
-  font-size: $flexy-body-font-size;
-  color: #8e8e8e;
-  padding: 15px 0;
-
-  &__link {
-    color: #8e8e8e;
-  }
-}
-
-.b-breakpoint {
-  padding: 10px;
-  text-align: center;
-
-  $breakpoint-colors: (
-          small: #3498db,
-          medium: #27ae60,
-          large: #e67e22,
-          xlarge: #e74c3c,
-          xxlarge: #8e44ad,
-  );
-
-  @each $breakpoint, $color in $breakpoint-colors {
-    @include flexy-breakpoint($breakpoint) {
-      background-color: rgba($color, .8);
-      box-shadow: 0 0 0 1px rgba($color, .2) inset;
-    }
-  }
-}
-
-.b-media {
-  padding: 10px;
-  text-align: center;
-  background-color: #3498db;
-
-  @include flexy-media((min-width: 600px, max-width: 700px)) {
-    background-color: #8e44ad;
-  }
-}
-
-.b-feature {
-  padding-bottom: 20px;
-}
-
-.b-coming {
-  background: {
-    color: #c0392b;
-  }
-  color: #fff;
-  font-size: $flexy-body-font-size * .7;
-  top: -20px;
-  left: 5px;
-  position: relative;
-  padding: 2px 4px;
-  border-radius: 3px;
-}
