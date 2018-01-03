@@ -7,6 +7,7 @@ $flexy-block-flash-types: (
 $flexy-block-flash-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-flash-font-size: .9em !default;
 $flexy-block-flash-styles: (
+        margin-bottom: .5em,
         user-select: none,
         cursor: pointer,
         color: #fff,
