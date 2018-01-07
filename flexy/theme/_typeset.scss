@@ -4,7 +4,8 @@
   }
 
   // Lists.
-  ul, ol {
+  ul,
+  ol {
     font-size: $flexy-body-font-size;
     margin-left: 1rem;
     margin-bottom: 1em;
@@ -12,7 +13,8 @@
     li {
       font-feature-settings: 'kern', 'onum', 'liga';
 
-      ol, ul {
+      ol,
+      ul {
         padding-top: 1rem;
         margin-bottom: 1rem;
         margin-left: 2rem;
@@ -37,15 +39,12 @@
       }
 
       ul {
-
         li {
-
           &:before {
             content: '';
           }
 
           ol {
-
             li {
               counter-increment: alt-level;
 
@@ -58,7 +57,6 @@
       }
 
       ol {
-
         li {
           counter-increment: sub-level;
 
@@ -67,9 +65,7 @@
           }
 
           ul {
-
             li {
-
               &:before {
                 content: '';
               }
@@ -77,12 +73,12 @@
           }
 
           ol {
-
             li {
               counter-increment: sub-sub-level;
 
               &:before {
-                content: counter(top-level) '.' counter(sub-level) '.' counter(sub-sub-level);
+                content: counter(top-level) '.' counter(sub-level) '.'
+                  counter(sub-sub-level);
               }
             }
           }
@@ -97,10 +93,11 @@
   }
 
   // Code block.
-  code, pre {
+  code,
+  pre {
     box-shadow: 0 0 0 1px rgba(#ecf0f1, 0.2) inset;
     background-color: #ecf0f1;
-    font-size: .9em;
+    font-size: 0.9em;
     font-family: Consolas, Menlo, Monospaced, monospace;
   }
 
@@ -127,7 +124,7 @@
 
     &::after {
       transform: skewX(-15deg);
-      content: "";
+      content: '';
       position: absolute;
       top: 100%;
       right: 25px;

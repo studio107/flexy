@@ -3,11 +3,13 @@
   flex-wrap: nowrap;
   align-items: flex-end;
 
-  &_space_between {
+  &_space_between,
+  &_between {
     justify-content: space-between;
   }
 
-  &_space_around {
+  &_space_around,
+  &_around {
     justify-content: space-around;
   }
 

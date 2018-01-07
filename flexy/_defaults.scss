@@ -14,7 +14,8 @@ body {
   line-height: $flexy-body-line-height;
 }
 
-button, input {
+button,
+input {
   font-size: $flexy-body-font-size;
   font-family: $flexy-font;
 }
@@ -32,7 +33,12 @@ p {
   font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-style: normal;
   font-weight: bold;
   color: $flexy-heading-text-color;
@@ -43,11 +49,13 @@ h1, h2, h3, h4, h5, h6 {
   @include flexy-placeholder-reset;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   @include flexy-placeholder-reset;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   @include flexy-placeholder-reset;
 }
 

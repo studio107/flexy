@@ -1,27 +1,33 @@
 .#{$flexy-prefix}-segment {
-  border-radius: 0;
-  padding: 1em;
+  border-radius: $flexy-block-segment-border-radius;
   background: $flexy-block-segment-background;
   position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(126, 142, 177, 0.12);
   margin-bottom: 1em;
 
-  .b-divider {
-    padding: 0 1em;
-    left: -1em;
-    right: -1em;
-    background: $flexy-block-segment-divider-color;
+  &__content {
+    padding: $flexy-block-segment-padding-vertical
+      $flexy-block-segment-padding-horizontal;
   }
 
-  &__panel {
+  &__footer {
     position: relative;
-    left: -1em;
-    right: -1em;
-    margin-bottom: -1em;
-    padding: 1em;
-    width: 100%;
-
-    @each $key, $value in $flexy-block-segment-panel {
-      #{$key}: #{$value};
+    background: {
+      image: linear-gradient(to bottom, rgba(#000, 0.05) 0, #fff 64px);
     }
+    border-top: 1px solid rgba(#000, 0.05);
+    margin-top: 1em;
+    border-radius: 0 0 $flexy-block-segment-border-radius
+      $flexy-block-segment-border-radius;
+    border-top: 1px solid rgba(#000, 0.07);
+    background: {
+      image: linear-gradient(to bottom, rgba(#000, 0.05) 0, #fff 12px);
+    }
+  }
+
+  .b-divider {
+    padding: 0;
+    margin: 0;
   }
 }

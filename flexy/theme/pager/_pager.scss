@@ -22,10 +22,10 @@
     border-radius: $flexy-block-pager-border-radius;
     text-align: center;
     display: block;
-    padding: 0 .2em;
+    padding: 0 0.2em;
     text-decoration: none;
     color: $flexy-block-pager-link-color;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
 
     &_disabled {
       cursor: not-allowed;

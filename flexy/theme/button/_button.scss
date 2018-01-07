@@ -5,7 +5,7 @@
   display: inline-block;
   max-width: 100%;
   margin: 0;
-  padding: .5em;
+  padding: 0.5em;
   border-radius: $flexy-block-button-border-radius;
   outline: 0;
   font-family: inherit;
@@ -21,6 +21,7 @@
   user-select: none;
   box-sizing: border-box;
   @include ellipsis;
+  flex-shrink: 0;
 
   // todo fixme
   min-width: 32px;
@@ -52,19 +53,22 @@
 
     &_outline {
       color: $flexy-current-color;
-      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color inset;
+      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color
+        inset;
       background-color: transparent;
 
       &:hover,
       &:focus {
         color: lighten($flexy-current-color, 10%);
-        box-shadow: 0 0 0 $flexy-block-button-outline-width lighten($flexy-current-color, 10%) inset;
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          lighten($flexy-current-color, 10%) inset;
         background-color: transparent;
       }
 
       &:active {
         color: darken($flexy-current-color, 10%);
-        box-shadow: 0 0 0 $flexy-block-button-outline-width darken($flexy-current-color, 10%) inset;
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          darken($flexy-current-color, 10%) inset;
         background-color: transparent;
       }
     }

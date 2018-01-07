@@ -6,13 +6,13 @@
   @return $number / ($number * 0 + 1);
 }
 
-@function implode($pieces, $glue: "") {
+@function implode($pieces, $glue: '') {
   $result: null;
   @each $piece in $pieces {
     @if type-of($piece) == list {
-      $result: unquote("#{$result}#{$glue}#{implode($piece, $glue)}");
+      $result: unquote('#{$result}#{$glue}#{implode($piece, $glue)}');
     } @else {
-      $result: unquote("#{$result}#{$glue}#{$piece}");
+      $result: unquote('#{$result}#{$glue}#{$piece}');
     }
   }
   @if $result != null {
@@ -80,7 +80,7 @@
 @function reverse($list, $recursive: false) {
   $result: ();
 
-  @for $i from length($list)*-1 through -1 {
+  @for $i from length($list) *-1 through -1 {
     @if type-of(nth($list, abs($i))) == list and $recursive {
       $result: append($result, reverse(nth($list, abs($i)), $recursive));
     } @else {

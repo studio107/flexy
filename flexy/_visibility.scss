@@ -9,11 +9,13 @@
       $next: map-next-key($flexy-breakpoints, $namespace);
 
       &_#{$namespace} {
-
         &_only {
           $media: ();
           @if ($next) {
-            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - .1px);
+            $media: (
+              min-width: flexy-get-breakpoint($namespace),
+              max-width: flexy-get-breakpoint($next) - 0.1px
+            );
           } @else {
             $media: (min-width: flexy-get-breakpoint($namespace));
           }
@@ -44,11 +46,13 @@
       $next: map-next-key($flexy-breakpoints, $namespace);
 
       &_#{$namespace} {
-
         &_only {
           $media: ();
           @if ($next) {
-            $media: (min-width: flexy-get-breakpoint($namespace), max-width: flexy-get-breakpoint($next) - 1px);
+            $media: (
+              min-width: flexy-get-breakpoint($namespace),
+              max-width: flexy-get-breakpoint($next) - 1px
+            );
           } @else {
             $media: (min-width: flexy-get-breakpoint($namespace));
           }

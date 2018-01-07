@@ -1,6 +1,4 @@
-/node_modules
-/build
 .DS_Store
 .idea
-npm-debug.log
-*.pyc
+yarn.lock
+/node_modules

@@ -4,7 +4,7 @@ $flexy-prefix: 'b' !default;
 // Максимальное количество колонок
 $flexy-grid-columns: 12 !default;
 // Отступы между колонками
-$flexy-grid-gutter: .5em !default;
+$flexy-grid-gutter: 0.5em !default;
 // Максимальная ширина контейнера
 $flexy-grid-wrapper-max-width: 100% !default;
 // Минимальная ширина контейнера
@@ -14,17 +14,23 @@ $flexy-grid-wrapper-min-width: auto !default;
 $flexy-block-grid-count: 25 !default;
 
 // Шрифты
-$flexy-font-boilerplate: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$flexy-font-boilerplate: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
 $flexy-font: $flexy-font-boilerplate !default;
-$flexy-font-mono-boilerplate: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+$flexy-font-mono-boilerplate: Consolas, Andale Mono WT, Andale Mono,
+  Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New,
+  Courier, monospace;
 $flexy-font-mono: $flexy-font-mono-boilerplate !default;
 $flexy-breakpoints: (
-        small: 0,
-        medium: 769px,
-        large: 992px,
-        xlarge: 1200px,
-        xxlarge: 1600px
-) !default;
+    small: 0,
+    medium: 769px,
+    large: 992px,
+    xlarge: 1200px,
+    xxlarge: 1600px
+  )
+  !default;
 
 $flexy-body-font-size: 16px !default;
 $flexy-body-line-height: 1.5 !default;

@@ -1,0 +1,16 @@
+.material-icons,
+.b-icon {
+  @include antialias;
+
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  position: relative;
+  top: 0.14em;
+}

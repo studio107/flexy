@@ -1,39 +1,22 @@
 $tooltip-z-index: 5 !default;
-$tooltip-arrow-width: .6em !default;
-$tooltip-body-padding: 5px !default;
-$tooltip-body-background-color: #333 !default;
-$tooltip-body-color: #fff !default;
-$tooltip-font-size: .9em !default;
-$tooltip-antialias: true !default;
-$tooltip-line-height: 1.45 !default;
-$tooltip-body-border-width: 1px !default;
-$tooltip-body-border-style: solid !default;
-$tooltip-body-border-color: $tooltip-body-background-color !default;
+$tooltip-arrow-width: 0.6em !default;
+$tooltip-font-size: 0.9rem !default;
 $tooltip-body-border-radius: $flexy-theme-border-radius !default;
 
-$flexy-tooltip-background-color: #353535;
-$flexy-tooltip-color: #fff;
 $flexy-theme-tooltip: (
-        default: (
-                background-color: #000,
-                color: #fff
-        ),
-        white: (
-                background-color: #f4f4f4,
-                color: #535353
-        ),
-        error: (
-                background-color: map-get($flexy-theme-colors, error),
-                color: #fff
-        ),
-        primary: (
-                background-color: map-get($flexy-theme-colors, primary),
-                color: #fff
-        ),
-        success: (
-                background-color: map-get($flexy-theme-colors, success),
-                color: #fff
-        )
+  default: (background-color: #000, color: #fff),
+  white: (background-color: #f4f4f4, color: #535353),
+  error: (background-color: map-get($flexy-theme-colors, error), color: #fff),
+  primary:
+    (
+      background-color: map-get($flexy-theme-colors, primary),
+      color: #fff
+    ),
+  success:
+    (
+      background-color: map-get($flexy-theme-colors, success),
+      color: #fff
+    )
 );
 
 .#{$flexy-prefix}-tooltip {
@@ -43,7 +26,7 @@ $flexy-theme-tooltip: (
 
   &::before,
   &::after {
-    transition: all .2s ease, opacity .2s ease;
+    transition: all 0.2s ease;
     font-family: $flexy-font;
     font-size: $tooltip-font-size;
     font-style: normal;
@@ -52,32 +35,26 @@ $flexy-theme-tooltip: (
     pointer-events: none;
     visibility: hidden;
     z-index: $tooltip-z-index;
-
-    @include antialias($tooltip-antialias);
   }
 
   &::before {
     position: absolute;
     border: $tooltip-arrow-width solid transparent;
-    content: "";
+    content: '';
   }
 
   &::after {
     position: absolute;
-    padding: .25em .5em;
+    padding: 0.25em 0.5em;
     border-radius: $flexy-theme-border-radius;
-    line-height: $tooltip-line-height;
     white-space: nowrap;
     content: attr(data-tooltip);
     visibility: hidden;
-    border: $tooltip-body-border-width $tooltip-body-border-style $flexy-tooltip-background-color;
-    background-color: $flexy-tooltip-background-color;
-    color: $flexy-tooltip-color;
   }
 
   @each $name, $styles in $flexy-theme-tooltip {
     &_#{$name}::after {
-      border: $tooltip-body-border-width $tooltip-body-border-style map-get($styles, background-color);
+      border: 1px solid map-get($styles, background-color);
       background-color: map-get($styles, background-color);
       color: map-get($styles, color);
     }
@@ -116,7 +93,6 @@ $flexy-theme-tooltip: (
       top: 0;
       left: 50%;
       transform: translate(-50%, -1em);
-      border-top-color: $tooltip-body-border-color;
     }
 
     &::after {
@@ -136,7 +112,6 @@ $flexy-theme-tooltip: (
       top: 50%;
       left: 100%;
       transform: translate(0, -50%);
-      border-right-color: $tooltip-body-border-color;
     }
 
     &::after {
@@ -156,7 +131,6 @@ $flexy-theme-tooltip: (
       bottom: 0;
       left: 50%;
       transform: translate(-50%, 1em);
-      border-bottom-color: $tooltip-body-border-color;
     }
 
     &::after {
@@ -176,7 +150,6 @@ $flexy-theme-tooltip: (
       top: 50%;
       right: 100%;
       transform: translate(0, -50%);
-      border-left-color: $tooltip-body-border-color;
     }
 
     &::after {

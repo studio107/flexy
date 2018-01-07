@@ -1,4 +1,5 @@
 $flexy-block-pager-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-pager-link-color: map-get($flexy-theme-colors, gray) !default;
-$flexy-block-pager-link-active-color: map-get($flexy-theme-colors, dark) !default;
+$flexy-block-pager-link-active-color: map-get($flexy-theme-colors, dark)
+  !default;
 $flexy-block-pager-total-color: map-get($flexy-theme-colors, gray) !default;

@@ -7,7 +7,7 @@
   color: #fff;
   font-size: 1.1em;
   cursor: pointer;
-  padding: .5em 0;
+  padding: 0.5em 0;
   width: 1.5em;
   line-height: 0.5em;
   transition: line-height 0.5s;
@@ -18,7 +18,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     font-size: 0.5em;
     position: absolute;
     height: 2.6em;
@@ -30,7 +30,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     font-size: 0.5em;
     position: absolute;
     border-style: solid;
@@ -56,17 +56,20 @@
       border: {
         width: 1.5em;
         style: solid;
-        color: $flexy-current-color $flexy-current-color transparent $flexy-current-color;
+        color: $flexy-current-color $flexy-current-color transparent
+          $flexy-current-color;
       }
     }
 
     &::before {
-      border-color: transparent transparent darken($flexy-current-color, 10%) transparent;
+      border-color: transparent transparent darken($flexy-current-color, 10%)
+        transparent;
     }
 
     &:hover::after {
       border: {
-        color: $flexy-current-color $flexy-current-color transparent $flexy-current-color;
+        color: $flexy-current-color $flexy-current-color transparent
+          $flexy-current-color;
       }
     }
   }

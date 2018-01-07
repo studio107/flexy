@@ -1,9 +1,0 @@
-.b-media {
-  padding: 10px;
-  text-align: center;
-  background-color: #3498db;
-
-  @include flexy-media((min-width: 600px, max-width: 700px)) {
-    background-color: #8e44ad;
-  }
-}

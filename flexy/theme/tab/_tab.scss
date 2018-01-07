@@ -11,50 +11,32 @@
   &__tab {
     cursor: pointer;
     margin: 0;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
     border-radius: $flexy-theme-border-radius $flexy-theme-border-radius 0 0;
+    transition: all 0.25s ease;
 
     &:hover {
-      background: {
-        color: rgba($flexy-block-tab-color, .5);
-      }
-      @if (lightness($flexy-block-tab-color) > 50) {
-        color: #000000;
-      } @else {
-        color: #ffffff;
-      }
+      color: $flexy-block-tab-color;
+      box-shadow: $flexy-block-tab-shadow;
     }
 
     &_active {
       cursor: default;
-      background: {
-        color: $flexy-block-tab-color;
-      }
-      @if (lightness($flexy-block-tab-color) > 50) {
-        color: #000000;
-      } @else {
-        color: #ffffff;
-      }
+      color: $flexy-block-tab-color;
+      box-shadow: $flexy-block-tab-shadow;
 
       &:hover {
-        background: {
-          color: $flexy-block-tab-color;
-        }
-        @if (lightness($flexy-block-tab-color) > 50) {
-          color: #000000;
-        } @else {
-          color: #ffffff;
-        }
+        transform: none;
       }
     }
 
     &_disabled {
-      background-color: initial;
       cursor: not-allowed;
       color: $flexy-block-tab-disabled-color;
 
       &:hover {
-        background-color: initial;
+        box-shadow: none;
+        color: $flexy-block-tab-disabled-color;
       }
     }
   }

@@ -1,13 +1,19 @@
+$flexy-block-badge-border-radius: $flexy-theme-border-radius !default;
+$flexy-block-badge-font-size: 0.9rem !default;
+$flexy-block-badge-colors: $flexy-theme-colors !default;
+
 .b-badge {
-  @include antialias;
+  font-weight: bold;
+  border-radius: $flexy-block-badge-border-radius;
+  font-size: $flexy-block-badge-font-size;
+  padding: 0 em-calc(4px);
   display: inline-block;
   color: #fff;
-  padding: 2px 6px;
-  border-radius: $flexy-theme-border-radius;
-  font-size: .9em;
   box-sizing: border-box;
+  position: relative;
+  top: -0.5rem;
 
-  @include flexy-colors {
+  @include flexy-colors($flexy-block-badge-colors) {
     background: {
       color: $flexy-current-color;
     }

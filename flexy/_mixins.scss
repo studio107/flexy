@@ -42,9 +42,10 @@
 
 @mixin clearfix {
   *zoom: 1;
-  &:before, &:after {
+  &:before,
+  &:after {
     display: table;
-    content: "";
+    content: '';
     line-height: 0;
   }
   &:after {
@@ -90,8 +91,8 @@
   opacity: $opacity;
   -moz-opacity: $opacity;
   $opacity: $opacity * 100;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})";
-  filter: "alpha(opacity=#{$opacity})";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})';
+  filter: 'alpha(opacity=#{$opacity})';
 }
 
 @mixin ellipsis($no-wrap: true) {
@@ -102,7 +103,7 @@
   text-overflow: ellipsis;
 }
 
-@mixin antialias($value: true) {
+@mixin antialias($value: true, $liga: true) {
   @if $value == true {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -111,5 +112,10 @@
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
     text-rendering: auto;
+  }
+
+  @if $liga {
+    /* Support for IE. */
+    font-feature-settings: 'liga';
   }
 }

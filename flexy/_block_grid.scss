@@ -1,4 +1,7 @@
+// Отступы между блоками. По умолчанию равно отступам между колонками в Grid
 $flexy-block-grid-padding: $flexy-grid-gutter !default;
+
+// Использовать flexbox для генерации block-grid? Если нет, то используется полный аналог из foundation
 $flexy-block-grid-flexbox: true !default;
 
 @mixin _block-grid-offset() {
@@ -14,7 +17,7 @@ $flexy-block-grid-flexbox: true !default;
     clear: none;
   }
 
-  &:nth-of-type(#{$row-num}n+1) {
+  &:nth-of-type(#{$row-num}n + 1) {
     clear: both;
   }
 }
@@ -26,13 +29,11 @@ $flexy-block-grid-flexbox: true !default;
   $media: ();
   @if ($next) {
     $media: (
-            min-width: flexy-get-breakpoint($namespace),
-            max-width: flexy-get-breakpoint($next) - .1px
+      min-width: flexy-get-breakpoint($namespace),
+      max-width: flexy-get-breakpoint($next) - 0.1px
     );
   } @else {
-    $media: (
-            min-width: flexy-get-breakpoint($namespace)
-    );
+    $media: (min-width: flexy-get-breakpoint($namespace));
   }
 
   @return $media;

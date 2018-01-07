@@ -21,7 +21,7 @@
 
     &:hover {
       background: {
-        color: lighten(#1B242E, 10%)
+        color: lighten(#1b242e, 10%);
       }
       color: #fff;
     }
@@ -47,11 +47,12 @@
       left: 0;
       transform: none;
 
-      &::after, &::before {
+      &::after,
+      &::before {
         bottom: 100%;
         left: 12px;
         border: solid transparent;
-        content: " ";
+        content: ' ';
         height: 0;
         width: 0;
         position: absolute;
@@ -66,12 +67,13 @@
       right: 0;
       transform: none;
 
-      &::after, &::before {
+      &::after,
+      &::before {
         bottom: 100%;
         left: auto;
         right: 12px;
         border: solid transparent;
-        content: " ";
+        content: ' ';
         height: 0;
         width: 0;
         position: absolute;
@@ -90,20 +92,22 @@
     opacity: 0;
     z-index: 1;
     position: absolute;
-    box-shadow: 0 0 0 1px rgba(16, 22, 26, .1), 0 2px 4px rgba(16, 22, 26, .2), 0 8px 24px rgba(16, 22, 26, .2);
+    box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2),
+      0 8px 24px rgba(16, 22, 26, 0.2);
     background: {
-      color: #1B242E;
+      color: #1b242e;
     }
     color: #fff;
     padding: 10px 0;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     transform: translate(-50%, 0);
 
-    &::after, &::before {
+    &::after,
+    &::before {
       bottom: 100%;
       left: 50%;
       border: solid transparent;
-      content: " ";
+      content: ' ';
       height: 0;
       width: 0;
       position: absolute;
@@ -112,14 +116,14 @@
 
     &::after {
       border-color: rgba(255, 255, 255, 0);
-      border-bottom-color: #1B242E;
+      border-bottom-color: #1b242e;
       border-width: $arrow-size;
       margin-left: -$arrow-size;
     }
 
     &::before {
       border-color: rgba(204, 204, 204, 0);
-      border-bottom-color: #1B242E;
+      border-bottom-color: #1b242e;
       border-width: $arrow-size + 1px;
       margin-left: -($arrow-size + 1px);
     }

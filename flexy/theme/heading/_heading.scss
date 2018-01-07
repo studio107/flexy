@@ -1,6 +1,6 @@
 .#{$flexy-prefix}-heading {
   margin: 0;
-  padding: 0 0 .5em;
+  padding: 0 0 0.5em;
   text-decoration: none;
   color: $flexy-heading-text-color;
 
@@ -12,15 +12,16 @@
     text-align: right;
   }
 
-  & > a, &__link {
+  & > a,
+  &__link {
     color: $flexy-heading-text-color;
   }
 
   &__caption {
     display: inline-block;
-    margin-top: -.5em;
+    margin-top: -0.5em;
     margin-bottom: 1em;
-    font-size: .9em;
+    font-size: 0.9em;
     color: $flexy-block-heading-caption-color;
 
     &_center {

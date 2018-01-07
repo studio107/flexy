@@ -3,11 +3,11 @@
   $flexy-table-th-td-border-color: #e8e8e8;
 
   width: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
   margin: 1em 0;
   box-shadow: none;
   text-align: left;
-  color: rgba(0, 0, 0, .87);
+  color: rgba(0, 0, 0, 0.87);
   border-collapse: collapse;
   border-spacing: 0;
 
@@ -18,7 +18,8 @@
     margin-bottom: 0;
   }
 
-  &__thead, &__tfoot {
+  &__thead,
+  &__tfoot {
     box-shadow: none;
   }
 
@@ -28,20 +29,20 @@
 
     &_tbody {
       &:hover {
-
       }
     }
   }
 
-  &__td, &__th {
+  &__td,
+  &__th {
     border: 1px solid $flexy-table-th-td-border-color;
     padding: $flexy-table-th-td-padding;
     text-align: inherit;
     vertical-align: inherit;
     cursor: auto;
-    transition: background .1s ease, color .1s ease;
+    transition: background 0.1s ease, color 0.1s ease;
     text-transform: none;
-    color: rgba(0, 0, 0, .87);
+    color: rgba(0, 0, 0, 0.87);
   }
 
   &__td {
@@ -62,7 +63,7 @@
   }
 
   &__th {
-    background: #F9FAFB;
+    background: #f9fafb;
     font-weight: bold;
   }
 

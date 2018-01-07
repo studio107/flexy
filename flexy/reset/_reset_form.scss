@@ -28,11 +28,11 @@ textarea {
 
 /* These elements are usually rendered a certain way by the browser */
 button,
-input[type=reset],
-input[type=button],
-input[type=submit],
-input[type=checkbox],
-input[type=radio],
+input[type='reset'],
+input[type='button'],
+input[type='submit'],
+input[type='checkbox'],
+input[type='radio'],
 select {
   box-sizing: border-box;
 }
@@ -49,12 +49,13 @@ select {
 -----------------------------------------------*/
 
 input {
-  &[type=checkbox], &[type=radio] {
+  &[type='checkbox'],
+  &[type='radio'] {
     width: 13px;
     height: 13px;
   }
 
-  &[type=search] {
+  &[type='search'] {
     /* Make webkit render the search input like a normal text field */
     appearance: textfield;
     box-sizing: content-box;
@@ -70,9 +71,9 @@ input {
 -----------------------------------------------*/
 
 button,
-input[type=reset],
-input[type=button],
-input[type=submit] {
+input[type='reset'],
+input[type='button'],
+input[type='submit'] {
   /* Fix IE7 display bug */
   overflow: visible;
   width: auto;
@@ -116,11 +117,13 @@ select {
   @extend %flexy-placeholder;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   @extend %flexy-placeholder;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   @extend %flexy-placeholder;
 }
 
