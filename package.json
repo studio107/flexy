@@ -1,7 +1,7 @@
 {
     "name": "flexy-framework",
     "license": "MIT",
-    "version": "4.1.11",
+    "version": "4.2.0",
     "devDependencies": {
         "prettier": "^1.9.2"
     },
