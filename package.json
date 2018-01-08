@@ -1,7 +1,7 @@
 {
     "name": "flexy-framework",
     "license": "MIT",
-    "version": "4.2.0",
+    "version": "4.2.1",
     "devDependencies": {
         "@symfony/webpack-encore": "~0.17.0",
         "autoprefixer": "^7.2.2",
