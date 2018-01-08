@@ -3,7 +3,6 @@
   $flexy-table-th-td-border-color: #e8e8e8;
 
   width: 100%;
-  background: #ffffff;
   margin: 1em 0;
   box-shadow: none;
   text-align: left;
@@ -46,7 +45,9 @@
   }
 
   &__td {
-    background: #fff;
+    background: {
+      color: #fff;
+    }
 
     &_tbody {
       border: 1px solid $flexy-table-th-td-border-color;
@@ -63,7 +64,9 @@
   }
 
   &__th {
-    background: #f9fafb;
+    background: {
+      color: #f9fafb;
+    }
     font-weight: bold;
   }
 
