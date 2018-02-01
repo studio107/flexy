@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "flexy-breakpoint": "^1.0.0",
+        "flexy-device": "1.0.1",
         "flexy-functions": "^1.0.0",
         "flexy-reset": "^1.0.0"
     }

@@ -2,11 +2,11 @@
 
 @import '~flexy-functions/src/functions';
 @import '~flexy-breakpoint/src/breakpoint';
+@import '~flexy-device/src/device';
 
 @import 'mixins';
 @import 'grid';
 @import 'visibility';
-@import 'device';
 @import 'block_grid';
 
 @import 'defaults';
