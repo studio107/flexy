@@ -5,8 +5,8 @@
     $prev: null;
 
     @each $namespace, $px in $flexy-breakpoints {
-      $prev: map-prev-key($flexy-breakpoints, $namespace);
-      $next: map-next-key($flexy-breakpoints, $namespace);
+      $prev: flexy-map-prev-key($flexy-breakpoints, $namespace);
+      $next: flexy-map-next-key($flexy-breakpoints, $namespace);
 
       &_#{$namespace} {
         &_only {
@@ -42,8 +42,8 @@
     $prev: null;
 
     @each $namespace, $px in $flexy-breakpoints {
-      $prev: map-prev-key($flexy-breakpoints, $namespace);
-      $next: map-next-key($flexy-breakpoints, $namespace);
+      $prev: flexy-map-prev-key($flexy-breakpoints, $namespace);
+      $next: flexy-map-next-key($flexy-breakpoints, $namespace);
 
       &_#{$namespace} {
         &_only {

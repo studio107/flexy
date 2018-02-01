@@ -12,7 +12,7 @@
   @each $key, $value in $map {
     $temp: append($temp, '(#{$key}: #{$value})');
   }
-  @return implode(reverse($temp), ' and ');
+  @return flexy-join(flexy-reverse($temp), ' and ');
 }
 
 @mixin flexy-media($map, $media: 'only screen') {
@@ -46,7 +46,7 @@
       $list: append($list, '(max-width: #{$maxWidth})');
     }
 
-    @media #{implode($list, ' and ')} {
+    @media #{flexy-join($list, ' and ')} {
       @content;
     }
   } @else {

@@ -1,6 +1,6 @@
 // based on https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 
-$flexy-devices: (
+$flexy-default-devices: (
     laptop:
       (
         min-device-width: 1200px,
@@ -101,9 +101,17 @@ $flexy-devices: (
   )
   !default;
 
+$flexy-devices: () !default;
+
+$flexy-device-list: map-merge($flexy-default-devices, $flexy-devices);
+
+@function flexy-device-has($name) {
+  @return map-has-key($flexy-device-list, $name);
+}
+
 @function flexy-device-media-query($device) {
-  @if (map-has-key($flexy-devices, $device)) {
-    @return flexy-media-map(map-get($flexy-devices, $device));
+  @if (map-has-key($flexy-device-list, $device)) {
+    @return flexy-media-map(map-get($flexy-device-list, $device));
   } @else {
     @warn "#{$device} is not a valid device variable";
     @return null;

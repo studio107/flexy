@@ -1,6 +1,7 @@
 @import 'settings';
 
-@import 'functions';
+@import '~flexy-functions/src/functions';
+
 @import 'mixins';
 @import 'breakpoint';
 @import 'grid';
