@@ -23,14 +23,6 @@ $flexy-font-mono-boilerplate: Consolas, Andale Mono WT, Andale Mono,
   Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New,
   Courier, monospace;
 $flexy-font-mono: $flexy-font-mono-boilerplate !default;
-$flexy-breakpoints: (
-    small: 0,
-    medium: 769px,
-    large: 992px,
-    xlarge: 1200px,
-    xxlarge: 1600px
-  )
-  !default;
 
 $flexy-body-font-size: 16px !default;
 $flexy-body-line-height: 1.5 !default;

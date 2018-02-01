@@ -1,9 +1,9 @@
 @import 'settings';
 
 @import '~flexy-functions/src/functions';
+@import '~flexy-breakpoint/src/breakpoint';
 
 @import 'mixins';
-@import 'breakpoint';
 @import 'grid';
 @import 'visibility';
 @import 'device';
