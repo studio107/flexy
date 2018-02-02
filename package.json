@@ -3,26 +3,30 @@
     "license": "MIT",
     "version": "4.2.3",
     "devDependencies": {
-        "@symfony/webpack-encore": "~0.17.0",
         "autoprefixer": "^7.2.2",
+        "gulp": "4",
+        "gulp-postcss": "^7.0.1",
+        "gulp-sass": "^3.1.0",
         "jest": "^22.1.4",
         "node-sass": "^4.7.2",
         "postcss-csso": "^3.0.0",
         "postcss-flexbugs-fixes": "^3.2.0",
-        "postcss-loader": "^2.0.9",
         "prettier": "^1.9.2",
-        "sass-loader": "^6.0.6",
         "sass-true": "^3.0.2"
     },
     "scripts": {
-        "build": "encore production",
+        "build": "gulp build",
         "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"flexy/**/*.scss\"",
         "test": "jest"
     },
     "dependencies": {
+        "flexy-block-grid": "^1.0.0",
         "flexy-breakpoint": "^1.0.0",
         "flexy-device": "1.0.1",
+        "flexy-flexgrid": "^1.0.1",
         "flexy-functions": "^1.0.0",
-        "flexy-reset": "^1.0.0"
+        "flexy-reset": "^1.0.0",
+        "flexy-visibility": "^1.0.0",
+        "node-sass-tilde-importer": "^1.0.1"
     }
 }

@@ -1,12 +1,12 @@
+@import "~flexy-reset/src/reset";
+
 @import 'settings';
+@import 'mixins';
+@import 'defaults';
 
 @import '~flexy-functions/src/functions';
 @import '~flexy-breakpoint/src/breakpoint';
 @import '~flexy-device/src/device';
-
-@import 'mixins';
-@import 'grid';
-@import 'visibility';
-@import 'block_grid';
-
-@import 'defaults';
+@import '~flexy-visibility/src/visibility';
+@import '~flexy-flexgrid/src/grid';
+@import '~flexy-block-grid/src/block_grid';
