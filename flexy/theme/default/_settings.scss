@@ -28,9 +28,9 @@ $flexy-block-input-placeholder-color: #c8c8c8 !default;
 $flexy-block-input-color: #c8c8c8 !default;
 $flexy-block-input-focus-color: map-get($flexy-theme-colors, default) !default;
 $flexy-block-input-hover-color: darken($flexy-block-input-color, 20%) !default;
-$flexy-block-input-icon-check: 'done';
+$flexy-block-input-icon-check: '\f00c';
 $flexy-block-input-icon-uncheck: '';
-$flexy-block-input-icon-font-family: 'Material Icons';
+$flexy-block-input-icon-font-family: 'Icons';
 
 $flexy-block-badge-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-badge-font-size: 0.9rem !default;
