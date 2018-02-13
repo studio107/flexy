@@ -1,5 +1,5 @@
-$flexy-current-name: null !default;
-$flexy-current-color: null !default;
+$flexy-current-name: null !global;
+$flexy-current-color: null !global;
 @mixin flexy-colors($schema: $flexy-theme-colors, $includeDefault: true) {
   @each $name, $color in $schema {
     $flexy-current-name: $name !global;
