@@ -7,7 +7,7 @@
     color: $flexy-block-divider-border-top-color transparent
       $flexy-block-divider-border-bottom-color;
   }
-  margin: 1rem 0;
+  margin: 1em 0;
   line-height: 1;
   height: 0;
   font-weight: 700;
@@ -16,10 +16,6 @@
   color: rgba(#000, 0.85);
   user-select: none;
   font-size: 1rem;
-
-  @include flexy-colors($flexy-theme-colors, false) {
-    background-color: $flexy-current-color;
-  }
 
   @each $name, $size in $flexy-block-divider-sizes {
     @if $name == 'default' {
