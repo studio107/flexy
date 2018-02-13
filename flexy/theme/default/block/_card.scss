@@ -1,0 +1,59 @@
+%border-radius {
+  border-radius: $flexy-theme-border-radius;
+}
+
+%border {
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+%card {
+  @extend %border-radius;
+  @extend %border;
+  padding: 1em;
+  background: {
+    color: #fff;
+  }
+}
+
+.b-card {
+  @extend %card;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+
+  &__divider {
+    margin: 1em (-1em);
+    border-top: 1px solid rgba(#000, 0.05);
+  }
+
+  &__meta {
+    color: rgba(#000, 0.4);
+  }
+
+  &__footer {
+    color: rgba(#000, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__item {
+    min-width: 140px;
+
+    &:not(:last-of-type) {
+      margin-right: 1em;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    color: #000;
+  }
+}

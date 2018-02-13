@@ -1,0 +1,33 @@
+.#{$flexy-prefix}-avatar {
+  display: inline-block;
+  position: relative;
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  border-radius: 30em;
+
+  &_text {
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: attr(data-avatar);
+      text-transform: uppercase;
+    }
+  }
+
+  @each $name, $styles in $flexy-theme-avatar {
+    @if $name == default {
+      &_text {
+        background-color: map-get($styles, background-color);
+        color: map-get($styles, color);
+      }
+    } @else {
+      &_text.b-avatar_#{$name} {
+        background-color: map-get($styles, background-color);
+        color: map-get($styles, color);
+      }
+    }
+  }
+}
