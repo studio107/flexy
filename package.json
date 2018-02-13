@@ -25,7 +25,8 @@
         "flexy-device": "1.0.1",
         "flexy-flexgrid": "^1.0.1",
         "flexy-functions": "^1.0.0",
-        "flexy-reset": "^1.0.0",
+        "flexy-icon": "^2.0.0",
+        "flexy-reset": "1.0.2",
         "flexy-visibility": "^1.0.0",
         "node-sass-tilde-importer": "^1.0.1"
     }
