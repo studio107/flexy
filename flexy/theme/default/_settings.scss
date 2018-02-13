@@ -1,18 +1,20 @@
 $flexy-theme-colors: (
-        default: #338fff,
-        gray: #cae2ef,
-        error: #dd162d,
-        success: #4caf50,
-        primary: #2196f3
-) !default;
+    default: #338fff,
+    gray: #cae2ef,
+    error: #dd162d,
+    success: #4caf50,
+    primary: #2196f3
+  )
+  !default;
 $flexy-typeset-sizes: (
-        xsmall: 0.5em,
-        small: 0.707em,
-        medium: 1em,
-        large: 1.414em,
-        xlarge: 1.999em,
-        xxlarge: 2.827em
-) !default;
+    xsmall: 0.5em,
+    small: 0.707em,
+    medium: 1em,
+    large: 1.414em,
+    xlarge: 1.999em,
+    xxlarge: 2.827em
+  )
+  !default;
 $flexy-block-heading-caption-color: #ccc !default;
 $flexy-block-heading-text-color: #000 !default;
 
@@ -38,33 +40,35 @@ $flexy-block-badge-colors: $flexy-theme-colors !default;
 
 $flexy-block-pager-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-pager-link-color: map-get($flexy-theme-colors, gray) !default;
-$flexy-block-pager-link-active-color: map-get($flexy-theme-colors, dark) !default;
+$flexy-block-pager-link-active-color: map-get($flexy-theme-colors, dark)
+  !default;
 $flexy-block-pager-total-color: map-get($flexy-theme-colors, gray) !default;
 
 $flexy-font-boilerplate: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-'Segoe UI Symbol';
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
 $flexy-font: $flexy-font-boilerplate !default;
 $flexy-font-mono-boilerplate: Consolas, Andale Mono WT, Andale Mono,
-Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
-Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New,
-Courier, monospace;
+  Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+  Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New,
+  Courier, monospace;
 $flexy-font-mono: $flexy-font-mono-boilerplate !default;
 
 $flexy-theme-avatar: (
-        default: (background-color: #2c3e50, color: #fff),
-        primary:
-        (
-                background-color: map-get($flexy-theme-colors, primary),
-                color: #fff
-        ),
-        error: (background-color: map-get($flexy-theme-colors, error), color: #fff),
-        success:
-        (
-                background-color: map-get($flexy-theme-colors, success),
-                color: #fff
-        )
-) !default;
+    default: (background-color: #2c3e50, color: #fff),
+    primary:
+      (
+        background-color: map-get($flexy-theme-colors, primary),
+        color: #fff
+      ),
+    error: (background-color: map-get($flexy-theme-colors, error), color: #fff),
+    success:
+      (
+        background-color: map-get($flexy-theme-colors, success),
+        color: #fff
+      )
+  )
+  !default;
 
 $flexy-theme-breadcrumb-link-color: #96a8b2 !default;
 $flexy-theme-breadcrumb-color: #96a8b2 !default;
@@ -76,18 +80,15 @@ $flexy-block-tab-disabled-color: #96a8b2 !default;
 $flexy-block-tab-disabled: (color: #ccc) !default;
 $flexy-block-tab-active: () !default;
 $flexy-block-space-sizes: (
-        small: 0.5em,
-        default: 1em,
-        large: 2em,
-        xlarge: 4em,
-        xxlarge: 6em
-)
-!default;
-$flexy-input-select-dropdown: 'data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==' !default;
+    small: 0.5em,
+    default: 1em,
+    large: 2em,
+    xlarge: 4em,
+    xxlarge: 6em
+  )
+  !default;
+$flexy-input-select-dropdown: 'data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw=='
+  !default;
 $flexy-block-divider-border-top-color: rgba(34, 36, 38, 0.15) !default;
 $flexy-block-divider-border-bottom-color: rgba(255, 255, 255, 0.1) !default;
-$flexy-block-divider-sizes: (
-        default: 1px,
-        large: 2px,
-        hero: 5px
-) !default;
+$flexy-block-divider-sizes: (default: 1px, large: 2px, hero: 5px) !default;
