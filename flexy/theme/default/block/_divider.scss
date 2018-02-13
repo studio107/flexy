@@ -1,8 +1,11 @@
 .b-divider {
   @include clearfix;
 
-  border-top: 1px solid $flexy-block-divider-border-top-color;
-  border-bottom: 1px solid $flexy-block-divider-border-bottom-color;
+  border: {
+    width: 1px 0;
+    style: solid;
+    color: $flexy-block-divider-border-top-color transparent $flexy-block-divider-border-bottom-color;
+  }
   margin: 1rem 0;
   line-height: 1;
   height: 0;

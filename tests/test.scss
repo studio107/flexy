@@ -3,6 +3,6 @@
 @include test-module('theme') {
   @include test('check theme') {
     @import "../flexy/flexy";
-    @import "../flexy/theme/default";
+    @import "../flexy/theme/default/index";
   }
 }
