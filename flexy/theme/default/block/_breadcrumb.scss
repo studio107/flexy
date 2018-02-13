@@ -12,11 +12,6 @@
 
   &__symbol {
     padding: 0 0.5em;
-    color: $flexy-theme-breadcrumb-link-color;
-
-    &::after {
-      content: $flexy-breadcrumb-symbol;
-    }
   }
 
   &__link {
