@@ -2,6 +2,20 @@
   @return map-get($flexy-theme-colors, $name);
 }
 
+@mixin flexy-input-track() {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+}
+
 @mixin flexy-input-placeholder {
   &::-webkit-input-placeholder {
     @content;

@@ -1,3 +1,6 @@
+$flexy-theme-breadcrumb-link-color: #6a6a6a !default;
+$flexy-theme-breadcrumb-color: #6a6a6a !default;
+
 .#{$flexy-prefix}-breadcrumb {
   display: flex;
   flex-direction: row;
@@ -11,7 +14,8 @@
   }
 
   &__symbol {
-    padding: 0 0.5em;
+    padding: 0 .5em;
+    color: $flexy-theme-breadcrumb-color;
   }
 
   &__link {
@@ -21,9 +25,5 @@
     &:hover {
       color: darken($flexy-theme-breadcrumb-link-color, 10%);
     }
-  }
-
-  .icon {
-    margin: 0;
   }
 }

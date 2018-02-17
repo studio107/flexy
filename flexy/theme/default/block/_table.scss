@@ -64,19 +64,12 @@
   }
 
   &__th {
+    font-weight: 500;
+    letter-spacing: -.5px;
+    font-size: .9rem;
     background: {
       color: #f9fafb;
     }
-    font-weight: 600;
-  }
-
-  &__link {
-    color: #aaa;
-    text-decoration: none;
-    display: block;
-
-    &:hover {
-      color: inherit;
-    }
+    color: #6a6a6a;
   }
 }
