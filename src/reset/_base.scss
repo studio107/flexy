@@ -189,3 +189,10 @@ h6 {
 a {
   color: flexy-color();
 }
+
+::selection {
+  background: {
+    color: rgba(flexy-color(), .6);
+  }
+  color: #fff;
+}

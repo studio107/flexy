@@ -1,16 +1,9 @@
-$flexy-theme-colors: (
-    default: #338fff,
-    gray: #cae2ef,
-    error: #dd162d,
-    success: #4caf50,
-    primary: #2196f3
-  )
-  !default;
 $flexy-block-heading-caption-color: #ccc !default;
 $flexy-block-heading-text-color: #000 !default;
 
 $flexy-theme-border-radius: 0.28571429rem;
 $flexy-theme-border-size: 1px;
+$flexy-theme-focus-border-size: 2px;
 $flexy-theme-height: 32px;
 
 $flexy-block-button-border-radius: $flexy-theme-border-radius !default;
@@ -18,34 +11,31 @@ $flexy-block-button-background-color: #96a8b2 !default;
 $flexy-block-button-outline-width: 1px !default;
 $flexy-block-input-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-input-color: #c8c8c8 !default;
-$flexy-block-input-focus-color: map-get($flexy-theme-colors, default) !default;
-$flexy-block-input-hover-color: darken($flexy-block-input-color, 20%) !default;
-$flexy-block-input-icon-check: '\f00c';
-$flexy-block-input-icon-uncheck: '';
-$flexy-block-input-icon-font-family: 'Icons';
+$flexy-block-input-focus-color: map-get($flexy-colors, default) !default;
+$flexy-block-input-hover-color: rgba($flexy-block-input-focus-color, 0.5) !default;
 
 $flexy-block-badge-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-badge-font-size: 0.9rem !default;
-$flexy-block-badge-colors: $flexy-theme-colors !default;
+$flexy-block-badge-colors: $flexy-colors !default;
 
 $flexy-block-pager-border-radius: $flexy-theme-border-radius !default;
-$flexy-block-pager-link-color: map-get($flexy-theme-colors, gray) !default;
-$flexy-block-pager-link-active-color: map-get($flexy-theme-colors, dark)
+$flexy-block-pager-link-color: map-get($flexy-colors, gray) !default;
+$flexy-block-pager-link-active-color: map-get($flexy-colors, dark)
   !default;
-$flexy-block-pager-total-color: map-get($flexy-theme-colors, gray) !default;
+$flexy-block-pager-total-color: map-get($flexy-colors, gray) !default;
 $flexy-label-color: #6a6a6a;
 
 $flexy-theme-avatar: (
     default: (background-color: #2c3e50, color: #fff),
     primary:
       (
-        background-color: map-get($flexy-theme-colors, primary),
+        background-color: map-get($flexy-colors, primary),
         color: #fff
       ),
-    error: (background-color: map-get($flexy-theme-colors, error), color: #fff),
+    error: (background-color: map-get($flexy-colors, error), color: #fff),
     success:
       (
-        background-color: map-get($flexy-theme-colors, success),
+        background-color: map-get($flexy-colors, success),
         color: #fff
       )
   )

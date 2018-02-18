@@ -1,7 +1,9 @@
-// Calculate column size percentag
-// TODO replace http://sass-lang.com/documentation/Sass/Script/Functions.html#percentage-instance_method ?
+// @content Calculate column size percentag
+// @param {Number} $column-num column number
+// @return {Number} width
+// @access public
 @function flexy-column-percent($column-num) {
-  @return $column-num / $flexy-grid-columns * 100%;
+  @return percentage($column-num / $flexy-grid-columns)
 }
 
 /**

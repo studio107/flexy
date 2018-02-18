@@ -12,6 +12,10 @@
     h#{$i} {
       &, &.b-heading {
         @include flexy-apply-style(calculate-offsets($i, $settings));
+
+        &_no-offset {
+          margin: 0;
+        }
       }
     }
   }

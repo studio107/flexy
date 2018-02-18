@@ -75,6 +75,10 @@
 
   &__td,
   &__th {
+    &_definition {
+      width: 260px;
+    }
+
     &_transparent {
       background: {
         color: transparent;
