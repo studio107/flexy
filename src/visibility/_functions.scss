@@ -1,0 +1,17 @@
+@function flexy-visibility-next-media($name) {
+  $next: flexy-map-next-key($flexy-breakpoints, $name);
+
+  @if ($next) {
+    @return (min-width: flexy-breakpoint-get($name), max-width: flexy-breakpoint-get($next) - 1px);
+  } @else {
+    @return (min-width: flexy-breakpoint-get($name));
+  }
+}
+
+@function flexy-visibility-media($name, $only: false) {
+  @if ($only) {
+    @return flexy-visibility-next-media($name);
+  } @else {
+    @return (min-width: flexy-breakpoint-get($name));
+  }
+}

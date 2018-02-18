@@ -1,0 +1,16 @@
+@mixin antialias($value: true, $liga: true) {
+  @if $value == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: auto;
+  }
+
+  @if $liga {
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+}

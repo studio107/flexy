@@ -1,0 +1,48 @@
+@import "~sass-true/sass/true";
+@import "../src/block_grid";
+
+@include test-module('block_grid') {
+
+  @include test('_block-grid-calc-legacy') {
+    @include assert {
+      @include output {
+        .foo {
+          @include _block-grid-calc-legacy(1);
+        }
+      }
+
+      @include expect {
+        .foo {
+          width: 100%;
+        }
+
+        .foo:nth-of-type(1n) {
+          clear: none;
+        }
+
+        .foo:nth-of-type(1n + 1) {
+          clear: both;
+        }
+      }
+    }
+  }
+
+  @include test('_block-grid-offset') {
+    @include assert {
+      @include output {
+        .foo {
+          @include _block-grid-offset();
+        }
+      }
+
+      @include expect {
+        .foo {
+          margin: 0;
+          box-sizing: border-box;
+          padding: 0 0.25em 0.5em;
+        }
+      }
+    }
+  }
+
+}

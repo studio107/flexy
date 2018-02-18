@@ -1,0 +1,7 @@
+@function flexy-reverse($entity) {
+  @if type-of($entity) == 'map' {
+    @return flexy-map-reverse($entity);
+  }
+
+  @return flexy-list-reverse($entity);
+}

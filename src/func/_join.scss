@@ -1,0 +1,18 @@
+@function flexy-join($pieces, $glue: null) {
+  $result: null;
+  @if $glue == null {
+    $glue: list-separator($pieces);
+    @if $glue == 'space' {
+      $glue: ' ';
+    } @else if($glue == 'comma') {
+      $glue: ',';
+    }
+  }
+  @each $piece in $pieces {
+    $result: unquote('#{$result}#{$glue}#{$piece}');
+  }
+  @if $result != null {
+    $result: str-slice($result, str-length($glue) + 1, -1);
+  }
+  @return $result;
+}

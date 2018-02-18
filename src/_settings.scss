@@ -1,0 +1,11 @@
+$flexy-prefix: 'b' !default;
+$flexy-font: $flexy-default-font !default;
+$flexy-font-mono: $flexy-default-font-mono !default;
+$flexy-heading-font: $flexy-font !default;
+$flexy-body-font-size: $flexy-default-font-size !default;
+$flexy-body-line-height: $flexy-default-line-height !default;
+$flexy-colors: $flexy-default-colors !default;
+$flexy-sizes: $flexy-default-sizes !default;
+$flexy-body-text-color: map-get($flexy-colors, text) !default;
+$flexy-heading-text-color: map-get($flexy-colors, heading) !default;
+$flexy-placeholder-color: map-get($flexy-colors, placeholder) !default;

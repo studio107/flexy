@@ -1,0 +1,11 @@
+// https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+
+@function flexy-list-reverse($list) {
+  $result: ();
+
+  @for $i from length($list) *-1 through -1 {
+    $result: append($result, nth($list, abs($i)), list-separator($list));
+  }
+
+  @return $result;
+}

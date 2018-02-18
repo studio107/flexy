@@ -1,0 +1,5 @@
+@mixin flexy-apply-style($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
