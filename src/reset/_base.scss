@@ -192,7 +192,7 @@ a {
 
 ::selection {
   background: {
-    color: rgba(flexy-color(), .6);
+    color: flexy-color();
   }
   color: #fff;
 }

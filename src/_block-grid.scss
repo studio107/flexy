@@ -1,6 +1,9 @@
-$flexy-block-grid-padding: 0.5em !default;
-$flexy-block-grid-count: 12 !default;
-$flexy-block-grid-use-devices: false !default;
+// Отступ между блоками
+$flexy-block-grid-padding: $flexy-grid-gutter !default;
+// Максимальное количество блоков
+$flexy-block-grid-count: $flexy-grid-columns !default;
+// Использовать модификаторы устройств
+$flexy-block-grid-use-devices: true !default;
 
 @mixin _block-grid-offset() {
   margin: 0;

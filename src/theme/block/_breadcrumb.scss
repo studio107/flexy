@@ -1,5 +1,7 @@
-$flexy-theme-breadcrumb-link-color: #6a6a6a !default;
-$flexy-theme-breadcrumb-color: #6a6a6a !default;
+// Цвет ссылки
+$flexy-theme-breadcrumb-link-color: flexy-color() !default;
+// Цвет текста
+$flexy-theme-breadcrumb-color: flexy-color(placeholder) !default;
 
 .#{$flexy-prefix}-breadcrumb {
   display: flex;

@@ -5,17 +5,19 @@ $flexy-default-line-height: 1.5;
 $flexy-default-colors: (
         default: #006EFF,
         disabled: #F0F2F7,
-        success: #2ecc71,
+        white: #fff,
+        success: #27ae60,
         error: #e74c3c,
         text: #212529,
         heading: #000,
         placeholder: #6a6a6a,
+        divider: rgba(#222426, 0.15),
 );
 $flexy-default-sizes: (
-        xxlarge: 2.827em,
-        xlarge: 1.999em,
-        large: 1.414em,
-        medium: 1em,
-        small: 0.707em,
-        xsmall: 0.5em,
+        xxlarge: 2.5rem,
+        xlarge: 2rem,
+        large: 1.75rem,
+        medium: 1.5rem,
+        small: 1.25rem,
+        xsmall: 1rem,
 );

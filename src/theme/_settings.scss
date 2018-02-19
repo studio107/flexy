@@ -14,10 +14,6 @@ $flexy-block-input-color: #c8c8c8 !default;
 $flexy-block-input-focus-color: map-get($flexy-colors, default) !default;
 $flexy-block-input-hover-color: rgba($flexy-block-input-focus-color, 0.5) !default;
 
-$flexy-block-badge-border-radius: $flexy-theme-border-radius !default;
-$flexy-block-badge-font-size: 0.9rem !default;
-$flexy-block-badge-colors: $flexy-colors !default;
-
 $flexy-block-pager-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-pager-link-color: map-get($flexy-colors, gray) !default;
 $flexy-block-pager-link-active-color: map-get($flexy-colors, dark)
@@ -57,6 +53,3 @@ $flexy-block-space-sizes: (
   !default;
 $flexy-input-select-dropdown: 'data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw=='
   !default;
-$flexy-block-divider-border-top-color: rgba(34, 36, 38, 0.15) !default;
-$flexy-block-divider-border-bottom-color: rgba(255, 255, 255, 0.1) !default;
-$flexy-block-divider-sizes: (default: 1em, large: 2em, hero: 5em) !default;

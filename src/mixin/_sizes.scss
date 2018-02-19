@@ -1,7 +1,0 @@
-@mixin flexy-sizes($sizes: $flexy-sizes) {
-  @each $key, $value in $sizes {
-    &_#{$key} {
-      font-size: $value;
-    }
-  }
-}

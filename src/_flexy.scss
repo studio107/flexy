@@ -6,12 +6,11 @@
 @import 'breakpoint';
 @import 'device';
 @import 'visibility/visibility';
-@import 'block-grid';
 @import 'grid/grid';
-@import 'rhythm/rhythm';
+@import 'block-grid';
 
-@import "color/flatui";
+@import "color/index";
 
-@import 'typeset';
+@import 'typography/typography';
 
 @import "theme/index";

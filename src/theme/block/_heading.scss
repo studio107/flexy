@@ -15,27 +15,27 @@
     }
   }
 
-  h1.b-heading {
+  h1.b-heading.b-heading_xxlarge {
     font-size: map-get($flexy-typeset-sizes, xxlarge);
   }
 
-  h2.b-heading {
+  h2.b-heading.b-heading_xlarge {
     font-size: map-get($flexy-typeset-sizes, xlarge);
   }
 
-  h3.b-heading {
+  h3.b-heading.b-heading_large {
     font-size: map-get($flexy-typeset-sizes, large);
   }
 
-  h4.b-heading {
+  h4.b-heading.b-heading_medium {
     font-size: map-get($flexy-typeset-sizes, medium);
   }
 
-  h5.b-heading {
+  h5.b-heading.b-heading_small {
     font-size: map-get($flexy-typeset-sizes, small);
   }
 
-  h6.b-heading {
+  h6.b-heading.b-heading_xsmall {
     font-size: map-get($flexy-typeset-sizes, xsmall);
   }
 }

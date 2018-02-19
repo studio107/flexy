@@ -16,6 +16,8 @@
         &_no-offset {
           margin: 0;
         }
+
+        @content;
       }
     }
   }
