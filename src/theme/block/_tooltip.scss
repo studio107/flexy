@@ -7,16 +7,8 @@ $flexy-theme-tooltip: (
   default: (background-color: #000, color: #fff),
   white: (background-color: #f4f4f4, color: #535353),
   error: (background-color: map-get($flexy-colors, error), color: #fff),
-  primary:
-    (
-      background-color: map-get($flexy-colors, primary),
-      color: #fff
-    ),
-  success:
-    (
-      background-color: map-get($flexy-colors, success),
-      color: #fff
-    )
+  primary: (background-color: map-get($flexy-colors, primary), color: #fff),
+  success: (background-color: map-get($flexy-colors, success), color: #fff)
 );
 
 .#{$flexy-prefix}-tooltip {

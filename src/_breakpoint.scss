@@ -1,11 +1,11 @@
 $flexy-breakpoints: (
-        small: 0,
-        medium: 769px,
-        large: 992px,
-        xlarge: 1200px,
-        xxlarge: 1600px
-)
-!default;
+    small: 0,
+    medium: 769px,
+    large: 992px,
+    xlarge: 1200px,
+    xxlarge: 1600px
+  )
+  !default;
 
 @function flexy-breakpoint-has($name) {
   @return map-has-key($flexy-breakpoints, $name);
@@ -24,7 +24,7 @@ $flexy-breakpoints: (
   $map: (min-width: flexy-breakpoint-get($from));
 
   @if ($to and flexy-breakpoint-has($to)) {
-    $map: map-merge((max-width: flexy-breakpoint-get($to) - .1px), $map);
+    $map: map-merge((max-width: flexy-breakpoint-get($to) - 0.1px), $map);
   }
 
   @return $map;

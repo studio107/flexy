@@ -10,7 +10,8 @@
   @for $i from 1 through $font-scale-length {
     // Headings Output
     h#{$i} {
-      &, &.b-heading {
+      &,
+      &.b-heading {
         @include flexy-apply-style(calculate-offsets($i, $settings));
 
         &_no-offset {
@@ -52,7 +53,7 @@
   $base-spacing: base-spacing(1, $settings);
   $margin-bottom: 0;
   $margin-bottom-bool: map-get($settings, 'margin-bottom');
-  $font-unit-ems-bool: if($base-font-unit == 'em', true, false);;
+  $font-unit-ems-bool: if($base-font-unit == 'em', true, false);
 
   // Margin Bottom
   @if $margin-bottom-bool {
@@ -86,5 +87,5 @@
 
   @content;
 
-  $flexy-rhythm: $old !global
+  $flexy-rhythm: $old !global;
 }

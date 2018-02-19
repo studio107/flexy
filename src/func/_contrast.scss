@@ -41,7 +41,6 @@
   @return $value;
 }
 
-
 @function flexy-color-luminance($color) {
   // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
   // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
@@ -52,7 +51,11 @@
     $rgb: nth($rgba, $i);
     $rgb: $rgb / 255;
 
-    $rgb: if($rgb < .03928, $rgb / 12.92, flexy-color-pow(($rgb + .055) / 1.055, 2.4, 16));
+    $rgb: if(
+      $rgb < 0.03928,
+      $rgb / 12.92,
+      flexy-color-pow(($rgb + 0.055) / 1.055, 2.4, 16)
+    );
 
     $rgba2: append($rgba2, $rgb);
   }
@@ -63,8 +66,8 @@
 @function flexy-color-contrast($color1, $color2) {
   // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
   // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
-  $luminance1: flexy-color-luminance($color1) + .05;
-  $luminance2: flexy-color-luminance($color2) + .05;
+  $luminance1: flexy-color-luminance($color1) + 0.05;
+  $luminance2: flexy-color-luminance($color2) + 0.05;
   $ratio: $luminance1 / $luminance2;
 
   @if $luminance2 > $luminance1 {
@@ -90,7 +93,8 @@
   }
 
   @if ($contrast < $constraint) {
-    @warn "Contrast ratio of #{$best} on #{$base} is pretty bad, just #{$contrast}";
+    @warn "Contrast ratio of #{$best} on #{$base} is pretty bad,
+      just #{$contrast}";
   }
 
   @return $best;

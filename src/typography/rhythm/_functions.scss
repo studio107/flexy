@@ -147,7 +147,7 @@
 
     // Use half increments, while technically breaking the baseline, they are more aesthetically pleasing and still mathematically sound
     @while line-height-spacing($increment, $settings) <= $font-size {
-      $increment: $increment + .5;
+      $increment: $increment + 0.5;
     }
 
     @if $font-unit-ems-bool {
@@ -166,9 +166,7 @@
     }
   }
 
-  @return (
-      font-size: $font-size,
+  @return (font-size: $font-size,
       line-height: $line-height,
-      margin-bottom: $margin-bottom,
-  )
+      margin-bottom: $margin-bottom,);
 }

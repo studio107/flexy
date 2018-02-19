@@ -12,28 +12,20 @@ $flexy-block-button-outline-width: 1px !default;
 $flexy-block-input-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-input-color: #c8c8c8 !default;
 $flexy-block-input-focus-color: map-get($flexy-colors, default) !default;
-$flexy-block-input-hover-color: rgba($flexy-block-input-focus-color, 0.5) !default;
+$flexy-block-input-hover-color: rgba($flexy-block-input-focus-color, 0.5)
+  !default;
 
 $flexy-block-pager-border-radius: $flexy-theme-border-radius !default;
 $flexy-block-pager-link-color: map-get($flexy-colors, gray) !default;
-$flexy-block-pager-link-active-color: map-get($flexy-colors, dark)
-  !default;
+$flexy-block-pager-link-active-color: map-get($flexy-colors, dark) !default;
 $flexy-block-pager-total-color: map-get($flexy-colors, gray) !default;
 $flexy-label-color: #6a6a6a;
 
 $flexy-theme-avatar: (
     default: (background-color: #2c3e50, color: #fff),
-    primary:
-      (
-        background-color: map-get($flexy-colors, primary),
-        color: #fff
-      ),
+    primary: (background-color: map-get($flexy-colors, primary), color: #fff),
     error: (background-color: map-get($flexy-colors, error), color: #fff),
-    success:
-      (
-        background-color: map-get($flexy-colors, success),
-        color: #fff
-      )
+    success: (background-color: map-get($flexy-colors, success), color: #fff)
   )
   !default;
 

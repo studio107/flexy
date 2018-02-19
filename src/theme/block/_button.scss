@@ -7,7 +7,7 @@
   display: inline-block;
   max-width: 100%;
   margin: 0;
-  padding: 0 .8rem;
+  padding: 0 0.8rem;
   border-radius: $flexy-theme-border-radius;
   outline: 0;
   font-family: inherit;
@@ -38,7 +38,11 @@
   }
 
   @include flexy-colors() {
-    $color: if(flexy-color-contrast($flexy-current-color, #fff) < 2, flexy-color(text), flexy-color(white));
+    $color: if(
+      flexy-color-contrast($flexy-current-color, #fff) < 2,
+      flexy-color(text),
+      flexy-color(white)
+    );
 
     color: $color;
     background-color: $flexy-current-color;
@@ -56,19 +60,22 @@
 
     &_outline {
       color: $flexy-current-color;
-      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color inset;
+      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color
+        inset;
       background-color: transparent;
 
       &:hover,
       &:focus {
         color: lighten($flexy-current-color, 10%);
-        box-shadow: 0 0 0 $flexy-block-button-outline-width lighten($flexy-current-color, 10%) inset;
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          lighten($flexy-current-color, 10%) inset;
         background-color: transparent;
       }
 
       &:active {
         color: darken($flexy-current-color, 10%);
-        box-shadow: 0 0 0 $flexy-block-button-outline-width darken($flexy-current-color, 10%) inset;
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          darken($flexy-current-color, 10%) inset;
         background-color: transparent;
       }
     }

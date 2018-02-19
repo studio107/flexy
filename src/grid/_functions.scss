@@ -3,7 +3,7 @@
 // @return {Number} width
 // @access public
 @function flexy-column-percent($column-num) {
-  @return percentage($column-num / $flexy-grid-columns)
+  @return percentage($column-num / $flexy-grid-columns);
 }
 
 /**
