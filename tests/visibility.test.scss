@@ -1,8 +1,8 @@
 @import "~sass-true/sass/true";
-@import "../src/visibility";
+@import "../src/defaults";
+@import "../src/flexy";
 
 @include test-module('functions') {
-
   @include test('flexy-visibility-next-media') {
     @include assert-equal(flexy-visibility-next-media(medium), (min-width: 769px, max-width: 991px));
     @include assert-equal(flexy-visibility-next-media(large), (min-width: 992px, max-width: 1199px));
@@ -88,5 +88,4 @@
     @include assert-equal(flexy-visibility-media(medium, false), (min-width: 769px));
     @include assert-equal(flexy-visibility-media(medium, true), (max-width: 991px, min-width: 769px));
   }
-
 }

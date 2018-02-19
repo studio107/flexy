@@ -6,15 +6,15 @@ $tooltip-body-border-radius: $flexy-theme-border-radius !default;
 $flexy-theme-tooltip: (
   default: (background-color: #000, color: #fff),
   white: (background-color: #f4f4f4, color: #535353),
-  error: (background-color: map-get($flexy-theme-colors, error), color: #fff),
+  error: (background-color: map-get($flexy-colors, error), color: #fff),
   primary:
     (
-      background-color: map-get($flexy-theme-colors, primary),
+      background-color: map-get($flexy-colors, primary),
       color: #fff
     ),
   success:
     (
-      background-color: map-get($flexy-theme-colors, success),
+      background-color: map-get($flexy-colors, success),
       color: #fff
     )
 );

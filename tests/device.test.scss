@@ -1,8 +1,9 @@
 @import "~sass-true/sass/true";
 
 @include test-module('Device') {
-  @include test('available devices') {
-    @import "../src/device";
+
+  @include test('default devices') {
+    @import "../src/defaults";
 
     @include assert-equal(map-keys($flexy-default-devices), (
             laptop,
@@ -31,14 +32,8 @@
     ));
   }
 
-  @include test('default devices') {
-    @import "../src/device";
-
-    @include assert-false(flexy-device-has(hello));
-    @include assert-true(flexy-device-has(iphone-4-4s));
-  }
-
   @include test('flexy-device-get') {
+    @import "../src/defaults";
     @import "../src/device";
 
     @include assert-equal(flexy-device-get(laptop), (
@@ -49,13 +44,17 @@
   }
 
   @include test('user defined devices') {
+    @import "../src/defaults";
     $flexy-devices: (
-            hello: (min-device-width: 1200px)
+            hello: (min-device-width: 1200px),
     );
+    @import "../src/functions";
+    @import "../src/mixins";
     @import "../src/device";
 
     @include assert-true(flexy-device-has(hello));
     @include assert-equal(flexy-device-media(hello), '(min-device-width: 1200px)');
     @include assert-equal(flexy-device-media(iphone-4-4s), '(-webkit-min-device-pixel-ratio: 2) and (max-device-width: 480px) and (min-device-width: 320px)');
   }
+
 }

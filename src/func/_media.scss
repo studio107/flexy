@@ -5,9 +5,3 @@
   }
   @return "#{flexy-join(flexy-list-reverse($temp), ' and ')}";
 }
-
-@mixin flexy-media($map, $screen: 'only screen') {
-  @media #{$screen} and #{flexy-media-get($map)} {
-    @content;
-  }
-}

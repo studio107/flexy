@@ -1,8 +1,9 @@
 @import "~sass-true/sass/true";
+@import "../src/functions";
+@import "../src/mixins";
 @import "../src/breakpoint";
 
 @include test-module('Breakpoint') {
-
   @include test('default breakpoints') {
     @include assert-equal(map-keys($flexy-breakpoints), (small, medium, large, xlarge, xxlarge));
   }
