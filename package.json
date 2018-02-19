@@ -17,7 +17,7 @@
     },
     "scripts": {
         "build": "gulp build",
-        "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{src,js}/**/*.{scss,js}\"",
+        "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{tests,src,js}/**/*.{scss,js}\"",
         "test": "jest"
     }
 }

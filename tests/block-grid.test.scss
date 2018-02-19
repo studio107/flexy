@@ -1,6 +1,6 @@
-@import "~sass-true/sass/true";
-@import "../src/defaults";
-@import "../src/flexy";
+@import '~sass-true/sass/true';
+@import '../src/defaults';
+@import '../src/flexy';
 
 @include test-module('block_grid') {
   @include test('_block-grid-offset') {
