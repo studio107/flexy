@@ -1,0 +1,31 @@
+// Цвет ссылки
+$flexy-theme-breadcrumb-link-color: flexy-color() !default;
+// Цвет текста
+$flexy-theme-breadcrumb-color: flexy-color(placeholder) !default;
+
+.#{$flexy-prefix}-breadcrumb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__item {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    color: $flexy-theme-breadcrumb-color;
+  }
+
+  &__symbol {
+    padding: 0 0.5em;
+    color: $flexy-theme-breadcrumb-color;
+  }
+
+  &__link {
+    color: $flexy-theme-breadcrumb-link-color;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($flexy-theme-breadcrumb-link-color, 10%);
+    }
+  }
+}

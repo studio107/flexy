@@ -1,0 +1,87 @@
+// @content Calculate column size percentag
+// @param {Number} $column-num column number
+// @return {Number} width
+// @access public
+@function flexy-column-percent($column-num) {
+  @return percentage($column-num / $flexy-grid-columns);
+}
+
+/**
+ * Spacing mixin to create uniform margin/padding
+ */
+@mixin flexy-grid-space($value, $type: margin) {
+  #{$type}-left: $value;
+  #{$type}-right: $value;
+}
+
+/**
+ * Row flex box parent.
+ */
+@mixin flexy-grid-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &_center {
+    justify-content: center;
+  }
+
+  &_space {
+    justify-content: space-between;
+  }
+
+  @include flexy-grid-space(-$flexy-grid-gutter, margin);
+}
+
+@mixin flexy-grid-column {
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 1px;
+
+  &_auto {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    max-width: 100%;
+  }
+
+  @include flexy-grid-space($flexy-grid-gutter, padding);
+}
+
+@mixin flexy-grid-reset() {
+  margin-left: 0;
+}
+
+/**
+ * Build the grid in two steps, to help minimize file size
+ * Step 1, for each namespace, create the grid-base
+ * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
+ */
+@mixin flexy-grid-build($namespace) {
+  // Run the loop for as many columns as speficied
+  @for $i from 1 through $flexy-grid-columns {
+    .#{$flexy-prefix}-col_#{$namespace} {
+      @include flexy-grid-column;
+      flex-grow: 1;
+      flex-basis: 0;
+
+      &_#{$i} {
+        flex-basis: flexy-column-percent($i);
+        max-width: flexy-column-percent($i);
+      }
+    }
+
+    // Don't include the .off class for the last column
+    @if ($i != $flexy-grid-columns) {
+      .#{$flexy-prefix}-off_#{$namespace}_#{$i} {
+        margin-left: flexy-column-percent($i);
+      }
+    }
+  }
+
+  .#{$flexy-prefix}-off_#{$namespace}_reset {
+    @include flexy-grid-reset;
+  }
+}

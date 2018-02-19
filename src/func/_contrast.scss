@@ -1,0 +1,101 @@
+// TODO copyrights https://github.com/voxpelli/sass-color-helpers
+// TODO Alternative, slow and unstable solution: custom libsass functions with http://gka.github.io/chroma.js/
+
+@function flexy-gcd($a, $b) {
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @return if($b != 0, flexy-gcd($b, $a % $b), abs($a));
+}
+
+@function flexy-nth-root($num, $n: 2, $prec: 12) {
+  // From: http://rosettacode.org/wiki/Nth_root#JavaScript
+  $x: 1;
+
+  @for $i from 0 through $prec {
+    $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)));
+  }
+
+  @return $x;
+}
+
+@function flexy-color-pow($base, $exponent, $prec: 12) {
+  // Handles decimal exponents by trying to convert them into a fraction
+  // and then use a nthRoot-algorithm for parts of the calculation
+  @if (floor($exponent) != $exponent) {
+    $prec2: pow(10, $prec);
+    $exponent: round($exponent * $prec2);
+    $denominator: flexy-gcd($exponent, $prec2);
+    @return flexy-nth-root(flexy-color-pow($base, $exponent / $denominator), $prec2 / $denominator, $prec);
+  }
+
+  $value: $base;
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  } @else if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+
+  @return $value;
+}
+
+@function flexy-color-luminance($color) {
+  // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+  $rgba: red($color), green($color), blue($color);
+  $rgba2: ();
+
+  @for $i from 1 through 3 {
+    $rgb: nth($rgba, $i);
+    $rgb: $rgb / 255;
+
+    $rgb: if(
+      $rgb < 0.03928,
+      $rgb / 12.92,
+      flexy-color-pow(($rgb + 0.055) / 1.055, 2.4, 16)
+    );
+
+    $rgba2: append($rgba2, $rgb);
+  }
+
+  @return .2126 * nth($rgba2, 1) + .7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
+}
+
+@function flexy-color-contrast($color1, $color2) {
+  // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+  $luminance1: flexy-color-luminance($color1) + 0.05;
+  $luminance2: flexy-color-luminance($color2) + 0.05;
+  $ratio: $luminance1 / $luminance2;
+
+  @if $luminance2 > $luminance1 {
+    $ratio: 1 / $ratio;
+  }
+
+  $ratio: round($ratio * 10) / 10;
+
+  @return $ratio;
+}
+
+@function flexy-best-color-contrast($base, $colors: (#fff, #000), $tolerance: 0, $constraint: 3) {
+  $best: nth($colors, 1);
+  $contrast: flexy-color-contrast($base, $best);
+
+  @for $i from 2 through length($colors) {
+    $currentColor: nth($colors, $i);
+    $currentContrast: flexy-color-contrast($base, $currentColor);
+    @if ($currentContrast - $contrast > $tolerance) {
+      $best: $currentColor;
+      $contrast: $currentContrast;
+    }
+  }
+
+  @if ($contrast < $constraint) {
+    @warn "Contrast ratio of #{$best} on #{$base} is pretty bad,
+      just #{$contrast}";
+  }
+
+  @return $best;
+}

@@ -1,0 +1,172 @@
+///
+/// Merge current settings map with Shevy defaults
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Map} Map of merged settings
+///
+@function flexy-rhythm-settings($settings: $flexy-rhythm) {
+  @return map-merge($flexy-rhythm-defaults, $settings);
+}
+
+///
+/// Returns the font scale value at a given position in the list
+/// @access private
+/// @param {Number} $position Position of scale value to retrieve
+/// @param {Map} $map [$shevy] Map from which to retrieve font scale value
+/// @return {Number} Font scale value at given position
+///
+@function get-font-scale-value($position, $settings: $flexy-rhythm) {
+  $base-font-scale: map-get($settings, 'base-font-scale');
+  @if type-of($base-font-scale) == 'map' {
+    $base-font-scale: map-values($base-font-scale);
+  }
+  @return nth($base-font-scale, $position);
+}
+
+///
+/// Returns the base font size of current settings
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Value} Value of base-font-size setting
+///
+@function base-font-size($settings: $flexy-rhythm) {
+  @return map-get($settings, 'base-font-size');
+}
+
+///
+/// Returns the base font unit of the current settings
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {String} Unit value of base font size
+///
+@function base-font-unit($settings: $flexy-rhythm) {
+  @return unit(map-get($settings, 'base-font-size'));
+}
+
+///
+/// Returns the base line-height of the current settings
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Number} Current base-line-height setting
+///
+@function base-line-height($settings: $flexy-rhythm) {
+  @return map-get($settings, 'base-line-height');
+}
+
+///
+/// Returns the line-height spacing, which is unaffected by proximity-factor
+/// @access private
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Value} Value of base-font-size multiplied by base-line-height
+///
+@function line-height-spacing-math($settings: $flexy-rhythm) {
+  @return base-font-size($settings) * base-line-height($settings);
+}
+
+///
+/// Returns the line-height spacing, which is unaffected by proximity-factor
+/// @access public
+/// @param {Number} $factor [1] A factor with which to multiply the base-spacing value
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Value} Value of the calculated line-height
+///
+@function line-height-spacing($factor: 1, $settings: $flexy-rhythm) {
+  @return line-height-spacing-math($settings) * $factor;
+}
+
+///
+/// Calculates base spacing
+/// @access private
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Value} Value of base-font-size multiplied by base-line-height, additionally multiplied by proximity factor if proximity is true
+///
+@function base-spacing-math($settings: $flexy-rhythm) {
+  $base-font-size: base-font-size($settings);
+  $base-line-height: base-line-height($settings);
+  $proximity-bool: map-get($settings, proximity);
+  $proximity-factor: map-get($settings, proximity-factor);
+  $base-spacing: $base-font-size * $base-line-height;
+
+  @if $proximity-bool {
+    $base-spacing: $base-spacing * $proximity-factor;
+  }
+
+  @return $base-spacing;
+}
+
+///
+/// Takes a factor, multiplies it with the current settings base spacing to output values that are multiples or dividends of the current vertical rhythm
+/// @access public
+/// @param {Number} $factor [1] A factor with which to multiply the base-spacing value
+/// @param {Map} $map [$shevy] Map of settings
+/// @return {Value} Value of base-spacing multiplied by the factor provided
+///
+@function base-spacing($factor: 1, $settings: $flexy-rhythm) {
+  @return base-spacing-math($settings) * $factor;
+}
+
+///
+/// Creates a value equivalent to 1 of the base unit, i.e. if base unit is pixels, returns 1px
+/// @access private
+/// @param {String} $unit String of unit type. Options are: 'px', 'em', or 'rem'
+/// @return {Value} a value of 1 in the given unit type
+///
+@function base-unit-multiplier($unit) {
+  @if $unit == 'px' {
+    @return 1px;
+  } @else if $unit == 'em' {
+    @return 1em;
+  } @else if $unit == 'rem' {
+    @return 1rem;
+  } @else {
+    @warn "Sorry, but that is not a supported unit of measure.";
+  }
+}
+
+@function calculate-offsets($i, $settings: $flexy-rhythm) {
+  $base-font-unit: base-font-unit($settings);
+  $base-unit-multiplier: base-unit-multiplier($base-font-unit);
+  $base-font-size: base-font-size($settings);
+  $base-line-height: base-line-height($settings);
+  $line-height-spacing: line-height-spacing(1, $settings);
+  $base-spacing: base-spacing(1, $settings);
+  $font-scale-length: length(map-get($settings, 'base-font-scale'));
+  $font-unit-ems-bool: if($base-font-unit == 'em', true, false);
+  $margin-bottom-bool: map-get($settings, 'margin-bottom');
+
+  $font-scale-value: get-font-scale-value($i, $settings);
+  $font-size: $base-font-size * flexy-strip-unit($font-scale-value);
+  $line-height: 0;
+  $margin-bottom: 0;
+
+  // Line Height Calculation
+  @if $font-size <= $line-height-spacing {
+    $line-height: $line-height-spacing;
+  } @else {
+    $increment: 1.5;
+
+    // Use half increments, while technically breaking the baseline, they are more aesthetically pleasing and still mathematically sound
+    @while line-height-spacing($increment, $settings) <= $font-size {
+      $increment: $increment + 0.5;
+    }
+
+    @if $font-unit-ems-bool {
+      $line-height: line-height-spacing($increment, $settings) / $font-size;
+    } @else {
+      $line-height: line-height-spacing($increment, $settings);
+    }
+  }
+
+  // Margin Bottom Calculation
+  @if $margin-bottom-bool {
+    @if $font-unit-ems-bool {
+      $margin-bottom: $base-spacing / $font-size * $base-unit-multiplier;
+    } @else {
+      $margin-bottom: $base-spacing;
+    }
+  }
+
+  @return (font-size: $font-size,
+      line-height: $line-height,
+      margin-bottom: $margin-bottom,);
+}

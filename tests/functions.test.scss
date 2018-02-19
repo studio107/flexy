@@ -1,0 +1,89 @@
+@import '~sass-true/sass/true';
+@import '../src/functions';
+@import '../src/mixins';
+
+@include test-module('functions') {
+  @include test('flexy-join') {
+    @include assert-equal(flexy-join((1 2 3)), '1 2 3');
+    @include assert-equal(flexy-join((1,2,3)), '1,2,3');
+    @include assert-equal(flexy-join((1 2 3), ', '), '1, 2, 3');
+  }
+
+  @include test('flexy-reverse') {
+    @include assert-equal(flexy-reverse((a b (c d e) f g h)), (h g f (c d e) b a));
+    @include assert-equal(flexy-reverse((a, b, (c, d, e), f, g, h)), (h, g, f, (c, d, e), b, a));
+  }
+
+  @include test('flexy-strip-unit') {
+    @include assert-equal(flexy-strip-unit(10px), 10);
+    @include assert-equal(flexy-strip-unit(10em), 10);
+    @include assert-equal(flexy-strip-unit(10rem), 10);
+    @include assert-equal(flexy-strip-unit(10pt), 10);
+    @include assert-equal(flexy-strip-unit(10vh), 10);
+    @include assert-equal(flexy-strip-unit(10vw), 10);
+  }
+
+  @include test('flexy-to-em') {
+    @include assert-equal(flexy-to-em(16px, 16px), 1em);
+    @include assert-equal(flexy-to-em(14px, 16px), 0.875em);
+    @include assert-equal(flexy-to-em(1rem, 16px), 1em);
+    @include assert-equal(flexy-to-em(2rem, 16px), 2em);
+    @include assert-equal(flexy-to-em(2pt, 16px), 0.125em);
+  }
+
+  @include test('flexy-to-rem') {
+    @include assert-equal(flexy-to-rem(16px, 16px), 1rem);
+    @include assert-equal(flexy-to-rem(14px, 16px), 0.875rem);
+    @include assert-equal(flexy-to-rem(1em, 16px), 1rem);
+    @include assert-equal(flexy-to-rem(2em, 16px), 2rem);
+    @include assert-equal(flexy-to-rem(2pt, 16px), 0.125rem);
+  }
+
+  @include test('flexy-next-prev') {
+    $map: (
+      foo: 1,
+      bar: 2
+    );
+
+    @include assert-equal(flexy-map-next-key($map, foo), bar);
+    @include assert-equal(flexy-map-prev-key($map, bar), foo);
+  }
+
+  @include test('pow') {
+    @include assert-equal(pow(1, 2), 1);
+    @include assert-equal(pow(4, 2), 16);
+  }
+
+  @include test('flexy-media-get') {
+    @include assert-equal(flexy-media-get((min-width: 100px, max-width: 101px)), '(max-width: 101px) and (min-width: 100px)');
+  }
+
+  @include test('flexy-media') {
+    @include assert {
+      @include output {
+        @include flexy-media((min-width: 100px)) {
+          font-size: 2rem;
+        }
+      }
+
+      @include expect {
+        @media only screen and (min-width: 100px) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  @include test('flexy-to-string') {
+    @include assert-equal(flexy-to-string(1), '1');
+    @include assert-equal(flexy-to-string(-1), '-1');
+  }
+
+  @include test('flexy-to-int') {
+    @include assert-equal(flexy-to-int('123'), 123);
+    @include assert-equal(flexy-to-int(123), 123);
+    @include assert-equal(flexy-to-int('-12'), -12);
+    @include assert-equal(flexy-to-int('-12.5'), -12.5);
+    @include assert-equal(flexy-to-int('12.5'), 12.5);
+  }
+}

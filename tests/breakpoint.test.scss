@@ -1,0 +1,71 @@
+@import '~sass-true/sass/true';
+@import '../src/functions';
+@import '../src/mixins';
+@import '../src/breakpoint';
+
+@include test-module('Breakpoint') {
+  @include test('default breakpoints') {
+    @include assert-equal(map-keys($flexy-breakpoints), (small, medium, large, xlarge, xxlarge));
+  }
+
+  @include test('flexy-breakpoint-has') {
+    @include assert-true(flexy-breakpoint-has(small));
+    @include assert-true(flexy-breakpoint-has(medium));
+    @include assert-true(flexy-breakpoint-has(large));
+    @include assert-true(flexy-breakpoint-has(xlarge));
+    @include assert-true(flexy-breakpoint-has(xxlarge));
+  }
+
+  @include test('flexy-breakpoint-step') {
+    @include assert-equal(flexy-breakpoint-step(small, xlarge), (max-width: 1199.9px, min-width: 0));
+    @include assert-equal(flexy-breakpoint-step(medium), (min-width: 769px));
+  }
+
+  @include test('flexy-breakpoint-get') {
+    @include assert-equal(flexy-breakpoint-get(small), 0);
+    @include assert-equal(flexy-breakpoint-get(medium), 769px);
+    @include assert-equal(flexy-breakpoint-get(large), 992px);
+    @include assert-equal(flexy-breakpoint-get(xlarge), 1200px);
+    @include assert-equal(flexy-breakpoint-get(xxlarge), 1600px);
+  }
+
+  @include test('flexy-breakpoint-next-step') {
+    @include assert-equal(flexy-breakpoint-next-step(small), (min-width: 0, max-width: 768.9px));
+    @include assert-equal(flexy-breakpoint-next-step(medium), (min-width: 769px, max-width: 991.9px));
+    @include assert-equal(flexy-breakpoint-next-step(large), (min-width: 992px, max-width: 1199.9px));
+    @include assert-equal(flexy-breakpoint-next-step(xlarge), (min-width: 1200px, max-width: 1599.9px));
+    @include assert-equal(flexy-breakpoint-next-step(xxlarge), (min-width: 1600px));
+  }
+
+  @include test('flexy-breakpoint-limit') {
+    // from medium to inf
+    @include assert {
+      @include output {
+        @include flexy-breakpoint-limit(medium) {
+          font-size: 2rem;
+        }
+      }
+
+      @include expect {
+        @media only screen and (min-width: 769px) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    // from medium to large
+    @include assert {
+      @include output {
+        @include flexy-breakpoint-limit(medium, large) {
+          font-size: 2rem;
+        }
+      }
+
+      @include expect {
+        @media only screen and (min-width: 769px) and (max-width: 991.9px) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

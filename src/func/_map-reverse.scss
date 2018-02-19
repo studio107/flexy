@@ -1,0 +1,23 @@
+@function flexy-map-reverse ($map) {
+  @if type-of($map) != 'map' {
+    @warn ''#{$map}' is not a valid map';
+    @return null;
+  }
+
+  $keys: map-keys($map);
+  $map-reversed: ();
+
+  @for $i from length($keys) through 1 {
+    $map-reversed: map-merge(
+      $map-reversed,
+       (nth($keys, $i): map-get($map, nth($keys, $i)))
+    );
+  }
+
+  @if type-of($map-reversed) != 'map' {
+    @warn 'There was an error reversing the order of '#{$map}'';
+    @return null;
+  }
+
+  @return $map-reversed;
+}

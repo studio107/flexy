@@ -1,0 +1,91 @@
+.b-button {
+  @include ellipsis;
+
+  border: 0;
+  background-color: $flexy-block-button-background-color;
+  color: #fff;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0.8rem;
+  border-radius: $flexy-theme-border-radius;
+  outline: 0;
+  font-family: inherit;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  user-select: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  min-width: 32px;
+  line-height: 2;
+  font-size: 1rem;
+
+  @include flexy-sizes;
+
+  &_block {
+    display: inline-block;
+    width: 100% !important;
+  }
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+  }
+
+  @include flexy-colors() {
+    $color: if(
+      flexy-color-contrast($flexy-current-color, #fff) < 2,
+      flexy-color(text),
+      flexy-color(white)
+    );
+
+    color: $color;
+    background-color: $flexy-current-color;
+
+    &:hover,
+    &:focus {
+      color: $color;
+      background-color: lighten($flexy-current-color, 10%);
+    }
+
+    &:active {
+      color: $color;
+      background-color: darken($flexy-current-color, 10%);
+    }
+
+    &_outline {
+      color: $flexy-current-color;
+      box-shadow: 0 0 0 $flexy-block-button-outline-width $flexy-current-color
+        inset;
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        color: lighten($flexy-current-color, 10%);
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          lighten($flexy-current-color, 10%) inset;
+        background-color: transparent;
+      }
+
+      &:active {
+        color: darken($flexy-current-color, 10%);
+        box-shadow: 0 0 0 $flexy-block-button-outline-width
+          darken($flexy-current-color, 10%) inset;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &:not(.#{$flexy-prefix}-button_icon) > .icon {
+    margin: 0 5px 0 0;
+  }
+
+  &__icon {
+    margin: 0;
+  }
+}

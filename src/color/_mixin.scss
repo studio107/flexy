@@ -1,0 +1,16 @@
+$flexy-current-name: null !global;
+$flexy-current-color: null !global;
+@mixin flexy-colors($schema: $flexy-colors, $includeDefault: true) {
+  @each $name, $color in $schema {
+    $flexy-current-name: $name !global;
+    $flexy-current-color: $color !global;
+
+    @if $includeDefault and $name == default {
+      @content;
+    } @else {
+      &_#{$flexy-current-name} {
+        @content;
+      }
+    }
+  }
+}

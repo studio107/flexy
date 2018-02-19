@@ -1,0 +1,11 @@
+.m-color {
+  @include flexy-colors($flexy-colors, false) {
+    color: $flexy-current-color;
+  }
+}
+
+.m-bg {
+  @include flexy-colors($flexy-colors, false) {
+    background-color: $flexy-current-color;
+  }
+}

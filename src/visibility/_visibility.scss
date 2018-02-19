@@ -1,0 +1,33 @@
+@import 'functions';
+@import 'mixins';
+
+.#{$flexy-prefix}-show,
+.#{$flexy-prefix}-visible {
+  @each $name, $px in $flexy-breakpoints {
+    &_#{$name} {
+      &_only {
+        @include flexy-show($name, true);
+      }
+
+      &_up {
+        @include flexy-show($name, false);
+      }
+    }
+  }
+}
+
+.#{$flexy-prefix}-hide {
+  display: block;
+
+  @each $name, $px in $flexy-breakpoints {
+    &_#{$name} {
+      &_only {
+        @include flexy-hide($name, true);
+      }
+
+      &_up {
+        @include flexy-hide($name, false);
+      }
+    }
+  }
+}

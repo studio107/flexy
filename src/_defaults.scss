@@ -1,0 +1,185 @@
+$flexy-default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol' !default;
+$flexy-default-font-mono: Consolas, 'Andale Mono WT', 'Andale Mono',
+  'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+  'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
+  'Courier New', Courier, monospace;
+$flexy-default-font-size: 16px;
+$flexy-default-line-height: 1.5;
+$flexy-default-colors: (
+  default: #006eff,
+  disabled: #f0f2f7,
+  white: #fff,
+  success: #27ae60,
+  error: #e74c3c,
+  text: #212529,
+  heading: #000,
+  placeholder: #6a6a6a,
+  divider: rgba(#222426, 0.15)
+);
+$flexy-default-sizes: (
+  xxlarge: 2.5rem,
+  xlarge: 2rem,
+  large: 1.75rem,
+  medium: 1.5rem,
+  small: 1.25rem,
+  xsmall: 1rem
+);
+// based on https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+$flexy-default-devices: (
+    laptop:
+      (
+        min-device-width: 1200px,
+        max-device-width: 1600px,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    laptop-retina:
+      (
+        min-device-width: 1200px,
+        max-device-width: 1600px,
+        -webkit-min-device-pixel-ratio: 2,
+        min-resolution: 192dpi
+      ),
+    iphone-4-4s:
+      (
+        min-device-width: 320px,
+        max-device-width: 480px,
+        -webkit-min-device-pixel-ratio: 2
+      ),
+    iphone-4-4s-portrait:
+      (
+        min-device-width: 320px,
+        max-device-width: 480px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: portrait
+      ),
+    iphone-4-4s-landscape:
+      (
+        min-device-width: 320px,
+        max-device-width: 480px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: landscape
+      ),
+    iphone-5-5s:
+      (
+        min-device-width: 320px,
+        max-device-width: 568px,
+        -webkit-min-device-pixel-ratio: 2
+      ),
+    iphone-5-5s-portrait:
+      (
+        min-device-width: 320px,
+        max-device-width: 568px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: portrait
+      ),
+    iphone-5-5s-landscape:
+      (
+        min-device-width: 320px,
+        max-device-width: 568px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: landscape
+      ),
+    iphone-6:
+      (
+        min-device-width: 375px,
+        max-device-width: 667px,
+        -webkit-min-device-pixel-ratio: 2
+      ),
+    iphone-6-portrait:
+      (
+        min-device-width: 375px,
+        max-device-width: 667px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: portrait
+      ),
+    iphone-6-landscape:
+      (
+        min-device-width: 375px,
+        max-device-width: 667px,
+        -webkit-min-device-pixel-ratio: 2,
+        orientation: landscape
+      ),
+    iphone-6-plus:
+      (
+        min-device-width: 414px,
+        max-device-width: 736px,
+        -webkit-min-device-pixel-ratio: 3
+      ),
+    iphone-6-plus-portrait:
+      (
+        min-device-width: 414px,
+        max-device-width: 736px,
+        -webkit-min-device-pixel-ratio: 3,
+        orientation: portrait
+      ),
+    iphone-6-plus-landscape:
+      (
+        min-device-width: 414px,
+        max-device-width: 736px,
+        -webkit-min-device-pixel-ratio: 3,
+        orientation: landscape
+      ),
+    ipad-mini:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-mini-portait:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: portrait,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-mini-landscape:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: landscape,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-1-2:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-1-2-portrait:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: portrait,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-1-2-landscape:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: landscape,
+        -webkit-min-device-pixel-ratio: 1
+      ),
+    ipad-3-4:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        -webkit-min-device-pixel-ratio: 2
+      ),
+    ipad-3-4-portrait:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: portrait,
+        -webkit-min-device-pixel-ratio: 2
+      ),
+    ipad-3-4-landscape:
+      (
+        min-device-width: 768px,
+        max-device-width: 1024px,
+        orientation: landscape,
+        -webkit-min-device-pixel-ratio: 2
+      )
+  )
+  !default;

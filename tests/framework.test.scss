@@ -1,0 +1,8 @@
+@import '~sass-true/sass/true';
+
+@include test-module('theme') {
+  @include test('check theme') {
+    @import '../src/defaults';
+    @import '../src/flexy';
+  }
+}

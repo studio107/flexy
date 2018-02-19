@@ -1,0 +1,22 @@
+%flexy-typeset {
+  @include flexy-rhythm-headings;
+  @include flexy-rhythm-body;
+  @include flexy-rhythm-content;
+
+  img {
+    @extend .b-image;
+  }
+
+  hr {
+    @extend .b-divider;
+  }
+
+  ul,
+  ol {
+    margin-left: 18px;
+  }
+}
+
+.b-typeset {
+  @extend %flexy-typeset;
+}

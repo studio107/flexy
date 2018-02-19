@@ -1,0 +1,7 @@
+@function flexy-media-get($map) {
+  $temp: ();
+  @each $key, $value in $map {
+    $temp: append($temp, '(#{$key}: #{$value})');
+  }
+  @return "#{flexy-join(flexy-list-reverse($temp), ' and ')}";
+}

@@ -1,0 +1,56 @@
+@import '~sass-true/sass/true';
+
+@include test-module('Device') {
+  @include test('default devices') {
+    @import '../src/defaults';
+
+    @include assert-equal(map-keys($flexy-default-devices), (
+            laptop,
+            laptop-retina,
+            iphone-4-4s,
+            iphone-4-4s-portrait,
+            iphone-4-4s-landscape,
+            iphone-5-5s,
+            iphone-5-5s-portrait,
+            iphone-5-5s-landscape,
+            iphone-6,
+            iphone-6-portrait,
+            iphone-6-landscape,
+            iphone-6-plus,
+            iphone-6-plus-portrait,
+            iphone-6-plus-landscape,
+            ipad-mini,
+            ipad-mini-portait,
+            ipad-mini-landscape,
+            ipad-1-2,
+            ipad-1-2-portrait,
+            ipad-1-2-landscape,
+            ipad-3-4,
+            ipad-3-4-portrait,
+            ipad-3-4-landscape
+    ));
+  }
+
+  @include test('flexy-device-get') {
+    @import '../src/defaults';
+    @import '../src/device';
+
+    @include assert-equal(flexy-device-get(laptop), (
+            min-device-width: 1200px,
+            max-device-width: 1600px,
+            -webkit-min-device-pixel-ratio: 1
+    ));
+  }
+
+  @include test('user defined devices') {
+    @import '../src/defaults';
+    $flexy-devices: (hello: (min-device-width: 1200px));
+    @import '../src/functions';
+    @import '../src/mixins';
+    @import '../src/device';
+
+    @include assert-true(flexy-device-has(hello));
+    @include assert-equal(flexy-device-media(hello), '(min-device-width: 1200px)');
+    @include assert-equal(flexy-device-media(iphone-4-4s), '(-webkit-min-device-pixel-ratio: 2) and (max-device-width: 480px) and (min-device-width: 320px)');
+  }
+}

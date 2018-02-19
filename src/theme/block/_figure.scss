@@ -1,0 +1,11 @@
+.b-figure {
+  &__image {
+    @extend .b-image;
+  }
+
+  &__caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: flexy-color(placeholder);
+  }
+}

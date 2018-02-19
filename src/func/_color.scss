@@ -1,0 +1,3 @@
+@function flexy-color($name: default, $schema: $flexy-colors) {
+  @return map-get($schema, $name);
+}

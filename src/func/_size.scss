@@ -1,0 +1,3 @@
+@function flexy-size($name) {
+  @return map-get($flexy-sizes, $name);
+}

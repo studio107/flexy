@@ -1,0 +1,14 @@
+blockquote,
+.b-blockquote {
+  padding: 1rem;
+  color: flexy-color(placeholder);
+  border: {
+    width: 1px 1px 1px 4px;
+    style: solid;
+    color: flexy-color(divider);
+  }
+
+  p:last-of-type {
+    margin-bottom: 0 !important;
+  }
+}

@@ -1,0 +1,35 @@
+// Типы flash сообщений
+$flexy-block-flash-types: (
+    success: #27ae60,
+    info: #3498db,
+    warning: #e67e22,
+    error: #c0392b
+  )
+  !default;
+// border-radius по умолчанию соответствует теме
+$flexy-block-flash-border-radius: $flexy-theme-border-radius !default;
+// Размер шрифта по умолчанию
+$flexy-block-flash-font-size: 1rem !default;
+// Дополнительные стили
+$flexy-block-flash-styles: () !default;
+
+.b-flash {
+  margin-bottom: 0.5em;
+  user-select: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: $flexy-block-flash-border-radius;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  font-size: $flexy-block-flash-font-size;
+
+  @include flexy-apply-style($flexy-block-flash-styles);
+
+  @each $prefix, $color in $flexy-block-flash-types {
+    &_#{$prefix} {
+      background: {
+        color: $color;
+      }
+    }
+  }
+}

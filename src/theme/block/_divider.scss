@@ -1,0 +1,32 @@
+$flexy-block-divider-sizes: (default: 1, large: 2, hero: 3) !default;
+
+.b-divider {
+  @include clearfix;
+
+  border: {
+    width: 1px 0 0 0;
+    style: solid;
+    color: flexy-color(divider);
+  }
+  margin: 1em 0;
+  line-height: 1;
+  height: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(#000, 0.85);
+  user-select: none;
+  font-size: 1rem;
+
+  @each $name, $size in $flexy-block-divider-sizes {
+    $offset: base-spacing($size);
+
+    @if $name == 'default' {
+      margin: ($offset / 2) 0;
+    }
+
+    &_#{$name} {
+      margin: ($offset / 2) 0;
+    }
+  }
+}

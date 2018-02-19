@@ -1,0 +1,24 @@
+// border-radius по умолчанию берется из настроек темы
+$flexy-block-badge-border-radius: $flexy-theme-border-radius !default;
+// размер шрифта по умолчанию
+$flexy-block-badge-font-size: 0.9rem !default;
+// цвета по умолчанию берутся из темы
+$flexy-block-badge-colors: $flexy-colors !default;
+
+.b-badge {
+  border-radius: $flexy-block-badge-border-radius;
+  font-size: $flexy-block-badge-font-size;
+  padding: 0.2rem 0.4rem;
+  display: inline-block;
+  line-height: 1;
+  color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  top: -0.5rem;
+
+  @include flexy-colors($flexy-block-badge-colors) {
+    background: {
+      color: $flexy-current-color;
+    }
+  }
+}

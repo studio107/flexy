@@ -1,0 +1,100 @@
+.#{$flexy-prefix}-table {
+  $flexy-table-th-td-padding: 4px 8px;
+  $flexy-table-th-td-border-color: #e8e8e8;
+
+  width: 100%;
+  margin: 1em 0;
+  box-shadow: none;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__thead,
+  &__tfoot {
+    box-shadow: none;
+  }
+
+  &__tr {
+    &_thead {
+    }
+
+    &_tbody {
+      &:hover {
+      }
+    }
+  }
+
+  &__td,
+  &__th {
+    border: 1px solid $flexy-table-th-td-border-color;
+    padding: $flexy-table-th-td-padding;
+    vertical-align: inherit;
+    cursor: auto;
+    transition: background 0.1s ease, color 0.1s ease;
+    text-transform: none;
+    color: rgba(#000, 0.87);
+  }
+
+  &__td {
+    background: {
+      color: #fff;
+    }
+
+    &_tbody {
+      border: 1px solid $flexy-table-th-td-border-color;
+    }
+
+    &_actions {
+      width: 100px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__th {
+    background: {
+      color: #f9fafb;
+    }
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    font-size: 0.9rem;
+    color: #6a6a6a;
+  }
+
+  &__td,
+  &__th {
+    &_definition {
+      width: 260px;
+    }
+
+    &_transparent {
+      background: {
+        color: transparent;
+      }
+    }
+
+    &_clear {
+      background: {
+        color: transparent;
+      }
+      border: 0;
+    }
+
+    &_single {
+      border: {
+        width: 1px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+$flexy-breakpoints: (
+    small: 0,
+    medium: 769px,
+    large: 992px,
+    xlarge: 1200px,
+    xxlarge: 1600px
+  )
+  !default;
+
+@function flexy-breakpoint-has($name) {
+  @return map-has-key($flexy-breakpoints, $name);
+}
+
+@function flexy-breakpoint-get($breakpoint) {
+  @if (flexy-breakpoint-has($breakpoint)) {
+    @return map-get($flexy-breakpoints, $breakpoint);
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+    @return null;
+  }
+}
+
+@function flexy-breakpoint-step($from, $to: null) {
+  $map: (min-width: flexy-breakpoint-get($from));
+
+  @if ($to and flexy-breakpoint-has($to)) {
+    $map: map-merge((max-width: flexy-breakpoint-get($to) - 0.1px), $map);
+  }
+
+  @return $map;
+}
+
+@function flexy-breakpoint-next-step($from) {
+  $to: flexy-map-next-key($flexy-breakpoints, $from);
+
+  @return flexy-breakpoint-step($from, $to);
+}
+
+@mixin flexy-breakpoint($breakpoint, $screen: 'only screen') {
+  @if flexy-breakpoint-has($breakpoint) {
+    $map: (min-width: flexy-breakpoint-get($breakpoint));
+
+    @include flexy-media($map, $screen) {
+      @content;
+    }
+  } @else {
+    @warn "#{$breakpoint} is not a set breakpoint variable";
+  }
+}
+
+@mixin flexy-breakpoint-limit($from, $to: null, $screen: 'only screen') {
+  @include flexy-media(flexy-breakpoint-step($from, $to), $screen) {
+    @content;
+  }
+}

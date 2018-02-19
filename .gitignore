@@ -2,5 +2,4 @@
 .idea
 yarn.lock
 /node_modules
-/release/manifest.json
 package-lock.json

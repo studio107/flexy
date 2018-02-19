@@ -1,0 +1,33 @@
+// Return next key from list-map
+@function flexy-map-next-key($map, $key) {
+  @if type_of($map) != map {
+    @return null;
+  }
+
+  @if map-has-key($map, $key) {
+    $list: map-values($map);
+    $keys: map-keys($map);
+    $index: index($keys, $key) + 1;
+
+    @return if($index > length($list), null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}
+
+// Return previous key from list-map
+@function flexy-map-prev-key($map, $key) {
+  @if type_of($map) != map {
+    @return null;
+  }
+
+  @if map-has-key($map, $key) {
+    $list: map-values($map);
+    $keys: map-keys($map);
+    $index: index($keys, $key) - 1;
+
+    @return if($index <= 0, null, nth($keys, $index));
+  } @else {
+    @return null;
+  }
+}

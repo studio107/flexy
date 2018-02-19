@@ -1,0 +1,91 @@
+///
+/// Output the headings (h1, h2...) with the calculated settings
+/// @access public
+/// @param {Map} $map [$shevy]
+/// @output Headings with calculated settings
+///
+@mixin flexy-rhythm-headings($settings: $flexy-rhythm) {
+  $font-scale-length: length(map-get($settings, 'base-font-scale'));
+
+  @for $i from 1 through $font-scale-length {
+    // Headings Output
+    h#{$i} {
+      &,
+      &.b-heading {
+        @include flexy-apply-style(calculate-offsets($i, $settings));
+
+        &_no-offset {
+          margin: 0;
+        }
+
+        @content;
+      }
+    }
+  }
+}
+
+///
+/// Output font-size and line-height for body element
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @output Font-size and line-height for body element
+///
+@mixin flexy-rhythm-body($settings: $flexy-rhythm) {
+  $base-font-size: base-font-size($settings);
+  $base-line-height: base-line-height($settings);
+
+  // Output
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+///
+/// Output font-size, line-height and margin-bottom for p, ol, ul, and pre elements
+/// @access public
+/// @param {Map} $map [$shevy] Map of settings
+/// @output Font-size, line-height and margin-bottom for p, ol, ul, and pre elements
+///
+@mixin flexy-rhythm-content($settings: $flexy-rhythm) {
+  $base-font-unit: base-font-unit($settings);
+  $base-unit-multiplier: base-unit-multiplier($base-font-unit);
+  $base-font-size: base-font-size($settings);
+  $base-line-height: base-line-height($settings);
+  $base-spacing: base-spacing(1, $settings);
+  $margin-bottom: 0;
+  $margin-bottom-bool: map-get($settings, 'margin-bottom');
+  $font-unit-ems-bool: if($base-font-unit == 'em', true, false);
+
+  // Margin Bottom
+  @if $margin-bottom-bool {
+    @if $font-unit-ems-bool {
+      $margin-bottom: $base-spacing / $base-font-size * $base-unit-multiplier;
+    } @else {
+      $margin-bottom: $base-spacing;
+    }
+  }
+
+  // Content Elements
+  p,
+  ol,
+  ul,
+  pre {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-bottom: $margin-bottom;
+  }
+}
+
+///
+/// Temporarily use a different settings map
+/// @access public
+/// @param {Map} $map A map consisting of some or all $shevy settings.
+/// @content [Merges the $map with the $shevy settings and uses this new map to do all shevy math within this content block. Restores the $shevy settings after the block.]
+///
+@mixin flexy-rhythm-with-settings($map) {
+  $old: flexy-rhythm-settings();
+  $flexy-rhythm: map-merge($old, $map) !global;
+
+  @content;
+
+  $flexy-rhythm: $old !global;
+}

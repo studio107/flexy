@@ -1,0 +1,31 @@
+kbd,
+.b-kbd {
+  padding: 0.05rem 0.2rem;
+  font-size: 0.85rem;
+  color: flexy-color(text);
+  background: {
+    color: flexy-color(disabled);
+    image: linear-gradient(
+      180deg,
+      lighten(flexy-color(disabled), 10%),
+      transparent
+    );
+    position: 0 0;
+    repeat: no-repeat;
+  }
+  border: 1px solid rgba(darken(flexy-color(disabled), 5%), 0.8);
+  border-radius: $flexy-theme-border-radius;
+
+  &_inverted {
+    color: #fff;
+    background: {
+      color: flexy-color(text);
+      image: linear-gradient(
+        180deg,
+        lighten(flexy-color(text), 10%),
+        transparent
+      );
+    }
+    border: 1px solid rgba(darken(flexy-color(text), 5%), 0.8);
+  }
+}

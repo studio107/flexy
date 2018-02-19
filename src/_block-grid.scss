@@ -1,0 +1,84 @@
+// Отступ между блоками
+$flexy-block-grid-padding: $flexy-grid-gutter !default;
+// Максимальное количество блоков
+$flexy-block-grid-count: $flexy-grid-columns !default;
+// Использовать модификаторы устройств
+$flexy-block-grid-use-devices: true !default;
+
+@mixin _block-grid-offset() {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 ($flexy-block-grid-padding / 2) $flexy-block-grid-padding;
+}
+
+@mixin flexy-block-grid-flex() {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_left {
+    justify-content: flex-start;
+  }
+
+  &_center {
+    justify-content: center;
+  }
+
+  &_space {
+    justify-content: space-between;
+  }
+
+  &_right {
+    justify-content: flex-end;
+  }
+
+  @for $i from 1 through $flexy-block-grid-count {
+    & > &__item {
+      &_fluid {
+        width: auto;
+        flex: 1 0 100% / $i;
+      }
+    }
+
+    @each $name, $width in $flexy-breakpoints {
+      &_#{$name}_#{$i} > &__item {
+        @include flexy-breakpoint($name) {
+          width: (100% / $i);
+        }
+
+        &_only {
+          @include flexy-media(flexy-breakpoint-next-step($name)) {
+            width: 100% / $i;
+          }
+        }
+      }
+    }
+
+    @if ($flexy-block-grid-use-devices) {
+      @each $namespace, $params in $flexy-devices {
+        &_#{$namespace}_#{$i} > &__item {
+          @include flexy-device($namespace) {
+            width: (100% / $i);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin flexy-block-grid() {
+  list-style: none;
+  padding: 0;
+  margin: 0 (-$flexy-block-grid-padding/2);
+
+  & > &__item {
+    display: block;
+    height: auto;
+    @include _block-grid-offset;
+  }
+
+  @include flexy-block-grid-flex;
+}
+
+.#{$flexy-prefix}-block-grid {
+  @include flexy-block-grid();
+}

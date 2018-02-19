@@ -1,0 +1,20 @@
+$flexy-devices: () !default;
+$flexy-device-list: map-merge($flexy-default-devices, $flexy-devices);
+
+@function flexy-device-has($name) {
+  @return map-has-key($flexy-device-list, $name);
+}
+
+@function flexy-device-get($name) {
+  @return map-get($flexy-device-list, $name);
+}
+
+@function flexy-device-media($name) {
+  @return flexy-media-get(flexy-device-get($name));
+}
+
+@mixin flexy-device($name, $screen: 'only screen') {
+  @include flexy-media(flexy-device-media($name), $screen) {
+    @content;
+  }
+}

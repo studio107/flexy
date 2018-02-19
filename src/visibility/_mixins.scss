@@ -1,0 +1,13 @@
+@mixin flexy-hide($name, $only: false, $screen: 'only screen') {
+  @include flexy-media(flexy-visibility-media($name, $only), $screen) {
+    display: none;
+  }
+}
+
+@mixin flexy-show($name, $only: false, $screen: 'only screen') {
+  display: none;
+
+  @include flexy-media(flexy-visibility-media($name, $only), $screen) {
+    display: block;
+  }
+}

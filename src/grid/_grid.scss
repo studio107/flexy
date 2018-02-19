@@ -1,0 +1,42 @@
+@import 'settings';
+@import 'functions';
+
+/**
+ * Generate a set of grid column classes using a namespace
+ *
+ * col-[namespace] for intelligent column division
+ * col-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
+ * off-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
+ * off-[namespace]-reset for resetting a col's offset for that and larger namespaces
+ */
+@each $namespace, $width in $flexy-breakpoints {
+  @if ($width == 0) {
+    @include flexy-grid-build($namespace);
+  } @else {
+    @include flexy-media((min-width: $width)) {
+      @include flexy-grid-build($namespace);
+    }
+  }
+}
+
+.#{$flexy-prefix} {
+  &-col {
+    @include flexy-grid-column;
+  }
+
+  &-row {
+    @include flexy-grid-row;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: $flexy-grid-wrapper-max-width;
+    min-width: $flexy-grid-wrapper-min-width;
+    box-sizing: border-box;
+    @include flexy-grid-space($flexy-grid-gutter, padding);
+
+    &_left {
+      margin: 0;
+    }
+  }
+}

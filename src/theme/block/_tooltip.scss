@@ -1,0 +1,153 @@
+$tooltip-z-index: 5 !default;
+$tooltip-arrow-width: 0.6em !default;
+$tooltip-font-size: 0.9rem !default;
+$tooltip-body-border-radius: $flexy-theme-border-radius !default;
+
+$flexy-theme-tooltip: (
+  default: (background-color: #000, color: #fff),
+  white: (background-color: #f4f4f4, color: #535353),
+  error: (background-color: map-get($flexy-colors, error), color: #fff),
+  primary: (background-color: map-get($flexy-colors, primary), color: #fff),
+  success: (background-color: map-get($flexy-colors, success), color: #fff)
+);
+
+.#{$flexy-prefix}-tooltip {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+
+  &::before,
+  &::after {
+    transition: all 0.2s ease;
+    font-family: $flexy-font;
+    font-size: $tooltip-font-size;
+    font-style: normal;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: $tooltip-z-index;
+  }
+
+  &::before {
+    position: absolute;
+    border: $tooltip-arrow-width solid transparent;
+    content: '';
+  }
+
+  &::after {
+    position: absolute;
+    padding: 0.25em 0.5em;
+    border-radius: $flexy-theme-border-radius;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    visibility: hidden;
+  }
+
+  @each $name, $styles in $flexy-theme-tooltip {
+    &_#{$name}::after {
+      border: 1px solid map-get($styles, background-color);
+      background-color: map-get($styles, background-color);
+      color: map-get($styles, color);
+    }
+
+    &_#{$name}.b-tooltip_top::before {
+      border-top-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_right::before {
+      border-right-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_bottom::before {
+      border-bottom-color: map-get($styles, background-color) !important;
+    }
+
+    &_#{$name}.b-tooltip_left::before {
+      border-left-color: map-get($styles, background-color) !important;
+    }
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+  }
+
+  &_top {
+    &::before,
+    &::after {
+      margin-top: -10px;
+    }
+
+    &::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -1em);
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -3em);
+    }
+  }
+
+  &_right {
+    &::before,
+    &::after {
+      margin-left: -10px;
+    }
+
+    &::before {
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+    }
+
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translate(1em, -50%);
+    }
+  }
+
+  &_bottom {
+    &::before,
+    &::after {
+      margin-bottom: -10px;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 1em);
+    }
+
+    &::after {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 3em);
+    }
+  }
+
+  &_left {
+    &::before,
+    &::after {
+      margin-right: -10px;
+    }
+
+    &::before {
+      top: 50%;
+      right: 100%;
+      transform: translate(0, -50%);
+    }
+
+    &::after {
+      top: 50%;
+      right: 100%;
+      transform: translate(-1em, -50%);
+    }
+  }
+}

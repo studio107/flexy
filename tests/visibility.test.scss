@@ -1,0 +1,91 @@
+@import '~sass-true/sass/true';
+@import '../src/defaults';
+@import '../src/flexy';
+
+@include test-module('functions') {
+  @include test('flexy-visibility-next-media') {
+    @include assert-equal(flexy-visibility-next-media(medium), (min-width: 769px, max-width: 991px));
+    @include assert-equal(flexy-visibility-next-media(large), (min-width: 992px, max-width: 1199px));
+  }
+
+  @include test('mixin: flexy-hide') {
+    @include assert {
+      @include output {
+        .foo {
+          @include flexy-hide(small, true);
+        }
+      }
+
+      @include expect {
+        @media only screen and (max-width: 768px) and (min-width: 0) {
+          .foo {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include assert {
+      @include output {
+        .foo {
+          @include flexy-hide(small);
+        }
+      }
+
+      @include expect {
+        @media only screen and (min-width: 0) {
+          .foo {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @include test('mixin: flexy-show') {
+    @include assert {
+      @include output {
+        .foo {
+          @include flexy-show(small, true);
+        }
+      }
+
+      @include expect {
+        .foo {
+          display: none;
+        }
+
+        @media only screen and (max-width: 768px) and (min-width: 0) {
+          .foo {
+            display: block;
+          }
+        }
+      }
+    }
+
+    @include assert {
+      @include output {
+        .foo {
+          @include flexy-show(medium);
+        }
+      }
+
+      @include expect {
+        .foo {
+          display: none;
+        }
+
+        @media only screen and (min-width: 769px) {
+          .foo {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @include test('flexy-visibility-media') {
+    @include assert-equal(flexy-visibility-media(medium, false), (min-width: 769px));
+    @include assert-equal(flexy-visibility-media(medium, true), (max-width: 991px, min-width: 769px));
+  }
+}

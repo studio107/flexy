@@ -1,0 +1,55 @@
+$flexy-block-progress-background-color: #ededed !default;
+$flexy-block-progress-border-radius: 0.18rem !default;
+$flexy-block-progress-colors: $flexy-colors;
+$flexy-block-progress-height: 12px !default;
+
+@keyframes progress-pattern {
+  100% {
+    background-position: 100px 0;
+  }
+}
+
+.b-progress {
+  border: none;
+  appearance: none;
+  height: $flexy-block-progress-height;
+  display: inline-block;
+  vertical-align: baseline;
+  border-radius: $flexy-block-progress-border-radius;
+  background-color: $flexy-block-progress-background-color;
+  position: relative;
+  min-width: 120px;
+
+  &__value {
+    border-radius: $flexy-block-progress-border-radius;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    height: $flexy-block-progress-height;
+
+    @each $name, $color in $flexy-block-progress-colors {
+      @if $name == default {
+        background-color: $color;
+      } @else {
+        &_#{$name} {
+          background-color: $color;
+        }
+      }
+    }
+
+    &_pattern {
+      background: {
+        image: linear-gradient(
+          -45deg,
+          transparent 33%,
+          rgba(0, 0, 0, 0.1) 33%,
+          rgba(0, 0, 0, 0.1) 66%,
+          transparent 66%
+        );
+        size: 35px 20px;
+      }
+      animation: progress-pattern 5s linear infinite;
+    }
+  }
+}
