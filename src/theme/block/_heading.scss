@@ -15,26 +15,26 @@
   }
 
   h1.b-heading.b-heading_xxlarge {
-    font-size: map-get($flexy-typeset-sizes, xxlarge);
+    font-size: flexy-size(xxlarge);
   }
 
   h2.b-heading.b-heading_xlarge {
-    font-size: map-get($flexy-typeset-sizes, xlarge);
+    font-size: flexy-size(xlarge);
   }
 
   h3.b-heading.b-heading_large {
-    font-size: map-get($flexy-typeset-sizes, large);
+    font-size: flexy-size(large);
   }
 
   h4.b-heading.b-heading_medium {
-    font-size: map-get($flexy-typeset-sizes, medium);
+    font-size: flexy-size(medium);
   }
 
   h5.b-heading.b-heading_small {
-    font-size: map-get($flexy-typeset-sizes, small);
+    font-size: flexy-size(small);
   }
 
   h6.b-heading.b-heading_xsmall {
-    font-size: map-get($flexy-typeset-sizes, xsmall);
+    font-size: flexy-size(xsmall);
   }
 }
