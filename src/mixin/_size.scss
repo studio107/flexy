@@ -1,0 +1,11 @@
+$flexy-size-current-name: null !global;
+$flexy-size-current-value: null !global;
+
+@mixin flexy-size() {
+  @each $prefix, $value in $flexy-sizes {
+    $flexy-size-current-name: $prefix !global;
+    $flexy-size-current-value: $value !global;
+
+    @content;
+  }
+}
