@@ -1,11 +1,10 @@
 $flexy-breakpoints: (
-    small: 0,
-    medium: 769px,
-    large: 992px,
-    xlarge: 1200px,
-    xxlarge: 1600px
-  )
-  !default;
+  small: 0,
+  medium: 769px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1600px
+) !default;
 
 @function flexy-breakpoint-has($name) {
   @return map-has-key($flexy-breakpoints, $name);
@@ -15,7 +14,7 @@ $flexy-breakpoints: (
   @if (flexy-breakpoint-has($breakpoint)) {
     @return map-get($flexy-breakpoints, $breakpoint);
   } @else {
-    @warn "#{$breakpoint} is not a set breakpoint variable";
+    @warn '#{$breakpoint} is not a set breakpoint variable';
     @return null;
   }
 }
@@ -44,7 +43,7 @@ $flexy-breakpoints: (
       @content;
     }
   } @else {
-    @warn "#{$breakpoint} is not a set breakpoint variable";
+    @warn '#{$breakpoint} is not a set breakpoint variable';
   }
 }
 

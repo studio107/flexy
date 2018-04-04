@@ -1,11 +1,10 @@
 // Типы flash сообщений
 $flexy-block-flash-types: (
-    success: #27ae60,
-    info: #3498db,
-    warning: #e67e22,
-    error: #c0392b
-  )
-  !default;
+  success: #27ae60,
+  info: #3498db,
+  warning: #e67e22,
+  error: #c0392b
+) !default;
 // border-radius по умолчанию соответствует теме
 $flexy-block-flash-border-radius: $flexy-theme-border-radius !default;
 // Размер шрифта по умолчанию

@@ -5,13 +5,19 @@
 @include test-module('functions') {
   @include test('flexy-join') {
     @include assert-equal(flexy-join((1 2 3)), '1 2 3');
-    @include assert-equal(flexy-join((1,2,3)), '1,2,3');
+    @include assert-equal(flexy-join((1, 2, 3)), '1,2,3');
     @include assert-equal(flexy-join((1 2 3), ', '), '1, 2, 3');
   }
 
   @include test('flexy-reverse') {
-    @include assert-equal(flexy-reverse((a b (c d e) f g h)), (h g f (c d e) b a));
-    @include assert-equal(flexy-reverse((a, b, (c, d, e), f, g, h)), (h, g, f, (c, d, e), b, a));
+    @include assert-equal(
+      flexy-reverse((a b (c d e) f g h)),
+      (h g f (c d e) b a)
+    );
+    @include assert-equal(
+      flexy-reverse((a, b, (c, d, e), f, g, h)),
+      (h, g, f, (c, d, e), b, a)
+    );
   }
 
   @include test('flexy-strip-unit') {
@@ -55,7 +61,10 @@
   }
 
   @include test('flexy-media-get') {
-    @include assert-equal(flexy-media-get((min-width: 100px, max-width: 101px)), '(max-width: 101px) and (min-width: 100px)');
+    @include assert-equal(
+      flexy-media-get((min-width: 100px, max-width: 101px)),
+      '(max-width: 101px) and (min-width: 100px)'
+    );
   }
 
   @include test('flexy-media') {

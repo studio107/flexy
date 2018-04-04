@@ -1,5 +1,7 @@
 .#{$flexy-prefix}-form {
   &__row {
+    position: relative;
+
     &:not(:last-child) {
       margin-bottom: 15px;
     }

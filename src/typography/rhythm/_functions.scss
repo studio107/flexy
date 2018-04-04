@@ -119,7 +119,7 @@
   } @else if $unit == 'rem' {
     @return 1rem;
   } @else {
-    @warn "Sorry, but that is not a supported unit of measure.";
+    @warn 'Sorry, but that is not a supported unit of measure.';
   }
 }
 
@@ -166,7 +166,9 @@
     }
   }
 
-  @return (font-size: $font-size,
-      line-height: $line-height,
-      margin-bottom: $margin-bottom,);
+  @return (
+    font-size: $font-size,
+    line-height: $line-height,
+    margin-bottom: $margin-bottom
+  );
 }

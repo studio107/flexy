@@ -5,7 +5,10 @@
 
 @include test-module('Breakpoint') {
   @include test('default breakpoints') {
-    @include assert-equal(map-keys($flexy-breakpoints), (small, medium, large, xlarge, xxlarge));
+    @include assert-equal(
+      map-keys($flexy-breakpoints),
+      (small, medium, large, xlarge, xxlarge)
+    );
   }
 
   @include test('flexy-breakpoint-has') {
@@ -17,7 +20,10 @@
   }
 
   @include test('flexy-breakpoint-step') {
-    @include assert-equal(flexy-breakpoint-step(small, xlarge), (max-width: 1199.9px, min-width: 0));
+    @include assert-equal(
+      flexy-breakpoint-step(small, xlarge),
+      (max-width: 1199.9px, min-width: 0)
+    );
     @include assert-equal(flexy-breakpoint-step(medium), (min-width: 769px));
   }
 
@@ -30,11 +36,26 @@
   }
 
   @include test('flexy-breakpoint-next-step') {
-    @include assert-equal(flexy-breakpoint-next-step(small), (min-width: 0, max-width: 768.9px));
-    @include assert-equal(flexy-breakpoint-next-step(medium), (min-width: 769px, max-width: 991.9px));
-    @include assert-equal(flexy-breakpoint-next-step(large), (min-width: 992px, max-width: 1199.9px));
-    @include assert-equal(flexy-breakpoint-next-step(xlarge), (min-width: 1200px, max-width: 1599.9px));
-    @include assert-equal(flexy-breakpoint-next-step(xxlarge), (min-width: 1600px));
+    @include assert-equal(
+      flexy-breakpoint-next-step(small),
+      (min-width: 0, max-width: 768.9px)
+    );
+    @include assert-equal(
+      flexy-breakpoint-next-step(medium),
+      (min-width: 769px, max-width: 991.9px)
+    );
+    @include assert-equal(
+      flexy-breakpoint-next-step(large),
+      (min-width: 992px, max-width: 1199.9px)
+    );
+    @include assert-equal(
+      flexy-breakpoint-next-step(xlarge),
+      (min-width: 1200px, max-width: 1599.9px)
+    );
+    @include assert-equal(
+      flexy-breakpoint-next-step(xxlarge),
+      (min-width: 1600px)
+    );
   }
 
   @include test('flexy-breakpoint-limit') {

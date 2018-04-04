@@ -1,7 +1,7 @@
-const path = require('path')
-const sassTrue = require('sass-true')
+const path = require('path');
+const sassTrue = require('sass-true');
 
-const importer = require('./importer')
+const importer = require('./importer');
 
 sassTrue.runSass(
     {
@@ -10,4 +10,4 @@ sassTrue.runSass(
     },
     describe,
     it
-)
+);

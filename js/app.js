@@ -1,3 +1,3 @@
-import './dropdown'
-import './flash'
-import './tab'
+import './dropdown';
+import './flash';
+import './tab';

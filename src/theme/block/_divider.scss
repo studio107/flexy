@@ -1,4 +1,8 @@
-$flexy-block-divider-sizes: (default: 1, large: 2, hero: 3) !default;
+$flexy-block-divider-sizes: (
+  default: 1,
+  large: 2,
+  hero: 3
+) !default;
 
 .b-divider {
   @include clearfix;
