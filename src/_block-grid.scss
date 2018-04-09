@@ -31,15 +31,8 @@ $flexy-block-grid-use-devices: true !default;
     justify-content: flex-end;
   }
 
-  @for $i from 1 through $flexy-block-grid-count {
-    & > &__item {
-      &_fluid {
-        width: auto;
-        flex: 1 0 100% / $i;
-      }
-    }
-
-    @each $name, $width in $flexy-breakpoints {
+  @each $name, $width in $flexy-breakpoints {
+    @for $i from 1 through $flexy-block-grid-count {
       &_#{$name}_#{$i} > &__item {
         @include flexy-breakpoint($name) {
           width: (100% / $i);

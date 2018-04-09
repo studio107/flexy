@@ -9,8 +9,8 @@
         "gulp-sass": "^3.1.0",
         "jest": "^22.1.4",
         "node-sass": "^4.7.2",
-        "postcss-csso": "^3.0.0",
         "node-sass-tilde-importer": "^1.0.1",
+        "postcss-csso": "^3.0.0",
         "postcss-flexbugs-fixes": "^3.2.0",
         "prettier": "^1.9.2",
         "sass-true": "^3.0.2"
